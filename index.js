@@ -5,7 +5,7 @@ var fs = require("fs");
 var path = require('path');
 app.use(bodyparser());
 
-app.listen(9007, () => console.log('Listening on port 9007!'));
+app.listen(process.env.PORT || 9007, () => console.log('Listening on port 9007!'));
 __discord_link = "https://discord.gg/HxxNybCgM4"
 
 // entry page
