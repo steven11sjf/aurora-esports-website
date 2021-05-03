@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> The Gopherwatch League </title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Overwatch, Gopherwatch, Esports">
+		<meta name="description" content="Website for the Gopherwatch League, run by Esports @ UMN">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<h1 class="center">The Gopherwatch League</h1>
+		<!-- navbar -->
+		<div id="nav-placeholder"></div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+		<!-- twitch channel embed -->
+		<div class="center" id="twitch-embed"></div>
+		
+		<!-- load twitch embed js -->
+		<script src="https://embed.twitch.tv/embed/v1.js"></script>
+		
+		<!-- create Twitch.Embed object -->
+		<script type="text/javascript">
+			new Twitch.Player("twitch-embed", {
+				video: "1009168195",
+				width:854,
+				height:480
+			});
+		</script>
+	</body>
+</html>

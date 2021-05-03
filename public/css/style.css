@@ -1,0 +1,52 @@
+#twitch-embed {
+	align: center;
+	padding: 50px 50px;
+}
+
+.center {
+	margin: auto;
+	width: 50%;
+}
+
+h1.center {
+	text-align: center;
+}
+
+nav {
+	text-align: center;
+	margin: auto;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #800;
+	text-align: center;
+}
+
+nav ul li {
+	float: left;
+	display: inline;
+}
+
+nav ul li a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+nav ul li a:hover:not(.active) {
+	background-color: #FFD700;
+}
+
+.active {
+	background-color: #111;
+}
+
+.discord-link {
+	background-color: #738ADB;
+}
