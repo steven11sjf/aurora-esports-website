@@ -1,3 +1,9 @@
+# allows to test with environment variables without having to deploy
+.env
+
+# we shouldn't need this since we're using a JWT instead but just in case i do stupid shit in the future
+credentials.json
+
 # old project
 fran0871_hw07
 fran0871_hw07.zip

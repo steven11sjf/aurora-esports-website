@@ -5,7 +5,6 @@
 
 .center {
 	margin: auto;
-	width: 50%;
 }
 
 h1.center {
@@ -15,6 +14,7 @@ h1.center {
 nav {
 	text-align: center;
 	margin: auto;
+	width: 50%;
 }
 
 nav ul {
@@ -49,4 +49,46 @@ nav ul li a:hover:not(.active) {
 
 .discord-link {
 	background-color: #738ADB;
+}
+
+#standingsTable {
+	width: 70%;
+	padding: 40px;
+	table-layout: fixed;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#standingsTable th {
+	height: 70px;
+	width: 20%
+}
+
+#standingsTable thead tr {
+	background-color: #800;
+	text-align: center;
+	color: white;
+	padding: 20px 20px;
+	text-decoration: none;
+}
+
+td.team-name {
+	text-align: left;
+	padding-left: 10px;
+}
+
+td {
+	text-align: center;
+}
+
+
+
+
+
+#standingsTable tbody tr:nth-child(even) {
+	background-color: #ffde7a;
+}
+
+#standingsTable tbody tr:nth-child(odd) {
+	background-color: #d5d6d2;
 }
