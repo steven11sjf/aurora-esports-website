@@ -17,7 +17,72 @@
 		});
 		</script>
 		
-		<h2 class="center"> Coming soon!</h2>
-		<p class="center"> This page is currently in development. Please <a href="/home/"> return to the home page</a>.</p>
+		<div class="center">
+			<table class="table center" id="standingsTable">
+				<thead>
+					<tr>
+						<th style="width:44%;" scope="col">Team Name</th>
+						<th style="width:7%;" scope="col">W</th>
+						<th style="width:7%;" scope="col">L</th>
+						<th style="width:14%;" scope="col">PCT</th>
+						<th style="width:7%;" scope="col">MW</th>
+						<th style="width:7%;" scope="col">ML</th>
+						<th style="width:7%;" scope="col">MT</th>
+						<th style="width:7%;" scope="col">DIFF</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<script type="text/javascript">
+		function doAjax() {
+			// create AJAX request for standingsTable
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/GetStandings", true);
+			xhttp.send();
+			
+			// runs when response is received
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					loadTable(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						alert(xhttp.status);
+					}
+				}
+			}
+		}
+		
+		// loads table into HTML
+		function loadTable(jsonObj) {
+			var out = "";
+			var table = jsonObj.teams;
+			for(i = 0; i < table.length; i++) {
+				out += '<tr><td class="team-name"><p>';
+				out += table[i]["name"];
+				out += "</p></td><td><p>";
+				out += table[i]["win"];
+				out += "</p></td><td><p>";
+				out += table[i]["loss"];
+				out += "</p></td><td><p>";
+				out += table[i]["pct"];
+				out += "</p></td><td><p>";
+				out += table[i]["mapwin"];
+				out += "</p></td><td><p>";
+				out += table[i]["maploss"];
+				out += "</p></td><td><p>";
+				out += table[i]["maptie"];
+				out += "</p></td><td><p>";
+				out += table[i]["mapdiff"];
+				out += "</p></td></tr>";
+			}
+		
+			document.getElementById("standingsTable").getElementsByTagName("tbody")[0].innerHTML = out;
+		}
+		
+		doAjax();
+		</script>
 	</body>
 </html>
