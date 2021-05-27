@@ -680,6 +680,9 @@ app.get('/Discord/', function(req, res) {
 	res.redirect(__discord_link);
 });
 
+app.get('/favicon.ico', function(req, res) {
+	res.sendFile(__dirname + '/public/images/leaguelogo.png');
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function(req, res) {
