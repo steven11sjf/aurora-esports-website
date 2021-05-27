@@ -433,7 +433,7 @@ __discord_link = "https://discord.gg/HxxNybCgM4"
 
 // entry page
 app.get('/',function(req, res) {
-  res.redirect('/Home/');
+  res.redirect('/Draft/');
 });
 
 app.get('/Home/', function(req, res) {
