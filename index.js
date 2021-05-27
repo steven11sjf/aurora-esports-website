@@ -52,7 +52,7 @@ playersUpdateJob.start();
 
 function getTime(mins) {
 	let date_curr = new Date();
-	let date_obj = new Date(date_curr.getTime() + mins * 60 * 1000);
+	let date_obj = new Date(new Date(date_curr.getTime() + mins * 60 * 1000).toLocaleString("en-US", {timeZone: "America/Chicago"}));
 	let year = date_obj.getFullYear();
 	let month = ("0" + (date_obj.getMonth() + 1)).slice(-2);
 	let day = ("0" + date_obj.getDate()).slice(-2);
