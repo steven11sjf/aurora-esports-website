@@ -30,17 +30,17 @@
 					<span id="team-page-div">Division</span>
 				</div>
 				<div class="LeagueStats">
-					<span id="team-page-league-matches">0-0</span>
-					<span id="team-page-league-maps">(0-0-0)</span>
+					<span id="team-page-league-matches" title="matches won-lost">0-0</span>
+					<span id="team-page-league-maps" title="maps won-lost-drawn">(0-0-0)</span>
 				</div>
 				<div class="DivStats">
-					<span id="team-page-div-matches">0-0</span>
+					<span id="team-page-div-matches" title="division matches won-lost">0-0</span>
 				</div>
 				<div class="LeagueRank">
-					<span id="team-page-league-rank">League: -/10</span>
+					<span id="team-page-league-rank" title="league ranking">League: -/10</span>
 				</div>
 				<div class="DivRank">
-					<span id="team-page-div-rank">Division: -/5</span>
+					<span id="team-page-div-rank" title="division ranking">Division: -/5</span>
 				</div>
 			</div>
 			
@@ -104,10 +104,7 @@
 		var teamName = 'LondonLumberjacks';
 		
 		window.onload = function(){
-			doTeamRosterAjax(teamName);
-			doMatchHistoryAjax(teamName);
-			doMapStatsAjax(teamName);
-			doTeamStatsAjax(teamName);
+			doTeamAjax(teamName);
 		}
 		</script>
 	</body>

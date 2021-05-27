@@ -1,3 +1,27 @@
+var jsonReceived;
+
+function doTeamAjax(team) {
+	console.log("getting data for team " + team);
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", '/api/teaminfo/' + team, true);
+	xhttp.send();
+	
+	// runs when response is received
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200){
+			jsonReceived = JSON.parse(xhttp.responseText);
+			loadRosterTable(jsonReceived);
+			loadMapTable(jsonReceived);
+			loadMatchTable(jsonReceived);
+			loadTeamStats(jsonReceived);
+		} else {
+			if(xhttp.status != 200) {
+				alert(xhttp.status);
+			}
+		}
+	}
+}
+
 function doTeamRosterAjax(team) {
 	console.log("getting roster for team " + team);
 	// create AJAX request for standingsTable
@@ -8,7 +32,6 @@ function doTeamRosterAjax(team) {
 	// runs when response is received
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
-			console.log(xhttp.responseText);
 			var jsonObj = JSON.parse(xhttp.responseText);
 			loadRosterTable(jsonObj);
 		} else {
@@ -28,7 +51,6 @@ function doMatchHistoryAjax(team) {
 	// runs when response is received
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
-			console.log(xhttp.responseText);
 			var jsonObj = JSON.parse(xhttp.responseText);
 			loadMatchTable(jsonObj);
 		} else {
@@ -48,7 +70,6 @@ function doMapStatsAjax(team) {
 	// runs when response is received
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
-			console.log(xhttp.responseText);
 			var jsonObj = JSON.parse(xhttp.responseText);
 			loadMapTable(jsonObj);
 		} else {
@@ -68,7 +89,6 @@ function doTeamStatsAjax(team) {
 	// runs when response is received
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
-			console.log(xhttp.responseText);
 			var jsonObj = JSON.parse(xhttp.responseText);
 			loadTeamStats(jsonObj);
 		} else {
@@ -81,6 +101,7 @@ function doTeamStatsAjax(team) {
 		
 // loads table into HTML
 function loadRosterTable(jsonObj) {
+	console.log(jsonObj);
 	var out = "";
 	var table = jsonObj.roster;
 	for(i = 0; i < table.length; i++) {
@@ -145,6 +166,7 @@ function loadMapTable(jsonObj) {
 }
 
 function loadTeamStats(jsonObj) {
+	console.log(jsonObj.stats);
 	document.getElementById("team-page-league-matches").innerHTML = '(' + jsonObj.stats.wins + '-' + jsonObj.stats.losses + ')';
 	document.getElementById("team-page-league-maps").innerHTML = '(' + jsonObj.stats.mapwins + '-' + jsonObj.stats.maplosses + '-' + jsonObj.stats.mapties + ')';
 	document.getElementById("team-page-div-matches").innerHTML = '(' + jsonObj.stats.divwins + '-' + jsonObj.stats.divlosses + ')';
