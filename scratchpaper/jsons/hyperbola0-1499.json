@@ -1,0 +1,38 @@
+{
+    "battletag": "hyperbola0#1499",
+	"discordtag": "hyperbola0#4962",
+	"mainrole": "support",
+	"subrole": "flex-support",
+	"playtime": 9459,
+	"team": "Saigon Swans",
+	"bio": "heyyo",
+	"sr": {
+	    "tank": 2200,
+		"damage": 1500,
+		"support": 2700
+	},
+	"heroes": [
+		{
+			"name": "Ana",
+			"hero": "support",
+			"playtime": 9018,
+			"elims": 74,
+			"fb": 18,
+			"damage": 20235,
+			"deaths": 92,
+			"healing": 142062,
+			"damageblocked": 0
+		},
+		{
+			"name": "Moira",
+			"hero": "support",
+			"playtime": 441,
+			"elims": 12,
+			"fb": 3,
+			"damage": 2373,
+			"deaths": 6,
+			"healing": 7435",
+			"damageblocked": 0
+		}
+	]
+}

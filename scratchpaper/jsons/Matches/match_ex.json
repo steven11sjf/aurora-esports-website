@@ -1,0 +1,32 @@
+{
+	"team1": "Saigon Swans",
+	"team1_int": "Saigon-Swans",
+	"team2": "S. Smelly BOON1Es",
+	"team2_int": "S-Smelly-Boon1es",
+	"date": "5/17/21",
+	"time": "8:00:00PM",
+	"score": "2-3",
+	"vod": "youtube.com/whateverthefuck",
+	"maps": {
+		"map1": {
+			"name": "Lijiang Tower",
+			"winner": "Saigon-Swans"
+		},
+		"map2": {
+			"name": "King's Row",
+			"winner": "S-Smelly-Boon1es"
+		},
+		"map3": {
+			"name": "Route: 66",
+			"winner": "Saigon-Swans"
+		},
+		"map4": {
+			"name": "Havana",
+			"winner": "Saigon-Swans"
+		},
+		"map5": {
+			"name": "Unplayed",
+			"winner": "Unplayed"
+		}
+	}
+}

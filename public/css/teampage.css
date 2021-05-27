@@ -1,0 +1,112 @@
+.team-page-container {
+	background-color: white;
+	width: 70%;
+}
+
+.grid-container {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 25% 30% 45%;
+  grid-template-rows: 33% 33% 33%;
+  gap: 5px 5px;
+  padding: 10px;
+  grid-template-areas:
+    "image TeamName TeamName"
+    "image LeagueStats DivStats"
+    "image LeagueRank DivRank";
+}
+
+.image { grid-area: image; }
+
+.TeamName { grid-area: TeamName; }
+
+.Division { grid-area: Division; }
+
+.LeagueStats { grid-area: LeagueStats; }
+
+.DivStats { grid-area: DivStats; }
+
+.LeagueRank { grid-area: LeagueRank; }
+
+.DivRank { grid-area: DivRank; }
+
+span#team-page-name {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+span#team-page-div {
+	margin-left: 10px;
+	font-size: 30px;
+	color: gray;
+}
+
+span#team-page-league-matches {
+	font-size: 30px;
+}
+
+span#team-page-league-maps {
+	font-size: 30px;
+}
+
+span#team-page-div-matches {
+	font-size: 30px;
+	color: gray;
+}
+
+span#team-page-div-maps {
+	font-size: 30px;
+	color: gray;
+}
+
+span#team-page-league-rank {
+	font-size: 30px;
+}
+
+span#team-page-div-rank {
+	font-size: 30px;
+	color: gray;
+}
+
+#team-page-icon {
+	width: 150px;
+	border-radius: 100px;
+}
+
+img {
+	float: right;
+	padding-right: 20px;
+}
+
+.ttable {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 90%;
+	table-layout: fixed;
+	font-size: 18px;
+	font-weight: bold;
+	border: 3px solid black;
+	border-collapse: collapse;
+}
+
+.ttable th {
+	height: 70px;
+	width: 20%;
+}
+
+.ttable thead tr {
+	background-color: #800;
+	text-align: center;
+	color: white;
+	padding: 20px 20px;
+	text-decoration: none;
+	border: 2px solid black;
+}
+
+.ttable tbody tr {
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	border: 2px solid black;
+}

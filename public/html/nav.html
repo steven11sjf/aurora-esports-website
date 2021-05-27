@@ -1,10 +1,25 @@
 <!-- navbar -->
-<nav class="center">
-	<ul>
-		<li><a href="/Home/"> Home </a></li>
-		<li><a href="/Standings/">Standings </a></li>
-		<li><a href="/Schedule/"> Schedule </a></li>
-		<li><a href="/Stats/"> Stats </a></li>
-		<li style="float:right"><a class="discord-link" target="_blank" href="/Discord/"> Discord </a></li>
-	</ul>
-</nav>
+<div class="navbar">
+  <a href="/Home/">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='/Standings/';">Teams 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/Teams/DjiboutiShorts">Djibouti Shorts</a>
+      <a href="/Teams/LondonLumberjackSlams">London Lumberjack Slams</a>
+      <a href="/Teams/OceaniaOtters">Oceania Otters</a>
+      <a href="/Teams/PlymouthPMAs">Plymouth PMAs</a>
+      <a href="/Teams/TheTenochitlanTacos">The Tenochitlan Tacos</a>
+      <a href="/Teams/BendigoBilbies">Bendigo Bilbies</a>
+      <a href="/Teams/GamingGollums">Gaming Gollums</a>
+      <a href="/Teams/RialtoRincewinds">Rialto Rincewinds</a>
+      <a href="/Teams/GalapagosGremlins">Galapagos Gremlins</a>
+      <a href="/Teams/WakandaBBQs">Wakanda BBQs</a>
+    </div>
+  </div> 
+  <a href="/Schedule/">Schedule</a>
+  <a href="/Standings/">Standings</a>
+  <a href="/Stats/">Stats</a>
+  <a href="/Draft/">Draft</a>
+</div>

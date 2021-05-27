@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Draft - The Gopherwatch League </title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<meta charset="UTF-8">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="/js/sortable-draft-table.js"></script>
+	</head>
+	<body>
+		<h1 class="center">The Gopherwatch League</h1>
+		<!-- navbar -->
+		<div id="nav-placeholder"></div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+		<p class="center notice">
+			<i>Information last updated at <span id="lastUpdateTime"></span>, refresh at <span id="nextUpdateTime"></span> for the latest changes.</i>
+		</p>
+		
+		<div class="center">
+			<table class="table center" id="draftTable">
+				<thead>
+					<tr>
+						<th style="width:30%;" scope="col" onclick="sortTable('draftTable', 0)">Battletag</th>
+						<th style="width:5%;" scope="col" onclick="sortTable('draftTable', 1)">Draft number</th>
+						<th style="width:35%;" scope="col" onclick="sortTable('draftTable', 2)">Team</th>
+						<th style="width:10%;" scope="col" onclick="sortTable('draftTable', 3)">Tank SR</th>
+						<th style="width:10%;" scope="col" onclick="sortTable('draftTable', 4)">DPS SR</th>
+						<th style="width:10%;" scope="col" onclick="sortTable('draftTable', 5)">Support SR</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<script type="text/javascript">
+		function doAjax() {
+			// create AJAX request for standingsTable
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/GetAllPlayersJson", true);
+			xhttp.send();
+			
+			// runs when response is received
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					loadTable(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						alert(xhttp.status);
+					}
+				}
+			}
+		}
+		
+		// loads table into HTML
+		function loadTable(jsonObj) {
+		
+			// update time
+			document.getElementById("lastUpdateTime").innerHTML = jsonObj.updated;
+			document.getElementById("nextUpdateTime").innerHTML = jsonObj.nextUpdate;
+			
+			// fill table
+			var out = "";
+			var table = jsonObj.players;
+			for(i = 0; i < table.length; i++) {
+				out += '<tr><td><p>';
+				out += table[i].battletag;
+				out += '</p></td><td><p>';
+				if(table[i].draft === '0') {
+					out += 'C';
+				} else if(table[i].draft === '') {
+					out += '-';
+				} else {
+					out += table[i].draft;
+				}
+				out += '</p></td><td class="team-name"><p>';
+				if(table[i].team === '') {
+					out += 'Undrafted';
+				} else {
+					out += table[i].team;
+				}
+				out += '</p></td><td><p>';
+				if(table[i].tank == 'undefined' || table[i].tank == '') {
+					out += '-';
+				} else {
+					out += table[i].tank;
+				}
+				out += '</p></td><td><p>';
+				if(table[i].dps == 'undefined' || table[i].dps == '') {
+					out += '-';
+				} else {
+					out += table[i].dps;
+				}
+				out += '</p></td><td><p>';
+				if(table[i].support == 'undefined' || table[i].support == '') {
+					out += '-';
+				} else {
+					out += table[i].support;
+				}
+				out += '</p></td></tr>';
+			}
+		
+			document.getElementById("draftTable").getElementsByTagName("tbody")[0].innerHTML = out;
+			sortTable('draftTable', 1); // default sorting is by draft order
+		}
+		
+		doAjax();
+		</script>
+	</body>
+</html>

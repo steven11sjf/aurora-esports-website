@@ -1,0 +1,10 @@
+{"teams":[
+  { "name":"Buenos Aires Beebles", "abbreviation":"BAB", "division":"Maroon", "captain":"Cathect", "icon":"/images/BA_Beebles.png" },
+  { "name":"Farmington Fishermen", "abbreviation":"FF", "division":"Maroon", "captain":"Corey", "icon":"/images/Farmington_Fishermen.png" },
+  { "name":"Moon Monkeys", "abbreviation":"MM", "division":"Gold", "captain":"Orion", "icon":"/images/Moon_Monkeys.png" },
+  { "name":"Nepalese Narwhals", "abbreviation":"NN", "division":"Gold", "captain":"PurpleJesus", "icon":"/images/Nepalese_Narwhals.png" },
+  { "name":"Richfield Rats", "abbreviation":"RFR", "division":"Gold", "captain":"RustyGoomba", "icon":"/images/Richfield_Rats.png" },
+  { "name":"Ritto Raccoons", "abbreviation":"RR", "division":"Gold", "captain":"Blastia", "icon":"/images/Ritto_Raccoons.png" },
+  { "name":"Saigon Swans", "abbreviation":"SS", "division":"Maroon", "captain":"Mikey", "icon":"/images/Saigon_Swans.png" },
+  { "name":"Staronizhestebliyevskaya Smelly BOON1Es", "abbreviation":"SSB", "division":"Maroon", "captain":"Bonezee", "icon":"/images/S_Smelly_BOON1Es.png" }
+]}

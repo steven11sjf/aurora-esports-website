@@ -1,0 +1,36 @@
+{
+	"teams": [
+		{
+			"name": "Saigon Swans",
+			"name_int": "Saigon-Swans"
+		},
+		{
+			"name": "S. Smelly BOON1Es",
+			"name_int": "S-Smelly-Boon1es"
+		},
+		{
+			"name": "Buenos Aires Beebles",
+			"name_int": "BA-Beebles"
+		},
+		{
+			"name": "Richfield Rats",
+			"name_int": "Richfield-Rats"
+		},
+		{
+			"name": "Moon Monkeys",
+			"name_int": "Moon-Monkeys"
+		},
+		{
+			"name": "Farmington Fishermen",
+			"name_int": "Farmington-Fishermen"
+		},
+		{
+			"name": "Nepalese Narwhals",
+			"name_int": "Nepalese-Narwhals"
+		},
+		{
+			"name": "Ritto Raccoons",
+			"name_int": "Ritto-Raccoons"
+		}
+	]
+}
