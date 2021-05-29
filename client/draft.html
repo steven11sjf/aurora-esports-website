@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="/js/sortable-draft-table.js"></script>
+		<script src="/js/link-team-names.js"></script>
 	</head>
 	<body>
 		<h1 class="center">The Gopherwatch League</h1>
@@ -47,7 +48,6 @@
 			// runs when response is received
 			xhttp.onreadystatechange = function() {
 				if(this.readyState == 4 && this.status == 200){
-					console.log(xhttp.responseText);
 					var jsonObj = JSON.parse(xhttp.responseText);
 					loadTable(jsonObj);
 				} else {
@@ -108,6 +108,8 @@
 		
 			document.getElementById("draftTable").getElementsByTagName("tbody")[0].innerHTML = out;
 			sortTable('draftTable', 1); // default sorting is by draft order
+			console.log('linking');
+			addLinks();
 		}
 		
 		doAjax();

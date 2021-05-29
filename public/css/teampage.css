@@ -70,7 +70,7 @@ span#team-page-div-rank {
 }
 
 #team-page-icon {
-	width: 150px;
+	height: 200px;
 }
 
 img {
@@ -108,4 +108,12 @@ img {
 	padding: 20px;
 	text-decoration: none;
 	border: 2px solid black;
+}
+
+.ttable tbody tr:nth-child(even) {
+	background-color: #d5d6d2;
+}
+
+.ttable tbody tr:nth-child(odd) {
+	/*background-color: #d5d6d2;*/
 }

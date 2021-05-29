@@ -108,7 +108,10 @@ function loadRosterTable(jsonObj) {
 		out += '<tr><td><p>';
 		out += table[i]["name"];
 		out += "</p></td><td><p>";
-		out += table[i]["draft"];
+		if(table[i]["draft"] == "0")
+			out += 'C';
+		else
+			out += table[i]["draft"];
 		out += "</p></td><td><p>";
 		out += table[i]["tank"];
 		out += "</p></td><td><p>";
