@@ -20,8 +20,8 @@ function addLinks()
 			x[i].innerHTML = '<a style="text-decoration: none; color: #000000;" href="/Teams/TheTenochitlanTacos">' + inner + '</a>';
 		else if(inner == 'Bendigo Bilbies')
 			x[i].innerHTML = '<a style="text-decoration: none; color: #000000;" href="/Teams/BendigoBilbies">' + inner + '</a>';
-		else if(inner == 'Gaming Gollums')
-			x[i].innerHTML = '<a style="text-decoration: none; color: #000000;" href="/Teams/GamingGollums">' + inner + '</a>';
+		else if(inner == 'Gaming Golems')
+			x[i].innerHTML = '<a style="text-decoration: none; color: #000000;" href="/Teams/GamingGolems">' + inner + '</a>';
 		else if(inner == 'Rialto Rincewinds')
 			x[i].innerHTML = '<a style="text-decoration: none; color: #000000;" href="/Teams/RialtoRincewinds">' + inner + '</a>';
 		else if(inner == "Galapagos Gremlins")

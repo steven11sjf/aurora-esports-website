@@ -170,9 +170,9 @@ function loadMapTable(jsonObj) {
 
 function loadTeamStats(jsonObj) {
 	console.log(jsonObj.stats);
-	document.getElementById("team-page-league-matches").innerHTML = '(' + jsonObj.stats.wins + '-' + jsonObj.stats.losses + ')';
+	document.getElementById("team-page-league-matches").innerHTML = jsonObj.stats.wins + '-' + jsonObj.stats.losses;
 	document.getElementById("team-page-league-maps").innerHTML = '(' + jsonObj.stats.mapwins + '-' + jsonObj.stats.maplosses + '-' + jsonObj.stats.mapties + ')';
-	document.getElementById("team-page-div-matches").innerHTML = '(' + jsonObj.stats.divwins + '-' + jsonObj.stats.divlosses + ')';
+	document.getElementById("team-page-div-matches").innerHTML = jsonObj.stats.divwins + '-' + jsonObj.stats.divlosses;
 }
 
 console.log("Loaded!");

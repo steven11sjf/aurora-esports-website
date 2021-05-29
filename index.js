@@ -210,9 +210,9 @@ function batchGetSpreadsheet(callback) {
 					'BendigoBilbies!A5:L14', // BB roster				17
 					'BendigoBilbies!F70:J88', // BB map stats			18
 					'BendigoBilbies!A32:X67', // BB match history		19
-					'GamingGollums!A5:L14', // GG roster				20
-					'GamingGollums!F70:J88', // GG map stats			21
-					'GamingGollums!A32:X67', // GG match history		22
+					'GamingGolems!A5:L14', // GG roster				20
+					'GamingGolems!F70:J88', // GG map stats			21
+					'GamingGolems!A32:X67', // GG match history		22
 					'RialtoRincewinds!A5:L14', // RR roster				23
 					'RialtoRincewinds!F70:J88', // RR map stats			24
 					'RialtoRincewinds!A32:X67', // RR match history		25
@@ -228,7 +228,7 @@ function batchGetSpreadsheet(callback) {
 					'PlymouthPMAs!B17:E26', // PP team stats			35
 					'TheTenochitlanTacos!B17:E26', // TTT team stats	36
 					'BendigoBilbies!B17:E26', // BB team stats			37
-					'GamingGollums!B17:E26', // GG team stats			38
+					'GamingGolems!B17:E26', // GG team stats			38
 					'RialtoRincewinds!B17:E26', // RR team stats		39
 					'GalapagosGremlins!B17:E26', // GPG team stats		40
 					'WakandaBBQs!B17:E26', // WB team stats				41
@@ -256,7 +256,7 @@ function storeBatchGet(obj) {
 	storeTeamStats('PlymouthPMAs.json',obj.valueRanges[11].values,obj.valueRanges[12].values,obj.valueRanges[13].values,obj.valueRanges[35].values);
 	storeTeamStats('TheTenochitlanTacos.json',obj.valueRanges[14].values,obj.valueRanges[15].values,obj.valueRanges[16].values,obj.valueRanges[36].values);
 	storeTeamStats('BendigoBilbies.json',obj.valueRanges[17].values,obj.valueRanges[18].values,obj.valueRanges[19].values,obj.valueRanges[37].values);
-	storeTeamStats('GamingGollums.json',obj.valueRanges[20].values,obj.valueRanges[21].values,obj.valueRanges[22].values,obj.valueRanges[38].values);
+	storeTeamStats('GamingGolems.json',obj.valueRanges[20].values,obj.valueRanges[21].values,obj.valueRanges[22].values,obj.valueRanges[38].values);
 	storeTeamStats('RialtoRincewinds.json',obj.valueRanges[23].values,obj.valueRanges[24].values,obj.valueRanges[25].values,obj.valueRanges[39].values);
 	storeTeamStats('GalapagosGremlins.json',obj.valueRanges[26].values,obj.valueRanges[27].values,obj.valueRanges[28].values,obj.valueRanges[40].values);
 	storeTeamStats('WakandaBBQs.json',obj.valueRanges[29].values,obj.valueRanges[30].values,obj.valueRanges[31].values,obj.valueRanges[41].values);
