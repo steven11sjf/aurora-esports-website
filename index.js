@@ -190,7 +190,7 @@ function batchGetSpreadsheet(callback) {
 				auth: auth,
 				spreadsheetId: SPREADSHEET_ID,
 				ranges: [
-					'MatchLog!A2:Z99', // match log						0
+					'MatchLog!A2:AA99', // match log					0
 					'HeroStats!A2:I2000', // all hero stats				1
 					'DjiboutiShorts!A5:L14', // DS roster				2
 					'DjiboutiShorts!F70:J88', // DS map stats			3
@@ -222,16 +222,16 @@ function batchGetSpreadsheet(callback) {
 					'WakandaBBQs!A5:L14', // WB roster					29
 					'WakandaBBQs!F70:J88', // WB map stats				30
 					'WakandaBBQs!A32:X67', // WB match history			31
-					'DjiboutiShorts!B17:E26', // DS team stats			32
-					'LondonLumberjacks!B17:E26', // LL team stats		33
-					'OceaniaOtters!B17:E26', // OO team stats			34
-					'PlymouthPMAs!B17:E26', // PP team stats			35
-					'TheTenochitlanTacos!B17:E26', // TTT team stats	36
-					'BendigoBilbies!B17:E26', // BB team stats			37
-					'GamingGolems!B17:E26', // GG team stats			38
-					'RialtoRincewinds!B17:E26', // RR team stats		39
-					'GalapagosGremlins!B17:E26', // GPG team stats		40
-					'WakandaBBQs!B17:E26', // WB team stats				41
+					'DjiboutiShorts!J17:P20', // DS team stats			32
+					'LondonLumberjacks!J17:P20', // LL team stats		33
+					'OceaniaOtters!J17:P20', // OO team stats			34
+					'PlymouthPMAs!J17:P20', // PP team stats			35
+					'TheTenochitlanTacos!J17:P20', // TTT team stats	36
+					'BendigoBilbies!J17:P20', // BB team stats			37
+					'GamingGolems!J17:P20', // GG team stats			38
+					'RialtoRincewinds!J17:P20', // RR team stats		39
+					'GalapagosGremlins!J17:P20', // GPG team stats		40
+					'WakandaBBQs!J17:P20', // WB team stats				41
 				]
 			}, function (err, response) {
 				if (err) {
@@ -279,7 +279,7 @@ function storeMatchLog(rows) {
 			json += `{"map":"${row[18]}","winner":"${row[19]}"},`;
 			json += `{"map":"${row[20]}","winner":"${row[21]}"},`;
 			json += `{"map":"${row[22]}","winner":"${row[23]}"}],`;
-			json += `"matchwinner":"${row[24]}","vod":"${row[25]}"},`;
+			json += `"matchwinner":"${row[24]}","vod":"${row[25]}","round":"${row[26]}"},`;
 		});
 		
 		json = json.replace(/,$/,'');
@@ -403,20 +403,17 @@ function storeTeamStats(filename,roster,maps,matches,stats) {
 	// store stats
 	json += '"stats":{';
 	if(stats.length) {
-		json += `"wins":"${stats[0][0]}",`;
-		json += `"losses":"${stats[1][0]}",`;
-		json += `"mapwins":"${stats[2][0]}",`;
-		json += `"maplosses":"${stats[3][0]}",`;
-		json += `"mapties":"${stats[4][0]}",`;
-		json += `"divwins":"${stats[5][0]}",`;
-		json += `"divlosses":"${stats[6][0]}",`;
-		json += `"ndivwins":"${stats[7][0]}",`;
-		json += `"ndivlosses":"${stats[8][0]}",`;
-		json += `"mapdiff":"${stats[9][0]}"}}`;
+		stats.map((row) => {
+			json += `"${row[0]}":{`;
+			json += `"wins":"${row[1]}","losses":"${row[2]}","mapwins":"${row[3]}","maplosses":"${row[4]}","mapties":"${row[5]}","mapdiff":"${row[6]}"},`;
+		});
+		
+		json = json.replace(/,$/,'');
+		json += '}}';
 	} else {
-		json += '"wins":"0","losses":"0","mapwins":"0","maplosses":"0","mapties":"0","divwins":"0","divlosses":"0","ndivwins":"0","ndivlosses":"0","mapdiff":"0"}}'	;
+		json += '}}';
 	}
-	
+
 	jsonObj = JSON.parse(json);
 	writeLocalJSON(filename, jsonObj, (res) => {});
 }

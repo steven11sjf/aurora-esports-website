@@ -1,3 +1,57 @@
+tr.match-win {
+	background: #66FF66;
+}
+
+tr.match-loss {
+	background: #FF6666;
+}
+
+tr.match-unplayed {
+	background: white;
+}
+
+.mapimgs {
+	margin: 0 auto;
+}
+
+.mapwin {
+	position: relative;
+	display: inline-block;
+	background: rgb(0,255,0);
+	float: left;
+	width: 64px;
+}
+.mapwin img {
+	display: block;
+	width: 64px;
+	opacity: 0.8;
+}
+
+.maploss {
+	position: relative;
+	display: inline-block;
+	background: rgb(255,0,0);
+	float: left;
+	width: 64px;
+}
+.maploss img {
+	width: 64px;
+	display: block;
+	opacity: 0.8;
+}
+
+.maptie {
+	position: relative;
+	display: inline-block;
+	background: rgb(85,85,85);
+	float: left;
+	width: 64px;
+}
+.maptie img {
+	display: block;
+	opacity: 0.8;
+	width: 64px;
+}
 .team-page-container {
 	background-color: white;
 	width: 70%;
@@ -13,8 +67,8 @@
   padding: 10px;
   grid-template-areas:
     "image TeamName TeamName"
-    "image LeagueStats DivStats"
-    "image LeagueRank DivRank";
+    "image LeagueStats LeagueStats"
+    "image LeagueRank LeagueRank";
 }
 
 .image { grid-area: image; }
@@ -73,7 +127,7 @@ span#team-page-div-rank {
 	height: 200px;
 }
 
-img {
+.image img {
 	float: right;
 	padding-right: 20px;
 }
@@ -87,6 +141,10 @@ img {
 	font-weight: bold;
 	border: 3px solid black;
 	border-collapse: collapse;
+}
+
+#mapTable {
+	width: 50%;
 }
 
 .ttable th {
@@ -108,6 +166,11 @@ img {
 	padding: 20px;
 	text-decoration: none;
 	border: 2px solid black;
+}
+
+#mapTable tbody tr {
+	padding: 1px;
+	height: 70%;
 }
 
 .ttable tbody tr:nth-child(even) {
