@@ -1,0 +1,141 @@
+.round-table thead {
+	visibility: collapse;
+}
+
+tr.match-win {
+	background: #AACCFF;
+}
+
+tr.match-loss {
+	background: #FFAA88;
+}
+
+tr.match-unplayed {
+	background: white;
+}
+
+.mapimgs {
+	margin: 0 auto;
+}
+
+.mapwin {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 64px;
+	border: 2px solid #AACCFF;
+}
+.mapwin img {
+	display: block;
+	height: 64px;
+}
+
+.maploss {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 64px;
+	border: 2px solid #FFAA88;
+}
+.maploss img {
+	height: 64px;
+	display: block;
+}
+
+.maptie {
+	position: relative;
+	display: inline-block;
+	background: rgb(85,85,85);
+	float: left;
+	height: 64px;
+	border: 2px solid #888888;
+}
+.maptie img {
+	display: block;
+	opacity: 0.8;
+	height: 64px;
+}
+
+.round-table {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 90%;
+	table-layout: fixed;
+	font-size: 18px;
+	font-weight: bold;
+	border: 3px solid black;
+	border-collapse: collapse;
+}
+.round-table th {
+	height: 70px;
+	width: 20%;
+}
+
+.round-table thead tr {
+	background-color: #800;
+	text-align: center;
+	color: white;
+	padding: 20px 20px;
+	text-decoration: none;
+	border: 2px solid black;
+}
+
+.round-table tbody tr {
+	text-align: center;
+	padding: 20px;
+	height: 128px;
+	text-decoration: none;
+	border: 2px solid black;
+}
+
+.round-table tbody tr td {
+	height: 128px;
+}
+
+.table-img {
+	display: block;
+	height: 100%;
+	margin: auto;
+}
+
+.blue-team {
+	background: #AACCFF;
+}
+
+.red-team {
+	background: #FFAA88;
+}
+
+.sched-header {
+	font-size: 60px;
+}
+
+.round-header {
+	font-size: 40px;
+	color: gray;
+}
+
+.left-float {
+	float: left;
+	padding-left: 10px;
+	text-align: left;
+}
+
+.right-float {
+	float: right;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.schedule-team-name {
+	margin: auto;
+	word-wrap: break-word;
+	font-size: 30px;
+}
+
+p.match-score {
+	font-size: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}

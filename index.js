@@ -14,10 +14,15 @@ const googleAuth = require('./auth');
 const SPREADSHEET_ID = '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM';
 const PLAYER_JSON = 'players.json';
 const MATCHLOG_JSON = 'matchlog.json';
+const HEROSTATS_JSON = 'herostats.json';
+const STANDINGS_JSON = 'standings.json';
 
 var QUOTA_USE = 0;
 var MAX_QUOTA_PER_MIN = 60;
 var TEAM_INFO = [];
+var CURRENT_WEEK = 1;
+
+var league_standings;
 
 function getTeamInfo() {
 	getDataInRange('Info!$A$2:$C$10', (rows) => {
@@ -194,44 +199,45 @@ function batchGetSpreadsheet(callback) {
 					'HeroStats!A2:I2000', // all hero stats				1
 					'DjiboutiShorts!A5:L14', // DS roster				2
 					'DjiboutiShorts!F70:J88', // DS map stats			3
-					'DjiboutiShorts!A32:X67', // DS match history		4
+					'DjiboutiShorts!A32:Y67', // DS match history		4
 					'LondonLumberjacks!A5:L14', // LLS roster			5
 					'LondonLumberjacks!F70:J88', // LLS map stats		6
-					'LondonLumberjacks!A32:X67', // LLS match history	7
+					'LondonLumberjacks!A32:Y67', // LLS match history	7
 					'OceaniaOtters!A5:L14', // OO roster				8
 					'OceaniaOtters!F70:J88', // OO map stats			9
-					'OceaniaOtters!A32:X67', // OO match history		10
+					'OceaniaOtters!A32:Y67', // OO match history		10
 					'PlymouthPMAs!A5:L14', // PP roster					11
 					'PlymouthPMAs!F70:J88', // PP map stats				12
-					'PlymouthPMAs!A32:X67', // PP match history			13
+					'PlymouthPMAs!A32:Y67', // PP match history			13
 					'TheTenochitlanTacos!A5:L14', // TTT roster			14
 					'TheTenochitlanTacos!F70:J88', // TTT map stats		15
-					'TheTenochitlanTacos!A32:X67', // TTT match history	16
+					'TheTenochitlanTacos!A32:Y67', // TTT match history	16
 					'BendigoBilbies!A5:L14', // BB roster				17
 					'BendigoBilbies!F70:J88', // BB map stats			18
-					'BendigoBilbies!A32:X67', // BB match history		19
+					'BendigoBilbies!A32:Y67', // BB match history		19
 					'GamingGolems!A5:L14', // GG roster				20
 					'GamingGolems!F70:J88', // GG map stats			21
-					'GamingGolems!A32:X67', // GG match history		22
+					'GamingGolems!A32:Y67', // GG match history		22
 					'RialtoRincewinds!A5:L14', // RR roster				23
 					'RialtoRincewinds!F70:J88', // RR map stats			24
-					'RialtoRincewinds!A32:X67', // RR match history		25
+					'RialtoRincewinds!A32:Y67', // RR match history		25
 					'GalapagosGremlins!A5:L14', // GPG roster			26
 					'GalapagosGremlins!F70:J88', // GPG map stats		27
-					'GalapagosGremlins!A32:X67', // GPG match history	28
+					'GalapagosGremlins!A32:Y67', // GPG match history	28
 					'WakandaBBQs!A5:L14', // WB roster					29
 					'WakandaBBQs!F70:J88', // WB map stats				30
-					'WakandaBBQs!A32:X67', // WB match history			31
-					'DjiboutiShorts!J17:P20', // DS team stats			32
-					'LondonLumberjacks!J17:P20', // LL team stats		33
-					'OceaniaOtters!J17:P20', // OO team stats			34
-					'PlymouthPMAs!J17:P20', // PP team stats			35
-					'TheTenochitlanTacos!J17:P20', // TTT team stats	36
-					'BendigoBilbies!J17:P20', // BB team stats			37
-					'GamingGolems!J17:P20', // GG team stats			38
-					'RialtoRincewinds!J17:P20', // RR team stats		39
-					'GalapagosGremlins!J17:P20', // GPG team stats		40
-					'WakandaBBQs!J17:P20', // WB team stats				41
+					'WakandaBBQs!A32:Y67', // WB match history			31
+					'DjiboutiShorts!J17:Q20', // DS team stats			32
+					'LondonLumberjacks!J17:Q20', // LL team stats		33
+					'OceaniaOtters!J17:Q20', // OO team stats			34
+					'PlymouthPMAs!J17:Q20', // PP team stats			35
+					'TheTenochitlanTacos!J17:Q20', // TTT team stats	36
+					'BendigoBilbies!J17:Q20', // BB team stats			37
+					'GamingGolems!J17:Q20', // GG team stats			38
+					'RialtoRincewinds!J17:Q20', // RR team stats		39
+					'GalapagosGremlins!J17:Q20', // GPG team stats		40
+					'WakandaBBQs!J17:Q20', // WB team stats				41
+					'Standings!B15:K24', // standings					42
 				]
 			}, function (err, response) {
 				if (err) {
@@ -249,6 +255,7 @@ function batchGetSpreadsheet(callback) {
 function storeBatchGet(obj) {
 	storeMatchLog(obj.valueRanges[0].values); // store match log
 	storeHeroStats(obj.valueRanges[1].values); // store hero stats
+	storeLeagueStandings(obj.valueRanges[42].values); // store the league standings
 	
 	storeTeamStats('DjiboutiShorts.json',obj.valueRanges[2].values,obj.valueRanges[3].values,obj.valueRanges[4].values,obj.valueRanges[32].values);
 	storeTeamStats('LondonLumberjacks.json',obj.valueRanges[5].values,obj.valueRanges[6].values,obj.valueRanges[7].values,obj.valueRanges[33].values);
@@ -265,20 +272,22 @@ function storeBatchGet(obj) {
 function storeMatchLog(rows) {
 	var json = '{"updated":"';
 	json += getTime(0);
-	json += '","matches":[';
+	json += '","currentround":';
+	json += CURRENT_WEEK;
+	json += ',"matches":[';
 	if(rows.length) {
 		rows.map((row) => {
 			json += `{"tournament":"${row[0]}","played":"${row[7]}",`;
 			json += `"team1":"${row[1]}","team2":"${row[2]}",`;
 			json += `"division":"${row[4]}","date":"${row[5]}","time":"${row[6]}",`;
-			json += `"maps":[{"map":"${row[8]}","winner":"${row[9]}"},`;
-			json += `{"map":"${row[10]}","winner":"${row[11]}"},`;
-			json += `{"map":"${row[12]}","winner":"${row[13]}"},`;
-			json += `{"map":"${row[14]}","winner":"${row[15]}"},`;
-			json += `{"map":"${row[16]}","winner":"${row[17]}"},`;
-			json += `{"map":"${row[18]}","winner":"${row[19]}"},`;
-			json += `{"map":"${row[20]}","winner":"${row[21]}"},`;
-			json += `{"map":"${row[22]}","winner":"${row[23]}"}],`;
+			json += `"map1":{"name":"${row[8]}","winner":"${row[9]}"},`;
+			json += `"map2":{"name":"${row[10]}","winner":"${row[11]}"},`;
+			json += `"map3":{"name":"${row[12]}","winner":"${row[13]}"},`;
+			json += `"map4":{"name":"${row[14]}","winner":"${row[15]}"},`;
+			json += `"map5":{"name":"${row[16]}","winner":"${row[17]}"},`;
+			json += `"map6":{"name":"${row[18]}","winner":"${row[19]}"},`;
+			json += `"map7":{"name":"${row[20]}","winner":"${row[21]}"},`;
+			json += `"map8":{"name":"${row[22]}","winner":"${row[23]}"},`;
 			json += `"matchwinner":"${row[24]}","vod":"${row[25]}","round":"${row[26]}"},`;
 		});
 		
@@ -297,7 +306,7 @@ function storeHeroStats(rows) {
 	var json = '{"updated":"';
 	json += getTime(0);
 	json += '","stats":[';
-	if(rows.length) {
+	if(rows && rows.length) {
 		rows.map((row) => {
 			json += `{"player":"${row[0]}","hero":"${row[1]}",`;
 			json += `"elims":"${row[2]}","fb":"${row[3]}",`;
@@ -314,7 +323,38 @@ function storeHeroStats(rows) {
 	}
 	
 	jsonObj = JSON.parse(json);			
-	writeLocalJSON(MATCHLOG_JSON, jsonObj, (res) => {});
+	writeLocalJSON(HEROSTATS_JSON, jsonObj, (res) => {});
+}
+
+function storeLeagueStandings(rows) {
+	var json = '{"updated":"';
+	json += getTime(0);
+	json += '","Teams":[';
+	if(rows && rows.length) {
+		rows.map((row) => {
+			json += `{"name":"${row[0]}","points":"${row[2]}",`;
+			json += `"win":"${row[3]}","loss":"${row[4]}",`;
+			if(row[3]+row[4]==0) {
+				json += `"pct":"0%",`;
+			} else {
+				let winrate = parseInt(row[3])+parseInt(row[4]);
+				winrate = parseInt(row[3])/winrate*100;
+				json += `"pct":"${winrate}%",`;
+			}
+			json += `"mapwin":"${row[6]}","maploss":"${row[7]}","maptie":"${row[8]}",`;
+			json += `"mapdiff":"${row[9]}"},`;
+		});
+		
+		json = json.replace(/,$/,'');
+		json += ']}';
+	} else {
+		console.log("Pulled an empty standings!");
+		json += ']}';
+	}
+
+	var obj = JSON.parse(json);
+	league_standings = obj;
+	writeLocalJSON(STANDINGS_JSON, obj, (res) => {});
 }
 
 function storeTeamStats(filename,roster,maps,matches,stats) {
@@ -391,7 +431,8 @@ function storeTeamStats(filename,roster,maps,matches,stats) {
 			json += `"map8":{"name":"${row[19]}","winner":"${row[20]}"},`;
 			json += `"winner":"${row[21]}",`;
 			json += `"division":"${row[22]}",`;
-			json += `"vod":"${row[23]}"},`;
+			json += `"vod":"${row[23]}",`;
+			json += `"round":"${row[24]}"},`;
 		});
 			
 		json = json.replace(/,$/,'');
@@ -405,7 +446,7 @@ function storeTeamStats(filename,roster,maps,matches,stats) {
 	if(stats.length) {
 		stats.map((row) => {
 			json += `"${row[0]}":{`;
-			json += `"wins":"${row[1]}","losses":"${row[2]}","mapwins":"${row[3]}","maplosses":"${row[4]}","mapties":"${row[5]}","mapdiff":"${row[6]}"},`;
+			json += `"wins":"${row[1]}","losses":"${row[2]}","mapwins":"${row[3]}","maplosses":"${row[4]}","mapties":"${row[5]}","mapdiff":"${row[6]}","rank":"${row[7]}"},`;
 		});
 		
 		json = json.replace(/,$/,'');
@@ -506,8 +547,10 @@ function getMapStats(team, callback) {
 }
 
 function getMatches(team, callback) {
-	let json = '{"matches":[';
-	getDataInRange(team + '!A32:X67', (rows) => {
+	let json = '{"currentround":';
+	json += CURRENT_WEEK;
+	json += ',"matches":[';
+	getDataInRange(team + '!A32:Y67', (rows) => {
 		if(rows.length) {
 			rows.map((row) => {
 				json += '{"tournament":"';
@@ -585,44 +628,12 @@ app.get('/GetAllPlayersJson', function(req, res) {
 });
 
 app.get('/GetStandings', function(req, res) {
-	let json = '{"teams":[';
-	
-	getDataInRange('Standings!B15:R22', (rows) => {
-		if(rows.length) {
-			rows.map((row) => {
-				json += '{"name":"';
-				json += `${row[0]}`;
-				json += '","win":"';
-				json += `${row[2]}`;
-				json += '","loss":"';
-				json += `${row[3]}`;
-				json += '","pct":"';
-				json += `${row[4]}`;
-				json += '","mapwin":"';
-				json += `${row[5]}`;
-				json += '","maploss":"';
-				json += `${row[6]}`;
-				json += '","maptie":"';
-				json += `${row[7]}`;
-				json += '","mapdiff":"';
-				json += `${row[8]}`;
-				json += '"},';
-			});
-			json = json.replace(/,$/,'');
-			json += ']}';
-			
-			res.statusCode = 200;
-			res.setHeader('Content-Type', 'application/json');
-			res.write(json);
-			res.end();
-		} else {
-			json += ']}';
-			
-			res.statusCode = 200;
-			res.setHeader('Content-Type', 'application/json');
-			res.write(json);
-			res.end();
-		}
+	openLocalJSON(STANDINGS_JSON, (obj) => {
+		json = JSON.stringify(obj);
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'application/json');
+		res.write(json);
+		res.end();
 	});
 });
 
@@ -638,6 +649,17 @@ app.get('/api/teaminfo/:team/',function(req,res) {
 	});
 });
 
+// endpoint for full match log
+app.get('/api/matchlog',function(req,res) {
+	openLocalJSON(MATCHLOG_JSON, (obj) => {
+		var json = JSON.stringify(obj);
+		
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'application/json');
+		res.write(json);
+		res.end();
+	});
+});
 
 app.listen(process.env.PORT || 9007, () => console.log('Listening on port 9007!'));
 __discord_link = "https://discord.gg/HxxNybCgM4"

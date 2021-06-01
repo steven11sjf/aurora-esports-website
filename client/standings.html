@@ -4,6 +4,7 @@
 		<title> Standings - The Gopherwatch League </title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	</head>
 	<body>
@@ -17,17 +18,18 @@
 		});
 		</script>
 		
-		<div class="center">
+		<div class="center page-container">
 			<table class="table center" id="standingsTable">
 				<thead>
 					<tr>
 						<th style="width:44%;" scope="col">Team Name</th>
+						<th style="width:7%;" scope="col">Pts</th>
 						<th style="width:7%;" scope="col">W</th>
 						<th style="width:7%;" scope="col">L</th>
-						<th style="width:14%;" scope="col">PCT</th>
+						<th style="width:7%;" scope="col">PCT</th>
 						<th style="width:7%;" scope="col">MW</th>
 						<th style="width:7%;" scope="col">ML</th>
-						<th style="width:7%;" scope="col">MT</th>
+						<th style="width:7%;" scope="col">MD</th>
 						<th style="width:7%;" scope="col">DIFF</th>
 					</tr>
 				</thead>
@@ -58,10 +60,12 @@
 		// loads table into HTML
 		function loadTable(jsonObj) {
 			var out = "";
-			var table = jsonObj.teams;
+			var table = jsonObj.Teams;
 			for(i = 0; i < table.length; i++) {
 				out += '<tr><td class="team-name"><p>';
 				out += table[i]["name"];
+				out += "</p></td><td><p>";
+				out += table[i]["points"];
 				out += "</p></td><td><p>";
 				out += table[i]["win"];
 				out += "</p></td><td><p>";

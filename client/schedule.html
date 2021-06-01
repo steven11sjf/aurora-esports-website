@@ -3,9 +3,12 @@
 	<head>
 		<title> Schedule - The Gopherwatch League </title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/schedule.css">
 		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="/js/sortable-table.js"></script>
+		<script src="/js/schedule-page.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	</head>
@@ -20,32 +23,16 @@
 		});
 		</script>
 		
-		<h1 class="center" style="font-size: 50px;">This page is under construction!</h1>
-
-		<img style="display: block; margin: 0 auto;" src="/images/under-construction.png">
-		
-		<p class="center">I've been on the grind, but this page isn't done quite yet. It should be completed by next week!</p>
-		
-		<!--
 		<div class="center">
-			<table class="table center" id="standingsTable">
-				<thead>
-					<tr>
-						<th style="width:10%;" scope="col">Icon</th>
-						<th style="width:50%;" scope="col" onclick="sortTable('standingsTable', 1)">Team Name</th>
-						<th style="width:10%;" scope="col"onclick="sortTable('standingsTable', 2)">Abb.</th>
-						<th style="width:12%;" scope="col"onclick="sortTable('standingsTable', 3)">Division</th>
-						<th style="width:18%;" scope="col"onclick="sortTable('standingsTable', 4)">Captain</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
+			<div id="rounds-div">
+			
+			</div>
 		</div>
 		<script type="text/javascript">
 		function doAjax() {
 			// create AJAX request for standingsTable
 			var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "/GetTeams", true);
+			xhttp.open("GET", "/api/matchlog", true);
 			xhttp.send();
 			
 			// runs when response is received
@@ -64,27 +51,22 @@
 		
 		// loads table into HTML
 		function loadTable(jsonObj) {
-			var out = "";
-			var table = jsonObj.teams;
-			for(i = 0; i < table.length; i++) {
-				out += '<tr><td><img src="';
-				out += table[i]["icon"];
-				out += '" style="max-width:50px;"></td><td class="team-name"><p>';
-				out += table[i]["name"];
-				out += "</p></td><td><p>";
-				out += table[i]["abbreviation"];
-				out += "</p></td><td><p>";
-				out += table[i]["division"];
-				out += "</p></td><td><p>";
-				out += table[i]["captain"];
-				out += "</p></td></tr>";
+			loadLog(jsonObj);
+			var week = jsonObj.currentround;
+			
+			document.getElementById("rounds-div").innerHTML += '<h1 class="sched-header">Upcoming Rounds</h1>';
+			for(var i=week; i<10; i++) {
+				addRoundTable(i);
 			}
-		
-			document.getElementById("standingsTable").getElementsByTagName("tbody")[0].innerHTML = out;
+			
+			document.getElementById("rounds-div").innerHTML += '<h1 class="sched-header">Previous Rounds</h1>';
+			for(i=1; i<week; i++) {
+				addRoundTable(i);
+			}
 		}
 		
-		doAjax();
+		window.onload = doAjax;
 		</script>
-		-->
+		
 	</body>
 </html>

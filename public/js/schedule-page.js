@@ -1,192 +1,131 @@
-var jsonReceived;
-var fullName;
+var matchJson;
 
-function doTeamAjax(team) {
+function loadLog(json) {
+	matchJson = json;
+}
+
+function addRoundTable(round) {
+	var res = "";
 	
-	var nameSpan = document.getElementById("team-page-name");
-	fullName = nameSpan.innerHTML;
-	console.log(fullName);
-	console.log("getting data for team " + team);
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/teaminfo/' + team, true);
-	xhttp.send();
+	// create header
+	res += '<h2 class="round-header">Round ';
+	res += round.toString();
+	res += '</h2>';
 	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			jsonReceived = JSON.parse(xhttp.responseText);
-			loadRosterTable(jsonReceived);
-			loadMapTable(jsonReceived);
-			loadMatchTable(jsonReceived);
-			loadTeamStats(jsonReceived);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
+	// create table header
+	res += '<table class="round-table center"><thead><tr>';
+	res += '<th style="width:10%;" scope="col">Date</th>';
+	res += '<th style="width:10%;" scope="col">Image</th>';
+	res += '<th style="width:15%;" scope="col">Team 1</th>';
+	res += '<th style="width:30%;" scope="col">Maps</th>';
+	res += '<th style="width:15%;" scope="col">Team 2</th>';
+	res += '<th style="width:10%;" scope="col">Image</th>';
+	res += '<th style="width:10%;" scope="col">VOD</th>';
+	res += '</tr></thead><tbody>';
+	
+	// create table contents
+	var matches = matchJson.matches;
+	var roundString = round.toString();
+	for(var i = 0; i < matches.length; i++) {
+		if(roundString == matches[i].round) {
+			res += '<tr><td><p class="match-time">';
+			if(matches[i]["date"] == "TBA" || matches[i]["date"] == "") {
+				res += 'TBA';
+			} else {
+				res += matches[i]["date"];
+				res += '<br>@<br>';
+				res += matches[i]["time"];
 			}
-		}
-	}
-}
-
-function doTeamRosterAjax(team) {
-	console.log("getting roster for team " + team);
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/roster/' + team, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadRosterTable(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
+			res += '</p></td><td class="schedule-team blue-team"><img class="table-img left-float" title="';
+			res += matches[i]["team1"];
+			res += '" src="/images/';
+			res += matches[i]["team1"].replace(/\s+/g,'-');
+			res += '.png"></td><td class="schedule-team blue-team"><p class="schedule-team-name right-float">'
+			res += matches[i]["team1"];
+			res += '</p></td><td><div class="mapimgs">';
+			if(matches[i]["played"] == "FALSE") {
+				res += "";
+			} else {
+				res += '<div class="score">';
+				res += getMatchScore(matches[i]);
+				res += '</div>';
+				res += loadMatchMaps(matches[i]);
 			}
-		}
-	}
-}
-
-function doMatchHistoryAjax(team) {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/matches/' + team, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadMatchTable(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
+			res += '</div></td><td class="schedule-team red-team"><p class="schedule-team-name left-float">'
+			res += matches[i]["team2"];
+			res += '</p></td><td class="schedule-team red-team"><img class="table-img right-float" title="';
+			res += matches[i]["team2"];
+			res += '" src="/images/';
+			res += matches[i]["team2"].replace(/\s+/g,'-');
+			res += '.png"></td><td>';
+			if(matches[i]["vod"] == "undefined" || matches[i]["vod"] == "") {
+				res += '<p class="vod-text">No VOD</p>';
+			} else {
+				res += '<a class="vod-link" href="' + matches[i]["vod"] + '>VOD</a>';
 			}
+			res += '</td></tr>';
 		}
 	}
-}
-
-function doMapStatsAjax(team) {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/mapstats/' + team, true);
-	xhttp.send();
+	res += '</tbody></table>';
 	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadMapTable(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
+	document.getElementById("rounds-div").innerHTML += res;
 }
 
-function doTeamStatsAjax(team) {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/teamstats/' + team, true);
-	xhttp.send();
+function getMatchScore(row) {
+	var team1score = 0;
+	var team2score = 0;
+	var ties = 0;
 	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadTeamStats(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
-}
-		
-// loads table into HTML
-function loadRosterTable(jsonObj) {
-	console.log(jsonObj);
-	var out = "";
-	var table = jsonObj.roster;
-	for(i = 0; i < table.length; i++) {
-		out += '<tr><td><p>';
-		out += table[i]["name"];
-		out += "</p></td><td><p>";
-		if(table[i]["draft"] == "0")
-			out += 'C';
-		else
-			out += table[i]["draft"];
-		out += "</p></td><td><p>";
-		out += table[i]["tank"];
-		out += "</p></td><td><p>";
-		out += table[i]["damage"];
-		out += "</p></td><td><p>";
-		out += table[i]["support"];
-		out += "</p></td></tr>";
-	}
-
-	document.getElementById("rosterTable").getElementsByTagName("tbody")[0].innerHTML = out;
-}
-
-// loads table into HTML
-function loadMatchTable(jsonObj) {
-	var out = "";
-	var table = jsonObj.matches;
-	for(i = 0; i < table.length; i++) {
-		if(table[i]["winner"] == fullName) {
-			out += '<tr class="match-win"><td><p>';
-		} else if(table[i]["played"] == "FALSE") {
-			out += '<tr class="match-unplayed"><td><p>';
-		} else {
-			out += '<tr class="match-loss"><td><p>';
-		}
-		out += table[i]["tournament"];
-		out += "</p></td><td><p>";
-		out += table[i]["opponent"];
-		out += "</p></td><td><p>";
-		if(table[i]["date"] == "" || table[i]["date"] == "TBA" || table[i]["date"] == "undefined")
-			out += "TBA";
-		else {
-			out += table[i]["date"];
-			out += "<br>@<br>";
-			out += table[i]["time"];
-		}
-		out += '</p></td><td><div class="mapimgs">';
-		if(table[i]["played"] == "FALSE") {
-			out += "";
-		} else {
-			out += loadMatchMaps(table[i]);
-		}
-		out += '</div></td><td><button onclick="window.open(\'';
-		if(table[i]["vod"] == "undefined" || table[i]["vod"] == "") {
-			out += '#\',\'_blank\');" class="btn-unplayed" disabled="true">VOD</button>';
-		} else {
-			out += table[i]["vod"];
-			out += '\',\'_blank\');" class="btn-vod">VOD</button>';
-		}
-		out += "</td></tr>";
-	}
-
-	document.getElementById("matchTable").getElementsByTagName("tbody")[0].innerHTML = out;
+	if(row.map1.winner == row.team1) team1score++;
+	else if(row.map1.winner == row.team2) team2score++;
+	else if(row.map1.winner == "Draw") ties++;
+	
+	if(row.map2.winner == row.team1) team1score++;
+	else if(row.map2.winner == row.team2) team2score++;
+	else if(row.map2.winner == "Draw") ties++;
+	
+	if(row.map3.winner == row.team1) team1score++;
+	else if(row.map3.winner == row.team2) team2score++;
+	else if(row.map3.winner == "Draw") ties++;
+	
+	if(row.map4.winner == row.team1) team1score++;
+	else if(row.map4.winner == row.team2) team2score++;
+	else if(row.map4.winner == "Draw") ties++;
+	
+	if(row.map5.winner == row.team1) team1score++;
+	else if(row.map5.winner == row.team2) team2score++;
+	else if(row.map5.winner == "Draw") ties++;
+	
+	if(row.map6.winner == row.team1) team1score++;
+	else if(row.map6.winner == row.team2) team2score++;
+	else if(row.map6.winner == "Draw") ties++;
+	
+	if(row.map7.winner == row.team1) team1score++;
+	else if(row.map7.winner == row.team2) team2score++;
+	else if(row.map7.winner == "Draw") ties++;
+	
+	if(row.map8.winner == row.team1) team1score++;
+	else if(row.map8.winner == row.team2) team2score++;
+	else if(row.map8.winner == "Draw") ties++;
+	
+	return '<p class="match-score">' + team1score + '-' + team2score + '</p>';
 }
 
 function loadMatchMaps(row) {
-	var res = "";
+	var res = '<div class="matchscore"></div>';
 	var teamscore = 0;
 	var oppscore = 0;
+	var tiescore = 0;
+	var team1 = row.team1;
 	
-	console.log(row);
-	console.log(fullName);
-	
-	if(row.map1.winner == fullName) {
+	if(row.map1.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map1.name;
 		res += '"><img src="';
 		res += getMapImage(row.map1.name);
 		res += '"></div>';
-	} else if(row.map1.winner == row.opponent) {
+	} else if(row.map1.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map1.name;
@@ -194,6 +133,7 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map1.name);
 		res += '"></div>';
 	} else if(row.map1.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map1.name;
 		res += '"><img src="';
@@ -203,14 +143,14 @@ function loadMatchMaps(row) {
 		return res;
 	}
 	
-	if(row.map2.winner == fullName) {
+	if(row.map2.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map2.name;
 		res += '"><img src="';
 		res += getMapImage(row.map2.name);
 		res += '"></div>';
-	} else if(row.map2.winner == row.opponent) {
+	} else if(row.map2.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map2.name;
@@ -218,6 +158,7 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map2.name);
 		res += '"></div>';
 	} else if(row.map2.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map2.name;
 		res += '"><img src="';
@@ -227,14 +168,14 @@ function loadMatchMaps(row) {
 		return res;
 	}
 	
-	if(row.map3.winner == fullName) {
+	if(row.map3.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map3.name;
 		res += '"><img src="';
 		res += getMapImage(row.map3.name);
 		res += '"></div>';
-	} else if(row.map3.winner == row.opponent) {
+	} else if(row.map3.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map3.name;
@@ -242,6 +183,7 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map3.name);
 		res += '"></div>';
 	} else if(row.map3.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map3.name;
 		res += '"><img src="';
@@ -251,14 +193,14 @@ function loadMatchMaps(row) {
 		return res;
 	}
 	
-	if(row.map4.winner == fullName) {
+	if(row.map4.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map4.name;
 		res += '"><img src="';
 		res += getMapImage(row.map4.name);
 		res += '"></div>';
-	} else if(row.map4.winner == row.opponent) {
+	} else if(row.map4.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map4.name;
@@ -266,6 +208,7 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map4.name);
 		res += '"></div>';
 	} else if(row.map4.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map4.name;
 		res += '"><img src="';
@@ -275,14 +218,14 @@ function loadMatchMaps(row) {
 		return res;
 	}
 	
-	if(row.map5.winner == fullName) {
+	if(row.map5.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map5.name;
 		res += '"><img src="';
 		res += getMapImage(row.map5.name);
 		res += '"></div>';
-	} else if(row.map5.winner == row.opponent) {
+	} else if(row.map5.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map5.name;
@@ -290,6 +233,7 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map5.name);
 		res += '"></div>';
 	} else if(row.map5.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map5.name;
 		res += '"><img src="';
@@ -299,14 +243,14 @@ function loadMatchMaps(row) {
 		return res;
 	}
 	
-	if(row.map6.winner == fullName) {
+	if(row.map6.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map6.name;
 		res += '"><img src="';
 		res += getMapImage(row.map6.name);
 		res += '"></div>';
-	} else if(row.map6.winner == row.opponent) {
+	} else if(row.map6.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map6.name;
@@ -314,23 +258,24 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map6.name);
 		res += '"></div>';
 	} else if(row.map6.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map6.name;
 		res += '"><img src="';
 		res += getMapImage(row.map6.name);
 		res += '"></div>';
 	} else {
-		return res;
+		return res;	
 	}
 	
-	if(row.map7.winner == fullName) {
+	if(row.map7.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map7.name;
 		res += '"><img src="';
 		res += getMapImage(row.map7.name);
 		res += '"></div>';
-	} else if(row.map7.winner == row.opponent) {
+	} else if(row.map7.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map7.name;
@@ -338,23 +283,24 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map7.name);
 		res += '"></div>';
 	} else if(row.map7.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map7.name;
 		res += '"><img src="';
 		res += getMapImage(row.map7.name);
 		res += '"></div>';
 	} else {
-		return res;
+		return res;	
 	}
 	
-	if(row.map8.winner == fullName) {
+	if(row.map8.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
 		res += row.map8.name;
 		res += '"><img src="';
 		res += getMapImage(row.map8.name);
 		res += '"></div>';
-	} else if(row.map8.winner == row.opponent) {
+	} else if(row.map8.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
 		res += row.map8.name;
@@ -362,16 +308,17 @@ function loadMatchMaps(row) {
 		res += getMapImage(row.map8.name);
 		res += '"></div>';
 	} else if(row.map8.winner == "Draw") {
+		tiescore++;
 		res += '<div class="mapdraw" title="';
 		res += row.map8.name;
 		res += '"><img src="';
 		res += getMapImage(row.map8.name);
 		res += '"></div>';
 	} else {
-		return res;
+		return res;	
 	}
 	
-	return res;
+	return res;	
 }
 
 function getMapImage(name) {
@@ -420,34 +367,3 @@ function getMapImage(name) {
 	console.log("Map not found: " + name);
 	return "/images/Overwatch_circle_logo.png";
 }
-
-
-// loads table into HTML
-function loadMapTable(jsonObj) {
-	var out = "";
-	var table = jsonObj.maps;
-	for(i = 0; i < table.length; i++) {
-		out += '<tr><td><p>';
-		out += table[i]["mapname"];
-		out += "</p></td><td><p>";
-		out += table[i]["wins"];
-		out += "</p></td><td><p>";
-		out += table[i]["losses"];
-		out += "</p></td><td><p>";
-		out += table[i]["draws"];
-		out += "</p></td><td><p>";
-		out += table[i]["winrate"];
-		out += "</p></td></tr>";
-	}
-
-	document.getElementById("mapTable").getElementsByTagName("tbody")[0].innerHTML = out;
-}
-
-function loadTeamStats(jsonObj) {
-	console.log(jsonObj.stats);
-	document.getElementById("team-page-league-matches").innerHTML = jsonObj.stats.season.wins + 'W - ' + jsonObj.stats.season.losses + 'L';
-	document.getElementById("team-page-league-maps").innerHTML = '(' + jsonObj.stats.season.mapwins + 'W - ' + jsonObj.stats.season.maplosses + 'L - ' + jsonObj.stats.season.mapties + 'T)';
-	document.getElementById("team-page-league-rank").innerHTML = 'League: ' + jsonObj.stats.season.rank + '/10';
-}
-
-console.log("Loaded!");

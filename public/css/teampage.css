@@ -1,9 +1,9 @@
 tr.match-win {
-	background: #66FF66;
+	background: #AAFFAA;
 }
 
 tr.match-loss {
-	background: #FF6666;
+	background: #FF9999;
 }
 
 tr.match-unplayed {
@@ -17,9 +17,9 @@ tr.match-unplayed {
 .mapwin {
 	position: relative;
 	display: inline-block;
-	background: rgb(0,255,0);
 	float: left;
 	width: 64px;
+	border: 2px solid #00FF00;
 }
 .mapwin img {
 	display: block;
@@ -30,14 +30,13 @@ tr.match-unplayed {
 .maploss {
 	position: relative;
 	display: inline-block;
-	background: rgb(255,0,0);
 	float: left;
 	width: 64px;
+	border: 2px solid #FF0000;
 }
 .maploss img {
 	width: 64px;
 	display: block;
-	opacity: 0.8;
 }
 
 .maptie {
@@ -46,6 +45,7 @@ tr.match-unplayed {
 	background: rgb(85,85,85);
 	float: left;
 	width: 64px;
+	border: 2px solid #888888;
 }
 .maptie img {
 	display: block;
@@ -98,10 +98,13 @@ span#team-page-div {
 
 span#team-page-league-matches {
 	font-size: 30px;
+	font-weight: bold;
 }
 
 span#team-page-league-maps {
 	font-size: 30px;
+	color: gray;
+	padding-left: 30px;
 }
 
 span#team-page-div-matches {
@@ -111,7 +114,7 @@ span#team-page-div-matches {
 
 span#team-page-div-maps {
 	font-size: 30px;
-	color: gray;
+	color: grey;
 }
 
 span#team-page-league-rank {
