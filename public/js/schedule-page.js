@@ -128,14 +128,14 @@ function loadMatchMaps(row) {
 	} else if(row.map1.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map1.name + '-' + row.map1.winner;
+		res += row.map1.name + ' - ' + row.map1.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map1.name);
 		res += '"></div>';
 	} else if(row.map1.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map1.name + '-' + row.map1.winner;
+		res += row.map1.name + ' - ' + row.map1.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map1.name);
 		res += '"></div>';
@@ -146,21 +146,21 @@ function loadMatchMaps(row) {
 	if(row.map2.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map2.name + '-' + row.map2.winner;
+		res += row.map2.name + ' - ' + row.map2.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map2.name);
 		res += '"></div>';
 	} else if(row.map2.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map2.name + '-' + row.map2.winner;
+		res += row.map2.name + ' - ' + row.map2.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map2.name);
 		res += '"></div>';
 	} else if(row.map2.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map2.name + '-' + row.map2.winner;
+		res += row.map2.name + ' - ' + row.map2.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map2.name);
 		res += '"></div>';
@@ -171,21 +171,21 @@ function loadMatchMaps(row) {
 	if(row.map3.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map3.name + '-' + row.map3.winner;
+		res += row.map3.name + ' - ' + row.map3.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map3.name);
 		res += '"></div>';
 	} else if(row.map3.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map3.name + '-' + row.map3.winner;
+		res += row.map3.name + ' - ' + row.map3.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map3.name);
 		res += '"></div>';
 	} else if(row.map3.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map3.name + '-' + row.map3.winner;
+		res += row.map3.name + ' - ' + row.map3.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map3.name);
 		res += '"></div>';
@@ -196,21 +196,21 @@ function loadMatchMaps(row) {
 	if(row.map4.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map4.name + '-' + row.map4.winner;
+		res += row.map4.name + ' - ' + row.map4.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map4.name);
 		res += '"></div>';
 	} else if(row.map4.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map4.name + '-' + row.map4.winner;
+		res += row.map4.name + ' - ' + row.map4.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map4.name);
 		res += '"></div>';
 	} else if(row.map4.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map4.name + '-' + row.map4.winner;
+		res += row.map4.name + ' - ' + row.map4.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map4.name);
 		res += '"></div>';
@@ -221,21 +221,21 @@ function loadMatchMaps(row) {
 	if(row.map5.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map5.name + '-' + row.map5.winner;
+		res += row.map5.name + ' - ' + row.map5.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map5.name);
 		res += '"></div>';
 	} else if(row.map5.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map5.name + '-' + row.map5.winner;
+		res += row.map5.name + ' - ' + row.map5.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map5.name);
 		res += '"></div>';
 	} else if(row.map5.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map5.name + '-' + row.map5.winner;
+		res += row.map5.name + ' - ' + row.map5.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map5.name);
 		res += '"></div>';
@@ -246,21 +246,21 @@ function loadMatchMaps(row) {
 	if(row.map6.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map6.name + '-' + row.map6.winner;
+		res += row.map6.name + ' - ' + row.map6.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map6.name);
 		res += '"></div>';
 	} else if(row.map6.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map6.name + '-' + row.map6.winner;
+		res += row.map6.name + ' - ' + row.map6.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map6.name);
 		res += '"></div>';
 	} else if(row.map6.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map6.name + '-' + row.map6.winner;
+		res += row.map6.name + ' - ' + row.map6.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map6.name);
 		res += '"></div>';
@@ -271,21 +271,21 @@ function loadMatchMaps(row) {
 	if(row.map7.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map7.name + '-' + row.map7.winner;
+		res += row.map7.name + ' - ' + row.map7.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map7.name);
 		res += '"></div>';
 	} else if(row.map7.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map7.name + '-' + row.map7.winner;
+		res += row.map7.name + ' - ' + row.map7.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map7.name);
 		res += '"></div>';
 	} else if(row.map7.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map7.name + '-' + row.map7.winner;
+		res += row.map7.name + ' - ' + row.map7.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map7.name);
 		res += '"></div>';
@@ -296,21 +296,21 @@ function loadMatchMaps(row) {
 	if(row.map8.winner == team1) {
 		teamscore++;
 		res += '<div class="mapwin" title="';
-		res += row.map8.name + '-' + row.map8.winner;
+		res += row.map8.name + ' - ' + row.map8.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map8.name);
 		res += '"></div>';
 	} else if(row.map8.winner == row.team2) {
 		oppscore++;
 		res += '<div class="maploss" title="';
-		res += row.map8.name + '-' + row.map8.winner;
+		res += row.map8.name + ' - ' + row.map8.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map8.name);
 		res += '"></div>';
 	} else if(row.map8.winner == "Draw") {
 		tiescore++;
 		res += '<div class="mapdraw" title="';
-		res += row.map8.name + '-' + row.map8.winner;
+		res += row.map8.name + ' - ' + row.map8.winner;
 		res += '"><img src="';
 		res += getMapImage(row.map8.name);
 		res += '"></div>';
