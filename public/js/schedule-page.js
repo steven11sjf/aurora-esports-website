@@ -61,7 +61,7 @@ function addRoundTable(round) {
 			if(matches[i]["vod"] == "undefined" || matches[i]["vod"] == "") {
 				res += '<p class="vod-text">No VOD</p>';
 			} else {
-				res += '<a class="vod-link" href="' + matches[i]["vod"] + '>VOD</a>';
+				res += '<a class="vod-link" href="' + matches[i]["vod"] + '">VOD</a>';
 			}
 			res += '</td></tr>';
 		}
