@@ -7,7 +7,7 @@ tr.match-win {
 }
 
 tr.match-loss {
-	background: #FFAA88;
+	background: #FFAAAA;
 }
 
 tr.match-unplayed {
@@ -23,7 +23,8 @@ tr.match-unplayed {
 	display: inline-block;
 	float: left;
 	height: 64px;
-	border: 2px solid #AACCFF;
+	border: 3px solid #AACCFF;
+	margin: 3px 3px;
 }
 .mapwin img {
 	display: block;
@@ -35,22 +36,24 @@ tr.match-unplayed {
 	display: inline-block;
 	float: left;
 	height: 64px;
-	border: 2px solid #FFAA88;
+	border: 3px solid #FFAAAA;
+	margin: 3px 3px;
 }
 .maploss img {
 	height: 64px;
 	display: block;
 }
 
-.maptie {
+.mapdraw {
 	position: relative;
 	display: inline-block;
 	background: rgb(85,85,85);
 	float: left;
 	height: 64px;
-	border: 2px solid #888888;
+	border: 3px solid #888888;
+	margin: 3px 3px;
 }
-.maptie img {
+.mapdraw img {
 	display: block;
 	opacity: 0.8;
 	height: 64px;
@@ -103,7 +106,7 @@ tr.match-unplayed {
 }
 
 .red-team {
-	background: #FFAA88;
+	background: #FFAAAA;
 }
 
 .sched-header {
