@@ -19,7 +19,8 @@ tr.match-unplayed {
 	display: inline-block;
 	float: left;
 	width: 64px;
-	border: 2px solid #00FF00;
+	border: 4px solid #00FF00;
+	margin: 3px;
 }
 .mapwin img {
 	display: block;
@@ -32,7 +33,8 @@ tr.match-unplayed {
 	display: inline-block;
 	float: left;
 	width: 64px;
-	border: 2px solid #FF0000;
+	border: 4px solid #FF0000;
+	margin: 3px;
 }
 .maploss img {
 	width: 64px;
@@ -45,7 +47,8 @@ tr.match-unplayed {
 	background: rgb(85,85,85);
 	float: left;
 	width: 64px;
-	border: 2px solid #888888;
+	border: 4px solid #888888;
+	margin: 3px;
 }
 .mapdraw img {
 	display: block;
