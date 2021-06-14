@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Blog - The Gopherwatch League </title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/blogpost.css">
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<h1 class="center">The Gopherwatch League</h1>
+		<!-- navbar -->
+		<div id="nav-placeholder"></div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+		<div class="center div-blog">
+			<div class="div-bloghead">
+				<p class="title-blog" id="blog-title"></p>
+				<p class="subtitle-blog">
+					<img class="icon" id="clock-icon" src="/images/clock-64.png">
+					<span class="date-blog" id="blog-date"></span>
+					<img class="icon" id="pencil-icon" src="/images/pencil.png">
+					<span class="author-blog" id="blog-author"></span>
+					<img class="icon" id="tags-icon" src="/images/tag.png">
+					<span class="tags" id="blog-tags"></span>
+				</p>
+			</div>
+			<div class="contents-blog" id="blog-contents"></div>
+		</div>
+		
+		<script type="text/javascript">
+		function doAjax() {
+			// get the blog's id
+			var blogpost = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
+			// create AJAX request for standingsTable
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/api/GetBlog/"+blogpost, true);
+			xhttp.send();
+			
+			// runs when response is received
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					loadBlog(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						alert(xhttp.status);
+					}
+				}
+			}
+		}
+		
+		// loads table into HTML
+		function loadBlog(jsonObj) {
+			var out = "";
+			
+			document.getElementById("blog-title").innerHTML = jsonObj.title;
+			document.getElementById("blog-date").innerHTML = jsonObj.date;
+			document.getElementById("blog-author").innerHTML = jsonObj.by;
+			
+			let tags = '';
+			for(i=0; i<jsonObj.tags.length; i++)
+			{
+				tags += '<a href="/blog/tag/';
+				tags += jsonObj.tags[i].replace(/\s+/g, '-').toLowerCase();
+				tags += '">';
+				tags += jsonObj.tags[i];
+				tags += '</a>';
+			}
+			document.getElementById("blog-tags").innerHTML = tags;
+			
+			document.getElementById("blog-contents").innerHTML = jsonObj.contents.join("");
+		}
+		
+		doAjax();
+		</script>
+	</body>
+</html>

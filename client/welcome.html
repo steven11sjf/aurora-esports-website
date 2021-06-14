@@ -3,11 +3,14 @@
 	<head>
 		<title> The Gopherwatch League </title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/homepage.css">
+		<link rel="stylesheet" type="text/css" href="/css/schedule.css">
 		<meta charset="UTF-8">
 		<meta name="robots" content="noindex">
 		<meta name="keywords" content="Overwatch, Gopherwatch, Esports">
 		<meta name="description" content="Website for the Gopherwatch League, run by Esports @ UMN">
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="/js/schedule-page.js"></script>
 	</head>
 	<body>
 		<h1 class="center">The Gopherwatch League</h1>
@@ -33,10 +36,171 @@
 			});
 		</script>-->
 		
-		<h1 class="center" style="font-size: 50px;">This page is under construction!</h1>
-
-		<img style="display: block; margin: 0 auto;" src="/images/under-construction.png">
+		<h1 class="center section-header">Teams</h1>
 		
-		<p class="center">I've been on the grind, but this page isn't done quite yet. It should be completed by next week!</p>
+		<div class="center teams-div">
+			<div class="DS">
+				<a href="/Teams/DjiboutiShorts/">
+					<p class="team-name">Djibouti Shorts</p>
+					<img class="team-logo" src="/images/djibouti-shorts.png">
+				</a>
+			</div>
+			<div class="LLS">
+				<a href="/Teams/LondonLumberjackSlams/">
+					<p class="team-name">London Lumberjack Slams</p>
+					<img class="team-logo" src="/images/london-lumberjack-slams.png">
+				</a>
+			</div>
+			<div class="OO">
+				<a href="/Teams/OceaniaOtters/">
+					<p class="team-name">Oceania Otters</p>
+					<img class="team-logo" src="/images/oceania-otters.png">
+				</a>
+			</div>
+			<div class="PP">
+				<a href="/Teams/PlymouthPMAs/">
+					<p class="team-name">Plymouth PMAs</p>
+					<img class="team-logo" src="/images/plymouth-pmas.png">
+				</a>
+			</div>
+			<div class="TTT">
+				<a href="/Teams/TheTenochitlanTacos/">
+					<p class="team-name">The Tenochitlan Tacos</p>
+					<img class="team-logo" src="/images/the-tenochitlan-tacos.png">
+				</a>
+			</div>
+			<div class="BB">
+				<a href="/Teams/BendigoBilbies/">
+					<p class="team-name">Bendigo Bilbies</p>
+					<img class="team-logo" src="/images/bendigo-bilbies.png">
+				</a>
+			</div>
+			<div class="GMG">
+				<a href="/Teams/GamingGolems/">
+					<p class="team-name">Gaming Golems</p>
+					<img class="team-logo" src="/images/gaming-golems.png">
+				</a>
+			</div>
+			<div class="RR">
+				<a href="/Teams/RialtoRincewinds/">
+					<p class="team-name">Rialto Rincewinds</p>
+					<img class="team-logo" src="/images/rialto-rincewinds.png">
+				</a>
+			</div>
+			<div class="GPG">
+				<a href="/Teams/GalapagosGremlins/">
+					<p class="team-name">Galapagos Gremlins</p>
+					<img class="team-logo" src="/images/galapagos-gremlins.png">
+				</a>
+			</div>
+			<div class="WB">
+				<a href="/Teams/WakandaBBQs">
+					<p class="team-name">Wakanda BBQs</p>
+					<img class="team-logo" src="/images/wakanda-bbqs.png">
+				</a>
+			</div>
+		</div>
+		
+		<h1 class="center section-header">Current Round</h1>
+		<div id="rounds-div"></div>
+		
+		<div class="blog-div">
+			<h1 class="center section-header">Blog</h1>
+			<div class="blog-blurbs" id="blog-blurbs"></div>
+		</div>
+		<script type="text/javascript">
+		function roundAjax() {
+			// create AJAX request for standingsTable
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/api/matchlog", true);
+			xhttp.send();
+			
+			// runs when response is received
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					roundTable(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						alert(xhttp.status);
+					}
+				}
+			}
+		}
+		
+		// loads table into HTML
+		function roundTable(jsonObj) {
+			loadLog(jsonObj);
+			var week = jsonObj.currentround;
+			
+			addRoundTable(week);
+		}
+		
+		window.onload = roundAjax;
+		</script>
+		<script type="text/javascript">
+		function doAjax() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/api/BlogBlurbs", true);
+			xhttp.send();
+			
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					loadBlurbs(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						document.getElementById("blog-blurbs").innerHTML = "<h2>The blog could not be loaded!</h2>";
+					}
+				}
+			}
+		}
+		
+		function loadBlurbs(jsonObj) {
+			var out = "";
+			console.log(jsonObj["blog-posts"].length);
+			for(i=jsonObj["blog-posts"].length-1; i>=0; i--) {
+				console.log(i);
+				let tags = '';
+				let obj = jsonObj["blog-posts"][i];
+				console.log(obj);
+				for(j=0; j<obj.tags.length; j++)
+				{
+					tags += '<a href="/blog/tag/';
+					tags += obj.tags[j].replace(/\s+/g, '-').toLowerCase();
+					console.log(tags);
+					tags += '">';
+					tags += obj.tags[j];
+					tags += '</a>';
+				}
+				out += '<div class="blurb" onclick="location.href=\'/Blog/'
+				out += jsonObj["blog-posts"][i]["id"];
+				out += '\';">';
+				out += '<img class="blog-thumbnail" src="';
+				out += jsonObj["blog-posts"][i]["image"];
+				out += '"><p class="title">';
+				out += jsonObj["blog-posts"][i]["title"];
+				out += '</a>';
+				
+				out += '<p class="blurb-subtext">';
+				out += '<img class="icon" src="/images/clock-64.png">';
+				out += '<span class="date-blurb">';
+				out += jsonObj["blog-posts"][i]["date"];
+				out += '</span><br><img class="icon" src="/images/pencil.png">';
+				out += '<span class="author-blurb">';
+				out += jsonObj["blog-posts"][i]["by"];
+				out += '</span><br><img class="icon" src="/images/tag.png">';
+				out += '<span class="tags-blurb">';
+				out += tags;
+				out += '</span></p></div>';
+			}
+			console.log(out);
+			document.getElementById("blog-blurbs").innerHTML = out;
+		}
+		
+		doAjax();
+		</script>
 	</body>
 </html>

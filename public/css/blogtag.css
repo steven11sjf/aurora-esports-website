@@ -1,0 +1,53 @@
+.div blog-div {
+	width: 70%;
+	text-align: left;
+}
+
+#blog-blurbs {
+	width: 70%;
+	margin: auto;
+}
+
+.blurb {
+	margin: 10px 10px;
+	padding: 10px 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: #6ACAB9;
+}
+
+.title {
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+	display: block;
+}
+
+.blurb-subtext {
+	text-align: center;
+	display: block;
+}
+
+.date-blurb {
+	font-size: 20px;
+	color: gray;
+}
+
+.author-blurb {
+	font-size: 20px;
+	color: gray;
+}
+
+.tags-blurb a {
+	color: gray;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.icon {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+	height: 20px;
+}

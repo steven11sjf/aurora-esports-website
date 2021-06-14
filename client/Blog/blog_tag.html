@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Blog - The Gopherwatch League </title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/blogtag.css">
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<h1 class="center">The Gopherwatch League</h1>
+		<!-- navbar -->
+		<div id="nav-placeholder"></div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+		<div class="blog-div">
+			<h1 class="center section-header" id="tag-name">Tag: </h1>
+			<div class="blog-blurbs" id="blog-blurbs"></div>
+		</div>
+		
+		<script type="text/javascript">
+		var blogtag;
+		function doAjax() {
+			// get the tag id
+			blogtag = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
+			document.getElementById("tag-name").innerHTML += blogtag.replace(/-/g, ' ').toUpperCase();
+			
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/api/BlogBlurbs", true);
+			xhttp.send();
+			
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					loadBlurbs(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						document.getElementById("blog-blurbs").innerHTML = "<h2>The blog could not be loaded!</h2>";
+					}
+				}
+			}
+		}
+		
+		function loadBlurbs(jsonObj) {
+			var out = "";
+			for(i=jsonObj["blog-posts"].length-1; i>=0; i--) {
+				let display = 0; // 0 for don't display, anything for do display
+				let tags = '';
+				let obj = jsonObj["blog-posts"][i];
+				console.log(obj);
+				for(j=0; j<obj.tags.length; j++)
+				{
+					if(obj.tags[j].replace(/\s+/g, '-').toLowerCase() == blogtag) display = 1;
+					tags += '<a href="/blog/tag/';
+					tags += obj.tags[j].replace(/\s+/g, '-').toLowerCase();
+					console.log(tags);
+					tags += '">';
+					tags += obj.tags[j];
+					tags += '</a>';
+				}
+				if(display == 0) continue;
+				
+				out += '<div class="blurb">';
+				out += '<a class="title" href="/Blog/';
+				out += jsonObj["blog-posts"][i]["id"];
+				out += '">';
+				out += jsonObj["blog-posts"][i]["title"];
+				out += '</a>';
+				
+				out += '<p class="blurb-subtext">';
+				out += '<img class="icon" src="/images/clock-64.png">';
+				out += '<span class="date-blurb">';
+				out += jsonObj["blog-posts"][i]["date"];
+				out += '</span><img class="icon" src="/images/pencil.png">';
+				out += '<span class="author-blurb">';
+				out += jsonObj["blog-posts"][i]["by"];
+				out += '</span><img class="icon" src="/images/tag.png">';
+				out += '<span class="tags-blurb">';
+				out += tags;
+				out += '</span></p></div>';
+			}
+			console.log(out);
+			document.getElementById("blog-blurbs").innerHTML = out;
+		}
+		
+		doAjax();
+		</script>
+	</body>
+</html>

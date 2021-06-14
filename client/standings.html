@@ -18,19 +18,24 @@
 		});
 		</script>
 		
+		<p class="center notice">
+			<i>Rank is calculated by points, then by wins, then by map differential.</i>
+		</p>
+		
 		<div class="center page-container">
 			<table class="table center" id="standingsTable">
 				<thead>
 					<tr>
-						<th style="width:44%;" scope="col">Team Name</th>
-						<th style="width:7%;" scope="col">Pts</th>
-						<th style="width:7%;" scope="col">W</th>
-						<th style="width:7%;" scope="col">L</th>
-						<th style="width:7%;" scope="col">PCT</th>
-						<th style="width:7%;" scope="col">MW</th>
-						<th style="width:7%;" scope="col">ML</th>
-						<th style="width:7%;" scope="col">MD</th>
-						<th style="width:7%;" scope="col">DIFF</th>
+						<th style="width:7%;" scope="col">Rank</th>
+						<th style="width:37%;" scope="col">Team Name</th>
+						<th style="width:7%;" scope="col" title="Points are calculated as the number of wins plus the number of tournament playoff wins">Pts</th>
+						<th style="width:7%;" scope="col" title="Wins">W</th>
+						<th style="width:7%;" scope="col" title="Losses">L</th>
+						<th style="width:7%;" scope="col" title="Win percent">PCT</th>
+						<th style="width:7%;" scope="col" title="Map wins">MW</th>
+						<th style="width:7%;" scope="col" title="Map losses">ML</th>
+						<th style="width:7%;" scope="col" title="Map draws">MD</th>
+						<th style="width:7%;" scope="col" title="Map differential">DIFF</th>
 					</tr>
 				</thead>
 				<tbody></tbody>
@@ -62,7 +67,9 @@
 			var out = "";
 			var table = jsonObj.Teams;
 			for(i = 0; i < table.length; i++) {
-				out += '<tr><td class="team-name"><p>';
+				out += '<tr><td><p>';
+				out += table[i]["rank"];
+				out += '</p></td><td class="team-name"><p>';
 				out += table[i]["name"];
 				out += "</p></td><td><p>";
 				out += table[i]["points"];

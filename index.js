@@ -6,11 +6,13 @@ var path = require('path');
 var readline = require('readline');
 var {google} = require('googleapis');
 var cron = require('cron');
+var favicon = require('serve-favicon');
 app.use(bodyparser());
 require('dotenv').config();
 const sheetsApi = google.sheets('v4');
 const googleAuth = require('./auth');
 
+const __report_link = 'https://docs.google.com/forms/d/e/1FAIpQLSfbxZpTM4A9Ukt-_uAJqL4qUw2VlaPKgb2oiAf-xW68yKiTww/viewform?usp=sf_link';
 const SPREADSHEET_ID = '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM';
 const PLAYER_JSON = 'players.json';
 const MATCHLOG_JSON = 'matchlog.json';
@@ -20,9 +22,111 @@ const STANDINGS_JSON = 'standings.json';
 var QUOTA_USE = 0;
 var MAX_QUOTA_PER_MIN = 60;
 var TEAM_INFO = [];
-var CURRENT_WEEK = 1;
+var CURRENT_WEEK = 2;
+var PAGE_HITS = 0;
 
 var league_standings;
+
+function getPageHits() {
+	// don't call if you need more quota
+	if(QUOTA_USE >= MAX_QUOTA_PER_MIN - 3) {
+		console.log('Exceeding max quota! QUOTA_USE=' + QUOTA_USE);
+		return;
+	}
+	else {
+		// increment the quota and decrement it after one minute
+		QUOTA_USE+=1;
+		setTimeout(function(){ QUOTA_USE-=1; },60000);
+	}
+	
+	console.log('Connecting to Google API to receive batch data, current quota use is ' + QUOTA_USE);
+	googleAuth.authorize()
+		.then((auth) => {
+			sheetsApi.spreadsheets.values.batchGet({
+				auth: auth,
+				spreadsheetId: SPREADSHEET_ID,
+				ranges: [
+					'SiteStats!B3:B98', // hourly hits					0
+					'SiteStats!E3:K3' // weekly hits
+				]
+			}, function (err, response) {
+				if (err) {
+					console.log('The API returned an error: ' + err);
+					return;
+				}
+				calcPageHits(response.data);
+			});
+		})
+		.catch((err) => {
+			console.log('auth error', err);
+		});
+}
+
+function calcPageHits(obj) {
+	row = 3 + get15Inc();
+	day = getDay();
+	timeCell = 'SiteStats!B' + row.toString();
+	dayCell = 'SiteStats!' + String.fromCharCode(69+day) + '3';
+	
+	currTime = obj.valueRanges[0].values[row-3][0];
+	currDay = obj.valueRanges[1].values[0][day];
+	
+	newStats = {
+		"timeCell" : timeCell,
+		"dayCell" : dayCell,
+		"timeUpdated" : parseInt(currTime, 10) + PAGE_HITS,
+		"dayUpdated" : parseInt(currDay) + PAGE_HITS
+	};
+	updatePageHits(newStats);
+	PAGE_HITS = 0;
+}
+
+function updatePageHits(stats) {
+	// don't call if you need more quota
+	if(QUOTA_USE >= MAX_QUOTA_PER_MIN - 3) {
+		console.log('Exceeding max quota! QUOTA_USE=' + QUOTA_USE);
+		return;
+	}
+	else {
+		// increment the quota and decrement it after one minute
+		QUOTA_USE+=1;
+		setTimeout(function(){ QUOTA_USE-=1; },60000);
+	}
+	
+	console.log('Connecting to Google API to update stats, current quota use is ' + QUOTA_USE);
+	
+	googleAuth.authorize()
+		.then((auth) => {
+			sheetsApi.spreadsheets.values.batchUpdate({
+				auth: auth,
+				spreadsheetId: SPREADSHEET_ID,
+				resource: {
+					data: [
+						{
+							range: stats.timeCell,
+							values: [[ stats.timeUpdated ]]
+						},
+						{
+							range: stats.dayCell,
+							values: [[ stats.dayUpdated ]]
+						}
+					],
+					valueInputOption: "USER_ENTERED"
+				}
+			}, function (err, response) {
+				if (err) {
+					console.log('The API returned an error: ', err);
+					console.log(response);
+					return;
+				}
+				
+				console.log("Updated values " + stats.timeCell + " to " + stats.timeUpdated + ", and " + stats.dayCell + " to " + stats.dayUpdated);
+			});
+		})
+		.catch((err) => {
+			console.log('auth error', err);
+		});
+}
 
 function getTeamInfo() {
 	getDataInRange('Info!$A$2:$C$10', (rows) => {
@@ -60,7 +164,29 @@ const batchUpdateJob = cron.job('30 0/1 * * * *', () => {
 	batchGetSpreadsheet(storeBatchGet);
 });
 batchUpdateJob.start();
-	
+
+const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
+	console.log('time is ' + getTime(0) + ", adding " + PAGE_HITS + "to totals!");
+	getPageHits();
+});
+if(process.env.ISPROD == "TRUE") statisticsUpdateJob.start();
+
+// returns the number of 15-min increments between midnight and 11:45pm
+// this is between 0 and 95
+// for example, 2:15AM returns 9	
+function get15Inc() {
+	let date_curr = new Date();
+	let date_obj = new Date(date_curr.toLocaleString("en-US", { timeZone: "America/Chicago" }));
+	let inc = date_obj.getHours() * 4;
+	inc += Math.floor(date_obj.getMinutes() / 15);
+	return inc;
+}
+
+function getDay() {
+	let date_curr = new Date();
+	let date_obj = new Date(date_curr.toLocaleString("en-US", { timeZone: "America/Chicago" }));
+	return date_obj.getDay();
+}
 
 function getTime(mins) {
 	let date_curr = new Date();
@@ -237,7 +363,7 @@ function batchGetSpreadsheet(callback) {
 					'RialtoRincewinds!J17:Q20', // RR team stats		39
 					'GalapagosGremlins!J17:Q20', // GPG team stats		40
 					'WakandaBBQs!J17:Q20', // WB team stats				41
-					'Standings!B15:K24', // standings					42
+					'Standings!A15:K24', // standings					42
 				]
 			}, function (err, response) {
 				if (err) {
@@ -332,17 +458,17 @@ function storeLeagueStandings(rows) {
 	json += '","Teams":[';
 	if(rows && rows.length) {
 		rows.map((row) => {
-			json += `{"name":"${row[0]}","points":"${row[2]}",`;
-			json += `"win":"${row[3]}","loss":"${row[4]}",`;
+			json += `{"name":"${row[1]}","rank":"${row[0]}","points":"${row[3]}",`;
+			json += `"win":"${row[4]}","loss":"${row[5]}",`;
 			if(row[3]+row[4]==0) {
 				json += `"pct":"0%",`;
 			} else {
-				let winrate = parseInt(row[3])+parseInt(row[4]);
-				winrate = parseInt(row[3])/winrate*100;
+				let winrate = parseInt(row[4])+parseInt(row[5]);
+				winrate = parseInt(row[4])/winrate*100;
 				json += `"pct":"${winrate}%",`;
 			}
-			json += `"mapwin":"${row[6]}","maploss":"${row[7]}","maptie":"${row[8]}",`;
-			json += `"mapdiff":"${row[9]}"},`;
+			json += `"mapwin":"${row[7]}","maploss":"${row[8]}","maptie":"${row[9]}",`;
+			json += `"mapdiff":"${row[10]}"},`;
 		});
 		
 		json = json.replace(/,$/,'');
@@ -661,46 +787,106 @@ app.get('/api/matchlog',function(req,res) {
 	});
 });
 
+// endpoint for blog
+app.get('/api/GetBlog/:blogid/',function(req,res) {
+	openLocalJSON('blog.json', (obj) => {
+		for(i=0; i<obj["blog-posts"].length; i++) {
+			if(req.params.blogid == obj["blog-posts"][i]["id"])
+			{
+				var json = JSON.stringify(obj["blog-posts"][i]);
+				console.log('found blog id ' + obj["blog-posts"][i]["id"]);
+				
+				res.statusCode = 200;
+				res.setHeader('Content-Type', 'application/json');
+				res.write(json);
+				return res.end();
+			}
+		}
+		
+		console.log('blog id ' + req.params.blogid + ' not found!');
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'application/json');
+		res.write('{"date":"","title":"Post not found!","by":"","tags":[],"contents":[]}');
+		res.end();
+	});
+});
+
+app.get('/api/BlogBlurbs/',function(req,res) {
+	openLocalJSON('blog.json', (obj) => {
+		var json = JSON.stringify(obj);
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'application/json');
+		res.write(json);
+		res.end();
+	});
+});
+
 app.listen(process.env.PORT || 9007, () => console.log('Listening on port 9007!'));
 __discord_link = "https://discord.gg/HxxNybCgM4"
 
 // entry page
 app.get('/',function(req, res) {
-  res.redirect('/Draft/');
+  res.redirect('/Home/');
 });
 
 app.get('/Home/', function(req, res) {
 	res.sendFile(__dirname + '/client/welcome.html');
+	PAGE_HITS++;
 });
 
 app.get('/Standings/', function(req, res) {
 	res.sendFile(__dirname + '/client/standings.html');
+	PAGE_HITS++;
 });
 
 app.get('/Schedule/', function(req, res) {
 	res.sendFile(__dirname + '/client/schedule.html');
+	PAGE_HITS++;
 });
 
 app.get('/Stats/', function(req, res) {
 	res.sendFile(__dirname + '/client/stats.html');
+	PAGE_HITS++;
 });
 
 app.get('/Draft/', function(req, res) {
 	res.sendFile(__dirname + '/client/draft.html');
+	PAGE_HITS++;
+});
+
+app.get('/Blog/',function(req,res) {
+	res.redirect('/Home/');
+	PAGE_HITS++;
+});
+
+app.get('/Blog/:blogid/',function(req,res) {
+	res.sendFile(__dirname + '/client/blog/blog_template.html');
+	PAGE_HITS++;
+});
+app.get('/Blog/Tag/:blogid/',function(req,res) {
+	res.sendFile(__dirname + '/client/blog/blog_tag.html');
+	PAGE_HITS++;
 });
 
 // send team files
 app.get('/Teams/:teamname/', function(req, res) {
 	res.sendFile(__dirname + '/client/Teams/' + req.params.teamname + '.html');
+	PAGE_HITS++;
 });
 
 // redirects user to discord link
 app.get('/Discord/', function(req, res) {
 	res.redirect(__discord_link);
+	PAGE_HITS++;
 });
 
-app.get('/favicon.ico', function(req, res) {
-	res.sendFile(__dirname + '/public/images/leaguelogo.png');
+app.get('/BugReport/', function(req,res) {
+	res.redirect(__report_link);
+	PAGE_HITS++;
+});
+
+app.get('/favicon.ico', function(req,res) {
+	res.sendFile(__dirname + '/public/images/uwu.ico');
 });
 app.use(express.static(path.join(__dirname, 'public')));
 

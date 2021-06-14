@@ -6,7 +6,6 @@ function sortTable(tableid, n) {
   if(n>2) dir = "desc";
   else dir = "asc";
   
-		  console.log('sorting!' + n);
   /* Make a loop that will continue until
   no switching has been done: */
   while (switching) {
@@ -57,7 +56,6 @@ function sortTable(tableid, n) {
 			if (xx > yy) {
 			  // If so, mark as a switch and break the loop:
 			  shouldSwitch = true;
-			  console.log('switching' + xx + ',' + yy);
 			  break;
 		    }
 		  } else if (dir == "desc") {
@@ -65,7 +63,6 @@ function sortTable(tableid, n) {
 			  // If so, mark as a switch and break the loop:
 			  shouldSwitch = true;
 			  
-			  console.log('switching' + xx + ',' + yy);
 			  break;
 			}
 		  }
