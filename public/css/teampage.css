@@ -1,12 +1,20 @@
-tr.match-win {
+.ttable tbody tr:nth-child(even):not(.match-win):not(.match-loss):not(.match-unplayed) {
+	background-color: #d5d6d2;
+}
+
+.ttable tbody tr:nth-child(odd) {
+	/*background-color: #d5d6d2;*/
+}
+
+.ttable tbody tr.match-win {
 	background: #AAFFAA;
 }
 
-tr.match-loss {
+.ttable tbody tr.match-loss {
 	background: #FF9999;
 }
 
-tr.match-unplayed {
+.ttable tbody tr.match-unplayed {
 	background: white;
 }
 
@@ -177,12 +185,4 @@ span#team-page-div-rank {
 #mapTable tbody tr {
 	padding: 1px;
 	height: 70%;
-}
-
-.ttable tbody tr:nth-child(even) {
-	background-color: #d5d6d2;
-}
-
-.ttable tbody tr:nth-child(odd) {
-	/*background-color: #d5d6d2;*/
 }

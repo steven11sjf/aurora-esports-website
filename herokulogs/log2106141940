@@ -1,0 +1,1500 @@
+2021-06-14T19:09:00.031622+00:00 app[web.1]: time is 14-06-2021 14:09:00
+2021-06-14T19:09:00.032330+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T19:09:00.320674+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T19:09:30.013077+00:00 app[web.1]: time is 14-06-2021 14:09:30
+2021-06-14T19:09:30.013138+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T19:09:30.260809+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T19:09:30.269026+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T19:09:30.269042+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T19:09:30.269091+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T19:09:30.269130+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T19:09:30.269183+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T19:09:30.269238+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T19:09:30.269281+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T19:09:30.269324+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T19:09:30.269371+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T19:09:30.269412+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T19:09:30.269456+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T19:09:30.269495+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T19:09:30.269541+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T19:10:00.032071+00:00 app[web.1]: time is 14-06-2021 14:10:00
+2021-06-14T19:10:00.032833+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T19:10:00.301057+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T19:10:30.031816+00:00 app[web.1]: time is 14-06-2021 14:10:30
+2021-06-14T19:10:30.031862+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T19:10:30.295072+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T19:10:30.303824+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T19:10:30.303876+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T19:10:30.303921+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T19:10:30.303990+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T19:10:30.304032+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T19:10:30.304075+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T19:10:30.304134+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T19:10:30.304194+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T19:10:30.304236+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T19:10:30.304278+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T19:10:30.304318+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T19:10:30.304365+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T19:10:30.304405+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T19:11:00.032088+00:00 app[web.1]: time is 14-06-2021 14:11:00
+2021-06-14T19:11:00.033612+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T19:11:00.279014+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T19:11:20.045878+00:00 heroku[web.1]: Idling
+2021-06-14T19:11:20.056398+00:00 heroku[web.1]: State changed from up to down
+2021-06-14T19:11:21.028754+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-14T19:11:21.179037+00:00 heroku[web.1]: Process exited with status 143
+2021-06-14T20:38:32.400595+00:00 heroku[web.1]: Unidling
+2021-06-14T20:38:32.452490+00:00 heroku[web.1]: State changed from down to starting
+2021-06-14T20:38:35.848578+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T20:38:39.790914+00:00 app[web.1]: 
+2021-06-14T20:38:39.790939+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T20:38:39.790939+00:00 app[web.1]: > node index.js
+2021-06-14T20:38:39.790940+00:00 app[web.1]: 
+2021-06-14T20:38:41.398339+00:00 app[web.1]: Mon, 14 Jun 2021 20:38:41 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:9:9
+2021-06-14T20:38:41.398638+00:00 app[web.1]: Mon, 14 Jun 2021 20:38:41 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T20:38:41.415277+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T20:38:41.469136+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T20:38:41.500654+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:38:41.521518+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T20:38:41.939691+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:38:41.950995+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:38:41.975636+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:38:41.975773+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:38:41.975894+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:38:41.976004+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:38:41.976106+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:38:41.976224+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:38:41.976356+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:38:41.976463+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:38:41.976566+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:38:41.976677+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:38:41.976779+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:38:41.976891+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:38:41.976995+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:38:42.076520+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T20:38:43.122730+00:00 heroku[router]: at=info method=GET path="/Draft/" host=gwl.herokuapp.com request_id=b668271b-5e62-472b-b31f-9ee095a613c4 fwd="138.199.42.237" dyno=web.1 connect=0ms service=15ms status=200 bytes=3782 protocol=https
+2021-06-14T20:38:43.255348+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=4243dd51-e366-4457-9e61-345f2236e576 fwd="138.199.42.237" dyno=web.1 connect=0ms service=7ms status=200 bytes=2860 protocol=https
+2021-06-14T20:38:43.318866+00:00 heroku[router]: at=info method=GET path="/js/sortable-draft-table.js" host=gwl.herokuapp.com request_id=c942678e-e20d-420b-a537-fb632241c757 fwd="138.199.42.237" dyno=web.1 connect=0ms service=5ms status=200 bytes=3090 protocol=https
+2021-06-14T20:38:43.370557+00:00 heroku[router]: at=info method=GET path="/js/link-team-names.js" host=gwl.herokuapp.com request_id=fd18c3fe-0057-40ff-9454-37e7d95d6848 fwd="138.199.42.237" dyno=web.1 connect=1ms service=11ms status=200 bytes=2217 protocol=https
+2021-06-14T20:38:43.487308+00:00 app[web.1]: opening file /json/players.json
+2021-06-14T20:38:43.495217+00:00 heroku[router]: at=info method=GET path="/GetAllPlayersJson" host=gwl.herokuapp.com request_id=4da41d1a-2427-48b4-b696-c552b71d4e75 fwd="138.199.42.237" dyno=web.1 connect=1ms service=9ms status=200 bytes=17899 protocol=https
+2021-06-14T20:38:43.544063+00:00 heroku[router]: at=info method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=1a6e6593-2b90-46b3-b13c-3aba55a9154f fwd="138.199.42.237" dyno=web.1 connect=0ms service=8ms status=200 bytes=1302 protocol=https
+2021-06-14T20:38:43.734055+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=8bed4c0a-99ad-4203-8b47-4534fa3db685 fwd="138.199.42.237" dyno=web.1 connect=8ms service=17ms status=200 bytes=158933 protocol=https
+2021-06-14T20:38:44.527073+00:00 heroku[router]: at=info method=GET path="/Draft/" host=gwl.herokuapp.com request_id=74c2f5f9-668b-466d-9d9d-8c2621c6f301 fwd="138.199.42.237" dyno=web.1 connect=1ms service=6ms status=200 bytes=3782 protocol=https
+2021-06-14T20:39:00.026087+00:00 app[web.1]: time is 14-06-2021 15:39:00
+2021-06-14T20:39:00.030021+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T20:39:00.318926+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:39:20.971577+00:00 heroku[router]: at=info method=GET path="/Schedule/" host=gwl.herokuapp.com request_id=2f3004bf-183b-43bd-9b1a-977faf78a110 fwd="138.199.42.237" dyno=web.1 connect=0ms service=7ms status=200 bytes=2192 protocol=https
+2021-06-14T20:39:21.425691+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=e822fb6e-fb12-4a79-8ec4-9c949610297d fwd="138.199.42.237" dyno=web.1 connect=0ms service=4ms status=304 bytes=237 protocol=https
+2021-06-14T20:39:21.437555+00:00 heroku[router]: at=info method=GET path="/css/schedule.css" host=gwl.herokuapp.com request_id=732fc585-61b8-4306-86b9-eb8486b4597b fwd="138.199.42.237" dyno=web.1 connect=1ms service=5ms status=200 bytes=2199 protocol=https
+2021-06-14T20:39:21.439207+00:00 heroku[router]: at=info method=GET path="/js/sortable-table.js" host=gwl.herokuapp.com request_id=2ebea1ef-d30f-44c0-be71-62b160bbee7b fwd="138.199.42.237" dyno=web.1 connect=0ms service=7ms status=200 bytes=2245 protocol=https
+2021-06-14T20:39:21.485368+00:00 heroku[router]: at=info method=GET path="/js/schedule-page.js" host=gwl.herokuapp.com request_id=01755a34-007c-424b-ae57-987aec053c85 fwd="138.199.42.237" dyno=web.1 connect=0ms service=3ms status=200 bytes=12115 protocol=https
+2021-06-14T20:39:21.629912+00:00 heroku[router]: at=info method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=81b3ec6f-0742-4f42-a4c8-87ede77ad6e3 fwd="138.199.42.237" dyno=web.1 connect=0ms service=3ms status=304 bytes=237 protocol=https
+2021-06-14T20:39:21.671369+00:00 app[web.1]: opening file /json/matchlog.json
+2021-06-14T20:39:21.676766+00:00 heroku[router]: at=info method=GET path="/api/matchlog" host=gwl.herokuapp.com request_id=fe077470-20e2-4b95-afee-eb0c145a6332 fwd="138.199.42.237" dyno=web.1 connect=0ms service=10ms status=200 bytes=49825 protocol=https
+2021-06-14T20:39:21.823343+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=5971048a-8e64-4b83-98e8-12d71f5cfde9 fwd="138.199.42.237" dyno=web.1 connect=1ms service=12ms status=200 bytes=116920 protocol=https
+2021-06-14T20:39:21.838765+00:00 heroku[router]: at=info method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=546c470a-892d-4e4c-9f37-d5efda2400e9 fwd="138.199.42.237" dyno=web.1 connect=2ms service=20ms status=200 bytes=81806 protocol=https
+2021-06-14T20:39:21.842510+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=adc99250-29b9-4d69-b58c-ff60688ac5ed fwd="138.199.42.237" dyno=web.1 connect=2ms service=22ms status=200 bytes=142751 protocol=https
+2021-06-14T20:39:21.853232+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=5b822bc9-0853-4559-a5dd-8d8fa1026103 fwd="138.199.42.237" dyno=web.1 connect=2ms service=33ms status=200 bytes=165943 protocol=https
+2021-06-14T20:39:21.927903+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=68278be0-0a25-451f-a989-78878a72f8fc fwd="138.199.42.237" dyno=web.1 connect=1ms service=27ms status=200 bytes=244848 protocol=https
+2021-06-14T20:39:21.947897+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=04c0f94d-0bf0-4060-9851-c6e6d3c8a9d0 fwd="138.199.42.237" dyno=web.1 connect=2ms service=19ms status=200 bytes=236991 protocol=https
+2021-06-14T20:39:21.990341+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=c67303fe-f5aa-4295-b09f-30dcb5df79e8 fwd="138.199.42.237" dyno=web.1 connect=1ms service=15ms status=200 bytes=116721 protocol=https
+2021-06-14T20:39:22.013485+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=d2efc40a-a307-4573-ba88-1e7503547252 fwd="138.199.42.237" dyno=web.1 connect=3ms service=23ms status=200 bytes=184122 protocol=https
+2021-06-14T20:39:22.017086+00:00 heroku[router]: at=info method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=b2c6f875-6539-4ddf-9ff9-527397bf7d86 fwd="138.199.42.237" dyno=web.1 connect=2ms service=28ms status=200 bytes=201165 protocol=https
+2021-06-14T20:39:22.025294+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=1d2f367b-b44c-493f-b9fa-51c4964c9d56 fwd="138.199.42.237" dyno=web.1 connect=2ms service=16ms status=200 bytes=115164 protocol=https
+2021-06-14T20:39:30.010315+00:00 app[web.1]: time is 14-06-2021 15:39:30
+2021-06-14T20:39:30.010564+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 5
+2021-06-14T20:39:30.034121+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=5b40843f-3d9d-4329-8803-f1f446de4222 fwd="138.199.42.237" dyno=web.1 connect=1ms service=12ms status=200 bytes=158933 protocol=https
+2021-06-14T20:39:30.337746+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:39:30.352568+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:39:30.352655+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:39:30.352763+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:39:30.352865+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:39:30.352958+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:39:30.353116+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:39:30.353216+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:39:30.353322+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:39:30.353414+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:39:30.353515+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:39:30.353620+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:39:30.353723+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:39:30.353802+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:39:32.213476+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=fed663c2-e755-4336-8ddc-fee195eb6030 fwd="138.199.42.237" dyno=web.1 connect=1ms service=3ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.224471+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=511d2c4e-12b5-4d44-9800-5cbda2864dbb fwd="138.199.42.237" dyno=web.1 connect=0ms service=10ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.225752+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=a591882c-0c4d-445d-850d-5d0619e8b619 fwd="138.199.42.237" dyno=web.1 connect=1ms service=10ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.226487+00:00 heroku[router]: at=info method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=e7df8f0a-edbc-47f2-8262-e6e5643d9410 fwd="138.199.42.237" dyno=web.1 connect=1ms service=11ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.230456+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=f15d0b66-2074-4959-b88b-22dd80c7f999 fwd="138.199.42.237" dyno=web.1 connect=0ms service=13ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.236858+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=a60d31b4-e3f9-4f0c-a540-7bfb563b3ede fwd="138.199.42.237" dyno=web.1 connect=0ms service=19ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.280178+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=31df6cab-fe92-4761-84dd-3da349aa0c02 fwd="138.199.42.237" dyno=web.1 connect=1ms service=4ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.291625+00:00 heroku[router]: at=info method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=efdd47a4-951b-4ce4-a7f6-99850ae08b27 fwd="138.199.42.237" dyno=web.1 connect=1ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.291976+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=488672be-3d21-46c0-8195-fcade56de4b1 fwd="138.199.42.237" dyno=web.1 connect=1ms service=3ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:32.294296+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=4a7c9b1c-aeb5-4bf8-8291-36267c2e23ae fwd="138.199.42.237" dyno=web.1 connect=2ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.441683+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=cedc14d9-895c-4ae4-a4a3-a858c67c48f6 fwd="138.199.42.237" dyno=web.1 connect=5ms service=3ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.447037+00:00 heroku[router]: at=info method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=90de5170-9913-4d69-82ef-9cd38e31ce7d fwd="138.199.42.237" dyno=web.1 connect=1ms service=5ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.451060+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=4e5a19a7-3e17-49d1-8c44-de7cab8f4b70 fwd="138.199.42.237" dyno=web.1 connect=0ms service=7ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.452171+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=abd1f927-ddb3-4211-be33-bdc4e2f22bcc fwd="138.199.42.237" dyno=web.1 connect=0ms service=5ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.454013+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=cc0b7813-fc89-4f52-a312-45b163f1466b fwd="138.199.42.237" dyno=web.1 connect=1ms service=6ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.454132+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=8153bb2a-c825-4007-bbc7-2d146b6556ee fwd="138.199.42.237" dyno=web.1 connect=0ms service=6ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.529234+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=0397d85f-6f9e-4520-93eb-4863771c082b fwd="138.199.42.237" dyno=web.1 connect=1ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.543204+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=229701c5-dc64-464f-8559-5b24d11c3e1a fwd="138.199.42.237" dyno=web.1 connect=0ms service=6ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.543572+00:00 heroku[router]: at=info method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=63041d8d-f8d9-4361-9798-f90f802c0ff6 fwd="138.199.42.237" dyno=web.1 connect=1ms service=6ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:36.544926+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=92a7227a-12cf-4ac9-ad14-ad707cceb98a fwd="138.199.42.237" dyno=web.1 connect=1ms service=5ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:42.874768+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=6351574c-c649-4e9f-b8ab-51b0ce29eda2 fwd="138.199.42.237" dyno=web.1 connect=1ms service=5ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:44.991560+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=8fe63e3f-4b7c-4d79-8bfd-62b1826dcdce fwd="138.199.42.237" dyno=web.1 connect=1ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.003885+00:00 heroku[router]: at=info method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=08765ae7-50f0-41ed-bf1a-e36d68562d4e fwd="138.199.42.237" dyno=web.1 connect=0ms service=6ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.007657+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=fe10ac33-ec98-4cef-b915-5423afdce66e fwd="138.199.42.237" dyno=web.1 connect=1ms service=8ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.009550+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=bef5fc6f-ed06-4b51-8564-7d60604e2868 fwd="138.199.42.237" dyno=web.1 connect=0ms service=9ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.010935+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=18fa0692-01c7-4329-9da0-fe554f2b7129 fwd="138.199.42.237" dyno=web.1 connect=1ms service=11ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.011936+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=6f31dd6c-1d73-49b6-a5a3-a63bec253bd3 fwd="138.199.42.237" dyno=web.1 connect=1ms service=9ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.057330+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=5070066b-b438-45be-8e9b-3b2d2d999f1b fwd="138.199.42.237" dyno=web.1 connect=1ms service=4ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.071947+00:00 heroku[router]: at=info method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=d9477795-1e18-4569-9f94-f1db866597eb fwd="138.199.42.237" dyno=web.1 connect=1ms service=3ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.079371+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=82f3b756-bb7c-40b1-ac93-da647f76e830 fwd="138.199.42.237" dyno=web.1 connect=1ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T20:39:45.084022+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=9c8ceda3-1786-4471-b0dd-7d0390a5486e fwd="138.199.42.237" dyno=web.1 connect=0ms service=1ms status=304 bytes=239 protocol=https
+2021-06-14T20:40:00.019854+00:00 app[web.1]: time is 14-06-2021 15:40:00
+2021-06-14T20:40:00.020874+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:40:00.303887+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:40:30.038142+00:00 app[web.1]: time is 14-06-2021 15:40:30
+2021-06-14T20:40:30.042429+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:40:30.330055+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:40:30.341273+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:40:30.341381+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:40:30.341518+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:40:30.341641+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:40:30.341755+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:40:30.341860+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:40:30.341961+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:40:30.342078+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:40:30.342185+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:40:30.342321+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:40:30.342441+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:40:30.342542+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:40:30.342639+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:41:00.009540+00:00 app[web.1]: time is 14-06-2021 15:41:00
+2021-06-14T20:41:00.010465+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:41:00.258550+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:41:30.033897+00:00 app[web.1]: time is 14-06-2021 15:41:30
+2021-06-14T20:41:30.033981+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:41:30.327077+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:41:30.334985+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:41:30.335062+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:41:30.335147+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:41:30.335226+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:41:30.335290+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:41:30.335363+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:41:30.335426+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:41:30.335490+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:41:30.335568+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:41:30.335635+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:41:30.335695+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:41:30.335762+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:41:30.335821+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:42:00.045053+00:00 app[web.1]: time is 14-06-2021 15:42:00
+2021-06-14T20:42:00.045977+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:42:00.344535+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:42:30.028788+00:00 app[web.1]: time is 14-06-2021 15:42:30
+2021-06-14T20:42:30.028843+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:42:30.296684+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:42:30.307801+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:42:30.307870+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:42:30.307941+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:42:30.308004+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:42:30.308075+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:42:30.308177+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:42:30.309025+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:42:30.309026+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:42:30.309027+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:42:30.309027+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:42:30.309027+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:42:30.309028+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:42:30.309028+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:43:00.033097+00:00 app[web.1]: time is 14-06-2021 15:43:00
+2021-06-14T20:43:00.033763+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:43:00.312844+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:43:30.026710+00:00 app[web.1]: time is 14-06-2021 15:43:30
+2021-06-14T20:43:30.026891+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:43:30.278411+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:43:30.287085+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:43:30.287241+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:43:30.287341+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:43:30.287447+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:43:30.287571+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:43:30.287647+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:43:30.287712+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:43:30.287792+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:43:30.287855+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:43:30.287922+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:43:30.287983+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:43:30.288056+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:43:30.288254+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:44:00.042016+00:00 app[web.1]: time is 14-06-2021 15:44:00
+2021-06-14T20:44:00.043873+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:44:00.300760+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:44:30.034022+00:00 app[web.1]: time is 14-06-2021 15:44:30
+2021-06-14T20:44:30.034094+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:44:30.326909+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:44:30.337459+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:44:30.337533+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:44:30.337608+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:44:30.337674+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:44:30.337741+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:44:30.337805+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:44:30.337877+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:44:30.337948+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:44:30.338011+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:44:30.338071+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:44:30.338133+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:44:30.338205+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:44:30.338293+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:45:00.031110+00:00 app[web.1]: time is 14-06-2021 15:45:00
+2021-06-14T20:45:00.032160+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:45:00.296287+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:45:30.010548+00:00 app[web.1]: time is 14-06-2021 15:45:30
+2021-06-14T20:45:30.010729+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:45:30.273517+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:45:30.286282+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:45:30.286373+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:45:30.286471+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:45:30.286522+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:45:30.286587+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:45:30.286663+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:45:30.286714+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:45:30.286779+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:45:30.286855+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:45:30.286902+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:45:30.286962+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:45:30.287045+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:45:30.287085+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:46:00.033375+00:00 app[web.1]: time is 14-06-2021 15:46:00
+2021-06-14T20:46:00.034228+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:46:00.325691+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:46:30.034025+00:00 app[web.1]: time is 14-06-2021 15:46:30
+2021-06-14T20:46:30.034457+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:46:30.310078+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:46:30.324979+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:46:30.325082+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:46:30.325172+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:46:30.325271+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:46:30.325363+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:46:30.325449+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:46:30.325547+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:46:30.325628+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:46:30.325729+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:46:30.325809+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:46:30.325909+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:46:30.325996+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:46:30.326091+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:47:00.030001+00:00 app[web.1]: time is 14-06-2021 15:47:00
+2021-06-14T20:47:00.030883+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:47:00.286785+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:47:30.024588+00:00 app[web.1]: time is 14-06-2021 15:47:30
+2021-06-14T20:47:30.024898+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:47:30.340188+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:47:30.348676+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:47:30.348677+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:47:30.348677+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:47:30.348678+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:47:30.348678+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:47:30.348678+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:47:30.348679+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:47:30.348683+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:47:30.348745+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:47:30.348825+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:47:30.348864+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:47:30.348945+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:47:30.348996+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:48:00.025247+00:00 app[web.1]: time is 14-06-2021 15:48:00
+2021-06-14T20:48:00.026490+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:48:00.409103+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:48:30.034339+00:00 app[web.1]: time is 14-06-2021 15:48:30
+2021-06-14T20:48:30.034442+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:48:30.307487+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:48:30.317328+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:48:30.317414+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:48:30.317501+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:48:30.317592+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:48:30.317644+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:48:30.317690+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:48:30.317739+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:48:30.317790+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:48:30.317833+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:48:30.317880+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:48:30.317925+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:48:30.317972+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:48:30.318018+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:49:00.032801+00:00 app[web.1]: time is 14-06-2021 15:49:00
+2021-06-14T20:49:00.033463+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:49:00.274577+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:49:30.033253+00:00 app[web.1]: time is 14-06-2021 15:49:30
+2021-06-14T20:49:30.033334+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:49:30.273490+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:49:30.288024+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:49:30.288270+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:49:30.288439+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:49:30.288551+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:49:30.288680+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:49:30.288851+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:49:30.288999+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:49:30.289170+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:49:30.289315+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:49:30.289403+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:49:30.289516+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:49:30.289616+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:49:30.289739+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:50:00.013395+00:00 app[web.1]: time is 14-06-2021 15:50:00
+2021-06-14T20:50:00.014014+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:50:00.271538+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:50:30.032950+00:00 app[web.1]: time is 14-06-2021 15:50:30
+2021-06-14T20:50:30.033025+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:50:30.325899+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:50:30.343113+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:50:30.343362+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:50:30.343411+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:50:30.343461+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:50:30.343509+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:50:30.343556+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:50:30.343610+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:50:30.343657+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:50:30.343704+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:50:30.343750+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:50:30.343803+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:50:30.343848+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:50:30.343896+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:51:00.024452+00:00 app[web.1]: time is 14-06-2021 15:51:00
+2021-06-14T20:51:00.025100+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:51:00.285440+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:51:30.034761+00:00 app[web.1]: time is 14-06-2021 15:51:30
+2021-06-14T20:51:30.034829+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:51:30.315339+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:51:30.327055+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:51:30.327183+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:51:30.327267+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:51:30.327359+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:51:30.327445+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:51:30.327524+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:51:30.327607+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:51:30.327688+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:51:30.327752+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:51:30.327832+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:51:30.327892+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:51:30.328075+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:51:30.328076+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:52:00.032544+00:00 app[web.1]: time is 14-06-2021 15:52:00
+2021-06-14T20:52:00.033529+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:52:00.225943+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:52:30.025509+00:00 app[web.1]: time is 14-06-2021 15:52:30
+2021-06-14T20:52:30.025596+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:52:30.323112+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:52:30.334958+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:52:30.335027+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:52:30.335117+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:52:30.335207+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:52:30.335293+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:52:30.335382+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:52:30.335468+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:52:30.335546+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:52:30.335623+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:52:30.335724+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:52:30.335804+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:52:30.335914+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:52:30.335985+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:53:00.033840+00:00 app[web.1]: time is 14-06-2021 15:53:00
+2021-06-14T20:53:00.034878+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:53:00.358942+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:53:30.033326+00:00 app[web.1]: time is 14-06-2021 15:53:30
+2021-06-14T20:53:30.033397+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:53:30.344686+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:53:30.358625+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:53:30.358703+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:53:30.358802+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:53:30.358882+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:53:30.358982+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:53:30.359060+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:53:30.359157+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:53:30.359227+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:53:30.359314+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:53:30.359415+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:53:30.359566+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:53:30.359659+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:53:30.359743+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:54:00.034177+00:00 app[web.1]: time is 14-06-2021 15:54:00
+2021-06-14T20:54:00.035932+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:54:00.298820+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:54:30.013645+00:00 app[web.1]: time is 14-06-2021 15:54:30
+2021-06-14T20:54:30.013745+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:54:30.304569+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:54:30.342869+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:54:30.343023+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:54:30.343182+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:54:30.343335+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:54:30.343483+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:54:30.343630+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:54:30.343761+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:54:30.343877+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:54:30.344280+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:54:30.344397+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:54:30.344549+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:54:30.344703+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:54:30.344841+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:55:00.033060+00:00 app[web.1]: time is 14-06-2021 15:55:00
+2021-06-14T20:55:00.047539+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:55:00.336450+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:55:30.012891+00:00 app[web.1]: time is 14-06-2021 15:55:30
+2021-06-14T20:55:30.012930+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:55:30.266199+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:55:30.274190+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:55:30.274273+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:55:30.274361+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:55:30.274428+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:55:30.274492+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:55:30.274556+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:55:30.274634+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:55:30.274698+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:55:30.274758+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:55:30.274825+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:55:30.274891+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:55:30.274953+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:55:30.275041+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:56:00.052592+00:00 app[web.1]: time is 14-06-2021 15:56:00
+2021-06-14T20:56:00.053792+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:56:00.297601+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:56:30.028414+00:00 app[web.1]: time is 14-06-2021 15:56:30
+2021-06-14T20:56:30.028589+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:56:30.286329+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:56:30.296507+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:56:30.296596+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:56:30.296696+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:56:30.296782+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:56:30.296884+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:56:30.296972+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:56:30.297070+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:56:30.297160+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:56:30.297255+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:56:30.297340+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:56:30.297438+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:56:30.297517+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:56:30.297621+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:57:00.027967+00:00 app[web.1]: time is 14-06-2021 15:57:00
+2021-06-14T20:57:00.028627+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:57:00.267439+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:57:30.032450+00:00 app[web.1]: time is 14-06-2021 15:57:30
+2021-06-14T20:57:30.032511+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:57:30.277651+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:57:30.286624+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:57:30.286686+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:57:30.286735+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:57:30.286785+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:57:30.286832+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:57:30.286885+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:57:30.286931+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:57:30.286978+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:57:30.287022+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:57:30.287100+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:57:30.287195+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:57:30.287282+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:57:30.287380+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:58:00.004360+00:00 app[web.1]: time is 14-06-2021 15:58:00
+2021-06-14T20:58:00.005031+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:58:00.244686+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:58:30.025006+00:00 app[web.1]: time is 14-06-2021 15:58:30
+2021-06-14T20:58:30.025062+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:58:30.314337+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:58:30.328195+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:58:30.328234+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:58:30.328308+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:58:30.328342+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:58:30.328381+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:58:30.328423+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:58:30.328478+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:58:30.328526+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:58:30.328571+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:58:30.328614+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:58:30.328657+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:58:30.328704+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T20:58:30.328749+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:59:00.012827+00:00 app[web.1]: time is 14-06-2021 15:59:00
+2021-06-14T20:59:00.013596+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T20:59:00.278356+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T20:59:30.029861+00:00 app[web.1]: time is 14-06-2021 15:59:30
+2021-06-14T20:59:30.029925+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T20:59:30.304187+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T20:59:30.312531+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T20:59:30.312591+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T20:59:30.312636+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T20:59:30.312684+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T20:59:30.312730+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T20:59:30.312779+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T20:59:30.312823+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T20:59:30.312876+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T20:59:30.312912+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T20:59:30.312960+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T20:59:30.313010+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T20:59:30.313055+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T20:59:30.313109+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:00:00.013649+00:00 app[web.1]: time is 14-06-2021 16:00:00
+2021-06-14T21:00:00.014374+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:00:00.241454+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:00:30.037150+00:00 app[web.1]: time is 14-06-2021 16:00:30
+2021-06-14T21:00:30.037317+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:00:30.335482+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:00:30.363114+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:00:30.363220+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:00:30.363304+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:00:30.363384+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:00:30.363485+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:00:30.363565+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:00:30.363641+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:00:30.363717+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:00:30.363804+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:00:30.363876+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:00:30.363969+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:00:30.364045+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:00:30.364127+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:01:00.004193+00:00 app[web.1]: time is 14-06-2021 16:01:00
+2021-06-14T21:01:00.005201+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:01:00.205931+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:01:30.029801+00:00 app[web.1]: time is 14-06-2021 16:01:30
+2021-06-14T21:01:30.029872+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:01:30.240996+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:01:30.263752+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:01:30.263872+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:01:30.263937+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:01:30.264023+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:01:30.264086+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:01:30.264199+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:01:30.264302+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:01:30.264398+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:01:30.264482+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:01:30.265976+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:01:30.266046+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:01:30.266156+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:01:30.266224+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:02:00.030052+00:00 app[web.1]: time is 14-06-2021 16:02:00
+2021-06-14T21:02:00.031968+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:02:00.243685+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:02:30.033450+00:00 app[web.1]: time is 14-06-2021 16:02:30
+2021-06-14T21:02:30.033544+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:02:30.267144+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:02:30.278922+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:02:30.279071+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:02:30.279228+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:02:30.279365+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:02:30.279501+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:02:30.279594+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:02:30.279746+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:02:30.279881+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:02:30.280011+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:02:30.280104+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:02:30.280243+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:02:30.280371+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:02:30.280471+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:03:00.032945+00:00 app[web.1]: time is 14-06-2021 16:03:00
+2021-06-14T21:03:00.033699+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:03:00.293864+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:03:30.016445+00:00 app[web.1]: time is 14-06-2021 16:03:30
+2021-06-14T21:03:30.016577+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:03:30.324076+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:03:30.342079+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:03:30.342196+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:03:30.342318+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:03:30.342417+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:03:30.342511+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:03:30.342602+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:03:30.342689+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:03:30.342779+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:03:30.342874+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:03:30.342961+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:03:30.343043+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:03:30.343133+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:03:30.343223+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:04:00.032301+00:00 app[web.1]: time is 14-06-2021 16:04:00
+2021-06-14T21:04:00.033005+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:04:00.265397+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:04:30.028553+00:00 app[web.1]: time is 14-06-2021 16:04:30
+2021-06-14T21:04:30.028727+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:04:30.297549+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:04:30.310222+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:04:30.310338+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:04:30.310422+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:04:30.310510+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:04:30.310609+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:04:30.310686+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:04:30.310767+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:04:30.310843+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:04:30.310933+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:04:30.311013+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:04:30.311095+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:04:30.311193+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:04:30.311284+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:05:00.009263+00:00 app[web.1]: time is 14-06-2021 16:05:00
+2021-06-14T21:05:00.009948+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:05:00.210681+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:05:30.005481+00:00 app[web.1]: time is 14-06-2021 16:05:30
+2021-06-14T21:05:30.005638+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:05:30.280480+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:05:30.293247+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:05:30.293402+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:05:30.293503+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:05:30.293605+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:05:30.293712+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:05:30.293814+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:05:30.293908+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:05:30.294007+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:05:30.294112+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:05:30.294210+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:05:30.294341+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:05:30.294437+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:05:30.294559+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:06:00.032795+00:00 app[web.1]: time is 14-06-2021 16:06:00
+2021-06-14T21:06:00.033504+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:06:00.285931+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:06:30.032379+00:00 app[web.1]: time is 14-06-2021 16:06:30
+2021-06-14T21:06:30.032428+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:06:30.292509+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:06:30.301049+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:06:30.301123+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:06:30.301190+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:06:30.301260+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:06:30.301326+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:06:30.301398+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:06:30.301458+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:06:30.301525+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:06:30.301588+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:06:30.301652+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:06:30.301714+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:06:30.301792+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:06:30.301854+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:07:00.032227+00:00 app[web.1]: time is 14-06-2021 16:07:00
+2021-06-14T21:07:00.033168+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:07:00.274713+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:07:30.032886+00:00 app[web.1]: time is 14-06-2021 16:07:30
+2021-06-14T21:07:30.032932+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:07:30.427342+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:07:30.443727+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:07:30.446438+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:07:30.446525+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:07:30.446631+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:07:30.446724+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:07:30.446804+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:07:30.446911+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:07:30.446982+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:07:30.447070+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:07:30.447161+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:07:30.447240+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:07:30.447333+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:07:30.447416+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:08:00.021319+00:00 app[web.1]: time is 14-06-2021 16:08:00
+2021-06-14T21:08:00.022158+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:08:00.246134+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:08:30.032800+00:00 app[web.1]: time is 14-06-2021 16:08:30
+2021-06-14T21:08:30.032863+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:08:30.465007+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:08:30.472842+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:08:30.472902+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:08:30.472973+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:08:30.473041+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:08:30.473105+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:08:30.473169+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:08:30.473252+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:08:30.473312+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:08:30.473376+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:08:30.473438+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:08:30.473505+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:08:30.473566+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:08:30.473628+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:09:00.024166+00:00 app[web.1]: time is 14-06-2021 16:09:00
+2021-06-14T21:09:00.024855+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:09:00.315581+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:09:30.033504+00:00 app[web.1]: time is 14-06-2021 16:09:30
+2021-06-14T21:09:30.033565+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:09:30.324044+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:09:30.333080+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:09:30.333154+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:09:30.333225+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:09:30.333288+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:09:30.333349+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:09:30.333414+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:09:30.333479+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:09:30.333541+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:09:30.333600+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:09:30.333670+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:09:30.333732+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:09:30.333827+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:09:30.333925+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:10:00.007404+00:00 app[web.1]: time is 14-06-2021 16:10:00
+2021-06-14T21:10:00.008082+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:10:00.245800+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:10:30.031886+00:00 app[web.1]: time is 14-06-2021 16:10:30
+2021-06-14T21:10:30.031937+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:10:30.289310+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:10:30.298725+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:10:30.298830+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:10:30.298892+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:10:30.298947+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:10:30.298995+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:10:30.299144+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:10:30.299191+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:10:30.299240+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:10:30.299310+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:10:30.299331+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:10:30.299387+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:10:30.299435+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:10:30.299480+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:11:00.033266+00:00 app[web.1]: time is 14-06-2021 16:11:00
+2021-06-14T21:11:00.033889+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:11:00.241752+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:11:30.031766+00:00 app[web.1]: time is 14-06-2021 16:11:30
+2021-06-14T21:11:30.031821+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:11:30.291597+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:11:30.301449+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:11:30.301526+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:11:30.301591+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:11:30.301655+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:11:30.301716+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:11:30.301788+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:11:30.301849+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:11:30.301910+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:11:30.301993+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:11:30.302059+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:11:30.302169+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:11:30.302238+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:11:30.302350+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:12:00.027865+00:00 app[web.1]: time is 14-06-2021 16:12:00
+2021-06-14T21:12:00.028493+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:12:00.286417+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:12:30.024079+00:00 app[web.1]: time is 14-06-2021 16:12:30
+2021-06-14T21:12:30.024139+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:12:30.283892+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:12:30.291987+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:12:30.292098+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:12:30.292167+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:12:30.292231+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:12:30.292294+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:12:30.292361+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:12:30.292423+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:12:30.292483+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:12:30.292547+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:12:30.292653+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:12:30.292724+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:12:30.292783+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:12:30.292845+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:13:00.032164+00:00 app[web.1]: time is 14-06-2021 16:13:00
+2021-06-14T21:13:00.032794+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:13:00.281701+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:13:30.031994+00:00 app[web.1]: time is 14-06-2021 16:13:30
+2021-06-14T21:13:30.032148+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:13:30.295203+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:13:30.307257+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:13:30.307338+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:13:30.307410+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:13:30.307488+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:13:30.307570+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:13:30.307653+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:13:30.307758+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:13:30.307834+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:13:30.307915+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:13:30.308009+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:13:30.308114+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:13:30.308217+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:13:30.308316+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:14:00.028409+00:00 app[web.1]: time is 14-06-2021 16:14:00
+2021-06-14T21:14:00.029020+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:14:00.305904+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:14:30.008011+00:00 app[web.1]: time is 14-06-2021 16:14:30
+2021-06-14T21:14:30.008056+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:14:30.315068+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:14:30.338666+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:14:30.338758+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:14:30.338858+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:14:30.338926+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:14:30.339005+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:14:30.339080+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:14:30.341296+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:14:30.341384+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:14:30.341483+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:14:30.341573+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:14:30.341670+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:14:30.341762+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:14:30.341860+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:15:00.031808+00:00 app[web.1]: time is 14-06-2021 16:15:00
+2021-06-14T21:15:00.032433+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:15:00.278207+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:15:30.029007+00:00 app[web.1]: time is 14-06-2021 16:15:30
+2021-06-14T21:15:30.029099+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:15:30.330370+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:15:30.354204+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:15:30.354396+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:15:30.354529+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:15:30.355123+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:15:30.355224+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:15:30.355586+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:15:30.355692+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:15:30.355823+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:15:30.355942+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:15:30.356047+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:15:30.356176+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:15:30.356261+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:15:30.356405+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:16:00.027759+00:00 app[web.1]: time is 14-06-2021 16:16:00
+2021-06-14T21:16:00.028374+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:16:00.264734+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:16:30.036760+00:00 app[web.1]: time is 14-06-2021 16:16:30
+2021-06-14T21:16:30.037190+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T21:16:30.311383+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:16:30.321041+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:16:30.321186+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:16:30.321308+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:16:30.324324+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:16:30.324445+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:16:30.324547+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:16:30.324639+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:16:30.324719+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:16:30.324830+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:16:30.324925+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:16:30.325023+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:16:30.325275+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:16:30.325374+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:16:37.257162+00:00 heroku[web.1]: Idling
+2021-06-14T21:16:37.264655+00:00 heroku[web.1]: State changed from up to down
+2021-06-14T21:16:38.160440+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-14T21:16:38.276546+00:00 heroku[web.1]: Process exited with status 143
+2021-06-14T21:48:51.043272+00:00 heroku[web.1]: Unidling
+2021-06-14T21:48:51.072133+00:00 heroku[web.1]: State changed from down to starting
+2021-06-14T21:48:53.946515+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:48:56.445645+00:00 app[web.1]: 
+2021-06-14T21:48:56.445662+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:48:56.445662+00:00 app[web.1]: > node index.js
+2021-06-14T21:48:56.445662+00:00 app[web.1]: 
+2021-06-14T21:48:57.180180+00:00 app[web.1]: Mon, 14 Jun 2021 21:48:57 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:9:9
+2021-06-14T21:48:57.181094+00:00 app[web.1]: Mon, 14 Jun 2021 21:48:57 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:48:57.187573+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:48:57.236538+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:48:57.268367+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:48:57.278794+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:48:57.634485+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:48:57.695908+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:48:57.708665+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:48:57.708768+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:48:57.708865+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:48:57.708952+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:48:57.709041+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:48:57.709131+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:48:57.709228+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:48:57.709318+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:48:57.709402+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:48:57.709540+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:48:57.709642+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:48:57.709720+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:48:57.709815+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:48:57.761666+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:48:59.170137+00:00 heroku[router]: at=info method=GET path="/" host=gwl.herokuapp.com request_id=4f167aa1-93b3-4ca2-8cdc-ba45c18f7404 fwd="131.212.248.228" dyno=web.1 connect=0ms service=8ms status=302 bytes=252 protocol=https
+2021-06-14T21:48:59.223467+00:00 heroku[router]: at=info method=GET path="/Draft/" host=gwl.herokuapp.com request_id=7e62793d-a8e6-47b7-8dd3-59a80bad21ae fwd="131.212.248.228" dyno=web.1 connect=0ms service=6ms status=200 bytes=3782 protocol=https
+2021-06-14T21:48:59.331362+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=303ecbcd-5cbd-4c43-8950-766297420d38 fwd="131.212.248.228" dyno=web.1 connect=0ms service=3ms status=304 bytes=237 protocol=https
+2021-06-14T21:48:59.374723+00:00 heroku[router]: at=info method=GET path="/js/sortable-draft-table.js" host=gwl.herokuapp.com request_id=b495e659-0ddd-4f5b-b3df-9ac5e027f673 fwd="131.212.248.228" dyno=web.1 connect=2ms service=4ms status=200 bytes=3090 protocol=https
+2021-06-14T21:48:59.408961+00:00 heroku[router]: at=info method=GET path="/js/link-team-names.js" host=gwl.herokuapp.com request_id=e365568d-8ee4-4282-89fd-58abd18935b6 fwd="131.212.248.228" dyno=web.1 connect=1ms service=3ms status=200 bytes=2217 protocol=https
+2021-06-14T21:48:59.465224+00:00 app[web.1]: opening file /json/players.json
+2021-06-14T21:48:59.472634+00:00 heroku[router]: at=info method=GET path="/GetAllPlayersJson" host=gwl.herokuapp.com request_id=d0333fd4-d85e-46f9-adcc-6d1bd2a89432 fwd="131.212.248.228" dyno=web.1 connect=2ms service=8ms status=200 bytes=17899 protocol=https
+2021-06-14T21:48:59.523567+00:00 heroku[router]: at=info method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=5a97d146-ed53-44bb-ac1d-cba6a7b9313a fwd="131.212.248.228" dyno=web.1 connect=0ms service=1ms status=304 bytes=237 protocol=https
+2021-06-14T21:49:00.004416+00:00 app[web.1]: time is 14-06-2021 16:49:00
+2021-06-14T21:49:00.005269+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T21:49:00.227516+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:49:29.000000+00:00 app[api]: Build started by user fran0871@umn.edu
+2021-06-14T21:49:30.025451+00:00 app[web.1]: time is 14-06-2021 16:49:30
+2021-06-14T21:49:30.025603+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 5
+2021-06-14T21:49:30.305433+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:49:30.313544+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:49:30.313692+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:49:30.313918+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:49:30.314035+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:49:30.314107+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:49:30.314188+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:49:30.314247+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:49:30.314309+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:49:30.314376+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:49:30.314472+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:49:30.314542+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:49:30.314601+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:49:30.314674+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:49:47.000000+00:00 app[api]: Build started by user fran0871@umn.edu
+2021-06-14T21:49:50.628805+00:00 app[api]: Deploy ca725603 by user fran0871@umn.edu
+2021-06-14T21:49:50.628805+00:00 app[api]: Release v35 created by user fran0871@umn.edu
+2021-06-14T21:49:50.889935+00:00 heroku[web.1]: Restarting
+2021-06-14T21:49:50.891930+00:00 heroku[web.1]: State changed from up to starting
+2021-06-14T21:49:51.859226+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-14T21:49:52.000000+00:00 app[api]: Build succeeded
+2021-06-14T21:49:52.001117+00:00 heroku[web.1]: Process exited with status 143
+2021-06-14T21:49:54.849524+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:50:00.065321+00:00 app[web.1]: 
+2021-06-14T21:50:00.065344+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:50:00.065344+00:00 app[web.1]: > node index.js
+2021-06-14T21:50:00.065344+00:00 app[web.1]: 
+2021-06-14T21:50:00.950430+00:00 app[web.1]: Mon, 14 Jun 2021 21:50:00 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T21:50:00.951407+00:00 app[web.1]: Mon, 14 Jun 2021 21:50:00 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:50:00.957481+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:50:01.013594+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:50:01.040885+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:50:01.056954+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:50:01.391870+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:50:01.405887+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:50:01.428730+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:50:01.428973+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:50:01.429121+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:50:01.429254+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:50:01.429388+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:50:01.429535+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:50:01.429680+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:50:01.429820+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:50:01.429947+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:50:01.430072+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:50:01.430210+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:50:01.430339+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:50:01.430463+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:50:01.485649+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:50:09.402252+00:00 app[api]: Deploy ca725603 by user fran0871@umn.edu
+2021-06-14T21:50:09.402252+00:00 app[api]: Release v36 created by user fran0871@umn.edu
+2021-06-14T21:50:10.588824+00:00 heroku[web.1]: Restarting
+2021-06-14T21:50:10.590896+00:00 heroku[web.1]: State changed from up to starting
+2021-06-14T21:50:11.000000+00:00 app[api]: Build succeeded
+2021-06-14T21:50:11.560612+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-14T21:50:11.674838+00:00 heroku[web.1]: Process exited with status 143
+2021-06-14T21:50:15.781497+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:50:19.988500+00:00 app[web.1]: 
+2021-06-14T21:50:19.988541+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:50:19.988541+00:00 app[web.1]: > node index.js
+2021-06-14T21:50:19.988542+00:00 app[web.1]: 
+2021-06-14T21:50:21.612452+00:00 app[web.1]: Mon, 14 Jun 2021 21:50:21 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T21:50:21.614706+00:00 app[web.1]: Mon, 14 Jun 2021 21:50:21 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:50:21.624535+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:50:21.836573+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:50:21.916703+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:50:21.943602+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:50:21.970835+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:50:22.504649+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:50:22.562338+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:50:22.562470+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:50:22.567550+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:50:22.567785+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:50:22.567982+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:50:22.568215+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:50:22.568420+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:50:22.568627+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:50:22.568827+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:50:22.569011+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:50:22.569190+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:50:22.569391+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:50:22.569583+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:50:22.569992+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:50:25.034631+00:00 heroku[router]: at=info method=GET path="/" host=gwl.herokuapp.com request_id=e9cb08b2-38f6-4067-8792-4fac44dcab08 fwd="131.212.248.228" dyno=web.1 connect=0ms service=56ms status=302 bytes=249 protocol=https
+2021-06-14T21:50:25.192000+00:00 heroku[router]: at=info method=GET path="/Home/" host=gwl.herokuapp.com request_id=9ba9873e-4a05-4cba-8709-5b7110afd0c5 fwd="131.212.248.228" dyno=web.1 connect=0ms service=31ms status=200 bytes=6327 protocol=https
+2021-06-14T21:50:25.298176+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=c73e366c-b4c5-4381-b434-2149e5251333 fwd="131.212.248.228" dyno=web.1 connect=0ms service=4ms status=200 bytes=3032 protocol=https
+2021-06-14T21:50:25.349980+00:00 heroku[router]: at=info method=GET path="/css/homepage.css" host=gwl.herokuapp.com request_id=d356655a-0e5c-4616-8a7f-456642ccd1b3 fwd="131.212.248.228" dyno=web.1 connect=5ms service=6ms status=200 bytes=2205 protocol=https
+2021-06-14T21:50:25.373742+00:00 heroku[router]: at=info method=GET path="/css/schedule.css" host=gwl.herokuapp.com request_id=3afa7cbd-2aba-4221-b0c5-1f296fbae9ad fwd="131.212.248.228" dyno=web.1 connect=1ms service=5ms status=200 bytes=2199 protocol=https
+2021-06-14T21:50:25.381583+00:00 heroku[router]: at=info method=GET path="/js/schedule-page.js" host=gwl.herokuapp.com request_id=e654e23c-139e-42a2-a97a-504e55a6276f fwd="131.212.248.228" dyno=web.1 connect=2ms service=8ms status=200 bytes=12115 protocol=https
+2021-06-14T21:50:25.438793+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=b6f08471-a9c9-46f4-bc4e-e36312dde763 fwd="131.212.248.228" dyno=web.1 connect=1ms service=18ms status=200 bytes=142751 protocol=https
+2021-06-14T21:50:25.486682+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=263c20f8-55db-4d76-a423-4c6792df6fb4 fwd="131.212.248.228" dyno=web.1 connect=0ms service=34ms status=200 bytes=116920 protocol=https
+2021-06-14T21:50:25.498736+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=d5c24e76-0a4a-4c15-91c4-e3e5af00815f fwd="131.212.248.228" dyno=web.1 connect=1ms service=43ms status=200 bytes=165943 protocol=https
+2021-06-14T21:50:25.502639+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=c4791b94-b781-4ba2-b9b2-9c96bff3fcc0 fwd="131.212.248.228" dyno=web.1 connect=1ms service=44ms status=200 bytes=184122 protocol=https
+2021-06-14T21:50:25.541490+00:00 app[web.1]: opening file /json/blog.json
+2021-06-14T21:50:25.552117+00:00 app[web.1]: /app/index.js:212
+2021-06-14T21:50:25.552119+00:00 app[web.1]: if(err) throw err;
+2021-06-14T21:50:25.552119+00:00 app[web.1]: ^
+2021-06-14T21:50:25.552120+00:00 app[web.1]: 
+2021-06-14T21:50:25.552121+00:00 app[web.1]: [Error: ENOENT: no such file or directory, open '/app/json/blog.json'] {
+2021-06-14T21:50:25.552121+00:00 app[web.1]: errno: -2,
+2021-06-14T21:50:25.552121+00:00 app[web.1]: code: 'ENOENT',
+2021-06-14T21:50:25.552122+00:00 app[web.1]: syscall: 'open',
+2021-06-14T21:50:25.552123+00:00 app[web.1]: path: '/app/json/blog.json'
+2021-06-14T21:50:25.552123+00:00 app[web.1]: }
+2021-06-14T21:50:25.591147+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=114dfe1a-9d19-4b45-8c3c-b1335e69bf22 fwd="131.212.248.228" dyno=web.1 connect=1ms service=42ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:25.591310+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/BlogBlurbs" host=gwl.herokuapp.com request_id=2ce4dd20-fadb-44ff-bf59-8fd39c04496a fwd="131.212.248.228" dyno=web.1 connect=1ms service=55ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:25.591493+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=1db49658-59cb-4faf-b3d8-592b66e93868 fwd="131.212.248.228" dyno=web.1 connect=1ms service=5ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:25.621146+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-14T21:50:25.621948+00:00 app[web.1]: npm ERR! errno 1
+2021-06-14T21:50:25.639335+00:00 app[web.1]: npm ERR! gwl@1.0.0 start: `node index.js`
+2021-06-14T21:50:25.639654+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-14T21:50:25.640008+00:00 app[web.1]: npm ERR!
+2021-06-14T21:50:25.640262+00:00 app[web.1]: npm ERR! Failed at the gwl@1.0.0 start script.
+2021-06-14T21:50:25.640461+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-06-14T21:50:25.680033+00:00 app[web.1]: 
+2021-06-14T21:50:25.684293+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-06-14T21:50:25.684640+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-06-14T21_50_25_641Z-debug.log
+2021-06-14T21:50:25.833301+00:00 heroku[web.1]: Process exited with status 1
+2021-06-14T21:50:26.164210+00:00 heroku[web.1]: State changed from up to crashed
+2021-06-14T21:50:26.189265+00:00 heroku[web.1]: State changed from crashed to starting
+2021-06-14T21:50:26.644172+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=eb160a9a-6988-46a0-bb84-6236a74b178f fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:50:26.709358+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=113cc8ff-e125-4504-84ab-0a2407ed78f9 fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:50:30.300017+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:50:33.300113+00:00 app[web.1]: 
+2021-06-14T21:50:33.300135+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:50:33.300135+00:00 app[web.1]: > node index.js
+2021-06-14T21:50:33.300136+00:00 app[web.1]: 
+2021-06-14T21:50:34.120279+00:00 app[web.1]: Mon, 14 Jun 2021 21:50:34 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T21:50:34.121186+00:00 app[web.1]: Mon, 14 Jun 2021 21:50:34 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:50:34.126835+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:50:34.179028+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:50:34.211556+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:50:34.222884+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:50:34.588464+00:00 app[web.1]: saved file /json/players.json
+2021-06-14T21:50:34.595889+00:00 app[web.1]: Pulled an empty HeroStats!
+2021-06-14T21:50:34.611371+00:00 app[web.1]: saved file /json/matchlog.json
+2021-06-14T21:50:34.611452+00:00 app[web.1]: saved file /json/herostats.json
+2021-06-14T21:50:34.611545+00:00 app[web.1]: saved file /json/standings.json
+2021-06-14T21:50:34.611608+00:00 app[web.1]: saved file /json/DjiboutiShorts.json
+2021-06-14T21:50:34.611804+00:00 app[web.1]: saved file /json/LondonLumberjacks.json
+2021-06-14T21:50:34.611829+00:00 app[web.1]: saved file /json/OceaniaOtters.json
+2021-06-14T21:50:34.611937+00:00 app[web.1]: saved file /json/PlymouthPMAs.json
+2021-06-14T21:50:34.612046+00:00 app[web.1]: saved file /json/TheTenochitlanTacos.json
+2021-06-14T21:50:34.612130+00:00 app[web.1]: saved file /json/BendigoBilbies.json
+2021-06-14T21:50:34.612185+00:00 app[web.1]: saved file /json/GamingGolems.json
+2021-06-14T21:50:34.612260+00:00 app[web.1]: saved file /json/RialtoRincewinds.json
+2021-06-14T21:50:34.612318+00:00 app[web.1]: saved file /json/GalapagosGremlins.json
+2021-06-14T21:50:34.612977+00:00 app[web.1]: saved file /json/WakandaBBQs.json
+2021-06-14T21:50:34.623796+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:50:35.678007+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=fc8da3c8-f00d-4b31-88a8-2787df7a4746 fwd="131.212.248.228" dyno=web.1 connect=0ms service=27ms status=200 bytes=236991 protocol=https
+2021-06-14T21:50:37.640350+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=7b3c86c4-85e2-40d0-a494-ba1a0e7bacc5 fwd="131.212.248.228" dyno=web.1 connect=1ms service=12ms status=200 bytes=244848 protocol=https
+2021-06-14T21:50:37.724557+00:00 heroku[router]: at=info method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=53de5605-8f36-4947-ac15-c011d06eb369 fwd="131.212.248.228" dyno=web.1 connect=1ms service=4ms status=200 bytes=81806 protocol=https
+2021-06-14T21:50:37.841012+00:00 app[web.1]: opening file /json/matchlog.json
+2021-06-14T21:50:37.849439+00:00 heroku[router]: at=info method=GET path="/api/matchlog" host=gwl.herokuapp.com request_id=401b93c6-e979-4f39-be35-e90767322f66 fwd="131.212.248.228" dyno=web.1 connect=0ms service=9ms status=200 bytes=49825 protocol=https
+2021-06-14T21:50:38.220566+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=507bbace-5339-4c2f-b973-ae2aadf0cd29 fwd="131.212.248.228" dyno=web.1 connect=0ms service=5ms status=200 bytes=116721 protocol=https
+2021-06-14T21:50:38.293796+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=c16d99e2-765b-41d1-bce3-8b8d59a5c654 fwd="131.212.248.228" dyno=web.1 connect=1ms service=7ms status=200 bytes=115164 protocol=https
+2021-06-14T21:50:38.327915+00:00 heroku[router]: at=info method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=b3992514-398f-4086-a58b-ff93a70b66c0 fwd="131.212.248.228" dyno=web.1 connect=0ms service=7ms status=200 bytes=201165 protocol=https
+2021-06-14T21:50:52.045022+00:00 heroku[router]: at=info method=GET path="/Home/" host=gwl.herokuapp.com request_id=a821485e-69cf-4c3d-bc9d-f625b61bc841 fwd="131.212.248.228" dyno=web.1 connect=0ms service=5ms status=304 bytes=238 protocol=https
+2021-06-14T21:50:52.156912+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=a751893d-3fb5-4786-8c1c-383e6077e4f7 fwd="131.212.248.228" dyno=web.1 connect=0ms service=6ms status=304 bytes=237 protocol=https
+2021-06-14T21:50:52.158359+00:00 heroku[router]: at=info method=GET path="/js/schedule-page.js" host=gwl.herokuapp.com request_id=0140755f-fd0a-40c9-966e-eceb5ee2dfb3 fwd="131.212.248.228" dyno=web.1 connect=0ms service=6ms status=304 bytes=238 protocol=https
+2021-06-14T21:50:52.159384+00:00 heroku[router]: at=info method=GET path="/css/schedule.css" host=gwl.herokuapp.com request_id=b6dd3e33-6511-438f-adb0-7d62674da293 fwd="131.212.248.228" dyno=web.1 connect=3ms service=6ms status=304 bytes=237 protocol=https
+2021-06-14T21:50:52.160092+00:00 heroku[router]: at=info method=GET path="/css/homepage.css" host=gwl.herokuapp.com request_id=c68747af-57bf-4a19-aa80-996ec870d655 fwd="131.212.248.228" dyno=web.1 connect=0ms service=6ms status=304 bytes=237 protocol=https
+2021-06-14T21:50:52.210661+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=2d78b859-53ff-4e8d-aa59-f6360baf3a9a fwd="131.212.248.228" dyno=web.1 connect=1ms service=3ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.215393+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=4e353cde-de55-4106-be77-a860622093c7 fwd="131.212.248.228" dyno=web.1 connect=0ms service=4ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.224926+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=4c99b359-fa1a-4b7c-b789-c8774c0c4064 fwd="131.212.248.228" dyno=web.1 connect=0ms service=1ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.227211+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=ae87bc5c-863a-4e91-ab85-07bca545a04b fwd="131.212.248.228" dyno=web.1 connect=0ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.255035+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=4b923b40-88f0-4ea9-98e9-2e6d1e102e49 fwd="131.212.248.228" dyno=web.1 connect=1ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.256890+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=c54d825b-f54c-4d88-9034-3213ccb78d7d fwd="131.212.248.228" dyno=web.1 connect=0ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.266032+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=fa83107c-c49e-4b8e-a547-482cf22388f2 fwd="131.212.248.228" dyno=web.1 connect=1ms service=1ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.268212+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=de4c0002-bcde-4bfe-bdc3-527fd81760e9 fwd="131.212.248.228" dyno=web.1 connect=0ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T21:50:52.294195+00:00 app[web.1]: opening file /json/blog.json
+2021-06-14T21:50:52.299504+00:00 app[web.1]: /app/index.js:212
+2021-06-14T21:50:52.299506+00:00 app[web.1]: if(err) throw err;
+2021-06-14T21:50:52.299506+00:00 app[web.1]: ^
+2021-06-14T21:50:52.299507+00:00 app[web.1]: 
+2021-06-14T21:50:52.299508+00:00 app[web.1]: [Error: ENOENT: no such file or directory, open '/app/json/blog.json'] {
+2021-06-14T21:50:52.299508+00:00 app[web.1]: errno: -2,
+2021-06-14T21:50:52.299509+00:00 app[web.1]: code: 'ENOENT',
+2021-06-14T21:50:52.299509+00:00 app[web.1]: syscall: 'open',
+2021-06-14T21:50:52.299509+00:00 app[web.1]: path: '/app/json/blog.json'
+2021-06-14T21:50:52.299510+00:00 app[web.1]: }
+2021-06-14T21:50:52.308740+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=4162b3d9-abbe-49ad-9994-31efa5153d4d fwd="131.212.248.228" dyno=web.1 connect=1ms service=5ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:52.309990+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=7deeb0cb-fd13-4124-b742-3b602a88c684 fwd="131.212.248.228" dyno=web.1 connect=1ms service=6ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:52.310404+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=7c21afc2-5a29-4ea7-b8d2-d3f8888c2cd5 fwd="131.212.248.228" dyno=web.1 connect=0ms service=9ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:52.312266+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/BlogBlurbs" host=gwl.herokuapp.com request_id=899d82db-2eb1-48cf-9f80-a4dc4dfe1564 fwd="131.212.248.228" dyno=web.1 connect=1ms service=16ms status=503 bytes=0 protocol=https
+2021-06-14T21:50:52.315879+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-14T21:50:52.316169+00:00 app[web.1]: npm ERR! errno 1
+2021-06-14T21:50:52.323210+00:00 app[web.1]: npm ERR! gwl@1.0.0 start: `node index.js`
+2021-06-14T21:50:52.323325+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-14T21:50:52.323441+00:00 app[web.1]: npm ERR!
+2021-06-14T21:50:52.323512+00:00 app[web.1]: npm ERR! Failed at the gwl@1.0.0 start script.
+2021-06-14T21:50:52.323572+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-06-14T21:50:52.332837+00:00 app[web.1]: 
+2021-06-14T21:50:52.332962+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-06-14T21:50:52.333013+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-06-14T21_50_52_324Z-debug.log
+2021-06-14T21:50:52.410963+00:00 heroku[web.1]: Process exited with status 1
+2021-06-14T21:50:52.478802+00:00 heroku[web.1]: State changed from up to crashed
+2021-06-14T21:50:53.358516+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api/matchlog" host=gwl.herokuapp.com request_id=d5d4f69c-c050-4332-ad58-f971efcfb313 fwd="131.212.248.228" dyno=web.1 connect=0ms service= status=503 bytes= protocol=https
+2021-06-14T21:50:53.359806+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=da56b33a-9626-486e-a8c9-6dd20f5c738b fwd="131.212.248.228" dyno=web.1 connect=0ms service= status=503 bytes= protocol=https
+2021-06-14T21:50:53.473411+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api/matchlog" host=gwl.herokuapp.com request_id=7598fff9-1ffa-4790-88fc-65aa5dd0a92d fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:51:01.765362+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/Home/" host=gwl.herokuapp.com request_id=3f574d6b-cd2b-4e79-8bed-db224d9c151b fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:51:02.039935+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=be8e583e-937f-40f5-8a69-3d101f7e6fec fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:51:36.003356+00:00 app[api]: Starting process with command `heroku logs --tail` by user fran0871@umn.edu
+2021-06-14T21:51:39.685402+00:00 heroku[run.9847]: State changed from starting to up
+2021-06-14T21:51:39.932479+00:00 heroku[run.9847]: Awaiting client
+2021-06-14T21:51:39.949330+00:00 heroku[run.9847]: Starting process with command `heroku logs --tail`
+2021-06-14T21:51:44.151517+00:00 heroku[run.9847]: Client connection closed. Sending SIGHUP to all processes
+2021-06-14T21:51:44.680068+00:00 heroku[run.9847]: Process exited with status 127
+2021-06-14T21:51:44.859739+00:00 heroku[run.9847]: State changed from up to complete
+2021-06-14T21:52:16.303528+00:00 app[api]: Set GOOGLE_PRIVATE_KEY config vars by user fran0871@umn.edu
+2021-06-14T21:52:16.303528+00:00 app[api]: Release v37 created by user fran0871@umn.edu
+2021-06-14T21:52:16.751514+00:00 heroku[web.1]: State changed from crashed to starting
+2021-06-14T21:52:19.713287+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:52:22.543474+00:00 app[web.1]: 
+2021-06-14T21:52:22.543500+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:52:22.543501+00:00 app[web.1]: > node index.js
+2021-06-14T21:52:22.543501+00:00 app[web.1]: 
+2021-06-14T21:52:23.537060+00:00 app[web.1]: Mon, 14 Jun 2021 21:52:23 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T21:52:23.538404+00:00 app[web.1]: Mon, 14 Jun 2021 21:52:23 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:52:23.546877+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:52:23.568343+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:52:23.598903+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:52:23.609389+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:52:23.617632+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:23.617813+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:23.617919+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:24.066541+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:52:30.011265+00:00 app[web.1]: time is 14-06-2021 16:52:30
+2021-06-14T21:52:30.011397+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T21:52:30.013044+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:31.464288+00:00 app[api]: Release v38 created by user fran0871@umn.edu
+2021-06-14T21:52:31.464288+00:00 app[api]: Set GOOGLE_CLIENT_EMAIL config vars by user fran0871@umn.edu
+2021-06-14T21:52:32.687995+00:00 heroku[web.1]: Restarting
+2021-06-14T21:52:32.714653+00:00 heroku[web.1]: State changed from up to starting
+2021-06-14T21:52:33.697840+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2021-06-14T21:52:33.817295+00:00 heroku[web.1]: Process exited with status 143
+2021-06-14T21:52:37.347291+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:52:39.000000+00:00 app[api]: Build started by user fran0871@umn.edu
+2021-06-14T21:52:40.107202+00:00 app[web.1]: 
+2021-06-14T21:52:40.107223+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:52:40.107224+00:00 app[web.1]: > node index.js
+2021-06-14T21:52:40.107224+00:00 app[web.1]: 
+2021-06-14T21:52:41.095353+00:00 app[web.1]: Mon, 14 Jun 2021 21:52:41 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T21:52:41.096467+00:00 app[web.1]: Mon, 14 Jun 2021 21:52:41 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:52:41.103749+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:52:41.120957+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:52:41.148960+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:52:41.157458+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:52:41.167216+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:41.167407+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:41.167564+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:52:41.299167+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:52:55.757894+00:00 heroku[router]: at=info method=GET path="/Home/" host=gwl.herokuapp.com request_id=9fd52f52-1c30-4db4-835e-0f80b4d8c02a fwd="131.212.248.228" dyno=web.1 connect=1ms service=22ms status=200 bytes=6327 protocol=https
+2021-06-14T21:52:55.891756+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=3129b943-28c2-4330-bd30-abafd9af5afb fwd="131.212.248.228" dyno=web.1 connect=1ms service=6ms status=304 bytes=237 protocol=https
+2021-06-14T21:52:55.937341+00:00 heroku[router]: at=info method=GET path="/css/homepage.css" host=gwl.herokuapp.com request_id=fa68c6b6-134f-4689-ad80-7fc429793315 fwd="131.212.248.228" dyno=web.1 connect=1ms service=7ms status=304 bytes=237 protocol=https
+2021-06-14T21:52:55.967851+00:00 heroku[router]: at=info method=GET path="/css/schedule.css" host=gwl.herokuapp.com request_id=a816022e-e5e4-4e7d-b747-317d2bd9e0c0 fwd="131.212.248.228" dyno=web.1 connect=0ms service=8ms status=304 bytes=237 protocol=https
+2021-06-14T21:52:55.973536+00:00 heroku[router]: at=info method=GET path="/js/schedule-page.js" host=gwl.herokuapp.com request_id=78d17393-4922-4db8-b823-53208eca8e62 fwd="131.212.248.228" dyno=web.1 connect=1ms service=12ms status=304 bytes=238 protocol=https
+2021-06-14T21:52:56.017237+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=84d59f43-aabe-4c66-a4d9-132a07cc29eb fwd="131.212.248.228" dyno=web.1 connect=1ms service=4ms status=304 bytes=239 protocol=https
+2021-06-14T21:52:56.035578+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=451bb192-fffd-4552-a707-7045a63ddefc fwd="131.212.248.228" dyno=web.1 connect=1ms service=9ms status=304 bytes=239 protocol=https
+2021-06-14T21:52:56.038302+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=e4639742-4289-43b8-97c0-5d30b447ba97 fwd="131.212.248.228" dyno=web.1 connect=1ms service=10ms status=304 bytes=239 protocol=https
+2021-06-14T21:52:56.055227+00:00 heroku[router]: at=info method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=97b6a22a-1c9e-442d-9563-8af84bf57f28 fwd="131.212.248.228" dyno=web.1 connect=1ms service=24ms status=200 bytes=201165 protocol=https
+2021-06-14T21:52:56.059896+00:00 app[web.1]: opening file /json/blog.json
+2021-06-14T21:52:56.065946+00:00 app[web.1]: /app/index.js:212
+2021-06-14T21:52:56.065947+00:00 app[web.1]: if(err) throw err;
+2021-06-14T21:52:56.065948+00:00 app[web.1]: ^
+2021-06-14T21:52:56.065949+00:00 app[web.1]: 
+2021-06-14T21:52:56.065950+00:00 app[web.1]: [Error: ENOENT: no such file or directory, open '/app/json/blog.json'] {
+2021-06-14T21:52:56.065950+00:00 app[web.1]: errno: -2,
+2021-06-14T21:52:56.065950+00:00 app[web.1]: code: 'ENOENT',
+2021-06-14T21:52:56.065951+00:00 app[web.1]: syscall: 'open',
+2021-06-14T21:52:56.065951+00:00 app[web.1]: path: '/app/json/blog.json'
+2021-06-14T21:52:56.065951+00:00 app[web.1]: }
+2021-06-14T21:52:56.074723+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/BlogBlurbs" host=gwl.herokuapp.com request_id=6660151b-7981-4cf5-b388-6ec59c3c85a2 fwd="131.212.248.228" dyno=web.1 connect=0ms service=19ms status=503 bytes=0 protocol=https
+2021-06-14T21:52:56.085140+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-14T21:52:56.085586+00:00 app[web.1]: npm ERR! errno 1
+2021-06-14T21:52:56.093942+00:00 app[web.1]: npm ERR! gwl@1.0.0 start: `node index.js`
+2021-06-14T21:52:56.094145+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-14T21:52:56.094362+00:00 app[web.1]: npm ERR!
+2021-06-14T21:52:56.094544+00:00 app[web.1]: npm ERR! Failed at the gwl@1.0.0 start script.
+2021-06-14T21:52:56.094717+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-06-14T21:52:57.151539+00:00 app[web.1]: 
+2021-06-14T21:52:57.152058+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-06-14T21:52:57.152335+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-06-14T21_52_56_095Z-debug.log
+2021-06-14T21:52:57.202247+00:00 heroku[web.1]: Process exited with status 1
+2021-06-14T21:52:57.271985+00:00 heroku[web.1]: State changed from up to crashed
+2021-06-14T21:52:58.089547+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=9620f823-dcbf-4362-aab7-619e6f57c240 fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:52:58.111397+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=04d8d742-490a-4dfe-b5ba-24008c1c9888 fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:52:58.112770+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=a06fbb91-a4bd-4fd0-9218-d42a7b7f2cbc fwd="131.212.248.228" dyno=web.1 connect=0ms service= status=503 bytes= protocol=https
+2021-06-14T21:52:58.192009+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=a575c339-8d55-484e-b1ce-7441f709cc78 fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:52:58.203334+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=864b4b07-de27-4b9c-9e33-1dfc5efbed65 fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:52:59.090324+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=c425bce0-8b47-4056-bd05-86aafadb5d7e fwd="131.212.248.228" dyno=web.1 connect=2ms service= status=503 bytes= protocol=https
+2021-06-14T21:52:59.213094+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=9f58aafc-c3e7-458f-ad80-988c30d0ee6e fwd="131.212.248.228" dyno=web.1 connect=2ms service= status=503 bytes= protocol=https
+2021-06-14T21:52:59.334443+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api/matchlog" host=gwl.herokuapp.com request_id=64716970-16da-4697-9dab-553e825ea4a5 fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:52:59.341429+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=dce20b70-9c36-49c4-b1d5-b4af1634677c fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:53:02.394425+00:00 app[api]: Release v39 created by user fran0871@umn.edu
+2021-06-14T21:53:02.394425+00:00 app[api]: Deploy ca725603 by user fran0871@umn.edu
+2021-06-14T21:53:02.673597+00:00 heroku[web.1]: State changed from crashed to starting
+2021-06-14T21:53:04.000000+00:00 app[api]: Build succeeded
+2021-06-14T21:53:05.892865+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T21:53:08.638267+00:00 app[web.1]: 
+2021-06-14T21:53:08.638291+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T21:53:08.638292+00:00 app[web.1]: > node index.js
+2021-06-14T21:53:08.638292+00:00 app[web.1]: 
+2021-06-14T21:53:09.360851+00:00 app[web.1]: Mon, 14 Jun 2021 21:53:09 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T21:53:09.362012+00:00 app[web.1]: Mon, 14 Jun 2021 21:53:09 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T21:53:09.367617+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T21:53:09.380627+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T21:53:09.398893+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T21:53:09.405636+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T21:53:09.410627+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:53:09.410753+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:53:09.410846+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T21:53:09.924524+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T21:53:11.208949+00:00 heroku[router]: at=info method=GET path="/Home/" host=gwl.herokuapp.com request_id=5a250b8e-a45c-4bdc-95a9-160a07d3bd58 fwd="131.212.248.228" dyno=web.1 connect=1ms service=30ms status=304 bytes=238 protocol=https
+2021-06-14T21:53:11.286060+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=5f6dda13-90db-4a6f-83f8-7e77db382600 fwd="131.212.248.228" dyno=web.1 connect=1ms service=9ms status=304 bytes=237 protocol=https
+2021-06-14T21:53:11.328974+00:00 heroku[router]: at=info method=GET path="/css/homepage.css" host=gwl.herokuapp.com request_id=d62a9034-550f-4689-9bc6-7e2c5ebbd34b fwd="131.212.248.228" dyno=web.1 connect=1ms service=4ms status=304 bytes=237 protocol=https
+2021-06-14T21:53:11.356672+00:00 heroku[router]: at=info method=GET path="/css/schedule.css" host=gwl.herokuapp.com request_id=1a0b4876-5aca-4fed-a467-5b78514b6622 fwd="131.212.248.228" dyno=web.1 connect=1ms service=6ms status=304 bytes=237 protocol=https
+2021-06-14T21:53:11.358518+00:00 heroku[router]: at=info method=GET path="/js/schedule-page.js" host=gwl.herokuapp.com request_id=8ed6a7a5-e961-406a-9b8c-55c72b05d7d2 fwd="131.212.248.228" dyno=web.1 connect=0ms service=9ms status=304 bytes=238 protocol=https
+2021-06-14T21:53:11.401207+00:00 heroku[router]: at=info method=GET path="/images/djibouti-shorts.png" host=gwl.herokuapp.com request_id=7c9cb171-35d8-498b-b57e-abe0df98e348 fwd="131.212.248.228" dyno=web.1 connect=1ms service=3ms status=304 bytes=239 protocol=https
+2021-06-14T21:53:11.405266+00:00 heroku[router]: at=info method=GET path="/images/london-lumberjack-slams.png" host=gwl.herokuapp.com request_id=3a1b2624-0b0f-4c3c-a43d-6102cefb6015 fwd="131.212.248.228" dyno=web.1 connect=0ms service=2ms status=304 bytes=239 protocol=https
+2021-06-14T21:53:11.411126+00:00 heroku[router]: at=info method=GET path="/images/oceania-otters.png" host=gwl.herokuapp.com request_id=a5ae608c-18c8-4335-9358-fae2f40560c8 fwd="131.212.248.228" dyno=web.1 connect=1ms service=4ms status=304 bytes=239 protocol=https
+2021-06-14T21:53:11.422125+00:00 heroku[router]: at=info method=GET path="/images/plymouth-pmas.png" host=gwl.herokuapp.com request_id=69722759-24ba-40b4-9a8a-19a7ea7a509c fwd="131.212.248.228" dyno=web.1 connect=0ms service=15ms status=200 bytes=165943 protocol=https
+2021-06-14T21:53:11.462072+00:00 heroku[router]: at=info method=GET path="/images/gaming-golems.png" host=gwl.herokuapp.com request_id=61abb255-d477-4aea-8c2f-50008389bb51 fwd="131.212.248.228" dyno=web.1 connect=1ms service=21ms status=200 bytes=236991 protocol=https
+2021-06-14T21:53:11.481345+00:00 heroku[router]: at=info method=GET path="/images/rialto-rincewinds.png" host=gwl.herokuapp.com request_id=99f670eb-9744-4e30-a58b-72891fb7e2e5 fwd="131.212.248.228" dyno=web.1 connect=1ms service=31ms status=200 bytes=115164 protocol=https
+2021-06-14T21:53:11.482417+00:00 heroku[router]: at=info method=GET path="/images/galapagos-gremlins.png" host=gwl.herokuapp.com request_id=97060951-32c6-477f-ad6c-cdab43053f06 fwd="131.212.248.228" dyno=web.1 connect=0ms service=34ms status=200 bytes=244848 protocol=https
+2021-06-14T21:53:11.498564+00:00 heroku[router]: at=info method=GET path="/images/wakanda-bbqs.png" host=gwl.herokuapp.com request_id=644b7df0-abfb-497d-9643-851f3a45e57c fwd="131.212.248.228" dyno=web.1 connect=1ms service=12ms status=200 bytes=116721 protocol=https
+2021-06-14T21:53:11.578698+00:00 app[web.1]: opening file /json/blog.json
+2021-06-14T21:53:11.586607+00:00 app[web.1]: /app/index.js:212
+2021-06-14T21:53:11.586609+00:00 app[web.1]: if(err) throw err;
+2021-06-14T21:53:11.586610+00:00 app[web.1]: ^
+2021-06-14T21:53:11.586610+00:00 app[web.1]: 
+2021-06-14T21:53:11.586611+00:00 app[web.1]: [Error: ENOENT: no such file or directory, open '/app/json/blog.json'] {
+2021-06-14T21:53:11.586612+00:00 app[web.1]: errno: -2,
+2021-06-14T21:53:11.586612+00:00 app[web.1]: code: 'ENOENT',
+2021-06-14T21:53:11.586612+00:00 app[web.1]: syscall: 'open',
+2021-06-14T21:53:11.586613+00:00 app[web.1]: path: '/app/json/blog.json'
+2021-06-14T21:53:11.586613+00:00 app[web.1]: }
+2021-06-14T21:53:11.596109+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/api/BlogBlurbs" host=gwl.herokuapp.com request_id=e3ad4978-1ed0-408b-b293-01496bf554d4 fwd="131.212.248.228" dyno=web.1 connect=0ms service=18ms status=503 bytes=0 protocol=https
+2021-06-14T21:53:11.610476+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-14T21:53:11.611014+00:00 app[web.1]: npm ERR! errno 1
+2021-06-14T21:53:11.620719+00:00 app[web.1]: npm ERR! gwl@1.0.0 start: `node index.js`
+2021-06-14T21:53:11.620876+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-14T21:53:11.621042+00:00 app[web.1]: npm ERR!
+2021-06-14T21:53:11.621155+00:00 app[web.1]: npm ERR! Failed at the gwl@1.0.0 start script.
+2021-06-14T21:53:11.621251+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-06-14T21:53:11.630504+00:00 app[web.1]: 
+2021-06-14T21:53:11.630788+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-06-14T21:53:11.630819+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-06-14T21_53_11_621Z-debug.log
+2021-06-14T21:53:11.712130+00:00 heroku[web.1]: Process exited with status 1
+2021-06-14T21:53:11.787326+00:00 heroku[web.1]: State changed from up to crashed
+2021-06-14T21:53:12.620299+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=c564ea76-0a19-4cd5-a1c4-50884d6932e2 fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:53:12.647438+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/the-tenochitlan-tacos.png" host=gwl.herokuapp.com request_id=ae57bf31-22cf-4d77-afe3-69dc264b8f29 fwd="131.212.248.228" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T21:53:13.642823+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/images/bendigo-bilbies.png" host=gwl.herokuapp.com request_id=08dfaeea-3c53-4c76-8614-2a57286d941c fwd="131.212.248.228" dyno=web.1 connect=2ms service= status=503 bytes= protocol=https
+2021-06-14T21:53:13.683596+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/api/matchlog" host=gwl.herokuapp.com request_id=8f533718-1c74-4230-a23c-921db7163b2d fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:53:13.686965+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=004f6fff-4cc5-456b-9078-782d44357f03 fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:53:41.743436+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/Home/" host=gwl.herokuapp.com request_id=cbb53e42-eeb9-4d6f-a114-486e247a0ea8 fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:53:42.018777+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=409e6820-9df6-4406-ba8e-c27df5dbfc83 fwd="131.212.248.228" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T21:53:50.467134+00:00 app[api]: Starting process with command `heroku logs --tail` by user fran0871@umn.edu
+2021-06-14T21:53:54.305702+00:00 heroku[run.8152]: Awaiting client
+2021-06-14T21:53:54.306512+00:00 heroku[run.8152]: State changed from starting to up
+2021-06-14T21:53:54.336556+00:00 heroku[run.8152]: Starting process with command `heroku logs --tail`
+2021-06-14T21:53:58.717532+00:00 heroku[run.8152]: Process exited with status 127
+2021-06-14T21:53:58.773332+00:00 heroku[run.8152]: State changed from up to complete
+2021-06-14T21:54:09.745562+00:00 app[api]: Starting process with command `logs --tail` by user fran0871@umn.edu
+2021-06-14T21:54:14.838143+00:00 heroku[run.8384]: State changed from starting to up
+2021-06-14T21:54:15.181245+00:00 heroku[run.8384]: Awaiting client
+2021-06-14T21:54:15.211905+00:00 heroku[run.8384]: Starting process with command `logs --tail`
+2021-06-14T21:54:20.085904+00:00 heroku[run.8384]: Process exited with status 127
+2021-06-14T21:54:20.175380+00:00 heroku[run.8384]: State changed from up to complete
+2021-06-14T22:31:49.482252+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/Standings/" host=gwl.herokuapp.com request_id=8552bddd-b839-4382-8fc7-d58b58ce7b12 fwd="66.41.108.170" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T22:31:53.541777+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=4332902a-30ae-47e6-b6f4-ef72dd95d998 fwd="66.41.108.170" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T22:50:46.147950+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/Home/" host=gwl.herokuapp.com request_id=1b3cc842-ac4b-4804-8ea1-c972a271e21b fwd="24.179.134.159" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:06:53.763364+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=9d08ded4-d286-42e6-ab9d-ddfe3ef7eb83 fwd="68.47.77.93" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:06:54.175440+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=d5f15b4d-3b20-4482-896e-e914cf919e09 fwd="68.47.77.93" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:22:37.982599+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=498b834f-52ab-4d66-818c-2619fc7b826a fwd="173.31.208.147" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:22:38.214413+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/js/sortable-draft-table.js" host=gwl.herokuapp.com request_id=a2715839-69e9-43bb-9c05-8824ee98663c fwd="173.31.208.147" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:22:38.242156+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=39826f71-acaf-4182-a2a6-e5e602102b3e fwd="173.31.208.147" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:22:40.962242+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=12787ead-abad-4924-a792-011b7ef585b3 fwd="173.31.208.147" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:24:24.114159+00:00 heroku[web.1]: State changed from crashed to starting
+2021-06-14T23:24:29.331722+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T23:24:34.791211+00:00 app[web.1]: 
+2021-06-14T23:24:34.791229+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T23:24:34.791230+00:00 app[web.1]: > node index.js
+2021-06-14T23:24:34.791230+00:00 app[web.1]: 
+2021-06-14T23:24:36.587651+00:00 app[web.1]: Mon, 14 Jun 2021 23:24:36 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T23:24:36.588862+00:00 app[web.1]: Mon, 14 Jun 2021 23:24:36 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T23:24:36.600077+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T23:24:36.636974+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T23:24:36.666274+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T23:24:36.677022+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T23:24:36.683503+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:24:36.683698+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:24:36.683792+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:24:36.960254+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T23:25:00.016276+00:00 app[web.1]: time is 14-06-2021 18:25:00
+2021-06-14T23:25:00.017062+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:25:00.020596+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:25:30.032041+00:00 app[web.1]: time is 14-06-2021 18:25:30
+2021-06-14T23:25:30.032135+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 5
+2021-06-14T23:25:30.033645+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:26:00.033194+00:00 app[web.1]: time is 14-06-2021 18:26:00, adding 0to totals!
+2021-06-14T23:26:00.033413+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:26:00.035756+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:26:00.039771+00:00 app[web.1]: time is 14-06-2021 18:26:00
+2021-06-14T23:26:00.043597+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:26:00.045411+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:26:30.022850+00:00 app[web.1]: time is 14-06-2021 18:26:30
+2021-06-14T23:26:30.022938+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:26:30.024076+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:27:00.031118+00:00 app[web.1]: time is 14-06-2021 18:27:00
+2021-06-14T23:27:00.031873+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:27:00.033757+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:27:30.031013+00:00 app[web.1]: time is 14-06-2021 18:27:30
+2021-06-14T23:27:30.031026+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:27:30.032528+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:28:00.030946+00:00 app[web.1]: time is 14-06-2021 18:28:00, adding 0to totals!
+2021-06-14T23:28:00.031047+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:28:00.032182+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:28:00.037589+00:00 app[web.1]: time is 14-06-2021 18:28:00
+2021-06-14T23:28:00.038374+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:28:00.039478+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:28:30.014765+00:00 app[web.1]: time is 14-06-2021 18:28:30
+2021-06-14T23:28:30.014843+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:28:30.016043+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:29:00.030930+00:00 app[web.1]: time is 14-06-2021 18:29:00
+2021-06-14T23:29:00.031720+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:29:00.032920+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:29:30.030884+00:00 app[web.1]: time is 14-06-2021 18:29:30
+2021-06-14T23:29:30.030995+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:29:30.032685+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:30:00.031385+00:00 app[web.1]: time is 14-06-2021 18:30:00, adding 0to totals!
+2021-06-14T23:30:00.031535+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:30:00.032985+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:30:00.034824+00:00 app[web.1]: time is 14-06-2021 18:30:00
+2021-06-14T23:30:00.035492+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:30:00.036788+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:30:30.033780+00:00 app[web.1]: time is 14-06-2021 18:30:30
+2021-06-14T23:30:30.033887+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:30:30.035028+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:31:00.030570+00:00 app[web.1]: time is 14-06-2021 18:31:00
+2021-06-14T23:31:00.031206+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:31:00.032362+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:31:30.031913+00:00 app[web.1]: time is 14-06-2021 18:31:30
+2021-06-14T23:31:30.031993+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:31:30.033390+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:32:00.034234+00:00 app[web.1]: time is 14-06-2021 18:32:00, adding 0to totals!
+2021-06-14T23:32:00.034327+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:32:00.035719+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:32:00.038593+00:00 app[web.1]: time is 14-06-2021 18:32:00
+2021-06-14T23:32:00.041617+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:32:00.043817+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:32:30.031948+00:00 app[web.1]: time is 14-06-2021 18:32:30
+2021-06-14T23:32:30.032032+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:32:30.033636+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:33:00.031247+00:00 app[web.1]: time is 14-06-2021 18:33:00
+2021-06-14T23:33:00.032056+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:33:00.033888+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:33:30.033318+00:00 app[web.1]: time is 14-06-2021 18:33:30
+2021-06-14T23:33:30.033418+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:33:30.036040+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:34:00.031461+00:00 app[web.1]: time is 14-06-2021 18:34:00, adding 0to totals!
+2021-06-14T23:34:00.031591+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:34:00.033034+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:34:00.035269+00:00 app[web.1]: time is 14-06-2021 18:34:00
+2021-06-14T23:34:00.036083+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:34:00.037119+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:34:30.014609+00:00 app[web.1]: time is 14-06-2021 18:34:30
+2021-06-14T23:34:30.014661+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:34:30.015727+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:35:00.005593+00:00 app[web.1]: time is 14-06-2021 18:35:00
+2021-06-14T23:35:00.006299+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:35:00.007364+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:35:30.031097+00:00 app[web.1]: time is 14-06-2021 18:35:30
+2021-06-14T23:35:30.031183+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:35:30.035715+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:36:00.034773+00:00 app[web.1]: time is 14-06-2021 18:36:00, adding 0to totals!
+2021-06-14T23:36:00.034895+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:36:00.036371+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:36:00.037999+00:00 app[web.1]: time is 14-06-2021 18:36:00
+2021-06-14T23:36:00.038746+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:36:00.039965+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:36:30.030546+00:00 app[web.1]: time is 14-06-2021 18:36:30
+2021-06-14T23:36:30.030624+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:36:30.031754+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:37:00.011851+00:00 app[web.1]: time is 14-06-2021 18:37:00
+2021-06-14T23:37:00.012640+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:37:00.014151+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:37:30.031069+00:00 app[web.1]: time is 14-06-2021 18:37:30
+2021-06-14T23:37:30.031148+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:37:30.032567+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:38:00.034590+00:00 app[web.1]: time is 14-06-2021 18:38:00
+2021-06-14T23:38:00.035610+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T23:38:00.036933+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:38:00.041924+00:00 app[web.1]: time is 14-06-2021 18:38:00, adding 0to totals!
+2021-06-14T23:38:00.042007+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:38:00.043025+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:38:30.030573+00:00 app[web.1]: time is 14-06-2021 18:38:30
+2021-06-14T23:38:30.030681+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 4
+2021-06-14T23:38:30.031756+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:39:00.007710+00:00 app[web.1]: time is 14-06-2021 18:39:00
+2021-06-14T23:39:00.007727+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 4
+2021-06-14T23:39:00.008960+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:39:30.030926+00:00 app[web.1]: time is 14-06-2021 18:39:30
+2021-06-14T23:39:30.031024+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 3
+2021-06-14T23:39:30.032445+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:39:31.513003+00:00 heroku[router]: at=info method=GET path="/Draft/" host=gwl.herokuapp.com request_id=471d0319-99b4-477f-8f4c-bc5d861ae926 fwd="73.15.38.248" dyno=web.1 connect=1ms service=20ms status=200 bytes=3755 protocol=https
+2021-06-14T23:39:31.656924+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=11866b30-b7a1-4fd3-bd25-aa2998b66659 fwd="73.15.38.248" dyno=web.1 connect=1ms service=5ms status=200 bytes=3032 protocol=https
+2021-06-14T23:39:31.757690+00:00 heroku[router]: at=info method=GET path="/js/sortable-draft-table.js" host=gwl.herokuapp.com request_id=bccc29bf-4b27-423c-acff-5bb7da6a9050 fwd="73.15.38.248" dyno=web.1 connect=1ms service=4ms status=200 bytes=2963 protocol=https
+2021-06-14T23:39:31.854692+00:00 heroku[router]: at=info method=GET path="/js/link-team-names.js" host=gwl.herokuapp.com request_id=5d3ae18d-292f-483f-a4f7-f48af6dc0f26 fwd="73.15.38.248" dyno=web.1 connect=1ms service=5ms status=200 bytes=2141 protocol=https
+2021-06-14T23:39:31.951515+00:00 app[web.1]: opening file /json/players.json
+2021-06-14T23:39:31.958674+00:00 heroku[router]: at=info method=GET path="/GetAllPlayersJson" host=gwl.herokuapp.com request_id=f44c6247-0586-4068-b0e6-0f2a38915764 fwd="73.15.38.248" dyno=web.1 connect=1ms service=8ms status=200 bytes=17899 protocol=https
+2021-06-14T23:39:31.989586+00:00 heroku[router]: at=info method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=fc04a100-3200-4b77-93ed-d8bf68423294 fwd="73.15.38.248" dyno=web.1 connect=1ms service=3ms status=200 bytes=1541 protocol=https
+2021-06-14T23:39:32.013123+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=0f9c6c2e-ce4f-43c4-8202-be3c31632658 fwd="73.15.38.248" dyno=web.1 connect=0ms service=3ms status=200 bytes=4564 protocol=https
+2021-06-14T23:39:35.735420+00:00 heroku[router]: at=info method=GET path="/Standings/" host=gwl.herokuapp.com request_id=03008afb-e502-44f5-a2b0-974e0f27e0a6 fwd="73.15.38.248" dyno=web.1 connect=2ms service=6ms status=200 bytes=3292 protocol=https
+2021-06-14T23:39:35.957275+00:00 heroku[router]: at=info method=GET path="/css/style.css" host=gwl.herokuapp.com request_id=33fd7386-7301-4461-9219-b4b461479458 fwd="73.15.38.248" dyno=web.1 connect=1ms service=3ms status=304 bytes=237 protocol=https
+2021-06-14T23:39:36.054276+00:00 app[web.1]: opening file /json/standings.json
+2021-06-14T23:39:36.057740+00:00 app[web.1]: /app/index.js:212
+2021-06-14T23:39:36.057741+00:00 app[web.1]: if(err) throw err;
+2021-06-14T23:39:36.057742+00:00 app[web.1]: ^
+2021-06-14T23:39:36.057742+00:00 app[web.1]: 
+2021-06-14T23:39:36.057746+00:00 app[web.1]: [Error: ENOENT: no such file or directory, open '/app/json/standings.json'] {
+2021-06-14T23:39:36.057746+00:00 app[web.1]: errno: -2,
+2021-06-14T23:39:36.057746+00:00 app[web.1]: code: 'ENOENT',
+2021-06-14T23:39:36.057747+00:00 app[web.1]: syscall: 'open',
+2021-06-14T23:39:36.057747+00:00 app[web.1]: path: '/app/json/standings.json'
+2021-06-14T23:39:36.057748+00:00 app[web.1]: }
+2021-06-14T23:39:36.066159+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=bedb3c73-3f74-4f62-993a-c337cbb941c3 fwd="73.15.38.248" dyno=web.1 connect=0ms service=2ms status=503 bytes=0 protocol=https
+2021-06-14T23:39:36.066358+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/GetStandings" host=gwl.herokuapp.com request_id=ac201e9d-c8fa-403c-adb2-9d802901e815 fwd="73.15.38.248" dyno=web.1 connect=1ms service=13ms status=503 bytes=0 protocol=https
+2021-06-14T23:39:36.072448+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-14T23:39:36.072773+00:00 app[web.1]: npm ERR! errno 1
+2021-06-14T23:39:36.077914+00:00 app[web.1]: npm ERR! gwl@1.0.0 start: `node index.js`
+2021-06-14T23:39:36.078063+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-14T23:39:36.078223+00:00 app[web.1]: npm ERR!
+2021-06-14T23:39:36.078354+00:00 app[web.1]: npm ERR! Failed at the gwl@1.0.0 start script.
+2021-06-14T23:39:36.078476+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-06-14T23:39:36.087540+00:00 app[web.1]: 
+2021-06-14T23:39:36.087676+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-06-14T23:39:36.087735+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-06-14T23_39_36_079Z-debug.log
+2021-06-14T23:39:36.133951+00:00 heroku[web.1]: Process exited with status 1
+2021-06-14T23:39:36.189030+00:00 heroku[web.1]: State changed from up to crashed
+2021-06-14T23:39:36.192150+00:00 heroku[web.1]: State changed from crashed to starting
+2021-06-14T23:39:40.431746+00:00 heroku[web.1]: Starting process with command `npm start`
+2021-06-14T23:39:43.764930+00:00 app[web.1]: 
+2021-06-14T23:39:43.764956+00:00 app[web.1]: > gwl@1.0.0 start /app
+2021-06-14T23:39:43.764956+00:00 app[web.1]: > node index.js
+2021-06-14T23:39:43.764956+00:00 app[web.1]: 
+2021-06-14T23:39:44.698342+00:00 app[web.1]: Mon, 14 Jun 2021 23:39:44 GMT body-parser deprecated bodyParser: use individual json/urlencoded middlewares at index.js:10:9
+2021-06-14T23:39:44.699975+00:00 app[web.1]: Mon, 14 Jun 2021 23:39:44 GMT body-parser deprecated undefined extended: provide extended option at node_modules/body-parser/index.js:105:29
+2021-06-14T23:39:44.706892+00:00 app[web.1]: Connecting to Google API to receive data Info!$A$2:$C$10, current quota use is 1
+2021-06-14T23:39:44.723766+00:00 app[web.1]: Connecting to Google API to receive batch data, current quota use is 2
+2021-06-14T23:39:44.745944+00:00 app[web.1]: Connecting to Google API to receive data PlayerInfo!A2:S76, current quota use is 3
+2021-06-14T23:39:44.754314+00:00 app[web.1]: Listening on port 9007!
+2021-06-14T23:39:44.760729+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:39:44.760841+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:39:44.760915+00:00 app[web.1]: The API returned an error: Error: error:0908F066:PEM routines:get_header_and_data:bad end line
+2021-06-14T23:39:44.984958+00:00 heroku[web.1]: State changed from starting to up
+2021-06-14T23:39:45.994203+00:00 app[web.1]: opening file /json/standings.json
+2021-06-14T23:39:46.008437+00:00 app[web.1]: /app/index.js:212
+2021-06-14T23:39:46.008439+00:00 app[web.1]: if(err) throw err;
+2021-06-14T23:39:46.008439+00:00 app[web.1]: ^
+2021-06-14T23:39:46.008440+00:00 app[web.1]: 
+2021-06-14T23:39:46.008440+00:00 app[web.1]: [Error: ENOENT: no such file or directory, open '/app/json/standings.json'] {
+2021-06-14T23:39:46.008441+00:00 app[web.1]: errno: -2,
+2021-06-14T23:39:46.008441+00:00 app[web.1]: code: 'ENOENT',
+2021-06-14T23:39:46.008442+00:00 app[web.1]: syscall: 'open',
+2021-06-14T23:39:46.008442+00:00 app[web.1]: path: '/app/json/standings.json'
+2021-06-14T23:39:46.008443+00:00 app[web.1]: }
+2021-06-14T23:39:46.016440+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=28e1a02e-6301-44c3-b983-a00f92872efa fwd="73.15.38.248" dyno=web.1 connect=0ms service=28ms status=503 bytes=0 protocol=https
+2021-06-14T23:39:46.016572+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/GetStandings" host=gwl.herokuapp.com request_id=55124a2f-b3f6-4d7f-9616-1a637b7d0668 fwd="73.15.38.248" dyno=web.1 connect=0ms service=29ms status=503 bytes=0 protocol=https
+2021-06-14T23:39:46.029132+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-14T23:39:46.029619+00:00 app[web.1]: npm ERR! errno 1
+2021-06-14T23:39:46.036078+00:00 app[web.1]: npm ERR! gwl@1.0.0 start: `node index.js`
+2021-06-14T23:39:46.036158+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-14T23:39:46.036283+00:00 app[web.1]: npm ERR!
+2021-06-14T23:39:46.036361+00:00 app[web.1]: npm ERR! Failed at the gwl@1.0.0 start script.
+2021-06-14T23:39:46.036435+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2021-06-14T23:39:46.544045+00:00 app[web.1]: 
+2021-06-14T23:39:46.544069+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2021-06-14T23:39:46.544178+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-06-14T23_39_46_037Z-debug.log
+2021-06-14T23:39:46.592834+00:00 heroku[web.1]: Process exited with status 1
+2021-06-14T23:39:46.720713+00:00 heroku[web.1]: State changed from up to crashed
+2021-06-14T23:39:47.390190+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=dd3cbf6a-9830-4a49-a3f9-297549ca66ff fwd="73.15.38.248" dyno=web.1 connect=1ms service= status=503 bytes= protocol=https
+2021-06-14T23:39:47.490845+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/Draft/" host=gwl.herokuapp.com request_id=07c267d4-13e3-4825-a5d9-2de9f8ce471d fwd="73.15.38.248" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:39:48.165160+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/GetStandings" host=gwl.herokuapp.com request_id=5a3863d8-c509-4d15-a381-e5459e851d9c fwd="73.15.38.248" dyno=web.1 connect=5000ms service= status=503 bytes= protocol=https
+2021-06-14T23:39:48.371010+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=e481625a-c463-4eb1-90a8-cad50b61dd10 fwd="73.15.38.248" dyno=web.1 connect=0ms service= status=503 bytes= protocol=https
+2021-06-14T23:39:52.185326+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/html/nav.html" host=gwl.herokuapp.com request_id=b12d6a7f-0cb5-4734-a9f8-cdb775900ede fwd="73.15.38.248" dyno=web.1 connect=2ms service= status=503 bytes= protocol=https
+2021-06-14T23:39:53.437871+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=ea20deae-c6a6-49d0-a90a-cf7c9611fb48 fwd="73.15.38.248" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:40:09.949927+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=9ef08a74-c1de-4501-b90d-6c443ab12131 fwd="73.15.38.248" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-14T23:41:57.819443+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=def873eb-3de5-43b4-a6fa-c1f3ef5d9692 fwd="73.15.38.248" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:10:13.575197+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=e7ea1a80-8453-453d-b8fe-2fd87aae08eb fwd="73.15.38.248" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:21:35.714001+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=686dcb3b-5474-4b27-97b1-b18dbe5b215b fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:21:36.127626+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=a9c5550c-3d5f-4b0d-a3f6-a69771df0825 fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:21:38.645225+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=30c083d1-5924-4d2f-ba77-67f481ae7040 fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:21:38.894609+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=5bb93217-79df-428b-9230-56321d533d36 fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:21:39.545482+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=fcb6fe95-1df2-495c-80d9-7a1f6fe2a3a9 fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:21:39.819000+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=76381d73-a077-47f7-b7d6-7a1cc162f9c2 fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:38:04.125860+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=gwl.herokuapp.com request_id=5103ac34-1139-4ecf-8274-61c94b95ac7a fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
+2021-06-15T00:38:04.435820+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=gwl.herokuapp.com request_id=10b5dccb-a379-4a85-8a06-d5ffb371830e fwd="65.30.4.41" dyno= connect= service= status=503 bytes= protocol=https
