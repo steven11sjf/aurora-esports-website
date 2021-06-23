@@ -18,6 +18,7 @@ const PLAYER_JSON = 'players.json';
 const MATCHLOG_JSON = 'matchlog.json';
 const HEROSTATS_JSON = 'herostats.json';
 const STANDINGS_JSON = 'standings.json';
+const BLOG_JSON = 'blog.json';
 
 var QUOTA_USE = 0;
 var MAX_QUOTA_PER_MIN = 60;
@@ -860,11 +861,11 @@ app.get('/Blog/',function(req,res) {
 });
 
 app.get('/Blog/:blogid/',function(req,res) {
-	res.sendFile(__dirname + '/client/blog/blog_template.html');
+	res.sendFile(__dirname + '/client/Blog/blog_template.html');
 	PAGE_HITS++;
 });
 app.get('/Blog/Tag/:blogid/',function(req,res) {
-	res.sendFile(__dirname + '/client/blog/blog_tag.html');
+	res.sendFile(__dirname + '/client/Blog/blog_tag.html');
 	PAGE_HITS++;
 });
 
