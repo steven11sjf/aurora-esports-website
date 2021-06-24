@@ -10,7 +10,7 @@ $(function() {
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
 			links_dict = JSON.parse(xhttp.responseText);
-			setTimeout(() => {  addLinks(); }, 100); // wait 1 second for all js to complete
+			setTimeout(() => {  addLinks(); }, 500); // wait 1 second for all js to complete
 		} else {
 			if(xhttp.status != 200) {
 				alert(xhttp.status);
