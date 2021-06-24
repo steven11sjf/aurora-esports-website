@@ -5,6 +5,11 @@ h1.center {
 	padding: 15px;
 }
 
+.auto-plink {
+	text-decoration: none;
+	color: inherit;
+}
+
 /* navbar */
 .discord {
 	background-color: #7289DA;

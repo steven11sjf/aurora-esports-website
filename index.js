@@ -19,6 +19,7 @@ const MATCHLOG_JSON = 'matchlog.json';
 const HEROSTATS_JSON = 'herostats.json';
 const STANDINGS_JSON = 'standings.json';
 const BLOG_JSON = 'blog.json';
+const LINKS_JSON = 'dictionary.json';
 
 var QUOTA_USE = 0;
 var MAX_QUOTA_PER_MIN = 60;
@@ -27,6 +28,56 @@ var CURRENT_WEEK = 2;
 var PAGE_HITS = 0;
 
 var league_standings;
+
+// generates a dictionary of (word,link) pairs
+// contains team names and player page links.
+function generateLinkDict() {
+	var dict = [
+		{
+			word: "Djibouti Shorts",
+			link: "/Teams/DjiboutiShorts/"
+		},
+		{
+			word: "London Lumberjack Slams",
+			link: "/Teams/LondonLumberjackSlams/"
+		},
+		{
+			word: "Oceania Otters",
+			link: "/Teams/OceaniaOtters/"
+		},
+		{
+			word: "Plymouth PMAs",
+			link: "/Teams/PlymouthPMAs/"
+		},
+		{
+			word: "The Tenochitlan Tacos",
+			link: "/Teams/TheTenochitlanTacos/"
+		},
+		{
+			word: "Bendigo Bilbies",
+			link: "/Teams/BendigoBilbies/"
+		},
+		{
+			word: "Gaming Golems",
+			link: "/Teams/GamingGolems/"
+		},
+		{
+			word: "Rialto Rincewinds",
+			link: "/Teams/RialtoRincewinds/"
+		},
+		{
+			word: "Galapagos Gremlins",
+			link: "/Teams/GalapagosGremlins/"
+		},
+		{
+			word: "Wakanda BBQs",
+			link: "/Teams/WakandaBBQs/"
+		}
+	];
+	
+	writeLocalJSON(LINKS_JSON, dict);
+}
+generateLinkDict();
 
 function getPageHits() {
 	// don't call if you need more quota
@@ -874,6 +925,12 @@ app.get('/Blog/Tag/:blogid/',function(req,res) {
 app.get('/Teams/:teamname/', function(req, res) {
 	res.sendFile(__dirname + '/client/Teams/' + req.params.teamname + '.html');
 	PAGE_HITS++;
+});
+
+app.get('/GetLinkDict',function(req,res) {
+	openLocalJSON(LINKS_JSON, (obj) => {
+		res.json(obj);
+	});
 });
 
 // redirects user to discord link
