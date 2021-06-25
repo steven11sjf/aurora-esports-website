@@ -2,6 +2,7 @@
 	"latest-update" : "6/11/2021 2:27 AM",
 	"all-tags" : [
 		"Website Updates",
+		"Match Recap",
 		"Weekly Recap",
 		"Rule Updates",
 		"Admin Announcements",
@@ -17,20 +18,18 @@
 				"Website Updates"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : [
-				"<p>Hello! This is our first article on our new blog!</p>",
-				"<img src=\"/images/Gopherwatch_League.png\" class=\"blog-image-large\">",
-				"<p>This is our first blog post, which will be used to make important league announcements and website updates! You can see that our home page is in progress and we have this snazzy new blog! This is a significant step towards full functionality of the website, and I will outline some of our upcoming changes along with a rough timetable:</p>",
-				"<ul>",
-				"<li>League-wide statistics page (6/18/2021)</li>",
-				"<li>Standings and matches viewable per-tournament (6/25/2021)</li>",
-				"<li>Player profile pages with hero stats and other poggers features (7/9/2021)</li>",
-				"</ul>",
-				"<p>That's all I have for you today; have a great week 2 and GL;HF in your upcoming games!</p>",
-				"<p> ~Steven </p>",
-				"<br>",
-				"<p style=\"color: red;\">EDIT 6/24/2021: I wrote this awhile ago in testing but there's been some delays due to starting a second job. As you may have noticed, the dates provided are largely passed lol. I'll get them up ASAP at this point, which it may take a while because I have a lot of stuff going on right now. Good news is the site is decently stable right now so hopefully it's functional enough until the new stuff is up. <br>Again, I'm super sorry for the delay and I'll get the new stuff to live as quickly as possible!</p>"
-			]
+			"contents" : "/html/Blog/welcomepost.html"
+		},
+		{
+			"id" : "week3-lls",
+			"date" : "6/25/2021 5:25 PM",
+			"title" : "Lumberjackslams Get Cut Down",
+			"by" : "BOON1E",
+			"tags" : [
+				"Match Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/week3-lls.html"
 		}
 	]
 }
