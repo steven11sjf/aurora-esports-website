@@ -32,24 +32,29 @@
 }
 
 .blog-image-large {
-	margin: auto;
+	display: block;
+	margin: 20px auto;
 	width: 100%;
+	text-align: center;
 }
 
 .blog-image-medium {
-	margin: auto;
-	float: center;
+	display: block;
+	margin: 20px auto;
 	width: 75%;
+	text-align: center;
 }
 
 .blog-image-small {
-	margin: auto;
+	display: block;
+	margin: 20px auto;
 	display: block;
 	width: 50%;
 }
 
 .blog-image-tiny {
-	margin: auto;
+	display: block;
+	margin: 20px auto;
 	width: 25%;
 }
 

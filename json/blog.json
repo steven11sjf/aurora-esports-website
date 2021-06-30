@@ -30,6 +30,17 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/week3-lls.html"
+		},
+		{
+			"id" : "pagehits1",
+			"date" : "6/29/2021 10:52 PM",
+			"title" : "Some interesting website statistics",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/stats_icon.png",
+			"contents" : "/html/Blog/pagehits1.html"
 		}
 	]
 }
