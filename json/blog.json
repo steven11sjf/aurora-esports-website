@@ -6,7 +6,8 @@
 		"Weekly Recap",
 		"Rule Updates",
 		"Admin Announcements",
-		"Free Agents"
+		"Free Agents",
+		"Power Rankings"
 	],
 	"blog-posts" : [
 		{
@@ -41,6 +42,18 @@
 			],
 			"image" : "/images/stats_icon.png",
 			"contents" : "/html/Blog/pagehits1.html"
+		},
+		{
+			"id" : "powerrankings-week3",
+			"date" : "7/1/2021 3:43:00 PM",
+			"title" : "Power Rankings by Rusty",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap",
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/powerrankings-week3.html"
 		}
 	]
 }
