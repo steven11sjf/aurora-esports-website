@@ -45,7 +45,7 @@
 		},
 		{
 			"id" : "powerrankings-week3",
-			"date" : "7/1/2021 3:43:00 PM",
+			"date" : "7/1/2021 3:43 PM",
 			"title" : "Power Rankings by Rusty",
 			"by" : "RustyGoomba",
 			"tags" : [
@@ -54,6 +54,17 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/powerrankings-week3.html"
+		},
+		{
+			"id" : "patch-notes-7-3-21",
+			"date" : "7/3/2021 8:26 PM",
+			"title" : "Patch Notes: Player Stats!",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/patch_notes.png",
+			"contents" : "/html/Blog/patch-notes-stats-1.html"
 		}
 	]
 }

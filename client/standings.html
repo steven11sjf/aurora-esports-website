@@ -7,6 +7,7 @@
 		<meta name="robots" content="noindex">
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="/js/link-team-names.js"></script>
+		<script src="/js/sortable-table.js"></script>
 	</head>
 	<body>
 		<h1 class="center">The Gopherwatch League</h1>
@@ -27,22 +28,23 @@
 			<table class="table center" id="standingsTable">
 				<thead>
 					<tr>
-						<th style="width:7%;" scope="col">Rank</th>
-						<th style="width:37%;" scope="col">Team Name</th>
-						<th style="width:7%;" scope="col" title="Points are calculated as the number of wins plus the number of tournament playoff wins">Pts</th>
-						<th style="width:7%;" scope="col" title="Wins">W</th>
-						<th style="width:7%;" scope="col" title="Losses">L</th>
-						<th style="width:7%;" scope="col" title="Win percent">PCT</th>
-						<th style="width:7%;" scope="col" title="Map wins">MW</th>
-						<th style="width:7%;" scope="col" title="Map losses">ML</th>
-						<th style="width:7%;" scope="col" title="Map draws">MD</th>
-						<th style="width:7%;" scope="col" title="Map differential">DIFF</th>
+						<th style="width:7%;" scope="col" onclick="removeArrows(); loadTable(jsonRecv);">Rank</th>
+						<th style="width:37%;" scope="col" onclick="sortTable('standingsTable', 1,false)">Team Name</th>
+						<th style="width:7%;" scope="col" title="Points are calculated as the number of wins plus the number of tournament playoff wins" onclick="sortTable('standingsTable', 2,true)">Pts</th>
+						<th style="width:7%;" scope="col" title="Wins" onclick="sortTable('standingsTable', 3,true)">W</th>
+						<th style="width:7%;" scope="col" title="Losses" onclick="sortTable('standingsTable', 4,true)">L</th>
+						<th style="width:7%;" scope="col" title="Win percent" onclick="sortTable('standingsTable', 5,true)">PCT</th>
+						<th style="width:7%;" scope="col" title="Map wins" onclick="sortTable('standingsTable', 6,true)">MW</th>
+						<th style="width:7%;" scope="col" title="Map losses" onclick="sortTable('standingsTable', 7,true)">ML</th>
+						<th style="width:7%;" scope="col" title="Map draws" onclick="sortTable('standingsTable', 8,true)">MD</th>
+						<th style="width:7%;" scope="col" title="Map differential" onclick="sortTable('standingsTable', 9,true)">DIFF</th>
 					</tr>
 				</thead>
 				<tbody></tbody>
 			</table>
 		</div>
 		<script type="text/javascript">
+		var jsonRecv;
 		function doAjax() {
 			// create AJAX request for standingsTable
 			var xhttp = new XMLHttpRequest();
@@ -53,8 +55,8 @@
 			xhttp.onreadystatechange = function() {
 				if(this.readyState == 4 && this.status == 200){
 					console.log(xhttp.responseText);
-					var jsonObj = JSON.parse(xhttp.responseText);
-					loadTable(jsonObj);
+					jsonRecv = JSON.parse(xhttp.responseText);
+					loadTable(jsonRecv);
 				} else {
 					if(xhttp.status != 200) {
 						alert(xhttp.status);

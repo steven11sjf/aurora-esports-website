@@ -864,6 +864,18 @@ app.get('/api/GetBlog/:blogid/',function(req,res) {
 	});
 });
 
+// endpoint for player stats
+app.get('/api/playerstats', function(req,res) {
+	openLocalJSON(HEROSTATS_JSON, (obj) => {
+		var json = JSON.stringify(obj);
+		
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'application/json');
+		res.write(json);
+		res.end();
+	});
+});
+
 app.get('/api/BlogBlurbs/',function(req,res) {
 	openLocalJSON('blog.json', (obj) => {
 		var json = JSON.stringify(obj);
@@ -945,7 +957,7 @@ app.get('/BugReport/', function(req,res) {
 });
 
 app.get('/favicon.ico', function(req,res) {
-	res.sendFile(__dirname + '/public/images/uwu.ico');
+	res.sendFile(__dirname + '/public/images/leaguelogo.png');
 });
 app.use(express.static(path.join(__dirname, 'public')));
 
