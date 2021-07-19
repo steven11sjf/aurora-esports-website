@@ -8,6 +8,8 @@ $(function() {
 	
 	// runs when response is received
 	xhttp.onreadystatechange = function() {
+		contentType = xhttp.getResponseHeader("content-type");
+		if(contentType != "application/json; charset=utf-8") console.log(contentType);
 		if(this.readyState == 4 && this.status == 200){
 			links_dict = JSON.parse(xhttp.responseText);
 			setTimeout(() => {  addLinks(); }, 500); // wait 1 second for all js to complete

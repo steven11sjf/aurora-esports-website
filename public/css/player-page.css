@@ -1,0 +1,370 @@
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  grid-template-rows: auto minmax(200px, 375px) 1fr, 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "header"
+    "pheader"
+    "bio"
+    "stats";
+}
+
+.container > header {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  grid-area: header;
+}
+
+.container > header > img {
+  width: 400px;
+  height: 75px;
+}
+
+nav > ul {
+  margin: 0;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+nav > ul > li {
+  list-style-type: none;
+  padding-right: 5px;
+}
+
+nav a,
+nav a:link,
+nav a:visited,
+nav a:active {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 2.4rem 1rem;
+}
+
+nav a:hover {
+  color: maroon;
+}
+
+.player-header {
+  grid-area: pheader;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "photo player-info";
+}
+
+.player-photo {
+  padding-top: 80px;
+  padding-left: 200px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.player-photo > img {
+  height: 300px;
+  width: 300px;
+}
+
+.player-info {
+  margin-top: 150px;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-info > a > img {
+  height: 50px;
+  width: 50px;
+}
+
+.player-name {
+  margin: auto;
+  margin-left: 0px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  font-size: 20px;
+}
+
+.pronouns {
+  margin: auto;
+  margin-left: 0px;
+  margin-top: 6px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  font-size: 18px;
+  color: white;
+}
+
+.player-tag-role {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-tag {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.player-number {
+  background-color: white;
+  height: 44px;
+  width: 48px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 0px;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-image {
+  background-color: black;
+  height: 44px;
+  width: 48px;
+  margin-left: 0px;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+
+.player-bio {
+  margin: 0;
+  grid-area: bio;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "bio-icons"
+    "bio-written";
+}
+
+.bio-basics {
+  grid-area: bio-icons;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 32% 32% 32%;
+  grid-template-areas: "hometown major socials";
+}
+
+.hometown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.hometown > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.hometown > p {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.major {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.major > img {
+  width: 30px;
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.major > p {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials > a > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 50px;
+}
+
+.bio-written {
+  grid-area: bio-written;
+  background-color: maroon;
+  color: white;
+  padding-left: 20px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: "awards history";
+}
+
+.awards {
+  grid-area: awards;
+  display: flex;
+  flex-direction: column;
+}
+
+.awards > h2,
+.history > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.award {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.award > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.award > p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.history {
+  grid-area: history;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.history > h2 {
+  text-transform: uppercase;
+}
+
+.history > p {
+  font-size: 18px;
+}
+
+.player-stats {
+  grid-area: stats;
+  background-color: maroon;
+  color: white;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "hero-stats overall-stats";
+}
+
+.hero-stats {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+.player-overall {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  padding-top: 10px;
+}
+
+thead {
+  background-color: gold;
+  color: black;
+}
+
+tbody {
+  background-color: white;
+  color: black;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+}
+
+thead {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+td {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+td > img {
+  width: 50px;
+  height: 50px;
+}

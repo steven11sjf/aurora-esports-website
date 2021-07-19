@@ -24,7 +24,7 @@ const LINKS_JSON = 'dictionary.json';
 var QUOTA_USE = 0;
 var MAX_QUOTA_PER_MIN = 60;
 var TEAM_INFO = [];
-var CURRENT_WEEK = 2;
+var CURRENT_WEEK = 5;
 var PAGE_HITS = 0;
 
 var league_standings;
@@ -75,7 +75,19 @@ function generateLinkDict() {
 		}
 	];
 	
-	writeLocalJSON(LINKS_JSON, dict);
+	// generate player names
+	openLocalJSON(PLAYER_JSON,(player_obj) => {
+		let players = player_obj.players;
+		for(i=0; i<players.length; ++i) {
+			let w = players[i].battletag;
+			let l = "/Player/" + w.replace('#','-');
+			let entry = { word: w, link: l };
+			dict.push(entry);
+		}
+		
+		writeLocalJSON(LINKS_JSON, dict);
+		console.log("Generated link dictionary!");
+	});
 }
 generateLinkDict();
 
@@ -374,7 +386,7 @@ function batchGetSpreadsheet(callback) {
 				spreadsheetId: SPREADSHEET_ID,
 				ranges: [
 					'MatchLog!A2:AA99', // match log					0
-					'HeroStats!A2:I2000', // all hero stats				1
+					'HeroStats!A2:J2000', // all hero stats				1
 					'DjiboutiShorts!A5:L14', // DS roster				2
 					'DjiboutiShorts!F70:J88', // DS map stats			3
 					'DjiboutiShorts!A32:Y67', // DS match history		4
@@ -416,6 +428,8 @@ function batchGetSpreadsheet(callback) {
 					'GalapagosGremlins!J17:Q20', // GPG team stats		40
 					'WakandaBBQs!J17:Q20', // WB team stats				41
 					'Standings!A15:K24', // standings					42
+					'HeroStats!L2:T32', // league-wide hero stats		43
+					'HeroStats!N34:S35', // league averages				44 
 				]
 			}, function (err, response) {
 				if (err) {
@@ -432,7 +446,7 @@ function batchGetSpreadsheet(callback) {
 
 function storeBatchGet(obj) {
 	storeMatchLog(obj.valueRanges[0].values); // store match log
-	storeHeroStats(obj.valueRanges[1].values); // store hero stats
+	storeHeroStats(obj.valueRanges[1].values,obj.valueRanges[43].values,obj.valueRanges[44].values); // store hero stats
 	storeLeagueStandings(obj.valueRanges[42].values); // store the league standings
 	
 	storeTeamStats('DjiboutiShorts.json',obj.valueRanges[2].values,obj.valueRanges[3].values,obj.valueRanges[4].values,obj.valueRanges[32].values);
@@ -480,21 +494,32 @@ function storeMatchLog(rows) {
 	writeLocalJSON(MATCHLOG_JSON, jsonObj, (res) => {});
 }
 
-function storeHeroStats(rows) {
+function storeHeroStats(rows,league,totals) {
 	var json = '{"updated":"';
 	json += getTime(0);
 	json += '","stats":[';
-	if(rows && rows.length) {
+	if(rows && rows.length && league && league.length) {
 		rows.map((row) => {
 			json += `{"player":"${row[0]}","hero":"${row[1]}",`;
 			json += `"elims":"${row[2]}","fb":"${row[3]}",`;
 			json += `"damage":"${row[4]}","deaths":"${row[5]}",`;
 			json += `"healing":"${row[6]}","blocked":"${row[7]}",`;
-			json += `"timeplayed":"${row[8]}"},`;
+			json += `"timeplayed":"${row[8]}","team":"${row[9]}"},`;
+		});
+		
+		league.map((row) => {
+			json += `{"player":"${row[0]}","hero":"${row[1]}",`;
+			json += `"elims":"${row[2]}","fb":"${row[3]}",`;
+			json += `"damage":"${row[4]}","deaths":"${row[5]}",`;
+			json += `"healing":"${row[6]}","blocked":"${row[7]}",`;
+			json += `"timeplayed":"${row[8]}","team":"The Gopherwatch League"},`;
 		});
 		
 		json = json.replace(/,$/,'');
-		json += ']}';
+		json += '],"averages":{';
+		json += `"elims":"${parseFloat(totals[0][0]).toFixed(2)}","elims10":"${parseFloat(totals[1][0]).toFixed(2)}","fb":"${parseFloat(totals[0][1]).toFixed(2)}","fb10":"${parseFloat(totals[1][1]).toFixed(2)}",`;
+		json += `"dmg":"${parseFloat(totals[0][2]).toFixed(2)}","dmg10":"${parseFloat(totals[1][2]).toFixed(2)}","deaths":"${parseFloat(totals[0][3]).toFixed(2)}","deaths10":"${parseFloat(totals[1][3]).toFixed(2)}",`;
+		json += `"healing":"${parseFloat(totals[0][4]).toFixed(2)}","healing10":"${parseFloat(totals[1][4]).toFixed(2)}","blocked":"${parseFloat(totals[0][5]).toFixed(2)}","blocked10":"${parseFloat(totals[1][5]).toFixed(2)}"}}`;
 	} else {
 		console.log("Pulled an empty HeroStats!");
 		json += ']}';
@@ -643,7 +668,7 @@ function refreshPlayerJson() {
 	json += '","nextUpdate":"';
 	json += getTime(1);
 	json += '","players":['
-	getDataInRange('PlayerInfo!A2:S76', (rows) => {
+	getDataInRange('PlayerInfo!A2:AC100', (rows) => {
 		if(rows.length) {
 			rows.map((row) => {
 				json += '{"battletag":"';
@@ -658,29 +683,22 @@ function refreshPlayerJson() {
 				json += `${row[10]}`;
 				json += '","support":"';
 				json += `${row[11]}`;
-				json += '","discordtag":"';
-				
-				if(row[13]=='yes')
-					json += `${row[12]}`;
-				else
-					json += 'PRIVATE';
-				
-				json += '","morebtags":"';
-				json += `${row[14]}`;
-				json += '","pronouns":"';
-				json += `${row[15]}`;
-				json += '","bio":"';
-				json += `${row[16]}`;
-				json += '","twitch":"';
-				json += `${row[17]}`;
-				json += '","twitter":"';
-				json += `${row[18]}`;
-				json += '"},';
+				json += `","mvp":"${row[12]}","realname":"${row[13]}","playernumber":"${row[14]}",`;
+				json += `"pronouns":"${row[15]}","hometown":"${row[16]}","major":"${row[17]}",`;
+				json += `"twitch":"${row[18]}","twitter":"${row[19]}","youtube":"${row[20]}","instagram":"${row[21]}","reddit":"${row[22]}",`;
+				let bio = row[27];
+				if(bio != undefined) {
+					bio = bio.split("\"").join("\\\"");
+					bio = bio.split("\n").join("\\n");
+				}
+				json += `"role":"${row[23]}","hero":"${row[24]}","accolades":"${row[25]}","picture":"${row[26]}","bio":"${bio}"},`;
 			});
 			
 			json = json.replace(/,$/,'');
 			json += ']}';
 			
+			json = json.split("\"undefined\"").join("\"\"");
+			console.log(json);
 			obj = JSON.parse(json);			
 			writeLocalJSON(PLAYER_JSON, obj, (res) => {});
 		} else {
@@ -886,6 +904,21 @@ app.get('/api/BlogBlurbs/',function(req,res) {
 	});
 });
 
+// endpoint for player page info 
+app.get('/api/playerjson/:player', function(req,res) {
+	let player = req.params.player.replace('-','#');
+	openLocalJSON(PLAYER_JSON, (obj) => {
+		for(i=0; i<obj.players.length; ++i) {
+			if(obj.players[i].battletag == player) {
+				let p = obj.players[i];
+				res.json(p);
+			}
+		}
+		
+		res.json('{"battletag":""}');
+	});
+});
+
 app.listen(process.env.PORT || 9007, () => console.log('Listening on port 9007!'));
 __discord_link = "https://discord.gg/HxxNybCgM4"
 
@@ -943,6 +976,11 @@ app.get('/GetLinkDict',function(req,res) {
 	openLocalJSON(LINKS_JSON, (obj) => {
 		res.json(obj);
 	});
+});
+
+app.get('/Player/:playertag', function(req,res) {
+	res.sendFile(__dirname + '/client/player-page.html');
+	PAGE_HITS++;
 });
 
 // redirects user to discord link

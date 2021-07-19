@@ -3,7 +3,7 @@
 }
 
 .ttable tbody tr:nth-child(odd) {
-	/*background-color: #d5d6d2;*/
+	background-color: white;
 }
 
 .ttable tbody tr.match-win {
@@ -64,7 +64,6 @@
 	width: 64px;
 }
 .team-page-container {
-	background-color: white;
 	width: 70%;
 }
 

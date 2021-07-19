@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Player - The Gopherwatch League</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/player-page.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="/js/player-page.js"></script>
+</head>
+
+<body onload="doAjax();">
+    <div class="container">
+        <!-- navbar -->
+		<div id="nav-placeholder"></div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+        <div class="player-header" id="player-header">
+            <div class="player-photo" id="player-photo">
+                <img src="#">
+            </div>
+
+            <div class="player-info">
+                <a href="#" id="teamlink"><img src="#" id="team-icon"></a>
+                <p class="player-name" id="player-name"></p>
+                <div class="player-tag-role">
+                    <p class="player-tag" id="player-tag"></p>
+                    <p class="player-number" id="player-number"></p>
+                    <img class="role-image" id="role-image" src="#">
+                </div>
+				<p class="pronouns" id="pronouns"></p>
+            </div>
+        </div>
+
+        <div class="player-bio">
+            <div class ="bio-basics">
+                <div class="hometown">
+                    <img id="hometown-img" src="/images/playerpage/house.png">
+                    <p id="hometown"></p>
+                </div>
+                <div class="major">
+                    <img id="major-img" src="/images/playerpage/cap.png">
+                    <p id="major"></p>
+                </div>
+                <div class="socials" id="socials">
+                    
+                </div>
+            </div>
+
+            <div class="bio-written">
+                <div class="awards" id="awards">
+                    <h2>Accolades</h2>
+                </div>
+                <div class="history">
+                    <h2>Player Bio</h2>
+                    <h3>Main Role: <span id="main-role"></span></h3>
+                    <h3>Favorite Hero: <span id="favorite-hero"></span></h3>
+                    <h3>Player History</h3>
+                    <p id="bio"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="player-stats">
+            <div class="hero-stats">
+                <h2>Hero Stats</h2>
+                <table>
+                    <thead>
+                        <td></td>
+                        <td>Hero</td>
+                        <td>Elims</td>
+                        <td>FB</td>
+                        <td>Damage</td>
+                        <td>Deaths</td>
+                        <td>Healing</td>
+                        <td>Blocked</td>
+                        <td>Time</td>
+                    </thead>
+					<tbody id="hero-stats">
+						
+					</tbody>
+                </table>
+            </div>
+
+            <div class="player-overall">
+                <h2>Player Stats</h2>
+                <table id="career-stats">
+                    <thead>
+                        <td>Stat</td>
+                        <td>Total</td>
+                        <td>Per 10</td>
+                        <td>League Average</td>
+                        <td>Per 10</td>
+                    </thead>
+                    <tr id="career-elims">
+                        
+                    </tr>
+                    <tr id="career-fbs">
+                        
+                    </tr>
+                    <tr id="career-dmg">
+                        
+                    </tr>
+                    <tr id="career-deaths">
+                        
+                    </tr>
+                    <tr id="career-heals">
+                        
+                    </tr>
+                    <tr id="career-blocked">
+							
+					</tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

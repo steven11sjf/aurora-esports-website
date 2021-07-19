@@ -1,3 +1,9 @@
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
 .headerSortDown:after,
 .headerSortUp:after {
   content: ' ';
@@ -37,18 +43,34 @@ h1.center {
 .discord {
 	background-color: #7289DA;
 }
+img.navbar-logo {
+  width: 400px;
+  height: 75px;
+}
 
 .navbar {
-  overflow: hidden;
-  background-color: #800;
-  width: 80%;
-  margin: auto;
-  border-radius: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
 }
+
+.navbar a,
+.navbar a:link,
+.navbar a:visited,
+.navbar a:active {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+
 .nav-right {
 	float: right;
 	font-size: 16px;
-	color: white;
+	color: black;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -57,7 +79,7 @@ h1.center {
 .nav-left {
   float: left;
   font-size: 16px;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -72,16 +94,15 @@ h1.center {
   font-size: 16px;  
   border: none;
   outline: none;
-  color: white;
+  color: black;
+  font-weight: bold;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #FFD700;
-}
+
 
 .dropdown-content {
   display: none;
@@ -110,11 +131,11 @@ h1.center {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/*
+
 body {
-	background-image: url("/images/Gopherwatch_League.png");
-	background-attachment: fixed;
-}*/
+	background-color: maroon;
+	margin: 0px 0px;
+}
 
 #twitch-embed {
 	align: center;
@@ -194,9 +215,9 @@ nav ul li a:hover:not(.active) {
 }
 
 .table thead tr {
-	background-color: #800;
+	background-color: white;
 	text-align: center;
-	color: white;
+	color: black;
 	padding: 20px 20px;
 	text-decoration: none;
 	border: 2px solid black;

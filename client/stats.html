@@ -12,7 +12,6 @@
 		<script src="/js/stats-page.js"></script>
 	</head>
 	<body>
-		<h1 class="center">The Gopherwatch League</h1>
 		<!-- navbar -->
 		<div id="nav-placeholder"></div>
 		
@@ -27,8 +26,8 @@
 		<div class="center">
 			<label for="hero-select">Select a hero to see stats</label>
 			<br>
-			<select name="hero-select" id="hero-select" onchange="loadHero(this);">
-				<option value="">Select a hero</option>
+			<select name="hero-select" id="hero-select" onchange="dropdownSelected(this.value);">
+				<option value="__LEAGUE_STANDINGS__">League-wide hero stats</option>
 				<option value="Ana">Ana</option>
 				<option value="Ashe">Ashe</option>
 				<option value="Baptiste">Baptiste</option>
@@ -65,7 +64,7 @@
 		</div>
 		<div class="center">
 			<table class="table center" id="statsTable">
-				<thead>
+				<thead id="statsTableHeader">
 					<tr>
 						<th style="width:20%;" scope="col" onclick="sortTable('statsTable', 0,false)">Battletag</th>
 						<th style="width:27%;" scope="col" onclick="sortTable('statsTable', 1,false)">Team (coming soon!)</th>
@@ -79,10 +78,12 @@
 						
 					</tr>
 				</thead>
-				<tbody></tbody>
+				<tbody id="statsTableBody"></tbody>
 			</table>
 		</div>
 		
-		
+		<script type="text/javascript">
+		onload=dropdownSelected("__LEAGUE_STANDINGS__");
+		</script>
 	</body>
 </html>
