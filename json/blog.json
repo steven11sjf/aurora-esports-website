@@ -65,6 +65,17 @@
 			],
 			"image" : "/images/patch_notes.png",
 			"contents" : "/html/Blog/patch-notes-stats-1.html"
+		},
+		{
+			"id" : "player-profiles",
+			"date" : "7/20/2021 1:55 PM",
+			"title" : "Patch Notes: Player Profiles!",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/patch_notes.png",
+			"contents" : "/html/Blog/player-profiles.html"
 		}
 	]
 }

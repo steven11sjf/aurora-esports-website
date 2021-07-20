@@ -1,6 +1,11 @@
 .div-blog {
 	width: 50%;
 	text-align: left;
+	background-color: white;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 20px;
+	padding-bottom: 200px;
 }
 
 #blog-title {
