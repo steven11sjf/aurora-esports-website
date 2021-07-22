@@ -686,12 +686,16 @@ function refreshPlayerJson() {
 				json += `","mvp":"${row[12]}","realname":"${row[13]}","playernumber":"${row[14]}",`;
 				json += `"pronouns":"${row[15]}","hometown":"${row[16]}","major":"${row[17]}",`;
 				json += `"twitch":"${row[18]}","twitter":"${row[19]}","youtube":"${row[20]}","instagram":"${row[21]}","reddit":"${row[22]}",`;
+				let accolades = row[25];
+				if(accolades != undefined) {
+					accolades = accolades.split("\n").join("\\n");
+				}
 				let bio = row[27];
 				if(bio != undefined) {
 					bio = bio.split("\"").join("\\\"");
 					bio = bio.split("\n").join("\\n");
 				}
-				json += `"role":"${row[23]}","hero":"${row[24]}","accolades":"${row[25]}","picture":"${row[26]}","bio":"${bio}"},`;
+				json += `"role":"${row[23]}","hero":"${row[24]}","accolades":"${accolades}","picture":"${row[26]}","bio":"${bio}"},`;
 			});
 			
 			json = json.replace(/,$/,'');
@@ -912,6 +916,7 @@ app.get('/api/playerjson/:player', function(req,res) {
 			if(obj.players[i].battletag == player) {
 				let p = obj.players[i];
 				res.json(p);
+				return;
 			}
 		}
 		

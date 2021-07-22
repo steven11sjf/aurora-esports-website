@@ -21,16 +21,30 @@ var accoladesDict = {
 	"Season 1 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
 	"Season 2 All-Star" : "/images/playerpage/allstar.png",
 	"Season 2 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
+	"Season 3 All-Star" : "/images/playerpage/allstar.png",
+	"Season 3 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
 	"Season 2 3rd Team All-Pro" : "/images/playerpage/3rdteam.png",
 	"Season 2 2nd Team All-Pro" : "/images/playerpage/2ndteam.png",
 	"Season 2 1st Team All-Pro" : "/images/playerpage/1stteam.png",
 	"Season 1 3rd Team All-Pro" : "/images/playerpage/3rdteam.png",
 	"Season 1 2nd Team All-Pro" : "/images/playerpage/2ndteam.png",
 	"Season 1 1st Team All-Pro" : "/images/playerpage/1stteam.png",
+	"Season 3 3rd Team All-Pro" : "/images/playerpage/3rdteam.png",
+	"Season 3 2nd Team All-Pro" : "/images/playerpage/2ndteam.png",
+	"Season 3 1st Team All-Pro" : "/images/playerpage/1stteam.png",
 	"Season 1 Most Valuable Player" : "/images/playerpage/mvp.png",
 	"Season 2 Most Valuable Player" : "/images/playerpage/mvp.png",
 	"Season 1 Champion" : "/images/playerpage/trophy.png",
-	"Season 2 Champion" : "/images/playerpage/trophy.png"
+	"Season 2 Champion" : "/images/playerpage/trophy.png",
+	"Season 3 Champion" : "/images/playerpage/trophy.png",
+	"Administrator" : "/images/playerpage/admin.png",
+	"Staff" : "/images/playerpage/staff.png",
+	"Graphic Design" : "/images/playerpage/gdes.png",
+	"Caster" : "/images/playerpage/headset.png",
+	"Producer" : "/images/playerpage/camera.png",
+	"Captain" : "/images/playerpage/captain.png",
+	"Season 1 Commissioners Award" : "/images/playerpage/commissioneraward.png",
+	"Season 2 Commissioners Award" : "/images/playerpage/commissioneraward.png"
 };
 
 playername = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
@@ -95,6 +109,7 @@ function loadData() {
 	loadSocials();
 	loadTeam();
 	loadAccolades();
+	loadSRs();
 }
 
 // loads the player's image
@@ -164,7 +179,7 @@ function loadAccolades() {
 		document.getElementById("awards").innerHTML += '<p>No accolades earned... yet!</p>';
 		return;
 	}
-	let accolades = playerInfo.accolades.split(";");
+	let accolades = playerInfo.accolades.split("\n");
 	let accoladesDiv = document.getElementById("awards");
 	console.log(accolades);
 	
@@ -289,4 +304,48 @@ function hideUnusedElements() {
 	if(playerInfo.major == "") {
 		document.getElementById("major-img").setAttribute('style','display:none;');
 	}
+}
+
+// set the player's SRs
+function loadSRs() {
+	let tankrank = getRank(playerInfo.tank);
+	let dpsrank = getRank(playerInfo.dps);
+	let supportrank = getRank(playerInfo.support);
+	console.log(tankrank,dpsrank,supportrank);
+	
+	// set tank sr
+	if(playerInfo.tank == "-") {
+		document.getElementById("tank-rank").setAttribute('style','display:none;');
+	} else {
+		document.getElementById("tank-sr").textContent = playerInfo.tank;
+		document.getElementById("tank-tier").src = "/images/ranks/" + tankrank;
+	}
+	// set dps sr
+	if(playerInfo.dps == "-") {
+		document.getElementById("damage-rank").setAttribute('style','display:none;');
+	} else {
+		document.getElementById("damage-sr").textContent = playerInfo.dps;
+		document.getElementById("damage-tier").src = "/images/ranks/" + dpsrank;
+	}
+	// set support sr
+	if(playerInfo.support == "-") {
+		document.getElementById("support-rank").setAttribute('style','display:none;');
+	} else {
+		document.getElementById("support-sr").textContent = playerInfo.support;
+		document.getElementById("support-tier").src = "/images/ranks/" + supportrank;
+	}
+	
+}
+
+// get rank icon for sr
+function getRank(sr) {
+	let num = parseInt(sr);
+	if(num == NaN || num < 0 || num > 5000) return "nil.png";
+	else if(num < 1500) return "bronze.png";
+	else if(num < 2000) return "silver.png";
+	else if(num < 2500) return "gold.png";
+	else if(num < 3000) return "plat.png";
+	else if(num < 3500) return "diamond.png";
+	else if(num < 4000) return "masters.png";
+	else return "grandmasters.png";
 }
