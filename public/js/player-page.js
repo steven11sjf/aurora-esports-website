@@ -175,12 +175,20 @@ function loadTeam() {
 
 // loads accolades
 function loadAccolades() {
-	if(playerInfo.accolades == "") {
+	if(playerInfo.accolades == "" && playerInfo.mvp == "0") {
 		document.getElementById("awards").innerHTML += '<p>No accolades earned... yet!</p>';
 		return;
 	}
 	let accolades = playerInfo.accolades.split("\n");
 	let accoladesDiv = document.getElementById("awards");
+	
+	if(playerInfo.mvp != "0" && playerInfo.mvp != "") {
+		// add match mvps
+		let mvp = '<div class="award"><img src="/images/playerpage/match_mvp.png"><p>Match MVP x' + playerInfo.mvp + '</p></div>';
+		console.log(playerInfo.mvp,mvp);
+		accoladesDiv.innerHTML += mvp;
+	}
+	
 	console.log(accolades);
 	
 	for(i=0; i<accolades.length; ++i) {
@@ -281,6 +289,9 @@ function loadCareerStats() {
 			blocked += parseInt(so[i]["blocked"]);
 		}
 	}
+	
+	// this is a sketchy workaround, but if timeplayed is zero then the player theoretically has no other stats. so setting timeplayed to 1 should make it still zero. 
+	if(timeplayed == 0) timeplayed = 1;
 	
 	document.getElementById("career-elims").innerHTML = `<td>Eliminations</td><td>${elims}</td><td>${(elims*600/timeplayed).toFixed(2)}</td><td>${statsObj.averages.elims}</td><td>${statsObj.averages.elims10}</td>`;
 	document.getElementById("career-fbs").innerHTML = `<td>Final Blows</td><td>${fb}</td><td>${(fb*600/timeplayed).toFixed(2)}</td><td>${statsObj.averages.fb}</td><td>${statsObj.averages.fb10}</td>`;

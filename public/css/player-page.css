@@ -352,6 +352,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  padding-right: 60px;
 }
 
 .history > h2 {
@@ -375,7 +376,7 @@ nav a:hover {
 .hero-stats {
   margin-left: 0px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 200px;
   margin-right: 0px;
   padding-top: 10px;
   padding-left: 50px;
