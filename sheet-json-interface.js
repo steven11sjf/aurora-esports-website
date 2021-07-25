@@ -68,6 +68,12 @@ function sanitize(string) {
 	
 	return output;
 }
+// gets day of week
+function getDay() {
+	let date_curr = new Date();
+	let date_obj = new Date(date_curr.toLocaleString("en-US", { timeZone: "America/Chicago" }));
+	return date_obj.getDay();
+}
 
 /**
  * gets the number of hourly and weekly page hits

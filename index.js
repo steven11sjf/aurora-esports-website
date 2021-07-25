@@ -112,13 +112,6 @@ const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
 });
 if(process.env.ISPROD == "TRUE") statisticsUpdateJob.start();
 
-
-function getDay() {
-	let date_curr = new Date();
-	let date_obj = new Date(date_curr.toLocaleString("en-US", { timeZone: "America/Chicago" }));
-	return date_obj.getDay();
-}
-
 function testWrite() {
 	console.log('one');
 	var asdf = {
