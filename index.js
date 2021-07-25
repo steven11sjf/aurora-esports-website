@@ -112,16 +112,6 @@ const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
 });
 if(process.env.ISPROD == "TRUE") statisticsUpdateJob.start();
 
-// returns the number of 15-min increments between midnight and 11:45pm
-// this is between 0 and 95
-// for example, 2:15AM returns 9	
-function get15Inc() {
-	let date_curr = new Date();
-	let date_obj = new Date(date_curr.toLocaleString("en-US", { timeZone: "America/Chicago" }));
-	let inc = date_obj.getHours() * 4;
-	inc += Math.floor(date_obj.getMinutes() / 15);
-	return inc;
-}
 
 function getDay() {
 	let date_curr = new Date();

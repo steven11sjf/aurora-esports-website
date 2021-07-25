@@ -18,6 +18,17 @@ var CURRENT_WEEK = 5;
 
 /* ======== HELPER FUNCTIONS ========= */
 
+// returns the number of 15-min increments between midnight and 11:45pm
+// this is between 0 and 95
+// for example, 2:15AM returns 9	
+function get15Inc() {
+	let date_curr = new Date();
+	let date_obj = new Date(date_curr.toLocaleString("en-US", { timeZone: "America/Chicago" }));
+	let inc = date_obj.getHours() * 4;
+	inc += Math.floor(date_obj.getMinutes() / 15);
+	return inc;
+}
+
 /**
  * Gets the time, offset by the number of minutes in the future
  * getTime(0) is current time
