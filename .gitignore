@@ -1,6 +1,4 @@
 # don't upload the cached jsons, except for blog
-/json/*
-!/json/blog.json
 
 # allows to test with environment variables without having to deploy
 .env
