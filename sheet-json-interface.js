@@ -79,7 +79,7 @@ function getDay() {
  * gets the number of hourly and weekly page hits
  * returns the page hits obj
  */
-function getPageHits() {
+function getPageHits(numHits) {
 	googleAuth.authorize()
 		.then((auth) => {
 			sheetsApi.spreadsheets.values.batchGet({
@@ -94,7 +94,7 @@ function getPageHits() {
 					console.log('The API returned an error: ' + err);
 					return;
 				}
-				return response.data;
+				calcPageHits(response.data,numHits);
 			});
 		})
 		.catch((err) => {
@@ -118,7 +118,7 @@ function calcPageHits(obj,numHits) {
 		"timeUpdated" : parseInt(currTime, 10) + numHits,
 		"dayUpdated" : parseInt(currDay) + numHits
 	};
-	return newStats;
+	updatePageHits(newStats);
 }
 
 /* updates page hits with latest stats */
@@ -420,9 +420,7 @@ function getDataInRange(range, callback) {
  */
 function doStats(numHits) {
 	if(numHits == 0) return; // skip if no pages have been loaded
-	let curr = getPageHits();
-	let next = calcPageHits(curr,numHits);
-	updatePageHits(next);
+	getPageHits(numHits);
 }
 
 /**
