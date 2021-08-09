@@ -59,6 +59,7 @@ function getGameStats() {
 		if(this.readyState == 4 && this.status == 200) {
 			statsObj = JSON.parse(xhttp.responseText);
 			loadTables();
+			loadImage();
 		} else {
 			if(xhttp.status != 200) {
 				alert('Error loading stats! HTTP status code ' + xhttp.status);
@@ -104,7 +105,8 @@ function loadData() {
 	console.log(bioHtml);
 	document.getElementById("bio").innerHTML = bioHtml;
 	
-	loadImage();
+	// since this relies on loading the stats, it's called after getGameStats receives the ajax response
+	//loadImage();
 	loadNumberAndRole();
 	loadSocials();
 	loadTeam();
@@ -117,8 +119,15 @@ function loadImage() {
 	if(playerInfo.picture == "") {
 		// player does not have a picture, use hero
 		if(playerInfo.hero == "") {
-			// player does not have a favorite hero, no image selected
-			document.getElementById("player-photo").innerHTML = '';
+			// player does not have favorite hero, use most played
+			let mostplayed = getMostPlayedHero();
+			if(mostplayed == '') {
+				// no heroes played, no image selected
+				document.getElementById("player-photo").innerHTML = '';
+			} else {
+				// has most playtime on hero, use their image
+				document.getElementById("player-photo").innerHTML = '<img src="/images/heroportraits/' + mostplayed + '.png">';
+			}
 		} else {
 			// player has a favorite hero, set image
 			document.getElementById("player-photo").innerHTML = '<img src="/images/heroportraits/' + playerInfo.hero + '.png">';
@@ -207,6 +216,22 @@ function loadTables() {
 	loadHeroStats();
 	loadCareerStats();
 	hideUnusedElements();
+}
+
+// returns the player's hero most played
+function getMostPlayedHero() {
+	let name = '';
+	let time = 0.0;
+	for(i=0;i<statsObj.stats.length;++i){
+		if(statsObj.stats[i]["player"] == playerInfo.battletag) {
+			let temp_t = parseFloat(statsObj.stats[i]["timeplayed"]);
+			if(temp_t > time) {
+				name = statsObj.stats[i]["hero"];
+				time = temp_t;
+			}
+		}
+	}
+	return name;
 }
 
 // loads hero stats table 
