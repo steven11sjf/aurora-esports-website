@@ -1,9 +1,12 @@
+// json for matchLog
 var matchJson;
 
+// stores log in page memory
 function loadLog(json) {
 	matchJson = json;
 }
 
+// generates a table for the given round's matches
 function addRoundTable(round) {
 	var res = "";
 	
@@ -71,6 +74,7 @@ function addRoundTable(round) {
 	document.getElementById("rounds-div").innerHTML += res;
 }
 
+// calculates the match's score and returns it as a p.match-score block
 function getMatchScore(row) {
 	var team1score = 0;
 	var team2score = 0;
@@ -111,8 +115,10 @@ function getMatchScore(row) {
 	return '<p class="match-score">' + team1score + '-' + team2score + '</p>';
 }
 
+// generates the map field
+// each map is a div that shows the map image, with a blue/red/gray border, and when hovered displays map name and winning team
 function loadMatchMaps(row) {
-	var res = '<div class="matchscore"></div>';
+	var res = '';
 	var teamscore = 0;
 	var oppscore = 0;
 	var tiescore = 0;
@@ -321,6 +327,7 @@ function loadMatchMaps(row) {
 	return res;	
 }
 
+// gets the map image url based on the map's name
 function getMapImage(name) {
 	if(name == "Lijiang Tower")
 		return "https://static.playoverwatch.com/img/pages/maps/images/lijiang-tower.jpg";
@@ -346,7 +353,7 @@ function getMapImage(name) {
 	if(name == "Watchpoint: Gibraltar")
 		return "https://static.playoverwatch.com/img/pages/maps/images/watchpoint-gibraltar.jpg";
 	
-	if(name == "King's Row")
+	if(name == "King&apos;s Row")
 		return "https://static.playoverwatch.com/img/pages/maps/images/kings-row.jpg";
 	if(name == "Eichenwalde")
 		return "https://static.playoverwatch.com/img/pages/maps/images/eichenwalde.jpg";
