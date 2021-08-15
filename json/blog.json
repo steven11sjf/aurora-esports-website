@@ -76,6 +76,17 @@
 			],
 			"image" : "/images/patch_notes.png",
 			"contents" : "/html/Blog/player-profiles.html"
+		},
+		{
+			"id" : "rat-rankings",
+			"date" : "8/15/2021 1:07:00 PM",
+			"title" : "Rat Power Rankings",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/ratrankings.html"
 		}
 	]
 }
