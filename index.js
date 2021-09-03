@@ -84,7 +84,7 @@ app.get('/GetStandings', function(req, res) {
 
 // sends team.json
 app.get('/api/teaminfo/:team/',function(req,res) {
-	localfs.openJson(req.params.team + '.json', (obj) => {
+	localfs.openJson('cached/' + req.params.team + '.json', (obj) => {
 		var json = JSON.stringify(obj);
 		
 		res.statusCode = 200;
