@@ -399,7 +399,7 @@ function getMapImage(name) {
 	if(name == "Watchpoint: Gibraltar")
 		return "https://static.playoverwatch.com/img/pages/maps/images/watchpoint-gibraltar.jpg";
 	
-	if(name == "King's Row")
+	if(name == "King&apos;s Row")
 		return "https://static.playoverwatch.com/img/pages/maps/images/kings-row.jpg";
 	if(name == "Eichenwalde")
 		return "https://static.playoverwatch.com/img/pages/maps/images/eichenwalde.jpg";
