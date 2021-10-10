@@ -16,6 +16,9 @@ const sheetsApi = google.sheets('v4');
 const googleAuth = require('./auth');
 const constants = require('./consts');
 const localfs = require('./localfs');
+const dh = require('./data-handler');
+
+var sheets = [];
 
 // helper function that sanitizes data taken from external source (ie spreadsheet cells) to make sure attackers cannot break code or html
 function sanitize(string) {
@@ -46,7 +49,9 @@ class GWLSpreadsheet {
 	ongoing; // whether the tournament is ongoing
 	spreadsheetId; // the spreadsheet's id (string after the last '/' in url)
 	teams; // the teams in the tournament
+	teamPageTemplatePath; // the path to the teampage HTML template, constant to subclass
 	format; // the format of the tournament
+	className; // the name of the class
 	meta; // metadata info object (i.e. meta.hasStats = true)
 	
 	// creates a spreadsheet
@@ -56,41 +61,137 @@ class GWLSpreadsheet {
 		this.ongoing = ongoing;
 		this.spreadsheetId = spreadsheetId;
 		this.format = "unformatted";
+		this.className = "GWLSpreadsheet";
 		this.teams = [];
 		this.meta = {};
+		
+		this.teamPageTemplatePath = "/client/Teams/team.html";
 	}
 	
 	// builds the directory structure
 	buildDirectory() {
 		console.info('Using default buildDirectory, but it is best practice to override');
-		fs.mkdirSync("./json/" + this.internal);
-		fs.mkdirSync("./json/" + this.internal + "/teams");
+		return new Promise((resolve,reject) => {
+			fs.mkdirSync("./data/" + this.internal);
+			fs.mkdirSync("./data/" + this.internal + "/teams");
+			resolve(null);
+		});
+	}
+	
+	// generates a link dictionary
+	generateLinkDict() {
+		console.log("Generating dict for " + this.name);
+		return new Promise((resolve,reject) => {	
+			// get players
+			this.getPlayers()
+			.then(playersJson => {
+				let dict = [];
+				let players = playersJson.players;
+				
+				for(i=0;i<this.teams.length;++i) {
+					console.log(this.teams[i].name, this.teams[i].internal);
+					if(!this.teams[i].name || !this.teams[i].internal) reject(`Error linking team: sheet name "${this.name}", teams index ${i}`);
+					
+					let w = this.teams[i].name;
+					let l = "/" + this.internal + "/Teams/" + this.teams[i].internal;
+					let entry = { word: w, link: l };
+					dict.push(entry);
+				}
+				
+				for(let j=0;j<players.length;++j) {
+					if(!players[j].battletag) reject(`Error linking player: sheet name "${this.name}, player index ${j}`);
+					
+					let w = players[j].battletag;
+					let l = `/${this.internal}/Player/${w.replace('#','-')}`;
+					let entry = { word: w, link: l };
+					dict.push(entry);
+				}
+				console.log("Dict completed for " + this.name);
+				this.storeLinkDict(dict)
+				.then(resolve(dict))
+				.catch(err => {
+					console.log("Storing dict fucked up! err=" + err);
+					reject(err);
+				});
+			})
+			.catch(err => reject(err));
+		});
 	}
 	
 	// loads a serialized object into the class
 	static loadObject(obj) {
-		// check it is the correct format
-		if(obj.format != "unformatted") {
-			console.log("Object is not a GWLSpreadsheet object!");
-			return null;
-		}
-		var sheet = new GWLSpreadsheet(obj.name, obj.internal, obj.ongoing, obj.spreadsheetId);
-		return sheet;
+		return new Promise((resolve,reject) => {
+			// check it is the correct format
+			if(obj.format != "unformatted") {
+				console.log("Object is not a GWLSpreadsheet object!");
+				reject("InvalidFormat");
+			}
+			var sheet = new GWLSpreadsheet(obj.name, obj.internal, obj.ongoing, obj.spreadsheetId);
+			resolve(sheet);
+		});
 	}
 	
 	// abstract method to access spreadsheet info (typically stored in Info tab)
 	loadSheetInfo() {
-		console.error('You have not implemented the method loadSheetInfo!');
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method loadSheetInfo!');
+		});
 	}
 	
 	// abstract method to BatchGet all info
 	batchGetAll() {
-		console.error('You have not implemented the method batchGetAll!');
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method batchGetAll!');
+		});
+	}
+	
+	// abstract method to store link dictionary
+	storeLinkDict(dict) {
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method storeLinkDict!');
+		});
+	}
+	
+	// abstract method to get link dictionary
+	getLinkDict() {
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method getLinkDict!');
+		});
 	}
 	
 	// abstract method to get player info
 	getPlayerInfo(battletag) {
-		console.error('You have not implemented the method getPlayerInfo!');
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method getPlayerInfo!');
+		});
+	}
+	
+	getPlayers() {
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method getPlayers!');
+		});
+	}
+	
+	getStandings() {
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method getStandings!');
+		});
+	}
+	
+	// abstract method to get team info
+	getTeamInfo(team) {
+		console.info('Using default getTeamInfo, but it is best practice to override!');
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise("./data/" + this.internal + "/teams/" + team + ".json")
+			.then(data => resolve(data))
+			.catch(err => reject(err))
+		});
+	}
+	
+	getMatches() {
+		return new Promise((resolve,reject) => {
+			reject('You have not implemented the method getMatches!');
+		});
 	}
 }
 
@@ -100,99 +201,113 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 	constructor(name, internal, ongoing, spreadsheetId) {
 		super(name, internal, ongoing, spreadsheetId);
 		this.format = "roundrobin";
+		this.className = "GWLRoundRobinSpreadsheet";
 		this.meta.hasStats = true;
 		this.meta.hasPlayerProfiles = true;
-		console.log(this);
-		this.buildDirectory();
+		
+		this.teamPageTemplatePath = "/client/Teams/team_roundrobin.html";
 	}
 	
 	// loads a serialized object into the class
 	static loadObject(obj) {
-		if(obj.format != "roundrobin") {
-			console.log("Object is not a GWLRoundRobinSpreadsheet object!");
-			return null;
-		}
-		var sheet = new GWLRoundRobinSpreadsheet(obj.name, obj.internal, obj.ongoing, obj.spreadsheetId);
-		sheet.teams = obj.teams;
-		return sheet;
+		return new Promise((resolve,reject) => {
+			console.log(obj);
+			if(obj.format != "roundrobin") {
+				console.log("Object is not a GWLRoundRobinSpreadsheet object!");
+				reject("InvalidFormat");
+			}
+			var sheet = new GWLRoundRobinSpreadsheet(obj.name, obj.internal, obj.ongoing, obj.spreadsheetId);
+			sheet.teams = obj.teams;
+			resolve(sheet);
+		});
 	}
 	
 	// accesses spreadsheet info
 	loadSheetInfo() {
-		googleAuth.authorize()
-		.then((auth) => {
-			sheetsApi.spreadsheets.values.batchGet({
-				auth: auth,
-				spreadsheetId: this.spreadsheetId,
-				ranges: [
-					'Info!A2:C21',			// 1 Team names
-				]
-			}, (err, response) => {
-				if (err) {
-					console.log('The API returned an error: ' + err);
-					return;
-				}
-				
-				// store teams
-				let teams = response.data.valueRanges[0].values;
-				teams.map((row) => {
-					let obj = {};
-					obj.name = row[0];
-					obj.internalName = row[2];
-					this.teams.push(obj);
+		return new Promise((resolve,reject) => {
+			googleAuth.authorize()
+			.then((auth) => {
+				sheetsApi.spreadsheets.values.batchGet({
+					auth: auth,
+					spreadsheetId: this.spreadsheetId,
+					ranges: [
+						'Info!A2:F21',			// 1 Team names
+					]
+				}, (err, response) => {
+					if (err) {
+						console.log('The API returned an error: ' + err);
+						reject(err);
+					}
+					
+					// store teams
+					let teams = response.data.valueRanges[0].values;
+					if(teams) teams.map((row) => {
+						let obj = {};
+						obj.name = row[0];
+						obj.internal = row[2];
+						obj.iconUrl = row[3];
+						obj.primaryColor = row[4];
+						obj.secondaryColor = row[5];
+						
+						// discard if team is invalid (no name or internal name)
+						if(obj.name != undefined && obj.name != '' && obj.internal != undefined && obj.internal != '') 
+						this.teams.push(obj);
+					});
+					
+					resolve(this);
 				});
-				
-				console.log("Loaded team info!", this);
-				this.batchGetAll();
+			})
+			.catch((err) => {
+				console.log('auth error', err);
+				reject(err);
 			});
-		})
-		.catch((err) => {
-			console.log('auth error', err);
 		});
 	}
 	
-	// stores data captured by batchGetAll
-	storeBatchGet(data) {
-		console.log(data);
-		// store matchlog info
-		{
-			let rows = data.valueRanges[0].values;
-			var json = '{"matches":[';
-			if(rows.length) {
-				rows.map((row) => {
-					json += `{"tournament":"${sanitize(row[0])}","played":"${sanitize(row[7])}",`;
-					json += `"team1":"${sanitize(row[1])}","team2":"${sanitize(row[2])}",`;
-					json += `"division":"${sanitize(row[4])}","date":"${sanitize(row[5])}","time":"${sanitize(row[6])}",`;
-					json += `"map1":{"name":"${sanitize(row[8])}","winner":"${sanitize(row[9])}"},`;
-					json += `"map2":{"name":"${sanitize(row[10])}","winner":"${sanitize(row[11])}"},`;
-					json += `"map3":{"name":"${sanitize(row[12])}","winner":"${sanitize(row[13])}"},`;
-					json += `"map4":{"name":"${sanitize(row[14])}","winner":"${sanitize(row[15])}"},`;
-					json += `"map5":{"name":"${sanitize(row[16])}","winner":"${sanitize(row[17])}"},`;
-					json += `"map6":{"name":"${sanitize(row[18])}","winner":"${sanitize(row[19])}"},`;
-					json += `"map7":{"name":"${sanitize(row[20])}","winner":"${sanitize(row[21])}"},`;
-					json += `"map8":{"name":"${sanitize(row[22])}","winner":"${sanitize(row[23])}"},`;
-					json += `"matchwinner":"${sanitize(row[24])}","vod":"${sanitize(row[25])}","round":"${sanitize(row[26])}"},`;
+	// functions for storing data
+	_storematchlog(range) {
+		return new Promise((resolve,reject) => {
+			// store matchlog info
+			{
+				var json = '{"matches":[';
+				if(range && range.length) {
+					range.map((row) => {
+						json += `{"tournament":"${sanitize(row[0])}","played":"${sanitize(row[7])}",`;
+						json += `"team1":"${sanitize(row[1])}","team2":"${sanitize(row[2])}",`;
+						json += `"division":"${sanitize(row[4])}","date":"${sanitize(row[5])}","time":"${sanitize(row[6])}",`;
+						json += `"map1":{"name":"${sanitize(row[8])}","winner":"${sanitize(row[9])}"},`;
+						json += `"map2":{"name":"${sanitize(row[10])}","winner":"${sanitize(row[11])}"},`;
+						json += `"map3":{"name":"${sanitize(row[12])}","winner":"${sanitize(row[13])}"},`;
+						json += `"map4":{"name":"${sanitize(row[14])}","winner":"${sanitize(row[15])}"},`;
+						json += `"map5":{"name":"${sanitize(row[16])}","winner":"${sanitize(row[17])}"},`;
+						json += `"map6":{"name":"${sanitize(row[18])}","winner":"${sanitize(row[19])}"},`;
+						json += `"map7":{"name":"${sanitize(row[20])}","winner":"${sanitize(row[21])}"},`;
+						json += `"map8":{"name":"${sanitize(row[22])}","winner":"${sanitize(row[23])}"},`;
+						json += `"matchwinner":"${sanitize(row[24])}","vod":"${sanitize(row[25])}","round":"${sanitize(row[26])}"},`;
+					});
+					
+					json = json.replace(/,$/,'');
+					json += ']}';
+				} else {
+					console.log("Pulled an empty MatchLog!");
+					json += ']}';
+				}
+					
+				let jsonObj = JSON.parse(json);
+				localfs.writeJsonPromise('./data/' + this.internal + '/matchlog.json', jsonObj)
+				.then(() => resolve(jsonObj))
+				.catch(err => {
+					console.log("Error storing matchlog!");
+					reject(err);
 				});
-				
-				json = json.replace(/,$/,'');
-				json += ']}';
-			} else {
-				console.log("Pulled an empty MatchLog!");
-				json += ']}';
 			}
-				
-			let jsonObj = JSON.parse(json);			
-			localfs.writeJson(this.internal + '/matchlog.json', jsonObj, (res) => {});
-		}
+		});
+	}
 		
-		// store hero stats
-		{
-			let rows = data.valueRanges[1].values;
-			let league = data.valueRanges[2].values;
-			let totals = data.valueRanges[3].values;
-			
+	_storeherostats(rows,league,totals) {
+		return new Promise((resolve,reject) => {
 			var json = '{"stats":[';
-			if(rows && rows.length && league && league.length) {
+			if(rows && rows.length && league && league.length && totals && totals.length) {
 				rows.map((row) => {
 					json += `{"player":"${sanitize(row[0])}","hero":"${sanitize(row[1])}",`;
 					json += `"elims":"${row[2]}","fb":"${row[3]}",`;
@@ -220,15 +335,20 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 			}
 			
 			let jsonObj = JSON.parse(json);
-			localfs.writeJson(this.internal + '/herostats.json', jsonObj, (res) => {});
-		}
+			localfs.writeJsonPromise('./data/' + this.internal + '/herostats.json', jsonObj)
+			.then(() => resolve(jsonObj))
+			.catch(err => {
+				console.log("Error storing HeroStats!");
+				reject(err)
+			});
+		});
+	}
 		
-		// store standings
-		{
-			let rows = data.valueRanges[4].values;
+	_storestandings(range) {
+		return new Promise((resolve,reject) => {
 			let json = '{"Teams":[';
-			if(rows && rows.length) {
-				rows.map((row) => {
+			if(range && range.length) {
+				range.map((row) => {
 					json += `{"name":"${sanitize(row[1])}","rank":"${sanitize(row[0])}","points":"${sanitize(row[3])}",`;
 					json += `"win":"${sanitize(row[4])}","loss":"${sanitize(row[5])}",`;
 					if(row[3]+row[4]==0) {
@@ -251,15 +371,20 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 			}
 
 			var obj = JSON.parse(json);
-			localfs.writeJson(this.internal + '/standings.json', obj, (res) => {});
-		}
+			localfs.writeJsonPromise('./Data/' + this.internal + '/standings.json', obj)
+			.then(() => resolve(obj))
+			.catch(err => {
+				console.log("Error storing standings!");
+				reject(err);
+			});
+		});
+	}
 		
-		// store player info
-		{
-			let rows = data.valueRanges[5].values;
+	_storeplayerinfo(range) {
+		return new Promise((resolve,reject) => {
 			let json = '{"players":['
-			if(rows.length) {
-				rows.map((row) => {
+			if(range && range.length) {
+				range.map((row) => {
 					json += '{"battletag":"';
 					json += `${sanitize(row[0])}`;
 					json += '","team":"';
@@ -291,173 +416,395 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 				json += ']}';
 				
 				json = json.split("\"undefined\"").join("\"\"");
-				let obj = JSON.parse(json);			
-				localfs.writeJson(this.internal + '/players.json', obj, (res) => {});
 			} else {
 				console.log('Player info is empty!');
+				json += ']}';
 			}
-		}
+			
+			let obj = JSON.parse(json);
+			localfs.writeJsonPromise('./Data/' + this.internal + '/players.json', obj)
+			.then(() => resolve(obj))
+			.catch(err => {
+				console.log("Error storing player info!");
+				reject(err);
+			});
+		});
+	}
 		
-		// store team info
-		let offset = 6; // what index team info starts
-		for(let i=0; i<this.teams.length; i++) {
-			// check the value ranges for the team exist
-			if(!data.valueRanges[offset+4*i+3]) {
-				console.error('Invalid batchGetAll response! data.valueRanges[' + (offset+4*i+3) + '] does not exist!')
-				break;
-			}
-			
-			// map to variables
-			let filename = this.internal + '/teams/' + this.teams[i].internalName + '.json';
-			let roster = data.valueRanges[offset+4*i].values;
-			let maps = data.valueRanges[offset+4*i+1].values;
-			let matches = data.valueRanges[offset+4*i+2].values;
-			let stats = data.valueRanges[offset+4*i+3].values;
-			
-			// store roster
-			let json = '{"roster":[';
-			if(roster.length) {
-				roster.map((row) => {
-					json += '{"name":"';
-					json += `${sanitize(row[0])}`;
-					json += '","draft":"';
-					json += `${sanitize(row[1])}`;
-					json += '","tank":"';
-					json += `${sanitize(row[2])}`;
-					json += '","damage":"';
-					json += `${sanitize(row[3])}`;
-					json += '","support":"';
-					json += `${sanitize(row[4])}`;
-					json += '"},';
-				});
+	_storeteaminfo(data) {
+		return new Promise((resolve,reject) => {
+			let offset = 6; // what index team info starts
+			for(let i=0; i<this.teams.length; i++) {
+				// check the value ranges for the team exist
+				if(!data.valueRanges[offset+4*i+3]) {
+					reject('Invalid batchGetAll response! data.valueRanges[' + (offset+4*i+3) + '] does not exist!');
+				}
 				
-				json = json.replace(/,$/,'');
-				json += '],';
-			} else {
-				json += '],';
-			}
-			
-			// store maps
-			json += '"maps":[';
-			if(maps.length) {
-				maps.map((row) => {
-					json += '{"mapname":"';
-					json += `${sanitize(row[0])}`;
-					json += '","wins":"';
-					json += `${sanitize(row[1])}`;
-					json += '","losses":"';
-					json += `${sanitize(row[2])}`;
-					json += '","draws":"';
-					json += `${sanitize(row[3])}`;
-					json += '","winrate":"';
-					json += `${sanitize(row[4])}`;
-					json += '"},';
-				});
-					
-				json = json.replace(/,$/,'');
-				json += '],';
-			} else {
-				json += '],';
-			}
-			
-			// store matches 
-			json += '"matches":[';
-			if(matches && matches.length) {
-				matches.map((row) => {
-					json += '{"tournament":"';
-					json += `${sanitize(row[0])}`;
-					json += '","opponent":"';
-					json += `${sanitize(row[1])}`;
-					json += '","date":"';
-					json += `${sanitize(row[2])}`;
-					json += '","time":"';
-					json += `${sanitize(row[3])}`;
-					json += '","played":"';
-					json += `${sanitize(row[4])}",`;
-					json += `"map1":{"name":"${sanitize(row[5])}","winner":"${sanitize(row[6])}"},`;
-					json += `"map2":{"name":"${sanitize(row[7])}","winner":"${sanitize(row[8])}"},`;
-					json += `"map3":{"name":"${sanitize(row[9])}","winner":"${sanitize(row[10])}"},`;
-					json += `"map4":{"name":"${sanitize(row[11])}","winner":"${sanitize(row[12])}"},`;
-					json += `"map5":{"name":"${sanitize(row[13])}","winner":"${sanitize(row[14])}"},`;
-					json += `"map6":{"name":"${sanitize(row[15])}","winner":"${sanitize(row[16])}"},`;
-					json += `"map7":{"name":"${sanitize(row[17])}","winner":"${sanitize(row[18])}"},`;
-					json += `"map8":{"name":"${sanitize(row[19])}","winner":"${sanitize(row[20])}"},`;
-					json += `"winner":"${sanitize(row[21])}",`;
-					json += `"division":"${sanitize(row[22])}",`;
-					json += `"vod":"${sanitize(row[23])}",`;
-					json += `"round":"${sanitize(row[24])}"},`;
-				});
-					
-				json = json.replace(/,$/,'');
-				json += '],';
-			} else {
-				json += '],';
-			}
-			
-			// store stats
-			json += '"stats":{';
-			if(stats.length) {
-				stats.map((row) => {
-					json += `"${row[0]}":{`;
-					json += `"wins":"${row[1]}","losses":"${row[2]}","mapwins":"${row[3]}","maplosses":"${row[4]}","mapties":"${row[5]}","mapdiff":"${row[6]}","rank":"${row[7]}"},`;
-				});
+				// map to variables
+				let filename = './data/' + this.internal + '/teams/' + this.teams[i].internal + '.json';
+				let roster = data.valueRanges[offset+4*i].values;
+				let maps = data.valueRanges[offset+4*i+1].values;
+				let matches = data.valueRanges[offset+4*i+2].values;
+				let stats = data.valueRanges[offset+4*i+3].values;
 				
-				json = json.replace(/,$/,'');
-				json += '}}';
-			} else {
-				json += '}}';
+				// store roster
+				let json = '{"roster":[';
+				if(roster && roster.length) {
+					roster.map((row) => {
+						json += '{"name":"';
+						json += `${sanitize(row[0])}`;
+						json += '","draft":"';
+						json += `${sanitize(row[1])}`;
+						json += '","tank":"';
+						json += `${sanitize(row[2])}`;
+						json += '","damage":"';
+						json += `${sanitize(row[3])}`;
+						json += '","support":"';
+						json += `${sanitize(row[4])}`;
+						json += '"},';
+					});
+					
+					json = json.replace(/,$/,'');
+					json += '],';
+				} else {
+					json += '],';
+				}
+				
+				// store maps
+				json += '"maps":[';
+				if(maps && maps.length) {
+					maps.map((row) => {
+						json += '{"mapname":"';
+						json += `${sanitize(row[0])}`;
+						json += '","wins":"';
+						json += `${sanitize(row[1])}`;
+						json += '","losses":"';
+						json += `${sanitize(row[2])}`;
+						json += '","draws":"';
+						json += `${sanitize(row[3])}`;
+						json += '","winrate":"';
+						json += `${sanitize(row[4])}`;
+						json += '"},';
+					});
+						
+					json = json.replace(/,$/,'');
+					json += '],';
+				} else {
+					json += '],';
+				}
+				
+				// store matches 
+				json += '"matches":[';
+				if(matches && matches.length) {
+					matches.map((row) => {
+						json += '{"tournament":"';
+						json += `${sanitize(row[0])}`;
+						json += '","opponent":"';
+						json += `${sanitize(row[1])}`;
+						json += '","date":"';
+						json += `${sanitize(row[2])}`;
+						json += '","time":"';
+						json += `${sanitize(row[3])}`;
+						json += '","played":"';
+						json += `${sanitize(row[4])}",`;
+						json += `"map1":{"name":"${sanitize(row[5])}","winner":"${sanitize(row[6])}"},`;
+						json += `"map2":{"name":"${sanitize(row[7])}","winner":"${sanitize(row[8])}"},`;
+						json += `"map3":{"name":"${sanitize(row[9])}","winner":"${sanitize(row[10])}"},`;
+						json += `"map4":{"name":"${sanitize(row[11])}","winner":"${sanitize(row[12])}"},`;
+						json += `"map5":{"name":"${sanitize(row[13])}","winner":"${sanitize(row[14])}"},`;
+						json += `"map6":{"name":"${sanitize(row[15])}","winner":"${sanitize(row[16])}"},`;
+						json += `"map7":{"name":"${sanitize(row[17])}","winner":"${sanitize(row[18])}"},`;
+						json += `"map8":{"name":"${sanitize(row[19])}","winner":"${sanitize(row[20])}"},`;
+						json += `"winner":"${sanitize(row[21])}",`;
+						json += `"division":"${sanitize(row[22])}",`;
+						json += `"vod":"${sanitize(row[23])}",`;
+						json += `"round":"${sanitize(row[24])}"},`;
+					});
+						
+					json = json.replace(/,$/,'');
+					json += '],';
+				} else {
+					json += '],';
+				}
+				
+				// store stats
+				json += '"stats":{';
+				if(stats && stats.length) {
+					stats.map((row) => {
+						json += `"${row[0]}":{`;
+						json += `"wins":"${row[1]}","losses":"${row[2]}","mapwins":"${row[3]}","maplosses":"${row[4]}","mapties":"${row[5]}","mapdiff":"${row[6]}","rank":"${row[7]}"},`;
+					});
+					
+					json = json.replace(/,$/,'');
+					json += '}}';
+				} else {
+					json += '}}';
+				}
+				
+				let jsonObj = JSON.parse(json);
+				localfs.writeJsonPromise(filename, jsonObj)
+				.then(() => {})
+				.catch(err => {
+					console.log("Error storing team info!");
+					reject(err);
+				});
 			}
-
-			console.log(json);
-			let jsonObj = JSON.parse(json);
-			localfs.writeJson(filename, jsonObj, (res) => {});
-		}
-		
-		console.log('Batch get for season "' + this.name + '" complete!');
+			
+			resolve("Done!");
+		});
+	}
+	
+	// stores link dict 
+	storeLinkDict(dict) {
+		return new Promise((resolve,reject) => {
+			// store the given dict
+			localfs.writeJsonPromise(`./data/${this.internal}/linkdict.json`, dict)
+			.then(() => resolve("Success!"))
+			.catch(err => {
+				console.log("Error storing dictionary");
+				reject(err);
+			});
+		});
+	}
+	
+	getLinkDict() {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise(`./data/${this.internal}/linkdict.json`)
+			.then(obj => resolve(obj))
+			.catch(err => reject(err));
+		});
+	}
+	
+	// stores data captured by batchGetAll
+	storeBatchGet(data) {
+		return new Promise((resolve,reject) => {
+			// store matchlog info
+			this._storematchlog(data.valueRanges[0].values)
+			.then(() => this._storeherostats(data.valueRanges[1].values, data.valueRanges[2].values, data.valueRanges[3].values))
+			.then(() => this._storestandings(data.valueRanges[4].values))
+			.then(() => this._storeplayerinfo(data.valueRanges[5].values))
+			.then(() => this._storeteaminfo(data))
+			.then(res => {
+				console.log('Batch get for ' + this.name + ' complete!');
+				resolve(this);
+			})
+			.catch(err => {
+				localfs.writeJsonPromise('./error.json', data.valueRanges)
+				.then(() => console.log("Error-prone data saved to ./error.json!"))
+				.catch(e2 => {
+					console.log("Error writing response to error.json! printing in console");
+					console.log(data.valueRanges);
+				});
+				reject(err);
+			});
+		});
 	}
 	
 	// batch get all info for sheet
 	batchGetAll() {
-		console.log("teams:",this.teams);
-		// generate ranges
-		let ranges = [];
-		ranges.push('MatchLog!A2:AA361');
-		ranges.push('HeroStats!A2:J2000');
-		ranges.push('HeroStats!L2:T32');
-		ranges.push('HeroStats!N34:S35');
-		ranges.push('Standings!A15:K24');
-		ranges.push('PlayerInfo!A2:AC200');
-		for(let i=0; i<this.teams.length; i++) {
-			ranges.push(this.teams[i].internalName + '!A5:L14') // roster
-			ranges.push(this.teams[i].internalName + '!F70:J88') // map stats
-			ranges.push(this.teams[i].internalName + '!A32:Y67') // match history
-			ranges.push(this.teams[i].internalName + '!J17:Q20') // team stats
-		}
-		
-		console.log(ranges);
-		
-		// get data on all ranges
-		googleAuth.authorize()
-		.then((auth) => {
-			sheetsApi.spreadsheets.values.batchGet({
-				auth: auth,
-				spreadsheetId: constants.SPREADSHEET_ID,
-				ranges: ranges
-			}, (err, response) => {
-				if (err) {
-					console.log('The API returned an error: ' + err);
-					return;
-				}
-				this.storeBatchGet(response.data);
+		return new Promise((resolve,reject) => {
+			// generate ranges
+			let ranges = [];
+			ranges.push('MatchLog!A2:AA361');
+			ranges.push('HeroStats!A2:J2000');
+			ranges.push('HeroStats!L2:T32');
+			ranges.push('HeroStats!N34:S35');
+			ranges.push('Standings!A15:K24');
+			ranges.push('PlayerInfo!A2:AC200');
+			for(let i=0; i<this.teams.length; i++) {
+				ranges.push(this.teams[i].internal + '!A5:L14') // roster
+				ranges.push(this.teams[i].internal + '!F70:J88') // map stats
+				ranges.push(this.teams[i].internal + '!A32:Y67') // match history
+				ranges.push(this.teams[i].internal + '!J17:Q20') // team stats
+			}
+			
+			// get data on all ranges
+			googleAuth.authorize()
+			.then((auth) => {
+				sheetsApi.spreadsheets.values.batchGet({
+					auth: auth,
+					spreadsheetId: this.spreadsheetId,
+					ranges: ranges
+				}, (err, response) => {
+					if (err) {
+						console.log('The API returned an error: ' + err);
+						reject(err);
+					}
+					localfs.writeJsonPromise('./'+this.internal+'.json',response)
+					.then(r => this.storeBatchGet(response.data))
+					.then(res => resolve(res))
+					.catch(err => reject(err));
+				});
+			})
+			.catch((err) => {
+				reject(err);
 			});
-		})
-		.catch((err) => {
-			console.log('auth error', err);
+		});
+	}
+
+	getPlayerInfo(battletag) {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise('./data/' + this.internal + '/players.json')
+			.then(res => dh.getPlayerFromJson(res, battletag))
+			.then(res2 => resolve(res2))
+			.catch(err => reject(err));
+		});
+	}
+	
+	getPlayers() {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise('./data/' + this.internal + '/players.json')
+			.then(res => resolve(res))
+			.catch(err => reject(err));
+		});
+	}
+	
+	getStandings() {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise('./data/' + this.internal + '/standings.json')
+			.then(res => resolve(res))
+			.catch(err => reject(err));
+		});
+	}
+	
+	getTeamInfo(team) {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise("./data/" + this.internal + "/teams/" + team + ".json")
+			.then(data => resolve(data))
+			.catch(err => reject(err))
+		});
+	}
+	
+	getMatches() {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise("./data/" + this.internal + "/matchlog.json")
+			.then(res => resolve(res))
+			.catch(err => reject(err));
+		});
+	}
+	
+	getHeroStats() {
+		return new Promise((resolve,reject) => {
+			localfs.openJsonPromise("./data/" + this.internal + "/herostats.json")
+			.then(res => resolve(res))
+			.catch(err => reject(err));
 		});
 	}
 }
 
+// function that loads one sheet and returns a promise
+const loadSheet = (sh) => new Promise((resolve,reject) => {
+	if(sh.format == "unformatted") {
+		GWLSpreadsheet.loadObject(sh)
+		.then(res => resolve(res))
+		.catch(err => {
+			console.log("loadObject fucked up, sh = " + JSON.stringify(sh));
+			reject(err);
+		});
+	} else if(sh.format == "roundrobin") {
+		GWLRoundRobinSpreadsheet.loadObject(sh)
+		.then(res => resolve(res))
+		.catch(err => {
+			console.log("loadObject fucked up, sh = " + JSON.stringify(sh));
+			reject(err);
+		});
+	} else {
+		console.log("format invalid " + JSON.stringify(sh));
+		reject('InvalidFormatField');
+	}
+});
+
+// function that loads all sheets into memory
+function init() {
+	return new Promise((res,reject) => {
+		// open sheet info
+		localfs.openJsonPromise('./data/sheets.json')
+		.then((data) => {
+			// load data and resolve
+			let promiseArr = [];
+			for(i=0;i<data.length;++i) {
+				promiseArr.push(loadSheet(data[i]));
+			}
+			console.log(promiseArr);
+			
+			Promise.all(promiseArr)
+			.then(doneArr => {
+				console.log("All promises executed! doneArr=" + doneArr);
+				sheets = doneArr;
+				res(doneArr)
+			})
+			.catch(err => {
+				console.log("one of the promises fucked up! ", err);
+				reject(err);
+			});
+		})
+		.catch(err => reject(err))
+	});
+}
+
+// function that updates all sheets
+function updateAll() {
+	return new Promise((fulfill,reject) => {
+		let updated = [];
+		let promiseArr = [];
+		
+		for(i=0;i<sheets.length;++i) {
+			if(sheets[i].ongoing) {
+				promiseArr.push(sheets[i].batchGetAll());
+			}
+		}
+		
+		Promise.all(promiseArr)
+		.then(doneArr => {
+			console.log("All sheets updated! doneArr=" + doneArr);
+			fulfill(doneArr);
+		})
+		.catch(err => {
+			console.log("one of the batchupdates fucked up! ", err);
+			reject(err);
+		});
+	});
+}
+
+// function that returns the season with internal name
+function getSeason(iname) {
+	return new Promise((resolve,reject) => {
+		for(i=0;i<sheets.length;++i) {
+			if(sheets[i].internal==iname) {
+				resolve(sheets[i]);
+			}
+		}
+		reject("InvalidSeason");
+	});
+}
+
+function buildDictionaries() {
+	return new Promise((resolve,reject) => {
+		let promiseArr = [];
+		for(i=0;i<sheets.length;i++) {
+			console.log(`sheets[${i}] : ${JSON.stringify(sheets[i])}`);
+			
+			promiseArr.push(sheets[i].generateLinkDict());
+		}
+		
+		Promise.all(promiseArr)
+		.then(doneArr => {
+			console.log("All dictionaries built! doneArr=" + doneArr);
+			resolve(doneArr);
+		})
+		.catch(err => {
+			console.log("One of the dictionaries fucked up! ", err);
+			reject(err);
+		});
+	});
+}
+
 module.exports = {
+	init,
+	updateAll,
+	getSeason,
+	sheets,
+	buildDictionaries,
 	GWLSpreadsheet,
-	GWLRoundRobinSpreadsheet,
+	GWLRoundRobinSpreadsheet
 }

@@ -1,14 +1,68 @@
 var jsonReceived;
 var fullName;
+var season;
+var team;
 
-function doTeamAjax(team) {
-	
-	var nameSpan = document.getElementById("team-page-name");
-	fullName = nameSpan.innerHTML;
-	console.log(fullName);
-	console.log("getting data for team " + team);
+const ajaxReq = url => new Promise((resolve,reject) => {
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/teaminfo/' + team, true);
+	xhttp.open("GET",url,true);
+	xhttp.send();
+	
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200){
+			resolve(this);
+		} else {
+			if(xhttp.status != 200)
+				reject(this);
+		}
+	}
+});
+
+function loadNavbarLinks(sname) {
+	console.log("linking navbar! sname=
+	// load static buttons with season links
+	$("#navlink-home").href = `/${sname}/Home`;
+	$("#navlink-schedule").href = `/${sname}/Schedule`;
+	$("#navlink-standings").href = `/${sname}/Standings`;
+	$("#navlink-stats").href = `/${sname}/Stats`;
+	$("#navlink-draft").href = `/${sname}/Draft`;
+	
+	ajaxReq(`/api/${sname}/teams`)
+	.then(res => {
+		if(res.error) {
+			console.log(res.error);
+			alert(`Error: /api/${sname}/teams returned error: ${err}\n\nPlease send this to hyperbola0#4962 on the discord to make sure they're aware.`);
+			return;
+		}
+		
+		for(i=0;i<res.length;++i) {
+			$('#navlink-teams-dropdown').append(`<a href=\"/${sname}/Teams/${res[i].internal}\">${res[i].name}</a>`);
+		}
+		
+		console.log("navbar linked!");
+	})
+	.catch(err => console.log(error));
+}
+
+function doTeamAjax(sname,tname) {
+	season = sname;
+	team = tname;
+	
+	console.log("getting data for team " + team);
+	ajaxReq(`/api/${season}/teaminfo/${team}`)
+	.then(res => {
+		jsonReceived = JSON.parse(res.responseText);
+		loadRosterTable(jsonReceived);
+		loadMapTable(jsonReceived);
+		loadMatchTable(jsonReceived);
+		loadTeamStats(jsonReceived);
+	})
+	.catch(res => {
+		console.error("AJAX Request Failed! " + this.status, res);
+	});
+	/*  
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", `/api/${season}/teaminfo/${team}`, true);
 	xhttp.send();
 	
 	// runs when response is received
@@ -24,7 +78,7 @@ function doTeamAjax(team) {
 				alert(xhttp.status);
 			}
 		}
-	}
+	} */ 
 }
 
 function doTeamRosterAjax(team) {
@@ -399,7 +453,7 @@ function getMapImage(name) {
 	if(name == "Watchpoint: Gibraltar")
 		return "https://static.playoverwatch.com/img/pages/maps/images/watchpoint-gibraltar.jpg";
 	
-	if(name == "King's Row")
+	if(name == "King&apos;s Row")
 		return "https://static.playoverwatch.com/img/pages/maps/images/kings-row.jpg";
 	if(name == "Eichenwalde")
 		return "https://static.playoverwatch.com/img/pages/maps/images/eichenwalde.jpg";

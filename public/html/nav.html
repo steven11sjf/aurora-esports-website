@@ -1,12 +1,12 @@
 <!-- navbar -->
 <div class="navbar">
-  <a class="nav-left" href="/Home/"><img src="/images/leaguelogo_header.png" class="navbar-logo"></a>
-  <a class="nav-left" href="/Home/">Home</a>
+  <a class="nav-left" href="/"><img src="/images/leaguelogo_header.png" class="navbar-logo"></a>
+  <a class="nav-left" id="navlink-home" href="#">Home</a>
   <div class="dropdown">
-    <button class="dropbtn" onclick="location.href='/Standings/';">Teams 
+    <button class="dropbtn" id="navlink-teamsbtn" onclick="location.href='#';">Teams 
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-content">
+    <div id="navlink-teams-dropdown" class="dropdown-content">
       <a href="/Teams/DjiboutiShorts">Djibouti Shorts</a>
       <a href="/Teams/LondonLumberjackSlams">London Lumberjack Slams</a>
       <a href="/Teams/OceaniaOtters">Oceania Otters</a>
@@ -19,10 +19,10 @@
       <a href="/Teams/WakandaBBQs">Wakanda BBQs</a>
     </div>
   </div> 
-  <a class="nav-left" href="/Schedule/">Schedule</a>
-  <a class="nav-left" href="/Standings/">Standings</a>
-  <a class="nav-left" href="/Stats/">Stats</a>
-  <a href="/Draft/" class="nav-left">Draft</a>
-  <a href="/BugReport/" class="" target="_blank">Bug Reporter</a>
+  <a class="nav-left" id="navlink-schedule" href="#">Schedule</a>
+  <a class="nav-left" id="navlink-standings" href="#">Standings</a>
+  <a class="nav-left" id="navlink-stats" href="#">Stats</a>
+  <a href="#" id="navlink-draft" class="nav-left">Draft</a>
+  <a href="/BugReport/" class="bugreport" target="_blank">Bug Reporter</a>
   <a href="/Discord/" class="discord" target="_blank">Join the Discord</a>
 </div>
