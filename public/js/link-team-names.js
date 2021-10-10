@@ -1,4 +1,4 @@
-/*var links_dict;
+var links_dict;
 
 $(function() {
 	// create AJAX request for standingsTable
@@ -38,4 +38,4 @@ function addLinks()
             });
         }
     );
-}*/
+}

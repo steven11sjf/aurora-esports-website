@@ -97,7 +97,7 @@ function generateLinkDict() {
 		{
 			word: "USSR Unicorns",
 			link: "/Teams/USSRUnicorns/"
-		},
+		}
 	];
 	
 	// generate player names
