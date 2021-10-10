@@ -57,7 +57,47 @@ function generateLinkDict() {
 		{
 			word: "Wakanda BBQs",
 			link: "/Teams/WakandaBBQs/"
-		}
+		},
+		{
+			word: "Bengali Boom",
+			link: "/Teams/BengaliBoom/"
+		},
+		{
+			word: "Falkland Fennecs",
+			link: "/Teams/FalklandFennecs/"
+		},
+		{
+			word: "Galactic Water Bears",
+			link: "/Teams/GalacticWaterBears/"
+		},
+		{
+			word: "Highland Hydro Homies",
+			link: "/Teams/HighlandHydroHomies/"
+		},
+		{
+			word: "Honey Bunches of Oks",
+			link: "/Teams/HoneyBunchesOfOks/"
+		},
+		{
+			word: "Jericho Jackalopes",
+			link: "/Teams/JerichoJackalopes/"
+		},
+		{
+			word: "Pompeii Pelicans",
+			link: "/Teams/PompeiiPelicans/"
+		},
+		{
+			word: "Singapore Seekers",
+			link: "/Teams/SingaporeSeekers/"
+		},
+		{
+			word: "Stockholm Syndromes",
+			link: "/Teams/StockholmSyndromes/"
+		},
+		{
+			word: "USSR Unicorns",
+			link: "/Teams/USSRUnicorns/"
+		},
 	];
 	
 	// generate player names

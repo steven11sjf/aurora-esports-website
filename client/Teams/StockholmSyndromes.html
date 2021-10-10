@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Stockholm Syndromes - The Gopherwatch League </title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/teampage.css">
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="/js/sortable-draft-table.js"></script>
+		<script src="/js/team-page.js"></script>
+		<script src="/js/link-team-names.js"></script>
+	</head>
+	<body style="background-color: #006aa6;">
+		<!-- navbar -->
+		<div id="nav-placeholder"></div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+		<div class="team-page-container center">
+			<div class="grid-container center">
+				<div class="image">
+					<img id="team-page-icon" src="/images/StockholmSyndromes.png">
+				</div>
+				<div class="TeamName">
+					<span id="team-page-name">Stockholm Syndromes</span>
+				</div>
+				<div class="LeagueStats">
+					<span id="team-page-league-matches" title="matches won-lost">0-0</span>
+					<span id="team-page-league-maps" title="maps won-lost-drawn">(0-0-0)</span>
+				</div>
+				<div class="LeagueRank">
+					<span id="team-page-league-rank" title="league ranking">League: -/10</span>
+				</div>
+			</div>
+			
+			<div class="center" id="team-roster">
+				<h1 class="center" >Team Roster</h1>
+				<table class="ttable roster-table center" id="rosterTable">
+					<thead>
+						<tr>
+							<th style="width:40%;" scope="col">Player</th>
+							<th style="width:15%;" scope="col">Draft no.</th>
+							<th style="width:15%;" scope="col">Tank</th>
+							<th style="width:15%;" scope="col">Damage</th>
+							<th style="width:15%;" scope="col">Support</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			
+			<div class="center" id="team-match-history">
+				<h1>Match History</h1>
+				<table class="ttable match-table center" id="matchTable">
+					<thead>
+						<tr>
+							<th style="width:10%;" scope="col">Tournament</th>
+							<th style="width:25%;" scope="col">Against</th>
+							<th style="width:10%;" scope="col">Time/date</th>
+							<th style="width:40%;" scope="col">Maps</th>
+							<th style="width:10%;" scope="col">VOD</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			
+			<div clas="center" id="team-map-stats">
+				<h1>Map Stats</h1>
+				<table class="ttable map-table center" id="mapTable">
+					<thead>
+						<tr>
+							<th style="width:35%;" scope="col">Map</th>
+							<th style="width:15%;" scope="col">Wins</th>
+							<th style="width:15%;" scope="col">Losses</th>
+							<th style="width:15%;" scope="col">Ties</th>
+							<th style="width:20%;" scope="col">Winrate</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><p>-</p></td>
+							<td><p>-</p></td>
+							<td><p>-</p></td>
+							<td><p>-</p></td>
+							<td><p>-</p></td>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		var teamName = 'StockholmSyndromes';
+		
+		window.onload = function(){
+			doTeamAjax(teamName);
+		}
+		</script>
+	</body>
+</html>

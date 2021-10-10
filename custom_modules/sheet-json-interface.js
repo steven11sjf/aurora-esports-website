@@ -190,16 +190,16 @@ function storeBatchGet(obj) {
 	storeHeroStats(obj.valueRanges[1].values,obj.valueRanges[43].values,obj.valueRanges[44].values); // store hero stats
 	storeLeagueStandings(obj.valueRanges[42].values); // store the league standings
 	
-	storeTeamStats('cached/DjiboutiShorts.json',obj.valueRanges[2].values,obj.valueRanges[3].values,obj.valueRanges[4].values,obj.valueRanges[32].values);
-	storeTeamStats('cached/LondonLumberjacks.json',obj.valueRanges[5].values,obj.valueRanges[6].values,obj.valueRanges[7].values,obj.valueRanges[33].values);
-	storeTeamStats('cached/OceaniaOtters.json',obj.valueRanges[8].values,obj.valueRanges[9].values,obj.valueRanges[10].values,obj.valueRanges[34].values);
-	storeTeamStats('cached/PlymouthPMAs.json',obj.valueRanges[11].values,obj.valueRanges[12].values,obj.valueRanges[13].values,obj.valueRanges[35].values);
-	storeTeamStats('cached/TheTenochitlanTacos.json',obj.valueRanges[14].values,obj.valueRanges[15].values,obj.valueRanges[16].values,obj.valueRanges[36].values);
-	storeTeamStats('cached/BendigoBilbies.json',obj.valueRanges[17].values,obj.valueRanges[18].values,obj.valueRanges[19].values,obj.valueRanges[37].values);
-	storeTeamStats('cached/GamingGolems.json',obj.valueRanges[20].values,obj.valueRanges[21].values,obj.valueRanges[22].values,obj.valueRanges[38].values);
-	storeTeamStats('cached/RialtoRincewinds.json',obj.valueRanges[23].values,obj.valueRanges[24].values,obj.valueRanges[25].values,obj.valueRanges[39].values);
-	storeTeamStats('cached/GalapagosGremlins.json',obj.valueRanges[26].values,obj.valueRanges[27].values,obj.valueRanges[28].values,obj.valueRanges[40].values);
-	storeTeamStats('cached/WakandaBBQs.json',obj.valueRanges[29].values,obj.valueRanges[30].values,obj.valueRanges[31].values,obj.valueRanges[41].values);
+	storeTeamStats('cached/BengaliBoom.json',obj.valueRanges[2].values,obj.valueRanges[3].values,obj.valueRanges[4].values,obj.valueRanges[32].values);
+	storeTeamStats('cached/FalklandFennecs.json',obj.valueRanges[5].values,obj.valueRanges[6].values,obj.valueRanges[7].values,obj.valueRanges[33].values);
+	storeTeamStats('cached/GalacticWaterBears.json',obj.valueRanges[8].values,obj.valueRanges[9].values,obj.valueRanges[10].values,obj.valueRanges[34].values);
+	storeTeamStats('cached/HighlandHydroHomies.json',obj.valueRanges[11].values,obj.valueRanges[12].values,obj.valueRanges[13].values,obj.valueRanges[35].values);
+	storeTeamStats('cached/HoneyBunchesOfOks.json',obj.valueRanges[14].values,obj.valueRanges[15].values,obj.valueRanges[16].values,obj.valueRanges[36].values);
+	storeTeamStats('cached/JerichoJackalopes.json',obj.valueRanges[17].values,obj.valueRanges[18].values,obj.valueRanges[19].values,obj.valueRanges[37].values);
+	storeTeamStats('cached/PompeiiPelicans.json',obj.valueRanges[20].values,obj.valueRanges[21].values,obj.valueRanges[22].values,obj.valueRanges[38].values);
+	storeTeamStats('cached/SingaporeSeekers.json',obj.valueRanges[23].values,obj.valueRanges[24].values,obj.valueRanges[25].values,obj.valueRanges[39].values);
+	storeTeamStats('cached/StockholmSyndromes.json',obj.valueRanges[26].values,obj.valueRanges[27].values,obj.valueRanges[28].values,obj.valueRanges[40].values);
+	storeTeamStats('cached/USSRUnicorns.json',obj.valueRanges[29].values,obj.valueRanges[30].values,obj.valueRanges[31].values,obj.valueRanges[41].values);
 }
 
 /**
@@ -461,46 +461,46 @@ function batchGetSpreadsheet() {
 				ranges: [
 					'MatchLog!A2:AA99', // match log					0
 					'HeroStats!A2:J2000', // all hero stats				1
-					'DjiboutiShorts!A5:L14', // DS roster				2
-					'DjiboutiShorts!F70:J88', // DS map stats			3
-					'DjiboutiShorts!A32:Y67', // DS match history		4
-					'LondonLumberjacks!A5:L14', // LLS roster			5
-					'LondonLumberjacks!F70:J88', // LLS map stats		6
-					'LondonLumberjacks!A32:Y67', // LLS match history	7
-					'OceaniaOtters!A5:L14', // OO roster				8
-					'OceaniaOtters!F70:J88', // OO map stats			9
-					'OceaniaOtters!A32:Y67', // OO match history		10
-					'PlymouthPMAs!A5:L14', // PP roster					11
-					'PlymouthPMAs!F70:J88', // PP map stats				12
-					'PlymouthPMAs!A32:Y67', // PP match history			13
-					'TheTenochitlanTacos!A5:L14', // TTT roster			14
-					'TheTenochitlanTacos!F70:J88', // TTT map stats		15
-					'TheTenochitlanTacos!A32:Y67', // TTT match history	16
-					'BendigoBilbies!A5:L14', // BB roster				17
-					'BendigoBilbies!F70:J88', // BB map stats			18
-					'BendigoBilbies!A32:Y67', // BB match history		19
-					'GamingGolems!A5:L14', // GG roster					20
-					'GamingGolems!F70:J88', // GG map stats				21
-					'GamingGolems!A32:Y67', // GG match history			22
-					'RialtoRincewinds!A5:L14', // RR roster				23
-					'RialtoRincewinds!F70:J88', // RR map stats			24
-					'RialtoRincewinds!A32:Y67', // RR match history		25
-					'GalapagosGremlins!A5:L14', // GPG roster			26
-					'GalapagosGremlins!F70:J88', // GPG map stats		27
-					'GalapagosGremlins!A32:Y67', // GPG match history	28
-					'WakandaBBQs!A5:L14', // WB roster					29
-					'WakandaBBQs!F70:J88', // WB map stats				30
-					'WakandaBBQs!A32:Y67', // WB match history			31
-					'DjiboutiShorts!J17:Q20', // DS team stats			32
-					'LondonLumberjacks!J17:Q20', // LL team stats		33
-					'OceaniaOtters!J17:Q20', // OO team stats			34
-					'PlymouthPMAs!J17:Q20', // PP team stats			35
-					'TheTenochitlanTacos!J17:Q20', // TTT team stats	36
-					'BendigoBilbies!J17:Q20', // BB team stats			37
-					'GamingGolems!J17:Q20', // GG team stats			38
-					'RialtoRincewinds!J17:Q20', // RR team stats		39
-					'GalapagosGremlins!J17:Q20', // GPG team stats		40
-					'WakandaBBQs!J17:Q20', // WB team stats				41
+					'BengaliBoom!A5:L14', // DS roster				2
+					'BengaliBoom!F70:J88', // DS map stats			3
+					'BengaliBoom!A32:Y67', // DS match history		4
+					'FalklandFennecs!A5:L14', // LLS roster			5
+					'FalklandFennecs!F70:J88', // LLS map stats		6
+					'FalklandFennecs!A32:Y67', // LLS match history	7
+					'GalacticWaterBears!A5:L14', // OO roster				8
+					'GalacticWaterBears!F70:J88', // OO map stats			9
+					'GalacticWaterBears!A32:Y67', // OO match history		10
+					'HighlandHydroHomies!A5:L14', // PP roster					11
+					'HighlandHydroHomies!F70:J88', // PP map stats				12
+					'HighlandHydroHomies!A32:Y67', // PP match history			13
+					'HoneyBunchesOfOks!A5:L14', // TTT roster			14
+					'HoneyBunchesOfOks!F70:J88', // TTT map stats		15
+					'HoneyBunchesOfOks!A32:Y67', // TTT match history	16
+					'JerichoJackalopes!A5:L14', // BB roster				17
+					'JerichoJackalopes!F70:J88', // BB map stats			18
+					'JerichoJackalopes!A32:Y67', // BB match history		19
+					'PompeiiPelicans!A5:L14', // GG roster					20
+					'PompeiiPelicans!F70:J88', // GG map stats				21
+					'PompeiiPelicans!A32:Y67', // GG match history			22
+					'SingaporeSeekers!A5:L14', // RR roster				23
+					'SingaporeSeekers!F70:J88', // RR map stats			24
+					'SingaporeSeekers!A32:Y67', // RR match history		25
+					'StockholmSyndromes!A5:L14', // GPG roster			26
+					'StockholmSyndromes!F70:J88', // GPG map stats		27
+					'StockholmSyndromes!A32:Y67', // GPG match history	28
+					'USSRUnicorns!A5:L14', // WB roster					29
+					'USSRUnicorns!F70:J88', // WB map stats				30
+					'USSRUnicorns!A32:Y67', // WB match history			31
+					'BengaliBoom!J17:Q20', // DS team stats			32
+					'FalklandFennecs!J17:Q20', // LL team stats		33
+					'GalacticWaterBears!J17:Q20', // OO team stats			34
+					'HighlandHydroHomies!J17:Q20', // PP team stats			35
+					'HoneyBunchesOfOks!J17:Q20', // TTT team stats	36
+					'JerichoJackalopes!J17:Q20', // BB team stats			37
+					'PompeiiPelicans!J17:Q20', // GG team stats			38
+					'SingaporeSeekers!J17:Q20', // RR team stats		39
+					'StockholmSyndromes!J17:Q20', // GPG team stats		40
+					'USSRUnicorns!J17:Q20', // WB team stats				41
 					'Standings!A15:K24', // standings					42
 					'HeroStats!L2:T32', // league-wide hero stats		43
 					'HeroStats!N34:S35', // league averages				44 

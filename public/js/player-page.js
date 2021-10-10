@@ -78,7 +78,7 @@ function doAjax() {
 			playerInfo = JSON.parse(xhttp.responseText);
 			console.log(playerInfo);
 			loadData();
-			getGameStats();
+			//getGameStats();
 		} else {
 			if(xhttp.status != 200) {
 				alert('Error loading player info! HTTP status code ' + xhttp.status);

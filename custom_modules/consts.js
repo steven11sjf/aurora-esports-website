@@ -12,7 +12,7 @@ const __report_link = 'https://docs.google.com/forms/d/e/1FAIpQLSfbxZpTM4A9Ukt-_
 const __discord_link = "https://discord.gg/HxxNybCgM4";
 
 // google spreadsheet id for season 3
-const SPREADSHEET_ID = '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM';
+const SPREADSHEET_ID = '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ';
 // path for json containing player info
 const PLAYER_JSON = 'cached/players.json';
 // path for json containing match info
