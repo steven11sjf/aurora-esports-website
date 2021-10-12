@@ -3,50 +3,7 @@ var fullName;
 var season;
 var team;
 
-const ajaxReq = url => new Promise((resolve,reject) => {
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET",url,true);
-	xhttp.send();
-	
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			resolve(this);
-		} else {
-			if(xhttp.status != 200)
-				reject(this);
-		}
-	}
-});
-
-function loadNavbarLinks(sname) {
-	console.log("linking navbar! sname=
-	// load static buttons with season links
-	$("#navlink-home").href = `/${sname}/Home`;
-	$("#navlink-schedule").href = `/${sname}/Schedule`;
-	$("#navlink-standings").href = `/${sname}/Standings`;
-	$("#navlink-stats").href = `/${sname}/Stats`;
-	$("#navlink-draft").href = `/${sname}/Draft`;
-	
-	ajaxReq(`/api/${sname}/teams`)
-	.then(res => {
-		if(res.error) {
-			console.log(res.error);
-			alert(`Error: /api/${sname}/teams returned error: ${err}\n\nPlease send this to hyperbola0#4962 on the discord to make sure they're aware.`);
-			return;
-		}
-		
-		for(i=0;i<res.length;++i) {
-			$('#navlink-teams-dropdown').append(`<a href=\"/${sname}/Teams/${res[i].internal}\">${res[i].name}</a>`);
-		}
-		
-		console.log("navbar linked!");
-	})
-	.catch(err => console.log(error));
-}
-
-function doTeamAjax(sname,tname) {
-	season = sname;
-	team = tname;
+function doTeamAjax() {
 	
 	console.log("getting data for team " + team);
 	ajaxReq(`/api/${season}/teaminfo/${team}`)
@@ -504,4 +461,9 @@ function loadTeamStats(jsonObj) {
 	document.getElementById("team-page-league-rank").innerHTML = 'League: ' + jsonObj.stats.season.rank + '/10';
 }
 
-console.log("Loaded!");
+document.addEventListener("DOMContentLoaded", function() {
+	season = document.location.split('/')[1];
+	team = document.location.split('/')[3];
+	
+	doTeamAjax();
+});

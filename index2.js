@@ -10,12 +10,10 @@
 // node submodules
 var express = require("express");
 var app = express();
-var bodyparser = require('body-parser');
 var path = require('path');
 var {google} = require('googleapis');
 var cron = require('cron');
 var favicon = require('serve-favicon');
-app.use(bodyparser());
 require('dotenv').config();
 const sheetsApi = google.sheets('v4');
 
@@ -40,18 +38,15 @@ function startup() {
 	sheets.init()
 	.then((sh) => sheets.updateAll())
 	.then((res) => sheets.buildDictionaries())
-	.then((res2) => console.log("Started up!"))
+	.then((res2) => {
+		console.log("\n===\nStarted up!")
+		const server = app.listen(process.env.PORT || 9007, () => console.log('Listening!'));
+	})
 	.catch((error) => {
 		console.error("A fatal error was encountered!");
 		console.error(error);
 		process.kill(process.pid, 'SIGTERM'); // /tp @s ~ -128 ~
-	})
-	// TODO link dicts
-	
-
-	// start server
-	const server = app.listen(process.env.PORT || 9007, () => console.log('Listening!'));
-}
+	})}
 startup();
 
 

@@ -211,7 +211,6 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 	// loads a serialized object into the class
 	static loadObject(obj) {
 		return new Promise((resolve,reject) => {
-			console.log(obj);
 			if(obj.format != "roundrobin") {
 				console.log("Object is not a GWLRoundRobinSpreadsheet object!");
 				reject("InvalidFormat");
@@ -694,24 +693,22 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 
 // function that loads one sheet and returns a promise
 const loadSheet = (sh) => new Promise((resolve,reject) => {
+	let type;
 	if(sh.format == "unformatted") {
-		GWLSpreadsheet.loadObject(sh)
-		.then(res => resolve(res))
-		.catch(err => {
-			console.log("loadObject fucked up, sh = " + JSON.stringify(sh));
-			reject(err);
-		});
+		type = GWLSpreadsheet;
 	} else if(sh.format == "roundrobin") {
-		GWLRoundRobinSpreadsheet.loadObject(sh)
-		.then(res => resolve(res))
-		.catch(err => {
-			console.log("loadObject fucked up, sh = " + JSON.stringify(sh));
-			reject(err);
-		});
+		type = GWLRoundRobinSpreadsheet;
 	} else {
 		console.log("format invalid " + JSON.stringify(sh));
 		reject('InvalidFormatField');
 	}
+
+	// correct class stored in type, use it to load object
+	type.loadObject(sh)
+	.then(res => resolve(res))
+	.catch(err => {
+		console.log("loadObject failed, sh = " + JSON.stringify(sh));
+	});
 });
 
 // function that loads all sheets into memory
@@ -720,16 +717,16 @@ function init() {
 		// open sheet info
 		localfs.openJsonPromise('./data/sheets.json')
 		.then((data) => {
-			// load data and resolve
+			// creates array of (unresolved) promises for loadSheet functions
 			let promiseArr = [];
 			for(i=0;i<data.length;++i) {
 				promiseArr.push(loadSheet(data[i]));
 			}
-			console.log(promiseArr);
 			
+			// executes when all promises are resolved to a GWLSpreadsheet object
 			Promise.all(promiseArr)
 			.then(doneArr => {
-				console.log("All promises executed! doneArr=" + doneArr);
+				console.log("All sheet-loading promises executed!");
 				sheets = doneArr;
 				res(doneArr)
 			})
@@ -748,16 +745,20 @@ function updateAll() {
 		let updated = [];
 		let promiseArr = [];
 		
+		// array of all promises for batchGetAll
 		for(i=0;i<sheets.length;++i) {
 			if(sheets[i].ongoing) {
 				promiseArr.push(sheets[i].batchGetAll());
 			}
 		}
 		
+		// executes when all promises have resolved
 		Promise.all(promiseArr)
 		.then(doneArr => {
-			console.log("All sheets updated! doneArr=" + doneArr);
-			fulfill(doneArr);
+			console.log("All sheets updated!");
+			let updated = [];
+			doneArr.map((row) => updated.push(row.name));
+			fulfill(updated);
 		})
 		.catch(err => {
 			console.log("one of the batchupdates fucked up! ", err);
@@ -778,18 +779,19 @@ function getSeason(iname) {
 	});
 }
 
+// builds the linking dictionaries for all seasons
 function buildDictionaries() {
 	return new Promise((resolve,reject) => {
+		// array of promises to resolve
 		let promiseArr = [];
 		for(i=0;i<sheets.length;i++) {
-			console.log(`sheets[${i}] : ${JSON.stringify(sheets[i])}`);
-			
 			promiseArr.push(sheets[i].generateLinkDict());
 		}
 		
+		// executes when all dictionaries have been completed
 		Promise.all(promiseArr)
 		.then(doneArr => {
-			console.log("All dictionaries built! doneArr=" + doneArr);
+			console.log("All dictionaries built!");
 			resolve(doneArr);
 		})
 		.catch(err => {
