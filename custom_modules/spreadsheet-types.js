@@ -241,16 +241,20 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 					// store teams
 					let teams = response.data.valueRanges[0].values;
 					if(teams) teams.map((row) => {
+						console.log(row);
 						let obj = {};
 						obj.name = row[0];
 						obj.internal = row[2];
 						obj.iconUrl = row[3];
 						obj.primaryColor = row[4];
 						obj.secondaryColor = row[5];
+						console.log(obj);
 						
 						// discard if team is invalid (no name or internal name)
-						if(obj.name != undefined && obj.name != '' && obj.internal != undefined && obj.internal != '') 
-						this.teams.push(obj);
+						if(obj.name != undefined && obj.name != '' && obj.internal != undefined && obj.internal != '') {
+							console.log("pushing obj");
+							this.teams.push(obj);
+						}
 					});
 					
 					resolve(this);
@@ -770,12 +774,32 @@ function updateAll() {
 // function that returns the season with internal name
 function getSeason(iname) {
 	return new Promise((resolve,reject) => {
+		console.log(iname)
 		for(i=0;i<sheets.length;++i) {
+			console.log(sheets[i].internal);
 			if(sheets[i].internal==iname) {
+				console.log("here");
 				resolve(sheets[i]);
 			}
 		}
+		console.log("FJIOWEJFNUIODSAPFHNJJUIPAJFDISDAOPFJDAS        ", iname);
 		reject("InvalidSeason");
+	});
+}
+
+// function that returns arr of sheets with name, internal
+function allSeasonInfo() {
+	return new Promise((resolve,reject) => {
+		let result = [];
+		for(i=0;i<sheets.length;++i) {
+			let temp = {
+				name: sheets[i].name,
+				internal: sheets[i].internal
+			};
+			// put temp in front of array, so seasons are reverse chronological order
+			result.unshift(temp)
+		}
+		resolve(result);
 	});
 }
 
@@ -807,6 +831,7 @@ module.exports = {
 	getSeason,
 	sheets,
 	buildDictionaries,
+	allSeasonInfo,
 	GWLSpreadsheet,
 	GWLRoundRobinSpreadsheet
 }

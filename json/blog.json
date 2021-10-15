@@ -87,6 +87,17 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/ratrankings.html"
+		},
+		{
+			"id" : "S4-PrePowerRankings",
+			"date" : "10/13/2021 6:02:00 PM",
+			"title" : "Pre-Season 4 Power Rankings",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Season4PrePowerRankings.html"
 		}
 	]
 }

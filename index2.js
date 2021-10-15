@@ -113,12 +113,22 @@ app.get('/api/:season/matchlog',async function(req,res) {
 
 // sends teams json
 app.get('/api/:season/teams',async function(req,res) {
+	console.log("foo");
 	sheets.getSeason(req.params.season)
-	.then(season => res.json(season.teams))
+	.then(season => {
+		console.log("returning ", season.teams);
+		return res.json(season.teams)
+	})
 	.catch(err => {
 		console.log(err);
 		res.json( {error: err} );
 	});
+});
+
+// sends seasons json
+app.get('/api/seasons',function(req,res) {
+	sheets.allSeasonInfo()
+	.then(result => res.json(result));
 });
 
 // sends article with given id in blog.json
@@ -181,7 +191,10 @@ app.get('/api/:season/playerjson/:player', function(req,res) {
 
 // entry page
 app.get('/',function(req, res) {
-	res.redirect('/Season3/Home/');
+	sheets.allSeasonInfo()
+	.then(result => {
+		res.redirect(`/${result[0].internal}/Home`)
+	});
 });
 
 app.get('/Home/', function(req,res) {
@@ -222,6 +235,7 @@ app.get('/Blog/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_template.html');
 	PAGE_HITS++;
 });
+
 app.get('/Blog/Tag/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_tag.html');
 	PAGE_HITS++;
@@ -266,5 +280,7 @@ app.get('/favicon.ico', function(req,res) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function(req, res) {
+	console.log("bruh")
+	console.log(req.url)
 	res.sendFile(__dirname + '/client/404.html');
 });

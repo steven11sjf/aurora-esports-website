@@ -1,14 +1,18 @@
 {
   "name": "gwl",
-  "version": "1.0.0",
+  "version": "1.9.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "setup-sheet": "node build.js"
+    "build": "node build.js"
   },
-  "author": "",
+  "author": "Steven Franklin <steve11sjf@gmail.com> (https://github.com/steven11sjf/gopherwatch-league-site)",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steven11sjf/gopherwatch-league-site"
+  },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "body-parser": "^1.19.0",
@@ -17,7 +21,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "googleapis": "^39.2.0",
+    "googleapis": "^88.2.0",
     "serve-favicon": "^2.5.0"
   }
 }
