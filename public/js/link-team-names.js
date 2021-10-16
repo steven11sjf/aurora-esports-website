@@ -1,24 +1,16 @@
 var links_dict;
 
 $(function() {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "/GetLinkDict", true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		contentType = xhttp.getResponseHeader("content-type");
-		if(contentType != "application/json; charset=utf-8") console.log(contentType);
-		if(this.readyState == 4 && this.status == 200){
-			links_dict = JSON.parse(xhttp.responseText);
-			setTimeout(() => {  addLinks(); }, 500); // wait 1 second for all js to complete
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
+	// get season
+	let season = window.location.pathname.split('/')[1];
+	ajaxReq("/" + season + "/GetLinkDict")
+	.then(res => {
+		links_dict = JSON.parse(res.responseText);
+		setTimeout(() => {addLinks();},500); // wait for js to complete
+	})
+	.catch(err => {
+		console.log("FUCK MY BUSSY");
+	});
 });
 
 function addLinks()

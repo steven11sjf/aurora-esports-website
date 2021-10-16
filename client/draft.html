@@ -8,6 +8,7 @@
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="/js/sortable-draft-table.js"></script>
 		<script src="/js/link-team-names.js"></script>
+		<script src="/js/utils.js"></script>
 	</head>
 	<body>
 		<!-- navbar -->
@@ -18,11 +19,7 @@
 			$("#nav-placeholder").load("/html/nav.html");
 		});
 		</script>
-		
-		<p class="center notice">
-			<i>Information last updated at <span id="lastUpdateTime"></span>, refresh at <span id="nextUpdateTime"></span> for the latest changes.</i>
-		</p>
-		
+		<h1 class="center" style="color:white; padding-top: 30px; padding-bottom: 30px;">Draft</h1>
 		<div class="center">
 			<table class="table center" id="draftTable">
 				<thead>
@@ -39,32 +36,22 @@
 			</table>
 		</div>
 		<script type="text/javascript">
-		function doAjax() {
-			// create AJAX request for standingsTable
-			var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "/GetAllPlayersJson", true);
-			xhttp.send();
-			
-			// runs when response is received
-			xhttp.onreadystatechange = function() {
-				if(this.readyState == 4 && this.status == 200){
-					var jsonObj = JSON.parse(xhttp.responseText);
-					loadTable(jsonObj);
-				} else {
-					if(xhttp.status != 200) {
-						alert(xhttp.status);
-					}
-				}
-			}
-		}
+		var season = window.location.pathname.split('/')[1];
+		ajaxReq('/api/'+season+'/GetAllPlayersJson')
+		.then(res => loadTable(res))
+		.catch(err => {
+			console.error("Ajax req failed for /api/season/GetAllPlayersJson!");
+			console.info(err);
+			return;
+		});
 		
 		// loads table into HTML
-		function loadTable(jsonObj) {
-		
-			// update time
-			document.getElementById("lastUpdateTime").innerHTML = jsonObj.updated;
-			document.getElementById("nextUpdateTime").innerHTML = jsonObj.nextUpdate;
-			
+		function loadTable(obj) {
+			let jsonObj = JSON.parse(obj.responseText);
+			if(jsonObj.error) {
+				console.error("Server returned an error retrieving player json!");
+				return;
+			};
 			// fill table
 			var out = "";
 			var table = jsonObj.players;
@@ -110,8 +97,6 @@
 			sortTable('draftTable', 1); // default sorting is by draft order
 			addLinks();
 		}
-		
-		doAjax();
 		</script>
 	</body>
 </html>

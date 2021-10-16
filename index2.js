@@ -71,7 +71,10 @@ const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
 app.get('/api/:season/GetAllPlayersJson', async function(req, res) {
 	sheets.getSeason(req.params.season)
 	.then(season => season.getPlayers())
-	.then(json => res.json(json))
+	.then(json => {
+		console.log("allplayer json:\n",json);
+		res.json(json)
+	})
 	.catch(err => {
 		console.log(err);
 		res.json( {error: err} );
@@ -248,7 +251,7 @@ app.get('/:season/Teams/:teamname/', function(req, res) {
 	PAGE_HITS++;
 });
 
-app.get(':season/GetLinkDict',function(req,res) {
+app.get('/:season/GetLinkDict',function(req,res) {
 	sheets.getSeason(req.params.season)
 	.then(season => season.getLinkDict())
 	.then(json => res.json(json))

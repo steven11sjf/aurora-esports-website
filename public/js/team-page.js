@@ -9,7 +9,12 @@ function doTeamAjax() {
 	ajaxReq(`/api/${season}/teaminfo/${team}`)
 	.then(res => {
 		jsonReceived = JSON.parse(res.responseText);
+		if(jsonReceived.error) {
+			console.log("Server failed to retrieve team info!");
+			return
+		}
 		loadRosterTable(jsonReceived);
+		loadTeamInfo(jsonReceived);
 		loadMapTable(jsonReceived);
 		loadMatchTable(jsonReceived);
 		loadTeamStats(jsonReceived);
@@ -17,107 +22,10 @@ function doTeamAjax() {
 	.catch(res => {
 		console.error("AJAX Request Failed! " + this.status, res);
 	});
-	/*  
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", `/api/${season}/teaminfo/${team}`, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			jsonReceived = JSON.parse(xhttp.responseText);
-			loadRosterTable(jsonReceived);
-			loadMapTable(jsonReceived);
-			loadMatchTable(jsonReceived);
-			loadTeamStats(jsonReceived);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	} */ 
-}
-
-function doTeamRosterAjax(team) {
-	console.log("getting roster for team " + team);
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/roster/' + team, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadRosterTable(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
-}
-
-function doMatchHistoryAjax(team) {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/matches/' + team, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadMatchTable(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
-}
-
-function doMapStatsAjax(team) {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/mapstats/' + team, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadMapTable(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
-}
-
-function doTeamStatsAjax(team) {
-	// create AJAX request for standingsTable
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/teamstats/' + team, true);
-	xhttp.send();
-	
-	// runs when response is received
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			var jsonObj = JSON.parse(xhttp.responseText);
-			loadTeamStats(jsonObj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
-			}
-		}
-	}
 }
 		
 // loads table into HTML
 function loadRosterTable(jsonObj) {
-	console.log(jsonObj);
 	var out = "";
 	var table = jsonObj.roster;
 	for(i = 0; i < table.length; i++) {
@@ -455,15 +363,26 @@ function loadMapTable(jsonObj) {
 }
 
 function loadTeamStats(jsonObj) {
-	console.log(jsonObj.stats);
-	document.getElementById("team-page-league-matches").innerHTML = jsonObj.stats.season.wins + 'W - ' + jsonObj.stats.season.losses + 'L';
-	document.getElementById("team-page-league-maps").innerHTML = '(' + jsonObj.stats.season.mapwins + 'W - ' + jsonObj.stats.season.maplosses + 'L - ' + jsonObj.stats.season.mapties + 'T)';
-	document.getElementById("team-page-league-rank").innerHTML = 'League: ' + jsonObj.stats.season.rank + '/10';
+	console.info(jsonObj.stats);
+	document.getElementById("team-page-league-matches").innerHTML = jsonObj.stats.Season.wins + 'W - ' + jsonObj.stats.Season.losses + 'L';
+	document.getElementById("team-page-league-maps").innerHTML = '(' + jsonObj.stats.Season.mapwins + 'W - ' + jsonObj.stats.Season.maplosses + 'L - ' + jsonObj.stats.Season.mapties + 'T)';
+	document.getElementById("team-page-league-rank").innerHTML = 'League: ' + jsonObj.stats.All.rank + '/10';
+}
+
+function loadTeamInfo(jsonObj) {
+	// set icon
+	$('#team-page-icon').attr('src','/images/'+team.replace(/\s+/g,'')+'.png');
+	// set team name
+	$('#team-page-name').text(jsonObj.name);
+	// set team color
+	$('body').attr('style','background-color:'+jsonObj.color1+';');
+	// set secondary color
+	$('.secondary-color').css("color", jsonObj.color2);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	season = document.location.split('/')[1];
-	team = document.location.split('/')[3];
+	season = window.location.pathname.split('/')[1];
+	team = window.location.pathname.split('/')[3];
 	
 	doTeamAjax();
 });

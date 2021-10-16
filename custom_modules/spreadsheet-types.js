@@ -53,6 +53,7 @@ class GWLSpreadsheet {
 	format; // the format of the tournament
 	className; // the name of the class
 	meta; // metadata info object (i.e. meta.hasStats = true)
+	currentRound; // the current round, used to show current week in 
 	
 	// creates a spreadsheet
 	constructor(name, internal, ongoing, spreadsheetId) {
@@ -272,7 +273,9 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 		return new Promise((resolve,reject) => {
 			// store matchlog info
 			{
-				var json = '{"matches":[';
+				var json = '{"currentround":';
+				json += this.currentRound;
+				json += ',"matches":[';
 				if(range && range.length) {
 					range.map((row) => {
 						json += `{"tournament":"${sanitize(row[0])}","played":"${sanitize(row[7])}",`;
@@ -291,6 +294,7 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 					
 					json = json.replace(/,$/,'');
 					json += ']}';
+					console.log(json);
 				} else {
 					console.log("Pulled an empty MatchLog!");
 					json += ']}';
@@ -436,7 +440,7 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 		
 	_storeteaminfo(data) {
 		return new Promise((resolve,reject) => {
-			let offset = 6; // what index team info starts
+			let offset = 7; // what index team info starts
 			for(let i=0; i<this.teams.length; i++) {
 				// check the value ranges for the team exist
 				if(!data.valueRanges[offset+4*i+3]) {
@@ -450,8 +454,16 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 				let matches = data.valueRanges[offset+4*i+2].values;
 				let stats = data.valueRanges[offset+4*i+3].values;
 				
+				// store team name
+				let json = '{"name":"';
+				json += this.teams[i].name;
+				json += '","color1":"';
+				json += this.teams[i].primaryColor;
+				json += '","color2":"';
+				json += this.teams[i].secondaryColor;
+				json += '","roster":[';
+				
 				// store roster
-				let json = '{"roster":[';
 				if(roster && roster.length) {
 					roster.map((row) => {
 						json += '{"name":"';
@@ -581,6 +593,8 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 	// stores data captured by batchGetAll
 	storeBatchGet(data) {
 		return new Promise((resolve,reject) => {
+			this.currentRound = parseInt(data.valueRanges[6].values[0][0]);
+			console.log("currentRound: ", this.currentRound);
 			// store matchlog info
 			this._storematchlog(data.valueRanges[0].values)
 			.then(() => this._storeherostats(data.valueRanges[1].values, data.valueRanges[2].values, data.valueRanges[3].values))
@@ -614,6 +628,7 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 			ranges.push('HeroStats!N34:S35');
 			ranges.push('Standings!A15:K24');
 			ranges.push('PlayerInfo!A2:AC200');
+			ranges.push('Info!H3');
 			for(let i=0; i<this.teams.length; i++) {
 				ranges.push(this.teams[i].internal + '!A5:L14') // roster
 				ranges.push(this.teams[i].internal + '!F70:J88') // map stats

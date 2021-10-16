@@ -10,6 +10,7 @@
 		<script src="/js/sortable-draft-table.js"></script>
 		<script src="/js/team-page.js"></script>
 		<script src="/js/link-team-names.js"></script>
+		<script src="/js/utils.js"></script>
 	</head>
 	<body style="background-color: red;">
 		<!-- navbar -->
@@ -27,19 +28,19 @@
 					<img id="team-page-icon" src="/images/overwatch_circle_logo.png">
 				</div>
 				<div class="TeamName">
-					<span id="team-page-name">Team Name</span>
+					<span id="team-page-name" class="secondary-color">Team Name</span>
 				</div>
 				<div class="LeagueStats">
-					<span id="team-page-league-matches" title="matches won-lost">0-0</span>
-					<span id="team-page-league-maps" title="maps won-lost-drawn">(0-0-0)</span>
+					<span id="team-page-league-matches" title="matches won-lost" class="secondary-color">0-0</span>
+					<span id="team-page-league-maps" title="maps won-lost-drawn" class="secondary-color">(0-0-0)</span>
 				</div>
 				<div class="LeagueRank">
-					<span id="team-page-league-rank" title="league ranking">League: -/10</span>
+					<span id="team-page-league-rank" title="league ranking" class="secondary-color">League: -/10</span>
 				</div>
 			</div>
 			
 			<div class="center" id="team-roster">
-				<h1 class="center" >Team Roster</h1>
+				<h1 class="center secondary-color" >Team Roster</h1>
 				<table class="ttable roster-table center" id="rosterTable">
 					<thead>
 						<tr>
@@ -55,7 +56,7 @@
 			</div>
 			
 			<div class="center" id="team-match-history">
-				<h1>Match History</h1>
+				<h1 class="secondary-color">Match History</h1>
 				<table class="ttable match-table center" id="matchTable">
 					<thead>
 						<tr>
@@ -71,7 +72,7 @@
 			</div>
 			
 			<div clas="center" id="team-map-stats">
-				<h1>Map Stats</h1>
+				<h1 class="secondary-color">Map Stats</h1>
 				<table class="ttable map-table center" id="mapTable">
 					<thead>
 						<tr>
@@ -83,12 +84,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><p>-</p></td>
-							<td><p>-</p></td>
-							<td><p>-</p></td>
-							<td><p>-</p></td>
-							<td><p>-</p></td>
 					</tbody>
 				</table>
 			</div>

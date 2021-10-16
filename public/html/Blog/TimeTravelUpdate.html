@@ -1,0 +1,43 @@
+<p>Hey y'all, here I am with like a day to spare somehow \o/</p>
+<p>So I'd consider this GWL website 2.0, but to y'all this is probably closer to version 1.5. Most of the changes are to how the site works behind the scenes. I'll detail the changes here in a few sections below:</p>
+
+<h3>Feature update: Time travel!</h3>
+
+<p>The most immediately noticable aspect of the site is the new Seasons dropdown at the top of the page. You can now see previous seasons of the league! (Seasons 1 and 2 to be added in the future). Selecting the logo will bring you to the most recent season.</p>
+
+<h3>Server changes</h3>
+
+<p>The server has basically been entirely rewritten. The first version was a nightmare to maintain, as features got added willy-nilly without a ton of forward planning. And as I learned new ways to do things, each page ended up having different methods of doing the same thing which is pretty gross to keep functioning in the long term.</p>
+
+<p>Since having multiple seasons accessed through the site already meant rewriting a lot of the server, I decided to redo the whole thing using a few Javascript features that I hadn't used before. This will get slightly more technical from this point on so if you don't care just skip to the next section.</p>
+
+<p>One feature I implemented was using Promises to make code run asynchronously. How the site works internally is that data is put in by the admins into a spreadsheet which is not very intuitive to humans but can basically take in the list of players, list of matches, etc and generates important stats (i.e. standings, map winrates, etc). The website accesses this sheet every 2 minutes, pulls the stats, and stores it in cached JSON files. When a page needs to access data (for example, you load the draft page and need to see the draft order), the user's page requests players.json and the server sends this file, which is then displayed by the user's browser.</p>
+
+<p>However, this can cause issues when it is run synchronously. For example, updating the data for a season can take around 10 seconds to complete since it is a lot of data having to travel between Google's servers and our server, and additional time to parse this data into the cached format. This means that if someone tried to load a page at this time, the server would be tied up with this until it finished updating the sheet.</p>
+
+<p>This is where Promises come in. A Promise consists of a sequence of code to run, a 'Pending' state, a 'Resolve' state, and a 'Reject' state. When a Promise is run, it runs its code in parallel to the rest of the code. After it completes, there is separate code that is triggered after the promise resolves, and after it rejects to handle errors. So the code will run a Promise to access the google sheet data. When that is completed it will pass that to another Promise that caches the data on the server. In the meantime the server is still responsive to users loading pages, sending the current cached data to them. Applying Promises to longer operations (waiting for the client/server to respond to each other, accessing files stored on the disk, etc) means that time to load pages is a lot more consistent and the server can handle high traffic more efficiently.</p>
+
+<p>The second feature I used was ES6 classes to manage spreadsheet access. Javascript stores data in "objects", which include things like numbers, arrays and strings. However, unlike many languages Javascript does not allow to attach functions to objects. This was updated in 2015 with the ES6 standard, which implemented classes. Since this is a newer feature, it is not as frequently used as older tutorials/forum answers do not include it.</p>
+
+<p>However, we have a great use case for it, and that is for each season. As mentioned before, each season is stored in a spreadsheet. The format of these sheets can change from season to season, but the general data (player info, match schedule, team information) is generally similar. So we can make several classes that each have different functions to store and access this data. For example, Season 2 and 3 could have completely different ways the matches are stored in the spreadsheet, but Season2.getMatchLog() would return the same log as Season3.getMatchLog(). This means the site can access different seasons much easier.</p>
+
+<h3>Bugs</h3>
+
+<p>Yeah, the tl;dr of the last section is this is the mildly-rushed first time running this code on the live server. So it's probably going to implode :^)</p>
+
+<p>Here are a few of the issues I am aware of and are my top priority to fix:</p>
+
+<ul>
+	<li>Player pages are completely broken.</li>
+	<li>Blog page breaks the navigation bar except for clicking the league logo</li>
+	<li>Linking teams is slightly broken and sometimes breaks (ex. Jericho Jackalopes in the Draft page)</li>
+	<li>Some maps do not load on matches in Season 3</li>
+</ul>
+
+<p>Please let me know about other issues by either @'ing me in the discord or sending me a DM. This will probably take a bit to get back to its original functionality unfortunately.</p>
+
+<h3>Next Update</h3>
+
+After I get this patched together, the next big update will probably be a lot cooler. I think we can agree that the site looks kinda bad, since I've been going for function over form so far. I plan to make it look a lot more pretty (like the player pages that Boonie made that I broke, oops). I'm excited to show that off, probably between season 4 and 5!
+
+<h3>Also: Thanks for always dealing with my site-mismanagement :]</h3>
