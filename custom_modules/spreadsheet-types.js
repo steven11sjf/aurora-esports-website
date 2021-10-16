@@ -378,7 +378,7 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 			}
 
 			var obj = JSON.parse(json);
-			localfs.writeJsonPromise('./Data/' + this.internal + '/standings.json', obj)
+			localfs.writeJsonPromise('./data/' + this.internal + '/standings.json', obj)
 			.then(() => resolve(obj))
 			.catch(err => {
 				console.log("Error storing standings!");
@@ -429,7 +429,7 @@ class GWLRoundRobinSpreadsheet extends GWLSpreadsheet {
 			}
 			
 			let obj = JSON.parse(json);
-			localfs.writeJsonPromise('./Data/' + this.internal + '/players.json', obj)
+			localfs.writeJsonPromise('./data/' + this.internal + '/players.json', obj)
 			.then(() => resolve(obj))
 			.catch(err => {
 				console.log("Error storing player info!");
