@@ -47,47 +47,57 @@
 		// get season name from address bar
 		let sname = window.location.pathname.split('/')[1];
 		console.log(`linking navbar! sname=${sname}`);
-
-		// load static buttons with season links
-		$("#navlink-home").attr("href",`/${sname}/Home`);
-		$("#navlink-schedule").attr("href",`/${sname}/Schedule`);
-		$("#navlink-standings").attr("href",`/${sname}/Standings`);
-		$("#navlink-stats").attr("href",`/${sname}/Stats`);
-		$("#navlink-draft").attr("href",`/${sname}/Draft`);
 		
-		// make ajax request for list of teams
-		ajaxReq(`/api/${sname}/teams`)
+		ajaxReq('/api/seasons')
 		.then(res => {
-			if(res.error) {
-				console.log(res.error);
-				alert(`Error: /api/${sname}/teams returned error: ${err}\n\nPlease send this to hyperbola0#4962 on the discord to make sure they are aware.`);
+			// load Seasons dropdown while confirming the season we have is a valid one
+			let isSeason = false;
+			let arr=JSON.parse(res.responseText);
+			if(arr.error) {
+				// server side error
+				console.error("Server side error:\n",res.error);
 				return;
 			}
+			
+			// iterate through array and add a tags to seasons dropdown
+			for(i=0;i<arr.length;++i) {
+				if(arr[i].internal == sname) isSeason = true;
+				let added = "<a href=\"/" + arr[i].internal + "/Home\">" + arr[i].name + "</a>";
+				$('#navlink-seasons-dropdown').append(added);
+			}
+			
+			// if sname wasn't found, set it to the first item in the array (which should be the most recent season)
+			if(!isSeason) sname = arr[0].internal;
+		})
+		.then(() => ajaxReq(`/api/${sname}/teams`))
+		.then(res => {
+			// load Teams dropdown
 			let arr = JSON.parse(res.responseText);
-			console.log("=== NAVBAR AJAX RETURNED ===");
+			if(res.error) {
+				// server side error
+				console.error("Server side error:\n",res.error);
+				return;
+			}
+			
+			// iterate array and add a tags to teams dropdown
 			for(i=0;i<arr.length;++i) {
 				let added = "<a href=\"/" + sname + "/Teams/" + arr[i].internal + "\">" + arr[i].name + "</a>";
 				console.log(added);
 				$('#navlink-teams-dropdown').append(added);
 			}
-			
-			console.log("navbar linked!");
 		})
-		.then(() => ajaxReq('/api/seasons'))
-		.then(res => {
-			if(res.error) {
-				console.log(res.error);
-				return;
-			}
-			let arr = JSON.parse(res.responseText);
-			console.log(arr);
-			for(i=0;i<arr.length;++i) {
-				let added = "<a href=\"/" + arr[i].internal + "/Home\">" + arr[i].name + "</a>";
-				$('#navlink-seasons-dropdown').append(added);
-			}
+		.then(() => {
+			// finally load static buttons with season links
+			$("#navlink-home").attr("href",`/${sname}/Home`);
+			$("#navlink-schedule").attr("href",`/${sname}/Schedule`);
+			$("#navlink-standings").attr("href",`/${sname}/Standings`);
+			$("#navlink-stats").attr("href",`/${sname}/Stats`);
+			$("#navlink-draft").attr("href",`/${sname}/Draft`);
 		})
-		.catch(err => console.log(error));
+		.catch(err => console.error(err))
 	}
+	
+	// load navbar links when page is ready
 	$(document).ready(loadNavbarLinks());
   </script>
 </div>
