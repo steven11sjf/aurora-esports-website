@@ -109,6 +109,28 @@
 			],
 			"image" : "/images/patch_notes.png",
 			"contents" : "/html/Blog/TimeTravelUpdate.html"
+		},
+		{
+			"id" : "RecapS4Wk1",
+			"date" : "10/24/2021 8:27:00 PM",
+			"title" : "Season 4 Week 1 Recap",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/GWLWeek1MatchRecap.html"
+		},
+		{
+			"id" : "RecapS4Wk2",
+			"date" : "10/27/2021 2:42:00 PM",
+			"title" : "Season 4 Week 2 Recap",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/GWLPostWeek2MatchRecap.html"
 		}
 	]
 }

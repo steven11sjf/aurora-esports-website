@@ -116,10 +116,8 @@ app.get('/api/:season/matchlog',async function(req,res) {
 
 // sends teams json
 app.get('/api/:season/teams',async function(req,res) {
-	console.log("foo");
 	sheets.getSeason(req.params.season)
 	.then(season => {
-		console.log("returning ", season.teams);
 		return res.json(season.teams)
 	})
 	.catch(err => {

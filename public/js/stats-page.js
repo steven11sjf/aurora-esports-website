@@ -41,30 +41,32 @@ function loadTable(header,hero) {
 	}
 }
 
-window.onload = function() {
-	season = window.location.pathname.split('/')[1];
-	ajaxReq('/api/'+season+'/playerstats')
-	.then(res => {
-		herostats_obj = JSON.parse(res.responseText);
-		if(herostats_obj.error) {
-			console.error("Server returned an error on /api/season/playerstats!");
-			return;
-		}
-		loaded++;
-	})
-	.catch(err => {
-		console.error("Ajax req /api/season/playerstats failed!");
-		return;
-	});
+function doAjax() {
+	return new Promise((resolve,reject) => {
+		season = window.location.pathname.split('/')[1];
+		ajaxReq('/api/'+season+'/playerstats')
+		.then(res => {
+			herostats_obj = JSON.parse(res.responseText);
+			if(herostats_obj.error) {
+				console.error("Server returned an error on /api/season/playerstats!");
+				reject(err);
+			}
+			loaded++;
+		})
+		.catch(err => {
+			console.error("Ajax req /api/season/playerstats failed!");
+			reject(err);
+		});
 
-	ajaxReq('/json/heroinfo.json')
-	.then(res => {
-		heroinfo_obj = JSON.parse(res.responseText)
-		loaded++;
-	})
-	.catch(err => {
-		console.error("Ajax req /json/heroinfo.json failed!");
-		return;
+		ajaxReq('/json/heroinfo.json')
+		.then(res => {
+			heroinfo_obj = JSON.parse(res.responseText)
+			loaded++;
+		})
+		.catch(err => {
+			console.error("Ajax req /json/heroinfo.json failed!");
+			reject(err);
+		});
 	});
 };
 
