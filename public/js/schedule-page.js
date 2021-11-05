@@ -42,7 +42,7 @@ function addRoundTable(round) {
 			res += '</p></td><td class="schedule-team blue-team"><img class="table-img left-float" title="';
 			res += matches[i]["team1"];
 			res += '" src="/images/';
-			res += matches[i]["team1"].replace(/\s+/g,'');
+			res += matches[i]["team1"].replace(/\s+/g,'-').toLowerCase();
 			res += '.png"></td><td class="schedule-team blue-team"><p class="schedule-team-name right-float">'
 			res += matches[i]["team1"];
 			res += '</p></td><td><div class="mapimgs">';
@@ -59,7 +59,7 @@ function addRoundTable(round) {
 			res += '</p></td><td class="schedule-team red-team"><img class="table-img right-float" title="';
 			res += matches[i]["team2"];
 			res += '" src="/images/';
-			res += matches[i]["team2"].replace(/\s+/g,'');
+			res += matches[i]["team2"].replace(/\s+/g,'-').toLowerCase();
 			res += '.png"></td><td>';
 			if(matches[i]["vod"] == "undefined" || matches[i]["vod"] == "") {
 				res += '<p class="vod-text">No VOD</p>';

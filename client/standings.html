@@ -8,7 +8,6 @@
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="/js/link-team-names.js"></script>
 		<script src="/js/sortable-table.js"></script>
-		<script src="/js/utils.js"></script>
 	</head>
 	<body>
 		<!-- navbar -->
@@ -45,22 +44,28 @@
 		</div>
 		<script type="text/javascript">
 		var jsonRecv;
-		var season = window.location.pathname.split('/')[1];
-		ajaxReq('/api/'+season+'/GetStandings')
-		.then(res => loadTable(res))
-		.catch(err => {
-			console.error("unable to complete ajax request to /api/season/GetStandings!");
-			return;
-		});
+		function doAjax() {
+			// create AJAX request for standingsTable
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/GetStandings", true);
+			xhttp.send();
+			
+			// runs when response is received
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					jsonRecv = JSON.parse(xhttp.responseText);
+					loadTable(jsonRecv);
+				} else {
+					if(xhttp.status != 200) {
+						alert(xhttp.status);
+					}
+				}
+			}
+		}
 		
 		// loads table into HTML
-		function loadTable(obj) {
-			let jsonObj = JSON.parse(obj.responseText);
-			if(jsonObj.error) {
-				console.error("Server returned an error to /api/season/GetStandings!");
-				return;
-			};
-			
+		function loadTable(jsonObj) {
 			var out = "";
 			var table = jsonObj.Teams;
 			for(i = 0; i < table.length; i++) {
@@ -89,6 +94,8 @@
 		
 			document.getElementById("standingsTable").getElementsByTagName("tbody")[0].innerHTML = out;
 		}
+		
+		doAjax();
 		</script>
 	</body>
 </html>

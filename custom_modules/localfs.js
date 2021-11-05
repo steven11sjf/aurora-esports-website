@@ -29,27 +29,6 @@ function writeJson(path, obj) {
 }
 
 /**
- * Saves an object to a local JSON stored in path
- * Same as writeJson but returns a promise
- */
-const writeJsonPromise = (path,obj) => {
-	return new Promise((resolve,reject) => {
-		try {
-			str = JSON.stringify(obj); // stringify object
-			fs.writeFile(path, str, function(err) {
-				if(err) {
-					reject(err);
-				}
-				console.log('saved file ' + path);
-				resolve();
-			});
-		} catch (e) {
-			reject(e);
-		}
-	});
-}
-
-/**
  * Opens a local JSON stored in __dirname/json/
  * Parses the json into an object and sends it to the callback
  */
@@ -67,54 +46,7 @@ function openJson(path, callback) {
 	});
 }
 
-/**
- * Opens a local json stored in path
- * Parses json into object and returns it as a promise
- */
-const openJsonPromise = (path) => {
-	return new Promise((resolve,reject) => {
-		console.log('opening file ' + path);
-		fs.readFile(path, function(err, data) {
-			if(err) reject(err);
-			try {
-				obj = JSON.parse(data);
-				resolve(obj);
-			} catch (e) {
-				// called if data does not resolve to a valid json
-				reject(e);
-			}
-		});
-	});
-}
-
-/**
- * Clears data stored in /data
- */
-const clearDataPromise = () => {
-	return new Promise(async (resolve,reject) => {
-		try {
-			console.log('Clearing ./data!');
-			fs.promises.rmdir('./data', { recursive: true })
-			.then(res => {
-				console.log(res);
-				return fs.promises.mkdir('./data');
-			})
-			.then(res2 => {
-				console.log(res2);
-				return resolve('./data');
-			})
-			.catch((err) => reject(err))
-		} catch(err) {
-			reject(err);
-		}
-	});
-}
-		
-
 module.exports = {
 	writeJson,
-	openJson,
-	writeJsonPromise,
-	openJsonPromise,
-	clearDataPromise
+	openJson
 }

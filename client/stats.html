@@ -10,7 +10,6 @@
 		<script src="/js/link-team-names.js"></script>
 		<script src="/js/sortable-table.js"></script>
 		<script src="/js/stats-page.js"></script>
-		<script src="/js/utils.js"></script>
 	</head>
 	<body>
 		<!-- navbar -->
@@ -34,7 +33,6 @@
 				<option value="Baptiste">Baptiste</option>
 				<option value="Bastion">Bastion</option>
 				<option value="Brigitte">Brigitte</option>
-				<option value="Cassidy">Cassidy</option>
 				<option value="D.Va">D.Va</option>
 				<option value="Doomfist">Doomfist</option>
 				<option value="Echo">Echo</option>
@@ -42,6 +40,7 @@
 				<option value="Hanzo">Hanzo</option>
 				<option value="Junkrat">Junkrat</option>
 				<option value="Lucio">Lucio</option>
+				<option value="McCree">McCree</option>
 				<option value="Mei">Mei</option>
 				<option value="Mercy">Mercy</option>
 				<option value="Moira">Moira</option>
@@ -84,11 +83,7 @@
 		</div>
 		
 		<script type="text/javascript">
-		onload=function(){
-			doAjax()
-			.then(dropdownSelected("__LEAGUE_STANDINGS__"))
-			.catch(err => {});
-		};
+		onload=dropdownSelected("__LEAGUE_STANDINGS__");
 		</script>
 	</body>
 </html>

@@ -126,6 +126,7 @@ tr.match-unplayed {
 }
 
 .right-float {
+	float: right;
 	padding-right: 10px;
 	text-align: right;
 }

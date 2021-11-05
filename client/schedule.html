@@ -10,7 +10,6 @@
 		<script src="/js/sortable-table.js"></script>
 		<script src="/js/schedule-page.js"></script>
 		<script src="/js/link-team-names.js"></script>
-		<script src="/js/utils.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	</head>
@@ -30,22 +29,28 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-		var season = window.location.pathname.split('/')[1];
-		ajaxReq('/api/'+season+'/matchlog')
-		.then(res => loadTable(res))
-		.catch(err => {
-			console.error("Server unable to return matchlog!");
-			return;
-		});
+		function doAjax() {
+			// create AJAX request for standingsTable
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "/api/matchlog", true);
+			xhttp.send();
+			
+			// runs when response is received
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					console.log(xhttp.responseText);
+					var jsonObj = JSON.parse(xhttp.responseText);
+					loadTable(jsonObj);
+				} else {
+					if(xhttp.status != 200) {
+						alert(xhttp.status);
+					}
+				}
+			}
+		}
 		
 		// loads table into HTML
-		function loadTable(obj) {
-			let jsonObj = JSON.parse(obj.responseText);
-			if(jsonObj.error) {
-				console.log("Server returned an error on matchlog!");
-				return;
-			};
-			
+		function loadTable(jsonObj) {
 			loadLog(jsonObj);
 			var week = jsonObj.currentround;
 			
