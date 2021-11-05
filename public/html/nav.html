@@ -1,11 +1,12 @@
 <!-- navbar -->
 <div class="navbar">
-  <a class="nav-left" href="/Home/"><img src="/images/leaguelogo_header.png" class="navbar-logo"></a>
-  <a class="nav-left" href="/Home/">Home</a>
+  <a class="nav-left" href="/"><img src="/images/leaguelogo_header.png" class="navbar-logo"></a>
+  <a class="nav-left" id="navlink-home">Home</a>
   <div class="dropdown">
-    <button class="dropbtn" onclick="location.href='/Standings/';">Teams 
+    <button class="dropbtn" id="navlink-teamsbtn" onclick="location.href='#';">Teams 
       <i class="fa fa-caret-down"></i>
     </button>
+<<<<<<< HEAD
     <div class="dropdown-content">
       <a href="/Teams/BengaliBoom">Bengali Boom</a>
       <a href="/Teams/FalklandFennecs">Falkland Fennecs</a>
@@ -17,12 +18,100 @@
       <a href="/Teams/SingaporeSeekers">Singapore Seekers</a>
       <a href="/Teams/StockholmSyndromes">Stockholm Syndromes</a>
       <a href="/Teams/USSRUnicorns">USSR Unicorns</a>
+=======
+    <div id="navlink-teams-dropdown" class="dropdown-content">
+>>>>>>> seasons-update
     </div>
   </div> 
-  <a class="nav-left" href="/Schedule/">Schedule</a>
-  <a class="nav-left" href="/Standings/">Standings</a>
-  <a class="nav-left" href="/Stats/">Stats</a>
-  <a href="/Draft/" class="nav-left">Draft</a>
-  <a href="/BugReport/" class="" target="_blank">Bug Reporter</a>
+  <a class="nav-left" id="navlink-schedule" href="#">Schedule</a>
+  <a class="nav-left" id="navlink-standings" href="#">Standings</a>
+  <a class="nav-left" id="navlink-stats" href="#">Stats</a>
+  <a href="#" id="navlink-draft" class="nav-left">Draft</a>
+  
+  <a href="/BugReport/" class="bugreport" target="_blank">Bug Reporter</a>
   <a href="/Discord/" class="discord" target="_blank">Join the Discord</a>
+  <div class="dropdown">
+	<button class="dropbtn" id="navlink-seasonsbtn" onlick="">Seasons
+	  <i class="fa fa-caret-down"></i>
+	</button>
+	<div id="navlink-seasons-dropdown" class="dropdown-content">
+	</div>
+  </div>
+  
+  <!-- script that loads navbar links -->
+  <script type="text/javascript">
+	const ajaxReq = url => new Promise((resolve,reject) => {
+		console.info(url);
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET",url,true);
+		xhttp.send();
+	
+		xhttp.onreadystatechange = function() {
+			console.log(this.responseText);
+			if(this.readyState == 4 && this.status == 200){
+				resolve(this);
+			} else {
+				if(xhttp.status != 200)
+					reject(this);
+			}
+		}
+	});
+
+	function loadNavbarLinks() {
+		// get season name from address bar
+		let sname = window.location.pathname.split('/')[1];
+		console.log(`linking navbar! sname=${sname}`);
+		
+		ajaxReq('/api/seasons')
+		.then(res => {
+			// load Seasons dropdown while confirming the season we have is a valid one
+			let isSeason = false;
+			let arr=JSON.parse(res.responseText);
+			if(arr.error) {
+				// server side error
+				console.error("Server side error:\n",res.error);
+				return;
+			}
+			
+			// iterate through array and add a tags to seasons dropdown
+			for(i=0;i<arr.length;++i) {
+				if(arr[i].internal == sname) isSeason = true;
+				let added = "<a href=\"/" + arr[i].internal + "/Home\">" + arr[i].name + "</a>";
+				$('#navlink-seasons-dropdown').append(added);
+			}
+			
+			// if sname wasn't found, set it to the first item in the array (which should be the most recent season)
+			if(!isSeason) sname = arr[0].internal;
+		})
+		.then(() => ajaxReq(`/api/${sname}/teams`))
+		.then(res => {
+			// load Teams dropdown
+			let arr = JSON.parse(res.responseText);
+			if(res.error) {
+				// server side error
+				console.error("Server side error:\n",res.error);
+				return;
+			}
+			
+			// iterate array and add a tags to teams dropdown
+			for(i=0;i<arr.length;++i) {
+				let added = "<a href=\"/" + sname + "/Teams/" + arr[i].internal + "\">" + arr[i].name + "</a>";
+				console.log(added);
+				$('#navlink-teams-dropdown').append(added);
+			}
+		})
+		.then(() => {
+			// finally load static buttons with season links
+			$("#navlink-home").attr("href",`/${sname}/Home`);
+			$("#navlink-schedule").attr("href",`/${sname}/Schedule`);
+			$("#navlink-standings").attr("href",`/${sname}/Standings`);
+			$("#navlink-stats").attr("href",`/${sname}/Stats`);
+			$("#navlink-draft").attr("href",`/${sname}/Draft`);
+		})
+		.catch(err => console.error(err))
+	}
+	
+	// load navbar links when page is ready
+	$(document).ready(loadNavbarLinks());
+  </script>
 </div>

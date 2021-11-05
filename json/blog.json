@@ -98,6 +98,42 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/Season4PrePowerRankings.html"
+<<<<<<< HEAD
+=======
+		},
+		{
+			"id" : "TimeTravelUpdate",
+			"date" : "10/15/2021 7:00:00 PM",
+			"title" : "Gopherwatch League Website 2.0: Too Many Seasons",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/patch_notes.png",
+			"contents" : "/html/Blog/TimeTravelUpdate.html"
+		},
+		{
+			"id" : "RecapS4Wk1",
+			"date" : "10/24/2021 8:27:00 PM",
+			"title" : "Season 4 Week 1 Recap",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/GWLWeek1MatchRecap.html"
+		},
+		{
+			"id" : "RecapS4Wk2",
+			"date" : "10/27/2021 2:42:00 PM",
+			"title" : "Season 4 Week 2 Recap",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/GWLPostWeek2MatchRecap.html"
+>>>>>>> seasons-update
 		}
 	]
 }

@@ -1,0 +1,32 @@
+{
+	"accolades" : {
+		"Season 1 All-Star" : "/images/playerpage/allstar.png",
+		"Season 1 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
+		"Season 2 All-Star" : "/images/playerpage/allstar.png",
+		"Season 2 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
+		"Season 3 All-Star" : "/images/playerpage/allstar.png",
+		"Season 3 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
+		"Season 2 3rd Team All-Pro" : "/images/playerpage/3rdteam.png",
+		"Season 2 2nd Team All-Pro" : "/images/playerpage/2ndteam.png",
+		"Season 2 1st Team All-Pro" : "/images/playerpage/1stteam.png",
+		"Season 1 3rd Team All-Pro" : "/images/playerpage/3rdteam.png",
+		"Season 1 2nd Team All-Pro" : "/images/playerpage/2ndteam.png",
+		"Season 1 1st Team All-Pro" : "/images/playerpage/1stteam.png",
+		"Season 3 3rd Team All-Pro" : "/images/playerpage/3rdteam.png",
+		"Season 3 2nd Team All-Pro" : "/images/playerpage/2ndteam.png",
+		"Season 3 1st Team All-Pro" : "/images/playerpage/1stteam.png",
+		"Season 1 Most Valuable Player" : "/images/playerpage/mvp.png",
+		"Season 2 Most Valuable Player" : "/images/playerpage/mvp.png",
+		"Season 1 Champion" : "/images/playerpage/trophy.png",
+		"Season 2 Champion" : "/images/playerpage/trophy.png",
+		"Season 3 Champion" : "/images/playerpage/trophy.png",
+		"Administrator" : "/images/playerpage/admin.png",
+		"Staff" : "/images/playerpage/staff.png",
+		"Graphic Design" : "/images/playerpage/gdes.png",
+		"Caster" : "/images/playerpage/headset.png",
+		"Producer" : "/images/playerpage/camera.png",
+		"Captain" : "/images/playerpage/captain.png",
+		"Season 1 Commissioners Award" : "/images/playerpage/commissioneraward.png",
+		"Season 2 Commissioners Award" : "/images/playerpage/commissioneraward.png"
+	}
+}

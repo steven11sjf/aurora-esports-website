@@ -1,19 +1,9 @@
+var seasonname; // season name in address bar
 var playername; // player name in address bar (with hyphen instead of hashtag)
 var playerInfo; // object containing player info
 var statsObj; // obj containing current stats
-
-var teamColors = {
-	"Djibouti Shorts" : "#93c6e3",
-	"London Lumberjack Slams" : "#e8c46b",
-	"Oceania Otters" : "#d5a99e",
-	"Plymouth PMAs" : "#b83f24",
-	"The Tenochitlan Tacos" : "#ecd23f",
-	"Bendigo Bilbies" : "#e68f5a",
-	"Gaming Golems" : "#5b5c5d",
-	"Rialto Rincewinds" : "#e5ce7e",
-	"Galapagos Gremlins" : "#37c837",
-	"Wakanda BBQs" : "#d6d6d6"
-};
+var teamsObj; // obj containing teams
+var team; // teamsObj element for player team
 
 // dictionary of accolade names and their icons
 var accoladesDict = {
@@ -47,32 +37,14 @@ var accoladesDict = {
 	"Season 2 Commissioners Award" : "/images/playerpage/commissioneraward.png"
 };
 
-playername = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
-
-// gets the stats json
-function getGameStats() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/playerstats/', true);
-	xhttp.send();
-	
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-			statsObj = JSON.parse(xhttp.responseText);
-			loadTables();
-			loadImage();
-		} else {
-			if(xhttp.status != 200) {
-				alert('Error loading stats! HTTP status code ' + xhttp.status);
-			}
-		}
-	}
-}
-
 function doAjax() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/playerjson/' + playername, true);
-	xhttp.send();
+	// run ajax requests on all promises
+	let promiseArr = [];
+	promiseArr.push(ajaxReq('/api/'+seasonname+'/playerjson/'+playername));
+	promiseArr.push(ajaxReq('/api/'+seasonname+'/playerstats'));
+	promiseArr.push(ajaxReq('/api/'+seasonname+'/teams'));
 	
+<<<<<<< HEAD
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 			playerInfo = JSON.parse(xhttp.responseText);
@@ -85,11 +57,36 @@ function doAjax() {
 			}
 		}
 	}
+=======
+	Promise.all(promiseArr)
+	.then(res => {
+		playerInfo = JSON.parse(res[0].responseText);
+		statsObj = JSON.parse(res[1].responseText);
+		teamsObj = JSON.parse(res[2].responseText);
+		if(playerInfo.error) Promise.reject("Server returned an error on player info!");
+		if(statsObj.error) Promise.reject("Server returned an error on stats object!");
+		if(teamsObj.error) Promise.reject("Server returned an error on teams object!");
+		
+		loadData();
+	})
+	.catch(err => {
+		console.error(err);
+	});
+>>>>>>> seasons-update
 }
 
 function loadData() {
 	if(playerInfo.battletag == "") {
 		alert('Player not found!');
+		return;
+	}
+	
+	// get player's team.
+	for(i=0;i<teamsObj.length;++i) {
+		if(teamsObj[i].name == playerInfo.team) team = teamsObj[i];
+	}
+	if(!team) {
+		alert('Player has invalid team!');
 		return;
 	}
 	
@@ -102,42 +99,19 @@ function loadData() {
 	document.getElementById("favorite-hero").innerHTML = playerInfo.hero;
 	
 	let bioHtml = "" + playerInfo.bio.split("\n").join("<br>");
-	console.log(bioHtml);
 	document.getElementById("bio").innerHTML = bioHtml;
 	
 	// since this relies on loading the stats, it's called after getGameStats receives the ajax response
-	//loadImage();
+	loadImage();
 	loadNumberAndRole();
 	loadSocials();
 	loadTeam();
 	loadAccolades();
 	loadSRs();
+	loadTables();
 }
 
-// loads the player's image
-function loadImage() {
-	if(playerInfo.picture == "") {
-		// player does not have a picture, use hero
-		if(playerInfo.hero == "") {
-			// player does not have favorite hero, use most played
-			let mostplayed = getMostPlayedHero();
-			if(mostplayed == '') {
-				// no heroes played, no image selected
-				document.getElementById("player-photo").innerHTML = '';
-			} else {
-				// has most playtime on hero, use their image
-				document.getElementById("player-photo").innerHTML = '<img src="/images/heroportraits/' + mostplayed + '.png">';
-			}
-		} else {
-			// player has a favorite hero, set image
-			document.getElementById("player-photo").innerHTML = '<img src="/images/heroportraits/' + playerInfo.hero + '.png">';
-		}
-	} else {
-		// player has a picture, use that
-		document.getElementById("player-photo").innerHTML = '<img src="' + playerInfo.picture + '">';
-	}
-}
-
+// loads the player's number and their main role, if they exist
 function loadNumberAndRole() {
 	document.getElementById("player-number").textContent = playerInfo.playernumber;
 	
@@ -175,11 +149,35 @@ function loadSocials() {
 // loads team and color
 function loadTeam() {
 	// sets color
-	document.getElementById("player-header").style.backgroundColor = teamColors[playerInfo.team];
+	document.getElementById("player-header").style.backgroundColor = team.primaryColor;
 	
-	let imgpath = playerInfo.team.split(" ").join("-").toLowerCase();
-	document.getElementById("team-icon").src = '/images/' + imgpath + '.png';
-	document.getElementById("teamlink").href = '/Teams/' + playerInfo.team.split(" ").join("");
+	let imgpath = playerInfo.team.replace(/\s+/g,'');
+	document.getElementById("team-icon").src = '/images/' + team.internal + '.png';
+	document.getElementById("teamlink").href = '/' + seasonname + '/Teams/' + team.internal;
+}
+
+// loads the player's image
+function loadImage() {
+	if(playerInfo.picture == "") {
+		// player does not have a picture, use hero
+		if(playerInfo.hero == "") {
+			// player does not have favorite hero, use most played
+			let mostplayed = getMostPlayedHero();
+			if(mostplayed == '') {
+				// no heroes played, no image selected
+				document.getElementById("player-photo").innerHTML = '';
+			} else {
+				// has most playtime on hero, use their image
+				document.getElementById("player-photo").innerHTML = '<img src="/images/heroportraits/' + mostplayed + '.png">';
+			}
+		} else {
+			// player has a favorite hero, set image
+			document.getElementById("player-photo").innerHTML = '<img src="/images/heroportraits/' + playerInfo.hero + '.png">';
+		}
+	} else {
+		// player has a picture, use that
+		document.getElementById("player-photo").innerHTML = '<img src="' + playerInfo.picture + '">';
+	}
 }
 
 // loads accolades
@@ -385,3 +383,10 @@ function getRank(sr) {
 	else if(num < 4000) return "masters.png";
 	else return "grandmasters.png";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+	seasonname = window.location.pathname.split('/')[1];
+	playername = window.location.pathname.split('/')[3];
+	
+	doAjax();
+});
