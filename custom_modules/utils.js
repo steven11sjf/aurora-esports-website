@@ -20,33 +20,84 @@ function searchArrayForParameter(arr,param,value) {
 	return -1;
 }
 
-function testSAFP() {
-	let arr = [
-		{
-			"team" : "foo",
-			"internal" : "owo"
-		},
-		{
-			"team" : "bar",
-			"internal" : "uwu"
-		},
-		{
-			"team" : "foobar",
-			"internal" : "nya"
-		}
-	];
+// helper function that sanitizes data taken from external source (ie spreadsheet cells) to make sure attackers cannot break code or html
+function sanitize(string) {
+	// ignore empty cells
+	if(string == undefined) return string;
+	let output = string;
 	
-	console.log('Searching for param "team" and value "foobar"','Value: ' + searchArrayForParameter(arr,"team","foobar"));
-	console.log('Searching for param "internal" and value "owo"','Value: ' + searchArrayForParameter(arr,"internal","owo"));
-	console.log('Searching for param "team" and value "poo"','Value: ' + searchArrayForParameter(arr,"team","poo"));
-	console.log('Searching for param "fax" and value "tru"','Value: ' + searchArrayForParameter(arr,"fax","tru"));
+	// < to &lt;
+	output = output.split("<").join("&lt;");
+	// > to &rt;
+	output = output.split(">").join("&rt;");
+	// & to &amp;
+	output = output.split("&").join("&amp;");
+	// " to &quot;
+	output = output.split("\"").join("&quot;");
+	// ' to &apos;
+	output = output.split("'").join("&apos;");
+	// newline to \\n
+	output = output.split("\n").join("\\n");
 	
-	console.log('Team with internal name "uwu": ', arr[searchArrayForParameter(arr,"internal","uwu")].team);
-	console.log('Team with team name "foobar": ', arr[searchArrayForParameter(arr,"team","foobar")].internal);
+	return output;
 }
-testSAFP();
+
+/*
+ * generates a dictionary of (word,link) pairs
+ * contains team names and player page links.
+ * saved into LINKS_JSON
+ */
+function generateLinkDict(season) {
+	return new Promise((resolve,reject) => {	
+		// get players
+		console.log(`datahandler has ${season}`);
+		season.getPlayers()
+		.then(playersJson => {
+			let dict = [];
+			let players = playersJson.players;
+			
+			for(i=0;i<season.teams.length;++i) {
+				if(!season.teams[i].name || !season.teams[i].internal) reject(`Error linking team: sheet name "${season.name}", teams index ${j}`);
+				
+				let w = season.teams[i].name;
+				let l = "/" + season.internal + "/Teams/" + season.teams[i].internal;
+				let entry = { word: w, link: l };
+				dict.push(entry);
+			}
+			
+			for(j=0;j<players.length;++j) {
+				if(!players[j].battletag) reject(`Error linking player: sheet name "${season.name}, teams index ${j}`);
+				
+				let w = players[j].battletag;
+				let l = `/${sheets[i].internal}/Player/${w.replace('#','-')}`;
+				let entry = { word: w, link: l };
+				dict.push(entry);
+			}
+			
+			resolve(dict);
+		})
+		.catch(err => reject(err));
+	});
+}
+
+/*
+ * Gets a specific player from the object defined. 
+ */
+function getPlayerFromObj(obj, battletag) {
+	return new Promise((resolve,reject) => {
+		let players = obj.players;
+		for(i=0;i<players.length;++i) {
+			if(players[i].battletag == battletag)
+				resolve(players[i]);
+		}
+		reject("PlayerNotFound");
+	});
+}
 
 // node exports
 module.exports = {
 	searchArrayForParameter,
+	sanitize,
+	generateLinkDict,
+	getPlayerFromObj,
 }

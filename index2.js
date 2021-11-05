@@ -7,6 +7,10 @@
 // (c) 2021 Steven Franklin.
 // ==========
 
+// registers aliases
+// makes it easier to include our other files without falling into ../../../ hell
+require('module-alias/register');
+
 // node submodules
 var express = require("express");
 var app = express();
@@ -18,11 +22,10 @@ require('dotenv').config();
 const sheetsApi = google.sheets('v4');
 
 // custom submodules
-const googleAuth = require('./custom_modules/auth'); // gets authorization for google sheets
-const localfs = require('./custom_modules/localfs'); // handles local json read/writes
-const sheets = require('./custom_modules/spreadsheet-types'); // Uses information from new spreadsheet module
-const jsonData = require('./custom_modules/data-handler'); // handles accessing data from locally cached files.
-const constants = require('./custom_modules/consts'); // global constants
+const googleAuth = require('@mymodules/auth'); // gets authorization for google sheets
+const localfs = require('@mymodules/localfs'); // handles local json read/writes
+const sheets = require('@mymodules/spreadsheet-types'); // Uses information from new spreadsheet module
+const constants = require('@mymodules/consts'); // global constants
 
 var PAGE_HITS = 0; // stores page hits until next cron job
 

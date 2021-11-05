@@ -13,6 +13,7 @@ function doTeamAjax() {
 			console.log("Server failed to retrieve team info!");
 			return
 		}
+		fullName = jsonReceived.name;
 		loadRosterTable(jsonReceived);
 		loadTeamInfo(jsonReceived);
 		loadMapTable(jsonReceived);
