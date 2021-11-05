@@ -13,6 +13,7 @@ const googleAuth = require('@mymodules/auth');
 const constants = require('@mymodules/consts');
 const localfs = require('@mymodules/localfs');
 var sheets = require('@mymodules/spreadsheet-types');
+var GWLRoundRobinSpreadsheet = require('@sheets/GWLRoundRobinSpreadsheet');
 
 // builds a spreadsheet using its buildDirectory, loadSheetInfo and batchGetAll functions
 async function buildSheet(sheetObj) {
@@ -39,8 +40,8 @@ function build() {
 
 		// Declare sheets below, push sheets to array
 		// MAKE SURE TO PUSH LATEST SHEETS LAST :^)
-		arr.push(new sheets.GWLRoundRobinSpreadsheet("Season 3", "Season3", false, '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM'));
-		arr.push(new sheets.GWLRoundRobinSpreadsheet("Season 4", "Season4", true, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
+		arr.push(new GWLRoundRobinSpreadsheet("Season 3", "Season3", false, '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM'));
+		arr.push(new GWLRoundRobinSpreadsheet("Season 4", "Season4", true, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
 		
 		// promise all to build sheets
 		for(i=0;i<arr.length;++i) {
