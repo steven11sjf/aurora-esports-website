@@ -25,11 +25,16 @@
 		</script>
 		
 		<div class="center">
+			<img src="/images/LeftArrow.png" id="left-btn" title="Previous Week" onclick="prevWeek();"></img>
+			<h1 class="sched-header">Upcoming Rounds</h1>
+			<img src="/images/RightArrow.png" id="right-btn" title="Previous Week" onclick="nextWeek();"></img>
 			<div id="rounds-div">
 			
 			</div>
 		</div>
 		<script type="text/javascript">
+		var week;
+		var numWeeks; // total number of weeks
 		var season = window.location.pathname.split('/')[1];
 		ajaxReq('/api/'+season+'/matchlog')
 		.then(res => loadTable(res))
@@ -47,20 +52,23 @@
 			};
 			
 			loadLog(jsonObj);
-			var week = jsonObj.currentround;
+			week = jsonObj.currentround;
+			numWeeks = getMaxWeek();
 			
-			document.getElementById("rounds-div").innerHTML += '<h1 class="sched-header">Upcoming Rounds</h1>';
-			for(var i=week; i<10; i++) {
-				addRoundTable(i);
-			}
-			
-			document.getElementById("rounds-div").innerHTML += '<h1 class="sched-header">Previous Rounds</h1>';
-			for(i=1; i<week; i++) {
-				addRoundTable(i);
-			}
+			addRoundTable(week);
 		}
 		
-		window.onload = doAjax;
+		// loads previous week
+		function prevWeek() {
+			if(week > 1) week--;
+			addRoundTable(week);
+		}
+		
+		// loads next week
+		function nextWeek() {
+			if(week < numWeeks) week++;
+			addRoundTable(week);
+		}
 		</script>
 		
 	</body>

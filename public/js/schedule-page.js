@@ -6,6 +6,16 @@ function loadLog(json) {
 	matchJson = json;
 }
 
+// gets the max week by iterating through matchJson
+function getMaxWeek() {
+	let max = 0;
+	for(var i=0; i<matchJson.matches.length; ++i) {
+		let r = parseInt(matchJson.matches[i].round);
+		if(!isNaN(r) && r > max) max = r;
+	}
+	return max;
+}
+
 // generates a table for the given round's matches
 function addRoundTable(round) {
 	var res = "";
@@ -71,7 +81,7 @@ function addRoundTable(round) {
 	}
 	res += '</tbody></table>';
 	
-	document.getElementById("rounds-div").innerHTML += res;
+	document.getElementById("rounds-div").innerHTML = res;
 }
 
 // calculates the match's score and returns it as a p.match-score block

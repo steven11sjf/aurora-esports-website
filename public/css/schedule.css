@@ -1,3 +1,30 @@
+#left-btn {
+	color: white;
+	height: 64px;
+	font-weight: bolder;
+	font-size: 64px;
+	float: left;
+	width: 50px;
+	padding-left: 80px;
+	padding-top: 30px;
+}
+
+#right-btn {
+	color: white;
+	height: 64px;
+	font-weight: bolder;
+	font-size: 64px;
+	float: right;
+	width: 50px;
+	padding-right: 80px;
+	padding-top: 30px;
+}
+
+button span {
+	display: none;
+}
+
+
 .round-table thead {
 	visibility: collapse;
 }
@@ -111,7 +138,9 @@ tr.match-unplayed {
 }
 
 .sched-header {
+	display: inline-block;
 	font-size: 60px;
+	width: 60%;
 }
 
 .round-header {
