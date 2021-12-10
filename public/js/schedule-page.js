@@ -11,7 +11,7 @@ function getMaxWeek() {
 	let max = 0;
 	for(var i=0; i<matchJson.matches.length; ++i) {
 		let r = parseInt(matchJson.matches[i].round);
-		if(!isNaN(r) && r > max) max = r;
+		if(!isNaN(r) && r > max && matchJson.matches[i].tournament == "Season") max = r;
 	}
 	return max;
 }
@@ -40,7 +40,7 @@ function addRoundTable(round) {
 	var matches = matchJson.matches;
 	var roundString = round.toString();
 	for(var i = 0; i < matches.length; i++) {
-		if(roundString == matches[i].round) {
+		if(roundString == matches[i].round && matches[i]["tournament"] == "Season") {
 			res += '<tr><td><p class="match-time">';
 			if(matches[i]["date"] == "TBA" || matches[i]["date"] == "") {
 				res += 'TBA';

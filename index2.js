@@ -193,6 +193,22 @@ app.get('/api/:season/playerjson/:player', function(req,res) {
 	});
 });
 
+// sends a season's tournaments if they exist
+app.get('/api/:season/tournaments', function(req,res) {
+	sheets.getSeason(req.params.season)
+	.then(season => {
+		if(season.meta.hasTournaments) {
+			res.json(season.tournaments);
+		} else {
+			res.json( ["NO_TOURNS"] );
+		}
+	})
+	.catch(err => {
+		console.log(err);
+		res.json( {error: err} );
+	});
+});
+
 // entry page
 app.get('/',function(req, res) {
 	sheets.allSeasonInfo()
@@ -217,6 +233,11 @@ app.get('/:season/Standings/', function(req, res) {
 
 app.get('/:season/Schedule/', function(req, res) {
 	res.sendFile(__dirname + '/client/schedule.html');
+	PAGE_HITS++;
+});
+
+app.get('/:season/Tournament/:tourn', function(req,res) {
+	res.sendFile(__dirname + '/client/tournament.html');
 	PAGE_HITS++;
 });
 

@@ -9,12 +9,19 @@
     <div id="navlink-teams-dropdown" class="dropdown-content">
     </div>
   </div> 
+  <div class="dropdown">
+	<button class="dropbtn" id="navlink-tournamentsbtn" onclick="">Tournaments
+	  <i class="fa fa-caret-down"></i>
+	</button>
+	<div id="navlink-tournaments-dropdown" class="dropdown-content">
+	</div>
+  </div>
   <a class="nav-left" id="navlink-schedule" href="#">Schedule</a>
   <a class="nav-left" id="navlink-standings" href="#">Standings</a>
   <a class="nav-left" id="navlink-stats" href="#">Stats</a>
   <a href="#" id="navlink-draft" class="nav-left">Draft</a>
   
-  <a href="/BugReport/" class="bugreport" target="_blank">Bug Reporter</a>
+  <a href="/BugReport/" class="bugreport nav-right" target="_blank">Bug Reporter</a>
   <a href="/Discord/" class="discord" target="_blank">Join the Discord</a>
   <div class="dropdown">
 	<button class="dropbtn" id="navlink-seasonsbtn" onlick="">Seasons
@@ -73,9 +80,9 @@
 		.then(res => {
 			// load Teams dropdown
 			let arr = JSON.parse(res.responseText);
-			if(res.error) {
+			if(arr.error) {
 				// server side error
-				console.error("Server side error:\n",res.error);
+				console.error("Server side error:\n",arr.error);
 				return;
 			}
 			
@@ -84,6 +91,29 @@
 				let added = "<a href=\"/" + sname + "/Teams/" + arr[i].internal + "\">" + arr[i].name + "</a>";
 				console.log(added);
 				$('#navlink-teams-dropdown').append(added);
+			}
+		})
+		.then(() => ajaxReq(`/api/${sname}/tournaments`))
+		.then(res2 => {
+			console.log(res2);
+			// load Tournaments dropdown
+			let arr = JSON.parse(res2.responseText);
+			if(arr.error) {
+				// server side error
+				console.error("Server side error:\n",arr.error);
+				return;
+			}
+			
+			// remove button if there are no tournaments
+			if(arr[0] == "NO_TOURNS") {
+				$('#navlink-tournamentsbtn').closest('.dropdown').remove();
+			}
+			
+			// iterate arr and add a tags to tournaments dropdown
+			for(let i=0;i<arr.length;++i) {
+				let added = "<a href=\"/" + sname + "/Tournament/" + arr[i] + "\">" + arr[i].replace(/-/g,' ') + "</a>";
+				console.log(added);
+				$('#navlink-tournaments-dropdown').append(added);
 			}
 		})
 		.then(() => {
