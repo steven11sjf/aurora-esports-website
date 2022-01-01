@@ -110,15 +110,11 @@ function updateAll() {
 // function that returns the season with internal name
 function getSeason(iname) {
 	return new Promise((resolve,reject) => {
-		console.log(iname)
 		for(i=0;i<sheets.length;++i) {
-			console.log(sheets[i].internal);
 			if(sheets[i].internal==iname) {
-				console.log("here");
 				resolve(sheets[i]);
 			}
 		}
-		console.log("FJIOWEJFNUIODSAPFHNJJUIPAJFDISDAOPFJDAS        ", iname);
 		reject("InvalidSeason");
 	});
 }

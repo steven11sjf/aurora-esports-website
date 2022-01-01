@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index2.js",
-    "build": "node build.js"
+    "start": "node index.js",
+    "build_sheets": "node build.js"
   },
   "author": "Steven Franklin <steve11sjf@gmail.com> (https://github.com/steven11sjf/gopherwatch-league-site)",
   "license": "ISC",

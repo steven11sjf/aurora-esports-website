@@ -9,7 +9,6 @@
 // node module imports
 var fs = require("fs");
 require('dotenv').config();
-
 /**
  * Saves an object to a local JSON stored in __dirname/json/path
  * Stringifies the json automatically
@@ -94,13 +93,11 @@ const clearDataPromise = () => {
 	return new Promise(async (resolve,reject) => {
 		try {
 			console.log('Clearing ./data!');
-			fs.promises.rmdir('./data', { recursive: true })
+			fs.promises.rm('./data', { recursive: true })
 			.then(res => {
-				console.log(res);
 				return fs.promises.mkdir('./data');
 			})
 			.then(res2 => {
-				console.log(res2);
 				return resolve('./data');
 			})
 			.catch((err) => reject(err))
