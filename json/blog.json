@@ -1,0 +1,148 @@
+{
+	"latest-update" : "6/11/2021 2:27 AM",
+	"all-tags" : [
+		"Website Updates",
+		"Match Recap",
+		"Weekly Recap",
+		"Rule Updates",
+		"Admin Announcements",
+		"Free Agents",
+		"Power Rankings"
+	],
+	"blog-posts" : [
+		{
+			"id" : "uwu",
+			"date" : "6/10/2021 11:52 PM",
+			"title" : "Welcome to the Gopherwatch League Blog!",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/welcomepost.html"
+		},
+		{
+			"id" : "week3-lls",
+			"date" : "6/25/2021 5:25 PM",
+			"title" : "Lumberjackslams Get Cut Down",
+			"by" : "BOON1E",
+			"tags" : [
+				"Match Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/week3-lls.html"
+		},
+		{
+			"id" : "pagehits1",
+			"date" : "6/29/2021 10:52 PM",
+			"title" : "Some interesting website statistics",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/stats_icon.png",
+			"contents" : "/html/Blog/pagehits1.html"
+		},
+		{
+			"id" : "powerrankings-week3",
+			"date" : "7/1/2021 3:43 PM",
+			"title" : "Power Rankings by Rusty",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap",
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/powerrankings-week3.html"
+		},
+		{
+			"id" : "patch-notes-7-3-21",
+			"date" : "7/3/2021 8:26 PM",
+			"title" : "Patch Notes: Player Stats!",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/patch_notes.png",
+			"contents" : "/html/Blog/patch-notes-stats-1.html"
+		},
+		{
+			"id" : "player-profiles",
+			"date" : "7/20/2021 1:55 PM",
+			"title" : "Patch Notes: Player Profiles!",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/patch_notes.png",
+			"contents" : "/html/Blog/player-profiles.html"
+		},
+		{
+			"id" : "rat-rankings",
+			"date" : "8/15/2021 1:07:00 PM",
+			"title" : "Rat Power Rankings",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/ratrankings.html"
+		},
+		{
+			"id" : "S4-PrePowerRankings",
+			"date" : "10/13/2021 6:02:00 PM",
+			"title" : "Pre-Season 4 Power Rankings",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Season4PrePowerRankings.html"
+		},
+		{
+			"id" : "TimeTravelUpdate",
+			"date" : "10/15/2021 7:00:00 PM",
+			"title" : "Gopherwatch League Website 2.0: Too Many Seasons",
+			"by" : "Steven Franklin",
+			"tags" : [
+				"Website Updates"
+			],
+			"image" : "/images/patch_notes.png",
+			"contents" : "/html/Blog/TimeTravelUpdate.html"
+		},
+		{
+			"id" : "RecapS4Wk1",
+			"date" : "10/24/2021 8:27:00 PM",
+			"title" : "Season 4 Week 1 Recap",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/GWLWeek1MatchRecap.html"
+		},
+		{
+			"id" : "RecapS4Wk2",
+			"date" : "10/27/2021 2:42:00 PM",
+			"title" : "Season 4 Week 2 Recap",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/GWLPostWeek2MatchRecap.html"
+		},
+		{
+			"id" : "PowerS4Wk3",
+			"date" : "11/9/2021 8:56:00 AM",
+			"title" : "Season 4 Week 3 Power Rankings",
+			"by" : "RustyGoomba",
+			"tags" : [
+				"Power Rankings",
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Week3PowerRankings.html"
+		}
+	]
+}

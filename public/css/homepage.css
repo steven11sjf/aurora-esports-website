@@ -117,6 +117,13 @@
 	margin-bottom: 30px;
 }
 
+.text {
+	font-size: 20px;
+	color: white;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
 #nav-placeholder {
 	padding-bottom: 50px;
 }
@@ -124,4 +131,12 @@
 .round-header {
 	margin: auto;
 	text-align: center;
+}
+
+.aboutlink:link {
+	color: #a7e7fa;
+}
+
+.aboutlink:visited {
+	color: #7bd3ed;
 }

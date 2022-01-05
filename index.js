@@ -294,7 +294,7 @@ app.get('/:season/Player/:playertag', function(req,res) {
 
 // redirects user to discord link
 app.get('/Discord/', function(req, res) {
-	res.redirect(__discord_link);
+	res.redirect(constants.__discord_link);
 	PAGE_HITS++;
 });
 
