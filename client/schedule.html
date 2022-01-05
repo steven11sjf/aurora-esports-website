@@ -10,12 +10,15 @@
 		<script src="/js/sortable-table.js"></script>
 		<script src="/js/schedule-page.js"></script>
 		<script src="/js/link-team-names.js"></script>
+		<script src="/js/utils.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	</head>
 	<body>
 		<!-- navbar -->
-		<div id="nav-placeholder"></div>
+		<div id="nav-placeholder">
+			<h1>Please enable JavaScript to use the site!</h1>
+		</div>
 		
 		<script>
 		$(function(){
@@ -24,48 +27,50 @@
 		</script>
 		
 		<div class="center">
+			<img src="/images/LeftArrow.png" id="left-btn" title="Previous Week" onclick="prevWeek();"></img>
+			<h1 class="sched-header">Schedule</h1>
+			<img src="/images/RightArrow.png" id="right-btn" title="Previous Week" onclick="nextWeek();"></img>
 			<div id="rounds-div">
 			
 			</div>
 		</div>
 		<script type="text/javascript">
-		function doAjax() {
-			// create AJAX request for standingsTable
-			var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "/api/matchlog", true);
-			xhttp.send();
-			
-			// runs when response is received
-			xhttp.onreadystatechange = function() {
-				if(this.readyState == 4 && this.status == 200){
-					console.log(xhttp.responseText);
-					var jsonObj = JSON.parse(xhttp.responseText);
-					loadTable(jsonObj);
-				} else {
-					if(xhttp.status != 200) {
-						alert(xhttp.status);
-					}
-				}
-			}
-		}
+		var week;
+		var numWeeks; // total number of weeks
+		var season = window.location.pathname.split('/')[1];
+		ajaxReq('/api/'+season+'/matchlog')
+		.then(res => loadTable(res))
+		.catch(err => {
+			console.error("Server unable to return matchlog!");
+			return;
+		});
 		
 		// loads table into HTML
-		function loadTable(jsonObj) {
+		function loadTable(obj) {
+			let jsonObj = JSON.parse(obj.responseText);
+			if(jsonObj.error) {
+				console.log("Server returned an error on matchlog!");
+				return;
+			};
+			
 			loadLog(jsonObj);
-			var week = jsonObj.currentround;
+			week = jsonObj.currentround;
+			numWeeks = getMaxWeek();
 			
-			document.getElementById("rounds-div").innerHTML += '<h1 class="sched-header">Upcoming Rounds</h1>';
-			for(var i=week; i<10; i++) {
-				addRoundTable(i);
-			}
-			
-			document.getElementById("rounds-div").innerHTML += '<h1 class="sched-header">Previous Rounds</h1>';
-			for(i=1; i<week; i++) {
-				addRoundTable(i);
-			}
+			addRoundTable(week);
 		}
 		
-		window.onload = doAjax;
+		// loads previous week
+		function prevWeek() {
+			if(week > 1) week--;
+			addRoundTable(week);
+		}
+		
+		// loads next week
+		function nextWeek() {
+			if(week < numWeeks) week++;
+			addRoundTable(week);
+		}
 		</script>
 		
 	</body>

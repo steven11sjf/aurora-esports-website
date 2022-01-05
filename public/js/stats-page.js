@@ -1,6 +1,8 @@
+var season;
 var herostats_obj;
 var heroinfo_obj;
 var table_type;
+var loaded = 0;
 
 // called when the dropdown is selected.
 function dropdownSelected(value) {
@@ -40,37 +42,40 @@ function loadTable(header,hero) {
 }
 
 function doAjax() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", '/api/playerstats/', true);
-	xhttp.send();
-	
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-			herostats_obj = JSON.parse(xhttp.responseText);
-			console.log(herostats_obj);
-		} else {
-			if(xhttp.status != 200) {
-				alert(xhttp.status);
+	return new Promise((resolve,reject) => {
+		season = window.location.pathname.split('/')[1];
+		ajaxReq('/api/'+season+'/playerstats')
+		.then(res => {
+			herostats_obj = JSON.parse(res.responseText);
+			if(herostats_obj.error) {
+				console.error("Server returned an error on /api/season/playerstats!");
+				reject(err);
 			}
-		}
-	}
-	
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", '/json/heroinfo.json', true);
-	xhr.send();
-	xhr.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-			heroinfo_obj = JSON.parse(xhr.responseText);
-		} else {
-			if(xhr.status != 200) {
-				alert(xhr.status);
-			}
-		}
-	}
-}
-doAjax();
+			loaded++;
+		})
+		.catch(err => {
+			console.error("Ajax req /api/season/playerstats failed!");
+			reject(err);
+		});
+
+		ajaxReq('/json/heroinfo.json')
+		.then(res => {
+			heroinfo_obj = JSON.parse(res.responseText)
+			loaded++;
+		})
+		.catch(err => {
+			console.error("Ajax req /json/heroinfo.json failed!");
+			reject(err);
+		});
+	});
+};
 
 function loadHero(dropdown) {
+	// check if page is loaded
+	if(loaded!=2) {
+		setTimeout(() => {loadHero(dropdown);},500);
+		return;
+	}
 	// get hero from dropdown
 	let heroName = dropdown;
 	if(heroName == "") return;

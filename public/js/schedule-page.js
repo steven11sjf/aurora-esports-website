@@ -6,6 +6,16 @@ function loadLog(json) {
 	matchJson = json;
 }
 
+// gets the max week by iterating through matchJson
+function getMaxWeek() {
+	let max = 0;
+	for(var i=0; i<matchJson.matches.length; ++i) {
+		let r = parseInt(matchJson.matches[i].round);
+		if(!isNaN(r) && r > max && matchJson.matches[i].tournament == "Season") max = r;
+	}
+	return max;
+}
+
 // generates a table for the given round's matches
 function addRoundTable(round) {
 	var res = "";
@@ -30,7 +40,7 @@ function addRoundTable(round) {
 	var matches = matchJson.matches;
 	var roundString = round.toString();
 	for(var i = 0; i < matches.length; i++) {
-		if(roundString == matches[i].round) {
+		if(roundString == matches[i].round && matches[i]["tournament"] == "Season") {
 			res += '<tr><td><p class="match-time">';
 			if(matches[i]["date"] == "TBA" || matches[i]["date"] == "") {
 				res += 'TBA';
@@ -42,7 +52,7 @@ function addRoundTable(round) {
 			res += '</p></td><td class="schedule-team blue-team"><img class="table-img left-float" title="';
 			res += matches[i]["team1"];
 			res += '" src="/images/';
-			res += matches[i]["team1"].replace(/\s+/g,'-').toLowerCase();
+			res += matches[i]["team1"].replace(/\s+/g,'');
 			res += '.png"></td><td class="schedule-team blue-team"><p class="schedule-team-name right-float">'
 			res += matches[i]["team1"];
 			res += '</p></td><td><div class="mapimgs">';
@@ -59,7 +69,7 @@ function addRoundTable(round) {
 			res += '</p></td><td class="schedule-team red-team"><img class="table-img right-float" title="';
 			res += matches[i]["team2"];
 			res += '" src="/images/';
-			res += matches[i]["team2"].replace(/\s+/g,'-').toLowerCase();
+			res += matches[i]["team2"].replace(/\s+/g,'');
 			res += '.png"></td><td>';
 			if(matches[i]["vod"] == "undefined" || matches[i]["vod"] == "") {
 				res += '<p class="vod-text">No VOD</p>';
@@ -71,7 +81,7 @@ function addRoundTable(round) {
 	}
 	res += '</tbody></table>';
 	
-	document.getElementById("rounds-div").innerHTML += res;
+	document.getElementById("rounds-div").innerHTML = res;
 }
 
 // calculates the match's score and returns it as a p.match-score block
