@@ -23,10 +23,11 @@
     "fs": "0.0.1-security",
     "googleapis": "^88.2.0",
     "module-alias": "^2.2.2",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "tr46": "^3.0.0"
   },
   "_moduleAliases": {
-	  "@mymodules" : "./custom_modules",
-	  "@sheets" : "./custom_modules/node_modules/SheetClasses"
+    "@mymodules": "./custom_modules",
+    "@sheets": "./custom_modules/node_modules/SheetClasses"
   }
 }
