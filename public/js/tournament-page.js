@@ -1,33 +1,24 @@
 // tourney String
 var tourneyString;
+// match data
+var data;
+
+function loadTournamentMatches(d) {
+	data = d;
+}
 
 function setTournamentString(str) {
 	tourneyString = str.replace(/-/g,' ');
 	document.getElementById('tournament-name').innerHTML = tourneyString;
 }
-// gets the max week by iterating through matchJson
-function getTourneyDepth() {
-	let max = 0;
-	for(var i=0; i<matchJson.matches.length; ++i) {
-		let r = parseInt(matchJson.matches[i].round);
-		if(!isNaN(r) && r > max && matchJson.matches[i].tournament == tourneyString) max = r;
-	}
-	return max;
-}
 
-// generates a table for the given tournament depth (finals, semis, quarters, wildcard)
-function addTourneyTable(depth) {
+// generates a table for the given tournament bracket
+function addTourneyTable(bracket) {
 	var res = "";
 	
 	// create header
 	res += '<h2 class="round-header">';
-	// title from depth
-	if(depth<0) res += 'Contact your local dev because tournament depth is negative'; // obligatory 'oops'
-	if(depth==0) res += 'Play-ins'; // 0 is a special case for stuff like 10 teams in playoffs. Play-ins go here. 
-	if(depth==1) res += 'Finals';
-	if(depth==2) res += 'Semifinals';
-	if(depth==3) res += 'Quarterfinals';
-	if(depth>3) res += 'Round of ' + Math.pow(2,depth); // catch-all in case yall have some wild fkin tournaments with 16+ teams. probably won't happen but hey, its one line of code for future proofing
+	res += bracket;
 	res += '</h2>';
 	
 	// create table header
@@ -43,12 +34,15 @@ function addTourneyTable(depth) {
 	
 	// create table contents
 	var matchCount = 0;
-	var matches = matchJson.matches;
-	var roundString = depth.toString();
+	var matches = data.matches;
 	for(var i = 0; i < matches.length; i++) {
-		if(roundString == matches[i].round && matches[i]["tournament"] == tourneyString) {
+		if(matches[i]["bracketname"] == bracket) {
 			matchCount++; // increment how many rows there are
-			res += '<tr><td><p class="match-time">';
+			res += '<tr id="Matchlog-';
+			res += `${bracket.replace(/\s+/g,'_')}-${matches[i].matchid}`; // id tag = "<bracket w/o spaces>-<matchid>"
+			res += '" onclick="window.location=\'#Bracket-';
+			res += `${bracket.replace(/\s+/g,'_')}-${matches[i].matchid}`;
+			res += '\';"><td><p class="match-time">';
 			if(matches[i]["date"] == "TBA" || matches[i]["date"] == "") {
 				res += 'TBA';
 			} else {

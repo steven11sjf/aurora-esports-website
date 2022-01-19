@@ -20,11 +20,15 @@ async function buildSheet(sheetObj) {
 	return new Promise((resolve,reject) => {
 		sheetObj.buildDirectory()
 		.then(res => sheetObj.loadSheetInfo())
-		.then(result => result.batchGetAll())
+		.then(result => {result.batchGetAll()})
 		.then(newResult => {
+			console.log("RESOLVED: ", sheetObj);
 			resolve(sheetObj);
 		})
-		.catch(err => reject(err));
+		.catch(err => {
+			console.log("===ERR=== on ", sheetObj.internal);
+			reject(err);
+		});
 	});
 }
 

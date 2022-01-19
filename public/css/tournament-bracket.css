@@ -1,0 +1,212 @@
+html, body, .brackets {
+	width: 100%;
+	min-height: 100%;
+	font-family: "Arial", sans-serif;
+	scroll-behavior: smooth;
+}
+.matchbox {
+	background-color: #bbb;
+	border: 2px double black;
+	height: 100px;
+	width: 300px;
+	margin-left: calc(100% - 154px);
+}
+
+/* since height can't be used in calc we set margin-top for each column */
+.r1 .matchbox {
+	margin-top: 8px;
+}
+.r2 .matchbox {
+	margin-top: 33px;
+}
+.r3 .matchbox {
+	margin-top: 118px;
+}
+.r4 .matchbox {
+	margin-top: 290.5px;
+}
+.r5 .matchbox {
+	margin-top: 630.5px;
+}
+.r6 .matchbox {
+	margin-top: 640.5px;
+}
+
+.mb-matchinfo {
+	height: 40px;
+	width: 100%;
+	background-color: #555555;
+}
+.mb-title {
+	float: left;
+	padding-left: 10px;
+	color: white;
+	font-size: large;
+	font-weight: bold;
+}
+.mb-datetime {
+	float: right;
+	padding-right: 10px;
+	color: white;
+	font-size: large;
+	font-weight: bold;
+}
+.mb-teaminfo {
+	height: 30px;
+	width: 100%;
+}
+.mb-winner {
+	background-color: #bfb;
+}
+.mb-loser {
+	background-color: #fbb;
+}
+.mb-teamname {
+	float: left;
+	padding-left: 10px;
+	color: black;
+	font-size: large;
+	font-weight: bold;
+}
+.mb-score {
+	float: right;
+	padding-right: 10px;
+	color: black;
+	font-size: large;
+	font-weight: bold;
+}
+
+.brackets > div {
+	vertical-align: top;
+	clear: both;
+}
+.brackets > div > div {
+	float: left;
+	height: 100%;
+}
+.brackets > div > div > div {
+	margin: 50px 0;
+}
+.brackets div.bracketbox {
+	position: relative;
+	width: 100%; height: 100%;
+	border-top: 1px solid #555;
+	border-right: 1px solid #555;
+	border-bottom: 1px solid #555;
+}
+.brackets div.bracketbox > span.info {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	font-size: 0.8em;
+	color: #BBB;
+}
+.brackets div.bracketbox span {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.brackets div.bracketbox span.teama {
+	font-size: 1em;
+	padding-left: 0.7em;
+	float: left;
+}
+.brackets div.bracketbox span.scorea {
+	font-size: 1em;
+	padding-right: 2em;
+	float: right;
+	font-weight: bold;
+}
+.brackets div.bracketbox span.teamb {
+	font-size: 1em;
+	padding-left: 0.7em;
+	float: left;
+}
+.brackets div.bracketbox span.scoreb {
+	font-size: 1em;
+	padding-right: 2em;
+	float: right;
+	font-weight: bold;
+	height: auto;
+}
+.brackets div.bracketbox > span.teamc {
+	bottom: 1px;
+}
+.brackets > .group2 {
+	height: 340px;
+}
+.brackets > .group2 > div:not(.r1) {
+	width: calc(49% - 150px);
+	margin-left: 150px;
+}
+.brackets > .group3 {
+	height: 680px;
+}
+.brackets > .group3 > div:not(.r1) {
+	width: calc(32.7% - 150px);
+	margin-left: 150px;
+}
+.brackets > .group4 {
+	height: 1360px;
+}
+.brackets > .group4 > div:not(.r1) {
+	width: calc(24.5% - 150px);
+	margin-left: 150px;
+}
+.brackets > .group5 {
+	height: 2720px;
+}
+.brackets > .group5 > div:not(.r1) {
+	width: calc(19.6% - 150px);
+	margin-left: 150px;
+}
+.brackets > .group6 {
+	height: 5440px;
+}
+.brackets > .group6 > div:not(.r1) {
+	width: calc(16.3% - 150px);
+	margin-left: 150px;
+}
+.brackets > div > .r1 > div {
+	height: 120px; /*60*/
+	position: relative;
+}
+.brackets > div > .r2 > div {
+	margin: 110px 0 170px 0;
+	height: 170px; /*110*/
+}
+.brackets > div > .r3 > div {
+	margin: 190px 0 340px 0;
+	height: 340px; /*220*/
+}
+.brackets > div > .r4 > div {
+	margin: 360px 0 685px 0;
+	height: 685px; /*445*/
+}
+.brackets > div > .r5 > div {
+	margin: 700px 0 0 0;
+	height: 1365px; /*900*/
+}
+.brackets > div > .r6 > div {
+	margin: 1385px 0 0 0;
+}
+.brackets div.final > div.bracketbox {
+	border-top: 0px;
+	border-right: 0px;
+	height: 0px;
+}
+.brackets > div > .r4 > div.drop {
+	height: 180px;
+	margin-bottom: 0px;
+}
+.brackets > div > .r5 > div.final.drop {
+	margin-top: 345px;
+	margin-bottom: 0px;
+	height: 1px;
+}
+.brackets > div > div > div:last-of-type {
+	margin-bottom: 0px;
+}

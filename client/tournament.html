@@ -4,12 +4,15 @@
 		<title> Tournament - The Gopherwatch League </title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/schedule.css">
+		<link rel="stylesheet" type="text/css" href="/css/tournament-bracket.css">
 		<meta charset="UTF-8">
 		<meta name="robots" content="noindex">
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://underscorejs.org/underscore-min.js"></script>
 		<script src="/js/sortable-table.js"></script>
 		<script src="/js/schedule-page.js"></script>
 		<script src="/js/tournament-page.js"></script>
+		<script src="/js/tournament-bracket.js"></script>
 		<script src="/js/link-team-names.js"></script>
 		<script src="/js/utils.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,18 +30,19 @@
 		});
 		</script>
 		
+		
 		<div class="center">
 			<h1 class="sched-header" id="tournament-name">Tournament</h1>
+			<div id="brackets" class="brackets"></div>
 			<div id="rounds-div">
 			
 			</div>
 		</div>
 		<script type="text/javascript">
 		var week;
-		var depth; // total depth of tournament (1=finals, 2=semis, 3=quarters, ...)
 		var season = window.location.pathname.split('/')[1];
 		var tournamentName = window.location.pathname.split('/')[3];
-		ajaxReq('/api/'+season+'/matchlog')
+		ajaxReq('/api/'+season+'/tournament/'+tournamentName)
 		.then(res => loadTables(res))
 		.catch(err => {
 			console.error("Server unable to return matchlog!");
@@ -50,21 +54,19 @@
 		function loadTables(obj) {
 			let jsonObj = JSON.parse(obj.responseText);
 			if(jsonObj.error) {
-				console.log("Server returned an error on matchlog!");
+				console.log("Server returned an error on tournament data!");
 				return;
 			};
 			
 			loadLog(jsonObj);
-			week = jsonObj.currentround;
 			setTournamentString(tournamentName);
-			depth = getTourneyDepth();
+			setData(jsonObj);
 			
-			// playins always first
-			addTourneyTable(0);
-			// rest of matches from top to bottom
-			for(let i=depth;i>0;--i) {
-				addTourneyTable(i);
-			}
+			// get list of brackets
+			let bracketList = _.uniq(_.map(jsonObj.matches, function(b) { return b.bracketname; }));
+			console.log(bracketList);
+			// print bracket and details for each bracket
+			bracketList.forEach(function(bname) { getBracket(jsonObj.matches, bname); addTourneyTable(bname); });
 		}
 		</script>
 		
