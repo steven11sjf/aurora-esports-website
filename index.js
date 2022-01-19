@@ -105,6 +105,25 @@ app.get('/api/:season/teaminfo/:team/', async function(req,res) {
 	});
 });
 
+// sends tournament.json
+app.get('/api/:season/tournament/:tourn/', async function(req,res) {
+	sheets.getSeason(req.params.season)
+	.then(season => {
+		return new Promise((resolve,reject) => {
+			if(season.meta.hasTournaments) {
+				resolve(season.getTournamentInfo(req.params.tourn))
+			} else {
+				reject("NoTournFormat")
+			}
+		});
+	})
+	.then(json => res.json(json))
+	.catch(err => {
+		console.log(err);
+		res.json ( {error: err} );
+	});
+});
+
 // sends matchlog.json
 app.get('/api/:season/matchlog',async function(req,res) {
 	sheets.getSeason(req.params.season)
