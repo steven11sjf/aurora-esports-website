@@ -69,7 +69,7 @@ function getScores(match) {
 /*
  * Build our bracket "model"
  */
-function getBracket(data, bname) {
+function getBracket(data, bname, headerRequired) {
 	
 	// matches for bracket
 	var matches = _.filter(data, function(b) { return b.bracketname == bname; });
@@ -127,7 +127,7 @@ function getBracket(data, bname) {
 	// print
 	console.log(output);
 	// render bracket
-	renderBrackets(output, bname);
+	renderBrackets(output, bname, headerRequired);
 }
 
 var bracketCount = 0; // global counter for how many brackets
@@ -135,9 +135,8 @@ var bracketCount = 0; // global counter for how many brackets
 /*
  * Inject our brackets
  */
-function renderBrackets(struct, bname) {
+function renderBrackets(struct, bname, headerRequired) {
 	var height = Math.log2(struct.length+1);
-	console.log("HEIGHT: ",height);
 	
 	var group = $('<div class="group'+height+'" id="b'+bracketCount+'"></div>');
 	
@@ -190,7 +189,8 @@ function renderBrackets(struct, bname) {
 		}
 		group.append(round);
 	}
-	$('#brackets').append(`<h2 class="round-header">${bname}</h2>`);
+	if(headerRequired)
+		$('#brackets').append(`<h2 class="round-header">${bname}</h2>`);
 	$('#brackets').append(group);
 	
 	bracketCount++;

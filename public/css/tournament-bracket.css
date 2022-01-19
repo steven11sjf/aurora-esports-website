@@ -4,6 +4,25 @@ html, body, .brackets {
 	font-family: "Arial", sans-serif;
 	scroll-behavior: smooth;
 }
+
+#tournament-name {
+	width: 100%;
+	border-top: 15px solid black;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.brackets {
+	background-color: white;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.brackets > h2 {
+	color: black;
+}
+
 .matchbox {
 	background-color: #bbb;
 	border: 2px double black;

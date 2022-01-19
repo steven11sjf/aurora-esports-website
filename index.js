@@ -317,11 +317,6 @@ app.get('/Discord/', function(req, res) {
 	PAGE_HITS++;
 });
 
-app.get('/tourn-testing/', function(req,res) {
-	console.log("testing");
-	res.sendFile(__dirname + '/client/tourn_testing.html');
-});
-
 app.get('/BugReport/', function(req,res) {
 	res.redirect(constants.__report_link);
 	PAGE_HITS++;

@@ -9,17 +9,19 @@ function loadTournamentMatches(d) {
 
 function setTournamentString(str) {
 	tourneyString = str.replace(/-/g,' ');
-	document.getElementById('tournament-name').innerHTML = tourneyString;
+	document.getElementById('tournament-name').innerHTML = tourneyString.replace(/_/g,' ');
 }
 
 // generates a table for the given tournament bracket
-function addTourneyTable(bracket) {
+function addTourneyTable(bracket,includeHeader) {
 	var res = "";
 	
 	// create header
-	res += '<h2 class="round-header">';
-	res += bracket;
-	res += '</h2>';
+	if(includeHeader) {
+		res += '<h2 class="round-header">';
+		res += bracket;
+		res += '</h2>';
+	}
 	
 	// create table header
 	res += '<table class="round-table center"><thead><tr>';

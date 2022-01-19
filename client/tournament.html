@@ -64,9 +64,9 @@
 			
 			// get list of brackets
 			let bracketList = _.uniq(_.map(jsonObj.matches, function(b) { return b.bracketname; }));
-			console.log(bracketList);
+			let useHeaders = bracketList.length > 1 ? true : false;
 			// print bracket and details for each bracket
-			bracketList.forEach(function(bname) { getBracket(jsonObj.matches, bname); addTourneyTable(bname); });
+			bracketList.forEach(function(bname) { getBracket(jsonObj.matches, bname, useHeaders); addTourneyTable(bname, useHeaders); });
 		}
 		</script>
 		
