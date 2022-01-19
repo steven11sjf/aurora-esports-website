@@ -1,5 +1,3 @@
-# don't upload the cached jsons, except for blog
-/data
 /error.json
 
 # allows to test with environment variables without having to deploy
