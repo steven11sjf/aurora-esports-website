@@ -45,7 +45,8 @@ function build() {
 		// Declare sheets below, push sheets to array
 		// MAKE SURE TO PUSH LATEST SHEETS LAST :^)
 		arr.push(new GWLRoundRobinSpreadsheet("Season 3", "Season3", false, '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM'));
-		arr.push(new GWLRoundRobinSpreadsheet("Season 4", "Season4", true, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
+		arr.push(new GWLRoundRobinSpreadsheet("Season 4", "Season4", false, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
+		arr.push(new GWLRoundRobinSpreadsheet("Season 5", "Season5", true, '1IZvGqUOmNn4p2yubCNDGvE68PM0A1HmlBgKUgLOTgm0'));
 		
 		// promise all to build sheets
 		for(i=0;i<arr.length;++i) {
