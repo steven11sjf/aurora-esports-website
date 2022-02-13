@@ -328,6 +328,16 @@ app.get('/favicon.ico', function(req,res) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', function(req, res) {
-	console.log("404'd on page: " + req.url)
+	console.log("404'd on resource: " + req.url);
+	
+	// if it's a png, it probably looked for an image that wasn't there. Send an Overwatch logo bc that looks good as a placeholder, lol. 
+	let file = req.url.split(".");
+	let file_ext = file[file.length - 1];
+	if(file_ext == "png") {
+		res.redirect('/images/Overwatch_circle_logo.png');
+		return;
+	}
+	
+	// otherwise send a 404 page
 	res.sendFile(__dirname + '/client/404.html');
 });
