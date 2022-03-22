@@ -40,7 +40,7 @@ const writeJsonPromise = (path,obj) => {
 					reject(err);
 				}
 				console.log('saved file ' + path);
-				resolve();
+				resolve(obj);
 			});
 		} catch (e) {
 			reject(e);

@@ -14,17 +14,18 @@ const constants = require('@mymodules/consts');
 const localfs = require('@mymodules/localfs');
 var sheets = require('@mymodules/spreadsheet-types');
 var GWLRoundRobinSpreadsheet = require('@sheets/GWLRoundRobinSpreadsheet');
+const playerlist = require('@mymodules/player-list-utils');
+var utils = require('@mymodules/utils');
 
 // builds a spreadsheet using its buildDirectory, loadSheetInfo and batchGetAll functions
 async function buildSheet(sheetObj) {
 	return new Promise((resolve,reject) => {
 		sheetObj.buildDirectory()
 		.then(res => sheetObj.loadSheetInfo())
-		.then(result => {result.batchGetAll()})
-		.then(newResult => {
-			console.log("RESOLVED: ", sheetObj);
-			resolve(sheetObj);
-		})
+		.then(resu => utils.printMessage("SCREAM",resu))
+		.then(result => result.batchGetAll())
+		.then(resul => utils.printMessage("POG FOR SHEET", resul))
+		.then(newResult => resolve(sheetObj))
 		.catch(err => {
 			console.log("===ERR=== on ", sheetObj.internal);
 			reject(err);
@@ -50,11 +51,29 @@ function build() {
 		
 		// promise all to build sheets
 		for(i=0;i<arr.length;++i) {
-			promises.push(buildSheet(arr[i] ));
+			promises.push( buildSheet(arr[i]) );
 		}
 		
 		Promise.all(promises)
 		.then(res => localfs.writeJsonPromise("./data/sheets.json", res))
+		.then(rees => {	
+			console.log("I am a whore *****************************************************************************************************");
+			console.log(rees);
+			
+			// promise all to build player list
+			var playerPromises = [];
+			for(i=0; i<rees.length;++i) {
+				playerPromises.push( rees[i].getPlayers() );
+			}
+			
+			Promise.all(playerPromises)
+			.then(res2 => {
+				// store new player info in order
+				for (const players of res2) playerlist.storeNewPlayerInfo(players);
+				playerlist.savePlayerInfo();
+				playerlist.writePlayerInfoToSpreadsheet();
+			});
+		})
 		.then(console.log("Wrote json!"))
 		.catch(err => console.error(err))
 	})
