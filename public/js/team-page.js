@@ -367,7 +367,7 @@ function loadTeamStats(jsonObj) {
 	console.info(jsonObj.stats);
 	document.getElementById("team-page-league-matches").innerHTML = jsonObj.stats.Season.wins + 'W - ' + jsonObj.stats.Season.losses + 'L';
 	document.getElementById("team-page-league-maps").innerHTML = '(' + jsonObj.stats.Season.mapwins + 'W - ' + jsonObj.stats.Season.maplosses + 'L - ' + jsonObj.stats.Season.mapties + 'T)';
-	document.getElementById("team-page-league-rank").innerHTML = 'League: ' + jsonObj.stats.All.rank + '/10';
+	document.getElementById("team-page-league-rank").innerHTML = 'League: ' + jsonObj.stats.All.rank;
 }
 
 function loadTeamInfo(jsonObj) {
