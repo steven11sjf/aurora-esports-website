@@ -8,6 +8,7 @@
 
 // local filesystem io
 const localfs = require("@mymodules/localfs");
+const sheet = require("@mymodules/spreadsheet-types").websiteSheet;
 
 // filename to save player_info to
 const FILE_PATH = "./data/player_info.json";
@@ -112,57 +113,25 @@ function updateField(newObj, newEntry, oldEntry, field, emptyString = "", season
 	}
 }
 
+// private func to sort array by battletag
+function sortList() {
+	player_info.sort((a,b) => (a.battletag > b.battletag) ? 1 : -1);
+}
+
 // write to spreadsheet
-function writePlayerInfoToSpreadsheet() {
-	// generate data to push to spreadsheet
-	let req = {
-		"range" : "MergedSeasonData!A2:W1000",
-		"majorDimension" : "ROWS",
-		"values" : [],
-	}
+function writePlayerInfoToSpreadsheet(inSheet = null) {
+	// sort list of players
+	sortList();
 	
-	// fill in values
-	
-	// fill in date
-	d = new Date();
-	req.values.push([null, d.getMonth().toString() + "/" + d.getDate().toString()]);
-	
-	// empty row
-	req.values.push([]);
-	
-	// start adding players
-	for (const player of player_info) {
-		let row = [
-			player.battletag,
-			player.teams,
-			player.tank,
-			player.tankLastUpdated,
-			player.dps,
-			player.dpsLastUpdated,
-			player.support,
-			player.supportLastUpdated,
-			player.realname,
-			player.playernumber,
-			player.pronouns,
-			player.hometown,
-			player.major,
-			player.twitch,
-			player.twitter,
-			player.youtube,
-			player.instagram,
-			player.reddit,
-			player.role,
-			player.hero,
-			player.picture,
-			player.bio,
-			player.mvp
-		];
-		
-		req.values.push(row);
-	}
+	// set spreadsheet to either inSheet or the default sheet.
+	spreadsheet = (inSheet == null) ? sheet : inSheet;
 	
 	// open website sheet and send a Update request
-	
+	spreadsheet.storePlayerInfo(player_info)
+	.catch(err => {
+		console.error(`Error storing sheet info!\nRejection reason: ${err}`);
+		console.trace();
+	});
 }
 
 // save all players into FILE_PATH

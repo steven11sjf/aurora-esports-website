@@ -16,15 +16,14 @@ var sheets = require('@mymodules/spreadsheet-types');
 var GWLRoundRobinSpreadsheet = require('@sheets/GWLRoundRobinSpreadsheet');
 const playerlist = require('@mymodules/player-list-utils');
 var utils = require('@mymodules/utils');
+const GWLWebsiteSpreadsheet = require('@sheets/GWLWebsiteSpreadsheet');
 
 // builds a spreadsheet using its buildDirectory, loadSheetInfo and batchGetAll functions
 async function buildSheet(sheetObj) {
 	return new Promise((resolve,reject) => {
 		sheetObj.buildDirectory()
 		.then(res => sheetObj.loadSheetInfo())
-		.then(resu => utils.printMessage("SCREAM",resu))
 		.then(result => result.batchGetAll())
-		.then(resul => utils.printMessage("POG FOR SHEET", resul))
 		.then(newResult => resolve(sheetObj))
 		.catch(err => {
 			console.log("===ERR=== on ", sheetObj.internal);
@@ -56,10 +55,9 @@ function build() {
 		
 		Promise.all(promises)
 		.then(res => localfs.writeJsonPromise("./data/sheets.json", res))
-		.then(rees => {	
-			console.log("I am a whore *****************************************************************************************************");
-			console.log(rees);
-			
+		.then(rees => {
+			// open an instance of GWLWebsiteSpreadsheet to let the player load it
+			var siteSheet = new GWLWebsiteSpreadsheet();
 			// promise all to build player list
 			var playerPromises = [];
 			for(i=0; i<rees.length;++i) {
@@ -71,7 +69,7 @@ function build() {
 				// store new player info in order
 				for (const players of res2) playerlist.storeNewPlayerInfo(players);
 				playerlist.savePlayerInfo();
-				playerlist.writePlayerInfoToSpreadsheet();
+				playerlist.writePlayerInfoToSpreadsheet(siteSheet);
 			});
 		})
 		.then(console.log("Wrote json!"))

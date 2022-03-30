@@ -1,5 +1,73 @@
 Clearing ./data!
 Wrote json!
+pushing team Bengali Boom to Season 4
+pushing team Falkland Fennecs to Season 4
+pushing team Galactic Water Bears to Season 4
+pushing team Highland Hydro Homies to Season 4
+pushing team Honey Bunches of Oks to Season 4
+pushing team Jericho Jackalopes to Season 4
+pushing team Pompeii Pelicans to Season 4
+pushing team Singapore Seekers to Season 4
+pushing team Stockholm Syndromes to Season 4
+pushing team USSR Unicorns to Season 4
+[
+  {
+    name: 'Thanksgiving Throwdown',
+    internal: 'Thanksgiving_Throwdown'
+  },
+  { name: 'Postseason', internal: 'Postseason' }
+]
+[
+  'MatchLog!A2:AA361',
+  'HeroStats!A2:J2000',
+  'HeroStats!L2:T33',
+  'HeroStats!N34:S35',
+  'Standings!A23:K32',
+  'PlayerInfo!A2:AC200',
+  'Info!H3',
+  'BengaliBoom!A5:L14',
+  'BengaliBoom!F70:J88',
+  'BengaliBoom!A32:Y67',
+  'BengaliBoom!J17:Q20',
+  'FalklandFennecs!A5:L14',
+  'FalklandFennecs!F70:J88',
+  'FalklandFennecs!A32:Y67',
+  'FalklandFennecs!J17:Q20',
+  'GalacticWaterBears!A5:L14',
+  'GalacticWaterBears!F70:J88',
+  'GalacticWaterBears!A32:Y67',
+  'GalacticWaterBears!J17:Q20',
+  'HighlandHydroHomies!A5:L14',
+  'HighlandHydroHomies!F70:J88',
+  'HighlandHydroHomies!A32:Y67',
+  'HighlandHydroHomies!J17:Q20',
+  'HoneyBunchesofOks!A5:L14',
+  'HoneyBunchesofOks!F70:J88',
+  'HoneyBunchesofOks!A32:Y67',
+  'HoneyBunchesofOks!J17:Q20',
+  'JerichoJackalopes!A5:L14',
+  'JerichoJackalopes!F70:J88',
+  'JerichoJackalopes!A32:Y67',
+  'JerichoJackalopes!J17:Q20',
+  'PompeiiPelicans!A5:L14',
+  'PompeiiPelicans!F70:J88',
+  'PompeiiPelicans!A32:Y67',
+  'PompeiiPelicans!J17:Q20',
+  'SingaporeSeekers!A5:L14',
+  'SingaporeSeekers!F70:J88',
+  'SingaporeSeekers!A32:Y67',
+  'SingaporeSeekers!J17:Q20',
+  'StockholmSyndromes!A5:L14',
+  'StockholmSyndromes!F70:J88',
+  'StockholmSyndromes!A32:Y67',
+  'StockholmSyndromes!J17:Q20',
+  'USSRUnicorns!A5:L14',
+  'USSRUnicorns!F70:J88',
+  'USSRUnicorns!A32:Y67',
+  'USSRUnicorns!J17:Q20',
+  "'Thanksgiving Throwdown'!A2:AD34",
+  "'Postseason'!A2:AD34"
+]
 pushing team Athens Axolotls to Season 5
 pushing team Bermuda Bandits to Season 5
 pushing team Hamburg Huhns to Season 5
@@ -12,7 +80,6 @@ pushing team Rialto Ringers to Season 5
 pushing team South Korea Kittens to Season 5
 pushing team St Michael Hawks to Season 5
 [ { name: 'Postseason', internal: 'Postseason' } ]
-SCREAM
 [
   'MatchLog!A2:AA361',
   'HeroStats!A2:J2000',
@@ -78,7 +145,6 @@ pushing team Rialto Rincewinds to Season 3
 pushing team Galapagos Gremlins to Season 3
 pushing team Wakanda BBQs to Season 3
 []
-SCREAM
 [
   'MatchLog!A2:AA361',
   'HeroStats!A2:J2000',
@@ -128,116 +194,6 @@ SCREAM
   'WakandaBBQs!A32:Y67',
   'WakandaBBQs!J17:Q20'
 ]
-pushing team Bengali Boom to Season 4
-pushing team Falkland Fennecs to Season 4
-pushing team Galactic Water Bears to Season 4
-pushing team Highland Hydro Homies to Season 4
-pushing team Honey Bunches of Oks to Season 4
-pushing team Jericho Jackalopes to Season 4
-pushing team Pompeii Pelicans to Season 4
-pushing team Singapore Seekers to Season 4
-pushing team Stockholm Syndromes to Season 4
-pushing team USSR Unicorns to Season 4
-[
-  {
-    name: 'Thanksgiving Throwdown',
-    internal: 'Thanksgiving_Throwdown'
-  },
-  { name: 'Postseason', internal: 'Postseason' }
-]
-SCREAM
-[
-  'MatchLog!A2:AA361',
-  'HeroStats!A2:J2000',
-  'HeroStats!L2:T33',
-  'HeroStats!N34:S35',
-  'Standings!A23:K32',
-  'PlayerInfo!A2:AC200',
-  'Info!H3',
-  'BengaliBoom!A5:L14',
-  'BengaliBoom!F70:J88',
-  'BengaliBoom!A32:Y67',
-  'BengaliBoom!J17:Q20',
-  'FalklandFennecs!A5:L14',
-  'FalklandFennecs!F70:J88',
-  'FalklandFennecs!A32:Y67',
-  'FalklandFennecs!J17:Q20',
-  'GalacticWaterBears!A5:L14',
-  'GalacticWaterBears!F70:J88',
-  'GalacticWaterBears!A32:Y67',
-  'GalacticWaterBears!J17:Q20',
-  'HighlandHydroHomies!A5:L14',
-  'HighlandHydroHomies!F70:J88',
-  'HighlandHydroHomies!A32:Y67',
-  'HighlandHydroHomies!J17:Q20',
-  'HoneyBunchesofOks!A5:L14',
-  'HoneyBunchesofOks!F70:J88',
-  'HoneyBunchesofOks!A32:Y67',
-  'HoneyBunchesofOks!J17:Q20',
-  'JerichoJackalopes!A5:L14',
-  'JerichoJackalopes!F70:J88',
-  'JerichoJackalopes!A32:Y67',
-  'JerichoJackalopes!J17:Q20',
-  'PompeiiPelicans!A5:L14',
-  'PompeiiPelicans!F70:J88',
-  'PompeiiPelicans!A32:Y67',
-  'PompeiiPelicans!J17:Q20',
-  'SingaporeSeekers!A5:L14',
-  'SingaporeSeekers!F70:J88',
-  'SingaporeSeekers!A32:Y67',
-  'SingaporeSeekers!J17:Q20',
-  'StockholmSyndromes!A5:L14',
-  'StockholmSyndromes!F70:J88',
-  'StockholmSyndromes!A32:Y67',
-  'StockholmSyndromes!J17:Q20',
-  'USSRUnicorns!A5:L14',
-  'USSRUnicorns!F70:J88',
-  'USSRUnicorns!A32:Y67',
-  'USSRUnicorns!J17:Q20',
-  "'Thanksgiving Throwdown'!A2:AD34",
-  "'Postseason'!A2:AD34"
-]
-Storing the BatchGet request for Season 3
-saved file ./data/Season3/matchlog.json
-saved file ./data/Season3/herostats.json
-saved file ./data/Season3/standings.json
-saved file ./data/Season3/players.json
-Wrote to './data/' + this.internal + '/players.json'!
-Batch get for Season 3 complete!
-storeBatchGet done for sheet Season 3
-POG FOR SHEET
-saved file ./data/Season3/teams/DjiboutiShorts.json
-saved file ./data/Season3/teams/LondonLumberjacks.json
-saved file ./data/Season3/teams/PlymouthPMAs.json
-saved file ./data/Season3/teams/BendigoBilbies.json
-saved file ./data/Season3/teams/TheTenochitlanTacos.json
-saved file ./data/Season3/teams/OceaniaOtters.json
-saved file ./data/Season3/teams/RialtoRincewinds.json
-saved file ./data/Season3/teams/GamingGolems.json
-saved file ./data/Season3/teams/GalapagosGremlins.json
-saved file ./data/Season3/teams/WakandaBBQs.json
-Storing the BatchGet request for Season 5
-saved file ./data/Season5/matchlog.json
-saved file ./data/Season5/herostats.json
-saved file ./data/Season5/standings.json
-saved file ./data/Season5/players.json
-Wrote to './data/' + this.internal + '/players.json'!
-{"tournament":"Postseason","matches":[{"matchid":"1","bracketname":"Playoffs","parent":"5","team1":"1st seed","team2":"8th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"2","bracketname":"Playoffs","parent":"6","team1":"2nd seed","team2":"7th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"3","bracketname":"Playoffs","parent":"6","team1":"3rd seed","team2":"6th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"4","bracketname":"Playoffs","parent":"5","team1":"4th seed","team2":"5th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"5","bracketname":"Playoffs","parent":"7","team1":"","team2":"","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"6","bracketname":"Playoffs","parent":"7","team1":"","team2":"","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"7","bracketname":"Playoffs","parent":"0","team1":"","team2":"","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"}]}
-Batch get for Season 5 complete!
-storeBatchGet done for sheet Season 5
-POG FOR SHEET
-saved file ./data/Season5/teams/AthensAxolotls.json
-saved file ./data/Season5/teams/BermudaBandits.json
-saved file ./data/Season5/teams/HamburgHuhns.json
-saved file ./data/Season5/teams/GorpGamerSyndicate.json
-saved file ./data/Season5/teams/HonoluluHamsters.json
-saved file ./data/Season5/teams/KantoCantaloupes.json
-saved file ./data/Season5/teams/NyaauruNekos.json
-saved file ./data/Season5/teams/QuebecQuokkas.json
-saved file ./data/Season5/teams/RialtoRingers.json
-saved file ./data/Season5/teams/SouthKoreaKittens.json
-saved file ./data/Season5/teams/StMichaelHawks.json
-saved file ./data/Season5/tournaments/Postseason.json
 Storing the BatchGet request for Season 4
 saved file ./data/Season4/matchlog.json
 saved file ./data/Season4/herostats.json
@@ -248,81 +204,58 @@ Wrote to './data/' + this.internal + '/players.json'!
 {"tournament":"Postseason","matches":[{"matchid":"1","bracketname":"Playoffs","parent":"3","team1":"Honey Bunches of Oks","team2":"Bengali Boom","date":"1/5/2022","time":"9:00:00 PM","played":"TRUE","map1":{"name":"Ilios","winner":"Honey Bunches of Oks"},"map2":{"name":"King&apos;s Row","winner":"Bengali Boom"},"map3":{"name":"Watchpoint: Gibraltar","winner":"Honey Bunches of Oks"},"map4":{"name":"","winner":""},"map5":{"name":"","winner":""},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Honey Bunches of Oks","vod":"undefined"},{"matchid":"2","bracketname":"Playoffs","parent":"5","team1":"Stockholm Syndromes","team2":"Jericho Jackalopes","date":"1/9/2022","time":"5:00:00 PM","played":"TRUE","map1":{"name":"Oasis","winner":"Stockholm Syndromes"},"map2":{"name":"King&apos;s Row","winner":"Stockholm Syndromes"},"map3":{"name":"","winner":""},"map4":{"name":"","winner":""},"map5":{"name":"","winner":""},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Stockholm Syndromes","vod":"undefined"},{"matchid":"3","bracketname":"Playoffs","parent":"7","team1":"Galactic Water Bears","team2":"Honey Bunches of Oks","date":"1/16/2022","time":"9:00:00 PM","played":"TRUE","map1":{"name":"Oasis","winner":"Honey Bunches of Oks"},"map2":{"name":"King&apos;s Row","winner":"Galactic Water Bears"},"map3":{"name":"Watchpoint: Gibraltar","winner":"Galactic Water Bears"},"map4":{"name":"Volskaya Industries","winner":"Galactic Water Bears"},"map5":{"name":"","winner":""},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Galactic Water Bears","vod":"undefined"},{"matchid":"4","bracketname":"Playoffs","parent":"7","team1":"Highland Hydro Homies","team2":"USSR Unicorns","date":"1/4/2022","time":"9:00:00 PM","played":"TRUE","map1":{"name":"Busan","winner":"USSR Unicorns"},"map2":{"name":"Numbani","winner":"Highland Hydro Homies"},"map3":{"name":"Rialto","winner":"Highland Hydro Homies"},"map4":{"name":"King&apos;s Row","winner":"USSR Unicorns"},"map5":{"name":"Oasis","winner":"USSR Unicorns"},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"USSR Unicorns","vod":"undefined"},{"matchid":"5","bracketname":"Playoffs","parent":"8","team1":"Pompeii Pelicans","team2":"Stockholm Syndromes","date":"1/11/2022","time":"7:00:00 PM","played":"TRUE","map1":{"name":"Lijiang Tower","winner":"Pompeii Pelicans"},"map2":{"name":"Eichenwalde","winner":"Pompeii Pelicans"},"map3":{"name":"Junkertown","winner":"Pompeii Pelicans"},"map4":{"name":"","winner":""},"map5":{"name":"","winner":""},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Pompeii Pelicans","vod":"undefined"},{"matchid":"6","bracketname":"Playoffs","parent":"8","team1":"Falkland Fennecs","team2":"Singapore Seekers","date":"1/14/2022","time":"7:00:00 PM","played":"TRUE","map1":{"name":"Ilios","winner":"Singapore Seekers"},"map2":{"name":"King&apos;s Row","winner":"Singapore Seekers"},"map3":{"name":"Watchpoint: Gibraltar","winner":"Falkland Fennecs"},"map4":{"name":"Hollywood","winner":"Falkland Fennecs"},"map5":{"name":"Lijiang Tower","winner":"Singapore Seekers"},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Singapore Seekers","vod":"undefined"},{"matchid":"7","bracketname":"Playoffs","parent":"9","team1":"Galactic Water Bears","team2":"USSR Unicorns","date":"1/21/2022","time":"7:00:00 PM","played":"TRUE","map1":{"name":"Nepal","winner":"Galactic Water Bears"},"map2":{"name":"King&apos;s Row","winner":"USSR Unicorns"},"map3":{"name":"Watchpoint: Gibraltar","winner":"USSR Unicorns"},"map4":{"name":"Volskaya Industries","winner":"Galactic Water Bears"},"map5":{"name":"Oasis","winner":"Galactic Water Bears"},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Galactic Water Bears","vod":"undefined"},{"matchid":"8","bracketname":"Playoffs","parent":"9","team1":"Pompeii Pelicans","team2":"Singapore Seekers","date":"1/17/2022","time":"7:00:00 PM","played":"TRUE","map1":{"name":"Lijiang Tower","winner":"Pompeii Pelicans"},"map2":{"name":"Numbani","winner":"Pompeii Pelicans"},"map3":{"name":"Junkertown","winner":"Pompeii Pelicans"},"map4":{"name":"","winner":""},"map5":{"name":"","winner":""},"map6":{"name":"","winner":""},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Pompeii Pelicans","vod":"undefined"},{"matchid":"9","bracketname":"Playoffs","parent":"0","team1":"Singapore Seekers","team2":"Galactic Water Bears","date":"1/22/2022","time":"7:00:00 PM","played":"TRUE","map1":{"name":"Nepal","winner":"Singapore Seekers"},"map2":{"name":"Numbani","winner":"Singapore Seekers"},"map3":{"name":"Watchpoint: Gibraltar","winner":"Singapore Seekers"},"map4":{"name":"Volskaya Industries","winner":"Galactic Water Bears"},"map5":{"name":"Lijiang Tower","winner":"Galactic Water Bears"},"map6":{"name":"King&apos;s Row","winner":"Singapore Seekers"},"map7":{"name":"","winner":""},"map8":{"name":"","winner":""},"winner":"Singapore Seekers","vod":"undefined"}]}
 Batch get for Season 4 complete!
 storeBatchGet done for sheet Season 4
-POG FOR SHEET
+saved file ./data/Season4/teams/BengaliBoom.json
 saved file ./data/Season4/teams/FalklandFennecs.json
 saved file ./data/Season4/teams/HighlandHydroHomies.json
-saved file ./data/Season4/teams/GalacticWaterBears.json
 saved file ./data/Season4/teams/HoneyBunchesofOks.json
-saved file ./data/Season4/teams/BengaliBoom.json
-saved file ./data/Season4/teams/PompeiiPelicans.json
 saved file ./data/Season4/teams/JerichoJackalopes.json
 saved file ./data/Season4/teams/SingaporeSeekers.json
-saved file ./data/Season4/teams/USSRUnicorns.json
-saved file ./data/Season4/tournaments/Thanksgiving_Throwdown.json
-saved file ./data/Season4/tournaments/Postseason.json
 saved file ./data/Season4/teams/StockholmSyndromes.json
+saved file ./data/Season4/teams/GalacticWaterBears.json
+saved file ./data/Season4/teams/USSRUnicorns.json
+saved file ./data/Season4/tournaments/Postseason.json
+saved file ./data/Season4/tournaments/Thanksgiving_Throwdown.json
+saved file ./data/Season4/teams/PompeiiPelicans.json
+Storing the BatchGet request for Season 5
+saved file ./data/Season5/matchlog.json
+saved file ./data/Season5/herostats.json
+saved file ./data/Season5/standings.json
+saved file ./data/Season5/players.json
+Wrote to './data/' + this.internal + '/players.json'!
+{"tournament":"Postseason","matches":[{"matchid":"4","bracketname":"Playoffs","parent":"5","team1":"1st seed","team2":"8th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"2","bracketname":"Playoffs","parent":"6","team1":"2nd seed","team2":"7th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"1","bracketname":"Playoffs","parent":"6","team1":"3rd seed","team2":"6th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"3","bracketname":"Playoffs","parent":"5","team1":"4th seed","team2":"5th seed","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"6","bracketname":"Playoffs","parent":"7","team1":"Winner of 3","team2":"Winner of 4","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"5","bracketname":"Playoffs","parent":"7","team1":"Winner of 1","team2":"Winner of 2","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"},{"matchid":"7","bracketname":"Playoffs","parent":"0","team1":"Winner of 5","team2":"Winner of 6","date":"","time":"","played":"FALSE","map1":{"name":"undefined","winner":"undefined"},"map2":{"name":"undefined","winner":"undefined"},"map3":{"name":"undefined","winner":"undefined"},"map4":{"name":"undefined","winner":"undefined"},"map5":{"name":"undefined","winner":"undefined"},"map6":{"name":"undefined","winner":"undefined"},"map7":{"name":"undefined","winner":"undefined"},"map8":{"name":"undefined","winner":"undefined"},"winner":"undefined","vod":"undefined"}]}
+Batch get for Season 5 complete!
+storeBatchGet done for sheet Season 5
+saved file ./data/Season5/teams/AthensAxolotls.json
+saved file ./data/Season5/teams/BermudaBandits.json
+saved file ./data/Season5/teams/HamburgHuhns.json
+saved file ./data/Season5/teams/GorpGamerSyndicate.json
+saved file ./data/Season5/teams/HonoluluHamsters.json
+saved file ./data/Season5/teams/KantoCantaloupes.json
+saved file ./data/Season5/teams/NyaauruNekos.json
+saved file ./data/Season5/teams/QuebecQuokkas.json
+saved file ./data/Season5/teams/RialtoRingers.json
+saved file ./data/Season5/teams/SouthKoreaKittens.json
+saved file ./data/Season5/tournaments/Postseason.json
+saved file ./data/Season5/teams/StMichaelHawks.json
+Storing the BatchGet request for Season 3
+saved file ./data/Season3/matchlog.json
+saved file ./data/Season3/herostats.json
+saved file ./data/Season3/standings.json
+saved file ./data/Season3/players.json
+Wrote to './data/' + this.internal + '/players.json'!
+Batch get for Season 3 complete!
+storeBatchGet done for sheet Season 3
+saved file ./data/Season3/teams/DjiboutiShorts.json
+saved file ./data/Season3/teams/LondonLumberjacks.json
+saved file ./data/Season3/teams/OceaniaOtters.json
+saved file ./data/Season3/teams/PlymouthPMAs.json
+saved file ./data/Season3/teams/TheTenochitlanTacos.json
+saved file ./data/Season3/teams/BendigoBilbies.json
+saved file ./data/Season3/teams/GamingGolems.json
+saved file ./data/Season3/teams/RialtoRincewinds.json
+saved file ./data/Season3/teams/GalapagosGremlins.json
+saved file ./data/Season3/teams/WakandaBBQs.json
 saved file ./data/sheets.json
-I am a whore *****************************************************************************************************
-[
-  GWLRoundRobinSpreadsheet {
-    name: 'Season 3',
-    internal: 'Season3',
-    ongoing: false,
-    spreadsheetId: '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM',
-    teams: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    teamPageTemplatePath: '/client/Teams/team_roundrobin.html',
-    format: 'roundrobin',
-    className: 'GWLRoundRobinSpreadsheet',
-    meta: { hasStats: true, hasPlayerProfiles: true, hasTournaments: true },
-    currentRound: 9,
-    tournaments: []
-  },
-  GWLRoundRobinSpreadsheet {
-    name: 'Season 4',
-    internal: 'Season4',
-    ongoing: false,
-    spreadsheetId: '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ',
-    teams: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    teamPageTemplatePath: '/client/Teams/team_roundrobin.html',
-    format: 'roundrobin',
-    className: 'GWLRoundRobinSpreadsheet',
-    meta: { hasStats: true, hasPlayerProfiles: true, hasTournaments: true },
-    currentRound: 7,
-    tournaments: [ [Object], [Object] ]
-  },
-  GWLRoundRobinSpreadsheet {
-    name: 'Season 5',
-    internal: 'Season5',
-    ongoing: true,
-    spreadsheetId: '1IZvGqUOmNn4p2yubCNDGvE68PM0A1HmlBgKUgLOTgm0',
-    teams: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object]
-    ],
-    teamPageTemplatePath: '/client/Teams/team_roundrobin.html',
-    format: 'roundrobin',
-    className: 'GWLRoundRobinSpreadsheet',
-    meta: { hasStats: true, hasPlayerProfiles: true, hasTournaments: true },
-    currentRound: 4,
-    tournaments: [ [Object] ]
-  }
-]
 opening file ./data/Season3/players.json
 opening file ./data/Season4/players.json
 opening file ./data/Season5/players.json
@@ -4391,4 +4324,4 @@ opening file ./data/Season5/players.json
   dpsLastUpdated: 'Season 5',
   supportLastUpdated: 'Season 5'
 }
-saved file ./data/player_info.json
+wwwwwwwwwwww 9845
