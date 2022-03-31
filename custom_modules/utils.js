@@ -94,10 +94,20 @@ function getPlayerFromObj(obj, battletag) {
 	});
 }
 
+/*
+ * Prints a message to console and resolves a promise with the given res, if applicable
+ * Allows to easily put print statements into chained promises without losing the result
+ */
+const printMessage = (msg, res) => {
+	console.log(msg);
+	return Promise.resolve(res);
+}
+
 // node exports
 module.exports = {
 	searchArrayForParameter,
 	sanitize,
 	generateLinkDict,
 	getPlayerFromObj,
+	printMessage,
 }

@@ -28,8 +28,10 @@ const utils = require('@mymodules/utils');
 // import sheet formats
 var GWLSpreadsheet = require('@sheets/GWLSpreadsheet');
 var GWLRoundRobinSpreadsheet = require('@sheets/GWLRoundRobinSpreadsheet');
+var GWLWebsiteSpreadsheet = require('@sheets/GWLWebsiteSpreadsheet');
 
 var sheets = [];
+var websiteSheet;
 
 // function that loads one sheet and returns a promise
 const loadSheet = (sh) => new Promise((resolve,reject) => {
@@ -54,6 +56,9 @@ const loadSheet = (sh) => new Promise((resolve,reject) => {
 // function that loads all sheets into memory
 function init() {
 	return new Promise((res,reject) => {
+		// load website sheet
+		websiteSheet = new GWLWebsiteSpreadsheet();
+		
 		// open sheet info
 		localfs.openJsonPromise('./data/sheets.json')
 		.then((data) => {
@@ -163,5 +168,6 @@ module.exports = {
 	getSeason,
 	sheets,
 	buildDictionaries,
-	allSeasonInfo
+	allSeasonInfo,
+	websiteSheet
 }
