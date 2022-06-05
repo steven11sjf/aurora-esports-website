@@ -143,6 +143,17 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/Week3PowerRankings.html"
+		},
+		{
+			"id" : "Preseason-Power-Rankings-Season-5.5",
+			"date" : "5/30/2021 8:23:00 PM",
+			"title" : "Season 5.5 Preseason Power Rankings",
+			"by" : "Nuttyr, RiddleDog, RustyGoomba, YeetMeister",
+			"tags" : [
+				"Power Rankings"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/season5_5powerrankings.html"
 		}
 	]
 }

@@ -28,6 +28,7 @@ const utils = require('@mymodules/utils');
 // import sheet formats
 var GWLSpreadsheet = require('@sheets/GWLSpreadsheet');
 var GWLRoundRobinSpreadsheet = require('@sheets/GWLRoundRobinSpreadsheet');
+var GWLDivisionSpreadsheet = require('@sheets/GWLDivisionSpreadsheet');
 var GWLWebsiteSpreadsheet = require('@sheets/GWLWebsiteSpreadsheet');
 
 var sheets = [];
@@ -40,6 +41,8 @@ const loadSheet = (sh) => new Promise((resolve,reject) => {
 		type = GWLSpreadsheet;
 	} else if(sh.format == "roundrobin") {
 		type = GWLRoundRobinSpreadsheet;
+	} else if(sh.format == "division") {
+		type = GWLDivisionSpreadsheet;
 	} else {
 		console.log("format invalid " + JSON.stringify(sh));
 		reject('InvalidFormatField');

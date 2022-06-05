@@ -273,6 +273,9 @@ function loadHeroStats() {
 }
 
 function loadCareerStats() {
+	if(statsObj.stats.length == 0) {
+		return;
+	}
 	let table = document.getElementById("career-stats");
 	let btag = playerInfo.battletag;
 	let so = statsObj.stats;

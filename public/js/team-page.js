@@ -375,6 +375,10 @@ function loadTeamInfo(jsonObj) {
 	$('#team-page-icon').attr('src','/images/'+team.replace(/\s+/g,'')+'.png');
 	// set team name
 	$('#team-page-name').text(jsonObj.name);
+	// if division exists, set division
+	if($('#team-page-div').length > 0) {
+		$('#team-page-div').text(jsonObj.division);
+	}
 	// set team color
 	$('body').attr('style','background-color:'+jsonObj.color1+';');
 	// set secondary color
