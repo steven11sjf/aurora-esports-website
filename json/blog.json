@@ -154,6 +154,18 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/season5_5powerrankings.html"
+		},
+		{
+			"id" : "Season-5.5-Week-1-Recap",
+			"date" : "6/10/2021 3:30:00 PM",
+			"title" : "Season 5.5, Week 1 Recap",
+			"by" : "Nuttyr, LostSilver, Yeetmeister, Rusty, RiddleDog",
+			"tags" : [
+				"Power Rankings",
+				"Weekly Recap"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/season5_5wk1recap.html"
 		}
 	]
 }
