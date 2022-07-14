@@ -32,7 +32,7 @@ var GWLDivisionSpreadsheet = require('@sheets/GWLDivisionSpreadsheet');
 var GWLWebsiteSpreadsheet = require('@sheets/GWLWebsiteSpreadsheet');
 
 var sheets = [];
-var websiteSheet;
+const websiteSheet = new GWLWebsiteSpreadsheet;
 
 // function that loads one sheet and returns a promise
 const loadSheet = (sh) => new Promise((resolve,reject) => {
@@ -59,9 +59,6 @@ const loadSheet = (sh) => new Promise((resolve,reject) => {
 // function that loads all sheets into memory
 function init() {
 	return new Promise((res,reject) => {
-		// load website sheet
-		websiteSheet = new GWLWebsiteSpreadsheet();
-		
 		// open sheet info
 		localfs.openJsonPromise('./data/sheets.json')
 		.then((data) => {
@@ -165,12 +162,38 @@ function buildDictionaries() {
 	});
 }
 
+// creates teams.json for all teams
+function buildTeamJson() {
+	return new Promise((resolve,reject) => {
+		let result = [];
+		
+		for(i=0; i<sheets.length; i++) {
+			for(j=0; j<sheets[i].teams.length; j++) {
+				let temp = sheets[i].teams[j];
+				temp.season = sheets[i].internal;
+				result.push(temp);
+			}
+		}
+		
+		localfs.writeJsonPromise('./data/teams.json', result)
+		.then(resolve("teams.json ready!"))
+		.catch(reject("teams.json not written!"));
+	});
+}
+
+// gives the team json
+function getTeamJson() {
+	return localfs.openJsonPromise('./data/teams.json');
+}
+
 module.exports = {
 	init,
 	updateAll,
 	getSeason,
 	sheets,
 	buildDictionaries,
+	buildTeamJson,
+	getTeamJson,
 	allSeasonInfo,
 	websiteSheet
 }

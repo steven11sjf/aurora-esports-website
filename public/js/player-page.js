@@ -1,11 +1,14 @@
 var seasonname; // season name in address bar
 var playername; // player name in address bar (with hyphen instead of hashtag)
 var playerInfo; // object containing player info
+var playerInfoSeason; // player info from the seasonal api
+var playerInfoGlobal; // player info from the global api
 var statsObj; // obj containing current stats
 var teamsObj; // obj containing teams
 var team; // teamsObj element for player team
 
 // dictionary of accolade names and their icons
+// TODO make this stored server side and AJAX'd through the api.
 var accoladesDict = {
 	"Season 1 All-Star" : "/images/playerpage/allstar.png",
 	"Season 1 All-Star Captain" : "/images/playerpage/allstarcaptain.png",
@@ -41,17 +44,24 @@ function doAjax() {
 	// run ajax requests on all promises
 	let promiseArr = [];
 	promiseArr.push(ajaxReq('/api/'+seasonname+'/playerjson/'+playername));
+	promiseArr.push(ajaxReq('/api/playerjson/'+playername));
 	promiseArr.push(ajaxReq('/api/'+seasonname+'/playerstats'));
-	promiseArr.push(ajaxReq('/api/'+seasonname+'/teams'));
+	promiseArr.push(ajaxReq('/api/teams'));
 	
 	Promise.all(promiseArr)
 	.then(res => {
-		playerInfo = JSON.parse(res[0].responseText);
-		statsObj = JSON.parse(res[1].responseText);
-		teamsObj = JSON.parse(res[2].responseText);
-		if(playerInfo.error) Promise.reject("Server returned an error on player info!");
+		playerInfoSeason = JSON.parse(res[0].responseText);
+		playerInfoGlobal = JSON.parse(res[1].responseText);
+		statsObj = JSON.parse(res[2].responseText);
+		teamsObj = JSON.parse(res[3].responseText);
+		if(playerInfoGlobal.error && playerInfoLocal.error) Promise.reject("Server returned an error on player info!");
 		if(statsObj.error) Promise.reject("Server returned an error on stats object!");
 		if(teamsObj.error) Promise.reject("Server returned an error on teams object!");
+		
+		if(playerInfoGlobal.error) 
+			playerInfo = playerInfoLocal;
+		else
+			playerInfo = playerInfoGlobal;
 		
 		loadData();
 	})
@@ -68,7 +78,7 @@ function loadData() {
 	
 	// get player's team.
 	for(i=0;i<teamsObj.length;++i) {
-		if(teamsObj[i].name == playerInfo.team) team = teamsObj[i];
+		if(teamsObj[i].name == playerInfoSeason.team) team = teamsObj[i];
 	}
 	if(!team) {
 		alert('Player has invalid team!');
@@ -91,7 +101,7 @@ function loadData() {
 	loadNumberAndRole();
 	loadSocials();
 	loadTeam();
-	loadAccolades();
+	// FIX loadAccolades();
 	loadSRs();
 	loadTables();
 }
@@ -133,12 +143,42 @@ function loadSocials() {
 
 // loads team and color
 function loadTeam() {
-	// sets color
-	document.getElementById("player-header").style.backgroundColor = team.primaryColor;
+	// load one team or multiple, depending on whether 'teams' attribute exists
+	if(playerInfo.teams) {
+		// get array of teams
+		let teamsArr = playerInfo.teams.split('\n');
+		console.log(teamsArr);
+		
+		// set color; do current team but
+		// TODO set color depending on season
+		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
+		for(t of teamsArr) {
+			console.info(t);
+			let teamInfo;
+			for(i=0;i<teamsObj.length;++i) {
+				if(teamsObj[i].name == t) teamInfo = teamsObj[i];
+			}
+			console.info(teamInfo);
+			let alink = document.createElement("a");
+			alink.href = '/' + teamInfo.season + '/Teams/' + teamInfo.internal;
+			
+			let icon = document.createElement("img");
+			icon.src = '/images/' + teamInfo.internal + '.png';
+			if(teamInfo.season == seasonname) icon.classList.add("current-team");
+			
+			document.getElementById("team-images").appendChild(alink);
+			alink.appendChild(icon);
+		}
+		
+		// add icons for list of teams
+	} else {
+		// sets color
+		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
 	
-	let imgpath = playerInfo.team.replace(/\s+/g,'');
-	document.getElementById("team-icon").src = '/images/' + team.internal + '.png';
-	document.getElementById("teamlink").href = '/' + seasonname + '/Teams/' + team.internal;
+		let imgpath = playerInfo.team.replace(/\s+/g,'');
+		document.getElementById("team-icon").src = '/images/' + team.internal + '.png';
+		document.getElementById("teamlink").href = '/' + seasonname + '/Teams/' + team.internal;
+	}
 }
 
 // loads the player's image

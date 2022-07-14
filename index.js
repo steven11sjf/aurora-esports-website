@@ -27,7 +27,7 @@ const localfs = require('@mymodules/localfs'); // handles local json read/writes
 const sheets = require('@mymodules/spreadsheet-types'); // Uses information from new spreadsheet module
 const constants = require('@mymodules/consts'); // global constants
 
-var PAGE_HITS = 0; // stores page hits until next cron job
+var PAGE_HITS = []; // stores page hits until next cron job
 
 // gracefully exit
 process.on('SIGTERM', () => {
@@ -41,7 +41,8 @@ function startup() {
 	sheets.init()
 	.then((sh) => sheets.updateAll())
 	.then((res) => sheets.buildDictionaries())
-	.then((res2) => {
+	.then((res2) => sheets.buildTeamJson())
+	.then((res3) => {
 		console.log("\n===\nStarted up!")
 		const server = app.listen(process.env.PORT || 9007, () => console.log('Listening!'));
 	})
@@ -52,9 +53,9 @@ function startup() {
 	})}
 startup();
 
-
-// SCHEDULES
-
+// =============
+// = Schedules =
+// =============
 
 // runs a batch update every two minutes
 const batchUpdateJob = cron.job('0/2 * * * *', () => {
@@ -64,11 +65,16 @@ const batchUpdateJob = cron.job('0/2 * * * *', () => {
 batchUpdateJob.start();
 
 // updates the website's stats every 2 minutes
+// *NOT RUNNING ATM, WILL BE PATCHED IN WITH WEBSITE SHEET*
 const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
 //	spreadsheet.doStats(PAGE_HITS);
 	PAGE_HITS = 0;
 });
 //if(process.env.ISPROD == "TRUE") statisticsUpdateJob.start();
+
+// =================
+// = API Endpoints =
+// =================
 
 // sends players.json
 app.get('/api/:season/GetAllPlayersJson', async function(req, res) {
@@ -147,6 +153,16 @@ app.get('/api/:season/teams',async function(req,res) {
 	});
 });
 
+// sends all teams
+app.get('/api/teams', async function(req,res) {
+	sheets.getTeamJson()
+	.then(teams => res.json(teams))
+	.catch(err => {
+		console.log(err);
+		res.json( {error: err} );
+	});
+});
+
 // sends seasons json
 app.get('/api/seasons',function(req,res) {
 	sheets.allSeasonInfo()
@@ -202,8 +218,21 @@ app.get('/api/BlogBlurbs/',function(req,res) {
 // sends a player's info with given battletag in players.json
 app.get('/api/:season/playerjson/:player', function(req,res) {
 	let player = req.params.player.replace('-','#');
+	
 	sheets.getSeason(req.params.season)
 	.then(season => season.getPlayerInfo(player))
+	.then(json => res.json(json))
+	.catch(err => {
+		console.log(err);
+		res.json( {error: err} );
+	});
+});
+
+// sends a player's info from the WebsiteSheet if it exists
+app.get('/api/playerjson/:player', function(req,res) {
+	let player = req.params.player.replace('-','#');
+	
+	sheets.websiteSheet.getPlayerInfo(player)
 	.then(json => res.json(json))
 	.catch(err => {
 		console.log(err);
@@ -227,6 +256,10 @@ app.get('/api/:season/tournaments', function(req,res) {
 	});
 });
 
+// ==================
+// = Page endpoints =
+// ==================
+
 // entry page
 app.get('/',function(req, res) {
 	sheets.allSeasonInfo()
@@ -235,55 +268,66 @@ app.get('/',function(req, res) {
 	});
 });
 
+// home page redirect to most recent season
 app.get('/Home/', function(req,res) {
 	res.redirect('/');
 });
 
+// season home pages
 app.get('/:season/Home/', function(req, res) {
 	res.sendFile(__dirname + '/client/welcome.html');
 	PAGE_HITS++;
 });
 
+// season standings pages
 app.get('/:season/Standings/', function(req, res) {
 	res.sendFile(__dirname + '/client/standings.html');
 	PAGE_HITS++;
 });
 
+// season schedule pages
 app.get('/:season/Schedule/', function(req, res) {
 	res.sendFile(__dirname + '/client/schedule.html');
 	PAGE_HITS++;
 });
 
+// season tournament pages
 app.get('/:season/Tournament/:tourn', function(req,res) {
 	res.sendFile(__dirname + '/client/tournament.html');
 	PAGE_HITS++;
 });
 
+// season stats pages
 app.get('/:season/Stats/', function(req, res) {
 	res.sendFile(__dirname + '/client/stats.html');
 	PAGE_HITS++;
 });
 
+// season draft pages
 app.get('/:season/Draft/', function(req, res) {
 	res.sendFile(__dirname + '/client/draft.html');
 	PAGE_HITS++;
 });
 
+// redirect Blog to homepage
 app.get('/Blog/',function(req,res) {
 	res.redirect('/Home/');
 	PAGE_HITS++;
 });
 
+// blog article pages
 app.get('/Blog/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_template.html');
 	PAGE_HITS++;
 });
 
+// blog tag pages
 app.get('/Blog/Tag/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_tag.html');
 	PAGE_HITS++;
 });
 
+// about page
 app.get('/About/',function(req,res) {
 	res.sendFile(__dirname + '/client/about.html');
 	PAGE_HITS++;

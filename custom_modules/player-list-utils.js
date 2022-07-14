@@ -104,8 +104,14 @@ function updatePlayer(newPlayerEntry, idx, season) {
 // oldEntry		the old player object that was entered
 // field		the field being updated
 // emptyString	the empty string if it exists
+// resetString  if the value is this, reset the field to null
 // the season to display when it was last updated
-function updateField(newObj, newEntry, oldEntry, field, emptyString = "", season = null) {
+function updateField(newObj, newEntry, oldEntry, field, emptyString = "", resetString = "-", season = null) {
+	// reset field if reset string encountered
+	if(newEntry[field] == resetString) {
+		newObj[field] = "";
+		return;
+	}
 	// update field
 	newObj[field] = newEntry[field] != emptyString ? newEntry[field] : oldEntry[field]
 	if(season) {
@@ -136,7 +142,8 @@ function writePlayerInfoToSpreadsheet(inSheet = null) {
 
 // save all players into FILE_PATH
 function savePlayerInfo() {
-	localfs.writeJsonPromise(FILE_PATH, player_info)
+	
+	localfs.writeJsonPromise(FILE_PATH, { players : player_info } )
 }
 
 // load all players from FILE_PATH
