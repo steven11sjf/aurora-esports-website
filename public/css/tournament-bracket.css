@@ -6,9 +6,10 @@ html, body, .brackets {
 }
 
 #tournament-name {
-	width: 100%;
+	width: 85%;
 	border-top: 15px solid black;
 	margin-top: 0;
+	padding-top: 20px;
 	margin-bottom: 0;
 	background-color: white;
 }
@@ -17,6 +18,7 @@ html, body, .brackets {
 	background-color: white;
 	padding-bottom: 50px;
 	padding-top: 50px;
+	width: 85%;
 }
 
 .brackets > h2 {
