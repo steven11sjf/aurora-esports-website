@@ -44,6 +44,9 @@ process.on('SIGTERM', () => {
 
 // startup tasks to build cache
 function startup() {
+	if (!fs.existsSync('./public/newblog')){
+		fs.mkdirSync('./public/newblog');
+	}
 	sheets.init()
 	.then((sh) => sheets.updateAll())
 	.then((res) => sheets.buildDictionaries())
