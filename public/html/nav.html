@@ -9,7 +9,7 @@
     <div id="navlink-teams-dropdown" class="dropdown-content">
     </div>
   </div> 
-  <div class="dropdown">
+  <div class="dropdown" id="navlink-tournaments-div">
 	<button class="dropbtn" id="navlink-tournamentsbtn" onclick="">Tournaments
 	  <i class="fa fa-caret-down"></i>
 	</button>
@@ -109,6 +109,13 @@
 			// remove button if there are no tournaments
 			if(arr[0] == "NO_TOURNS") {
 				$('#navlink-tournamentsbtn').closest('.dropdown').remove();
+			}
+			
+			// if there is only one tournament make it the dropdown (ie playoffs)
+			if(arr.length == 1) {
+				$('#navlink-tournaments-div').empty();
+				let html = "<a href=\"/" + sname + "/Tournament/" + arr[0].internal + "\">" + arr[0].name + "</a>";
+				$('#navlink-tournaments-div').append(html);
 			}
 			
 			// iterate arr and add a tags to tournaments dropdown

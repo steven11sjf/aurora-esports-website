@@ -20,12 +20,18 @@ var cron = require('cron');
 var favicon = require('serve-favicon');
 require('dotenv').config();
 const sheetsApi = google.sheets('v4');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+app.use(bodyParser.urlencoded({ extended : true }));
+app.use(express.urlencoded());
+app.use(express.json());
 
 // custom submodules
 const googleAuth = require('@mymodules/auth'); // gets authorization for google sheets
 const localfs = require('@mymodules/localfs'); // handles local json read/writes
 const sheets = require('@mymodules/spreadsheet-types'); // Uses information from new spreadsheet module
 const constants = require('@mymodules/consts'); // global constants
+const froala_helper = require('@mymodules/froala-upload-helper'); // helper for froala uploads (html + images)
 
 var PAGE_HITS = []; // stores page hits until next cron job
 
@@ -315,6 +321,23 @@ app.get('/Blog/',function(req,res) {
 	PAGE_HITS++;
 });
 
+// blog editor
+app.get('/Blog/New', function(req,res) {
+	res.sendFile(__dirname + '/client/Blog/blog_post_formatter.html');
+	PAGE_HITS++;
+});
+
+// froala links
+app.get('/froala/css/froala_editor.pkgd.min.css', function(req,res) {
+	res.sendFile(__dirname + '/node_modules/froala-editor/css/froala_editor.pkgd.min.css');
+});
+app.get('/froala/css/froala_style.min.css', function(req,res) {
+	res.sendFile(__dirname + '/node_modules/froala-editor/css/froala_style.min.css');
+});
+app.get('/froala/js/froala_editor.pkgd.min.js', function(req,res) {
+	res.sendFile(__dirname + '/node_modules/froala-editor/js/froala_editor.pkgd.min.js');
+});
+
 // blog article pages
 app.get('/Blog/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_template.html');
@@ -326,6 +349,7 @@ app.get('/Blog/Tag/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_tag.html');
 	PAGE_HITS++;
 });
+
 
 // about page
 app.get('/About/',function(req,res) {
@@ -364,6 +388,48 @@ app.get('/Discord/', function(req, res) {
 app.get('/BugReport/', function(req,res) {
 	res.redirect(constants.__report_link);
 	PAGE_HITS++;
+});
+
+
+// =====================
+// == ARTICLE EDITOR  ==
+// == UPLOAD/DOWNLOAD ==
+// =====================
+
+app.post('/upload/image', function(req,res) {
+	console.log(req.headers);
+	console.log(req.query);
+	froala_helper.uploadImage(req, function(err, data) {
+		if(err) {
+			return res.status(404).end(JSON.stringify(err));
+		}
+		res.send(data);
+	});
+});
+
+app.post('/upload/text', function(req,res) {
+	console.log(req.headers);
+	froala_helper.uploadHtml(req, function(err, data) {
+		if(err) {
+			return res.status(404).end(JSON.stringify(err));
+		}
+		res.send(data);
+	});
+});
+
+app.post('/upload/article', function(req,res) {
+	console.log(req.headers);
+	froala_helper.generateArticle(req, function(err, data) {
+		if(err) {
+			return res.status(404).end(JSON.stringify(err));
+		}
+		res.send(data);
+	});
+});
+
+app.get('/download/:path/:article', function(req,res) {
+	
+	res.sendFile(__dirname + `/public/${req.params.article}`);
 });
 
 app.get('/favicon.ico', function(req,res) {

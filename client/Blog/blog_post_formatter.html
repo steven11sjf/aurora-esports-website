@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> New Blog Post - The Gopherwatch League </title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/blogpost.css">
+		<link rel="stylesheet" type="text/css" href="/froala/css/froala_editor.pkgd.min.css">
+		<link rel="stylesheet" type="text/css" href="/froala/css/froala_style.min.css">
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://www.gopherwatchleague.com/js/utils.js"></script>
+		<script type="text/javascript" src="/froala/js/froala_editor.pkgd.min.js"></script>
+	</head>
+	<body>
+	
+		<!-- navbar -->
+		<div id="nav-placeholder">
+			<h1>Please enable JavaScript to use the site!</h1>
+		</div>
+		
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("/html/nav.html");
+		});
+		</script>
+		
+		<div class="center div-blog">
+		
+			<!-- download button -->
+			<button id="saveButton">Submit article</button>
+			<div class="div-bloghead">
+				<p class="title-blog" id="blog-title">New blog post</p>
+				<p class="subtitle-blog">
+					<img class="icon" id="clock-icon" src="/images/clock-64.png">
+					<span class="date-blog" id="blog-date">Today</span>
+					<img class="icon" id="pencil-icon" src="/images/pencil.png">
+					<span class="author-blog" id="blog-author">You</span>
+					<img class="icon" id="tags-icon" src="/images/tag.png">
+					<span class="tags" id="blog-tags">New Post</span>
+				</p>
+			</div>
+			<div class="contents-blog" id="blog-contents">
+				<!-- Froala editor area --> 
+				<div id="editor" class="fr-view"></div>
+				<script>
+					const id = Date.now();
+					var editor = new FroalaEditor('#editor', {
+						// inline mode
+						toolbarInline : true,
+						charCounterCount : false,
+						
+						// 
+						
+						// image upload URL
+						imageUploadURL : '/upload/image',
+						// request type
+						imageUploadMethod : 'POST',
+						// include id
+						imageUploadParams: {id : id.toString()},
+						// max image size
+						imageMaxSize : 6 * 1024 * 1024,
+						// allow PNG only, for now
+						imageAllowedTypes : ['png'],
+						
+						// save interval (no autosave)
+						saveInterval : 0,
+						// save parameter
+						saveParam : 'content',
+						// include id
+						saveParams : {id : id.toString()},
+						// save URL
+						saveURL : '/upload/text',
+						// request type
+						saveMethod : 'POST'
+					});
+					
+					document.querySelector('#saveButton').addEventListener("click", function() {
+						// send the file to the server
+						editor.save.save();
+						
+						// get the article name, authors and tags
+						let title = prompt('Please enter the article name');
+						let byline = prompt('Please enter the authors\' names (what you want to see on the byline)');
+						
+						$.post("/upload/article",
+							{
+								title: title,
+								byline: byline,
+								id: id.toString()
+							},
+							function(data, status) {
+								// redirect to download the file
+								if(status == 'success') {
+									alert(data);
+									location.href = data;
+									
+									alert("Download successful! Please send the zip file to Steven to be added to the site!");
+								} else {
+									alert("Error occurred! Status " + status + "\nData: " + data);
+								}
+							}
+						);
+					});
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

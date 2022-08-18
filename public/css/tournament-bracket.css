@@ -5,9 +5,12 @@ html, body, .brackets {
 	scroll-behavior: smooth;
 }
 
-#tournament-name {
-	width: 85%;
+body > div.center {
 	border-top: 15px solid black;
+}
+
+#tournament-name {
+	width: 90%;
 	margin-top: 0;
 	padding-top: 20px;
 	margin-bottom: 0;
@@ -18,7 +21,9 @@ html, body, .brackets {
 	background-color: white;
 	padding-bottom: 50px;
 	padding-top: 50px;
-	width: 85%;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 86%;
 }
 
 .brackets > h2 {
