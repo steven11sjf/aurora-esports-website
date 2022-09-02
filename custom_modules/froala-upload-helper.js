@@ -131,7 +131,8 @@ function uploadHtml(req, callback) {
 	// get html from POST body
 	let body = req.body.content;
 	let id = req.body.id;
-	// write html into content.html
+	// write html into /newblog/id/content.html
+	if(!fs.existsSync(`./public/newblog/${id}`)) fs.mkdirSync(`./public/newblog/${id}`);
 	fs.writeFile(`./public/newblog/${id}/content.html`, body.toString(), err => { return callback(err) });
 	// callback success
 	return callback(null, `/newblog/content.html`);
@@ -146,14 +147,13 @@ function generateArticle(req, callback) {
 	
 	// zip up /public/newblog
 	const zip = new AdmZip();
-	const outputFile = `./public/${articleInfo.title}.zip`
-	console.log("Output file: " + outputFile);
+	const outputFile = `./public/${articleInfo.title+' - '+articleInfo.byline}.zip`
 	
 	zip.addLocalFolder(`./public/newblog/${articleInfo.id}`);
 	zip.writeZip(outputFile);
 	
 	// use the callback
-	callback(null, `/download/${articleInfo.id}/${articleInfo.title}.zip`);
+	callback(null, `/download/${articleInfo.id}/${articleInfo.title+' - '+articleInfo.byline}.zip`);
 }
 
 module.exports = {

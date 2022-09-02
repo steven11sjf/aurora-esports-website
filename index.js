@@ -400,8 +400,6 @@ app.get('/BugReport/', function(req,res) {
 // =====================
 
 app.post('/upload/image', function(req,res) {
-	console.log(req.headers);
-	console.log(req.query);
 	froala_helper.uploadImage(req, function(err, data) {
 		if(err) {
 			return res.status(404).end(JSON.stringify(err));
@@ -411,7 +409,6 @@ app.post('/upload/image', function(req,res) {
 });
 
 app.post('/upload/text', function(req,res) {
-	console.log(req.headers);
 	froala_helper.uploadHtml(req, function(err, data) {
 		if(err) {
 			return res.status(404).end(JSON.stringify(err));
@@ -421,11 +418,12 @@ app.post('/upload/text', function(req,res) {
 });
 
 app.post('/upload/article', function(req,res) {
-	console.log(req.headers);
 	froala_helper.generateArticle(req, function(err, data) {
 		if(err) {
 			return res.status(404).end(JSON.stringify(err));
 		}
+		
+		// send file
 		res.send(data);
 	});
 });
