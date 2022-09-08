@@ -48,7 +48,7 @@ function build() {
 		arr.push(new GWLRoundRobinSpreadsheet("Season 3", "Season3", false, '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM'));
 		arr.push(new GWLRoundRobinSpreadsheet("Season 4", "Season4", false, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
 		arr.push(new GWLRoundRobinSpreadsheet("Season 5", "Season5", false, '1IZvGqUOmNn4p2yubCNDGvE68PM0A1HmlBgKUgLOTgm0'));
-		arr.push(new GWLDivisionSpreadsheet("Season 5.5", "Season5_5", true, '1rjwOiKJDN82Zmre40ZcUiBOyZK39jhVRfM5g16alf4k'));
+		arr.push(new GWLDivisionSpreadsheet("Season 5.5", "Season5.5", true, '1rjwOiKJDN82Zmre40ZcUiBOyZK39jhVRfM5g16alf4k'));
 		
 		// promise all to build sheets
 		for(i=0;i<arr.length;++i) {

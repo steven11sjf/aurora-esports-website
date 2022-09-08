@@ -223,6 +223,22 @@ app.get('/api/BlogBlurbs/',function(req,res) {
 		res.end();
 	});
 });
+app.get('/api/BlogBlurbs/:season',function(req,res) {
+	localfs.openJson(constants.BLOG_JSON, (obj) => {
+		sheets.getSeason(req.params.season)
+		.then(season => {
+			sname = season.name;
+			console.log(sname);
+			
+			obj["blog-posts"] = obj["blog-posts"].filter(post => post.tags.includes(sname));
+			var json = JSON.stringify(obj);
+			res.statusCode = 200;
+			res.setHeader('Content-Type', 'application/json');
+			res.write(json);
+			res.end();
+		});
+	});
+});
 
 // sends a player's info with given battletag in players.json
 app.get('/api/:season/playerjson/:player', function(req,res) {

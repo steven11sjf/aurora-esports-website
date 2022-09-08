@@ -7,7 +7,10 @@
 		"Rule Updates",
 		"Admin Announcements",
 		"Free Agents",
-		"Power Rankings"
+		"Power Rankings",
+		"Season 3",
+		"Season 4",
+		"Season 5.5"
 	],
 	"blog-posts" : [
 		{
@@ -16,7 +19,8 @@
 			"title" : "Welcome to the Gopherwatch League Blog!",
 			"by" : "Steven Franklin",
 			"tags" : [
-				"Website Updates"
+				"Website Updates",
+				"Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/welcomepost.html"
@@ -27,7 +31,8 @@
 			"title" : "Lumberjackslams Get Cut Down",
 			"by" : "BOON1E",
 			"tags" : [
-				"Match Recap"
+				"Match Recap",
+				"Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/week3-lls.html"
@@ -38,7 +43,8 @@
 			"title" : "Some interesting website statistics",
 			"by" : "Steven Franklin",
 			"tags" : [
-				"Website Updates"
+				"Website Updates",
+				"Season 3"
 			],
 			"image" : "/images/stats_icon.png",
 			"contents" : "/html/Blog/pagehits1.html"
@@ -50,7 +56,8 @@
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Weekly Recap",
-				"Power Rankings"
+				"Power Rankings",
+				"Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/powerrankings-week3.html"
@@ -61,7 +68,8 @@
 			"title" : "Patch Notes: Player Stats!",
 			"by" : "Steven Franklin",
 			"tags" : [
-				"Website Updates"
+				"Website Updates",
+				"Season 3"
 			],
 			"image" : "/images/patch_notes.png",
 			"contents" : "/html/Blog/patch-notes-stats-1.html"
@@ -72,100 +80,161 @@
 			"title" : "Patch Notes: Player Profiles!",
 			"by" : "Steven Franklin",
 			"tags" : [
-				"Website Updates"
+				"Website Updates",
+				"Season 3"
 			],
 			"image" : "/images/patch_notes.png",
 			"contents" : "/html/Blog/player-profiles.html"
 		},
 		{
 			"id" : "rat-rankings",
-			"date" : "8/15/2021 1:07:00 PM",
+			"date" : "8/15/2021 1:07 PM",
 			"title" : "Rat Power Rankings",
 			"by" : "RustyGoomba",
 			"tags" : [
-				"Power Rankings"
+				"Power Rankings",
+				"Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/ratrankings.html"
 		},
 		{
 			"id" : "S4-PrePowerRankings",
-			"date" : "10/13/2021 6:02:00 PM",
+			"date" : "10/13/2021 6:02 PM",
 			"title" : "Pre-Season 4 Power Rankings",
 			"by" : "RustyGoomba",
 			"tags" : [
-				"Power Rankings"
+				"Power Rankings",
+				"Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/Season4PrePowerRankings.html"
 		},
 		{
 			"id" : "TimeTravelUpdate",
-			"date" : "10/15/2021 7:00:00 PM",
+			"date" : "10/15/2021 7:00 PM",
 			"title" : "Gopherwatch League Website 2.0: Too Many Seasons",
 			"by" : "Steven Franklin",
 			"tags" : [
-				"Website Updates"
+				"Website Updates",
+				"Season 4"
 			],
 			"image" : "/images/patch_notes.png",
 			"contents" : "/html/Blog/TimeTravelUpdate.html"
 		},
 		{
 			"id" : "RecapS4Wk1",
-			"date" : "10/24/2021 8:27:00 PM",
+			"date" : "10/24/2021 8:27 PM",
 			"title" : "Season 4 Week 1 Recap",
 			"by" : "RustyGoomba",
 			"tags" : [
-				"Weekly Recap"
+				"Weekly Recap",
+				"Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/GWLWeek1MatchRecap.html"
 		},
 		{
 			"id" : "RecapS4Wk2",
-			"date" : "10/27/2021 2:42:00 PM",
+			"date" : "10/27/2021 2:42 PM",
 			"title" : "Season 4 Week 2 Recap",
 			"by" : "RustyGoomba",
 			"tags" : [
-				"Weekly Recap"
+				"Weekly Recap",
+				"Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/GWLPostWeek2MatchRecap.html"
 		},
 		{
 			"id" : "PowerS4Wk3",
-			"date" : "11/9/2021 8:56:00 AM",
+			"date" : "11/9/2021 8:56 AM",
 			"title" : "Season 4 Week 3 Power Rankings",
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Power Rankings",
-				"Weekly Recap"
+				"Weekly Recap",
+				"Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/Week3PowerRankings.html"
 		},
 		{
 			"id" : "Preseason-Power-Rankings-Season-5.5",
-			"date" : "5/30/2022 8:23:00 PM",
+			"date" : "5/30/2022 8:23 PM",
 			"title" : "Season 5.5 Preseason Power Rankings",
 			"by" : "Nuttyr, RiddleDog, RustyGoomba, YeetMeister",
 			"tags" : [
-				"Power Rankings"
+				"Power Rankings",
+				"Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/season5_5powerrankings.html"
 		},
 		{
 			"id" : "Season-5.5-Week-1-Recap",
-			"date" : "6/10/2022 3:30:00 PM",
+			"date" : "6/10/2022 3:30 PM",
 			"title" : "Season 5.5, Week 1 Recap",
 			"by" : "Nuttyr, LostSilver, Yeetmeister, Rusty, RiddleDog",
 			"tags" : [
 				"Power Rankings",
-				"Weekly Recap"
+				"Weekly Recap",
+				"Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/Blog/season5_5wk1recap.html"
+		},
+		{
+			"id" : "Season-5.5-Week-2-Recap",
+			"date" : "6/16/2022 4:05 PM",
+			"title" : "Season 5.5, Week 2 Recap",
+			"by" : "The Journalism Team",
+			"tags" : [
+				"Power Rankings",
+				"Weekly Recap",
+				"Season 5.5"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Season5.5Week2Recap.html"
+		},
+		{
+			"id" : "Season-5.5-Week-3-Recap",
+			"date" : "6/19/2022 4:05 PM",
+			"title" : "Season 5.5, Week 3 Recap",
+			"by" : "The Journalism Team",
+			"tags" : [
+				"Power Rankings",
+				"Weekly Recap",
+				"Season 5.5"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Season5.5Week3Recap.html"
+		},
+		{
+			"id" : "Season-5.5-Week-4-Recap",
+			"date" : "6/29/2022 9:00 PM",
+			"title" : "Season 5.5, Week 4 Recap",
+			"by" : "The Journalism Team",
+			"tags" : [
+				"Power Rankings",
+				"Weekly Recap",
+				"Season 5.5"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Season5.5Week4Recap.html"
+		},
+		{
+			"id" : "Season-5.5-Week-5-Recap",
+			"date" : "7/10/2022 10:45 PM",
+			"title" : "Season 5.5, Week 5 Recap",
+			"by" : "The Journalism Team",
+			"tags" : [
+				"Power Rankings",
+				"Weekly Recap",
+				"Season 5.5"
+			],
+			"image" : "/images/Gopherwatch_League.png",
+			"contents" : "/html/Blog/Season5.5Week5Recap.html"
 		}
 	]
 }
