@@ -350,6 +350,8 @@ function getMapImage(name) {
 	if(name == "Oasis")
 		return "https://static.playoverwatch.com/img/pages/maps/images/oasis.jpg";
 	
+	if(name == "Circuit Royal")
+		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/10/Monte_Carlo.jpg/revision/latest/scale-to-width-down/200?cb=20220926230154";
 	if(name == "Dorado")
 		return "https://static.playoverwatch.com/img/pages/maps/images/dorado.jpg";
 	if(name == "Havana")
@@ -363,6 +365,10 @@ function getMapImage(name) {
 	if(name == "Watchpoint: Gibraltar")
 		return "https://static.playoverwatch.com/img/pages/maps/images/watchpoint-gibraltar.jpg";
 	
+	if(name == "Midtown")
+		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/4/4e/N18S6DCTDPG81613669123002.png/revision/latest/scale-to-width-down/200?cb=20210221175110";
+	if(name == "Paraiso")
+		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/90/Para%C3%ADso_pvp.jpg/revision/latest/scale-to-width-down/200?cb=20220630025520";
 	if(name == "King&apos;s Row")
 		return "https://static.playoverwatch.com/img/pages/maps/images/kings-row.jpg";
 	if(name == "Eichenwalde")
@@ -380,6 +386,13 @@ function getMapImage(name) {
 		return "https://static.playoverwatch.com/img/pages/maps/images/temple-of-anubis.jpg";
 	if(name == "Volskaya Industries")
 		return "https://static.playoverwatch.com/img/pages/maps/images/volskaya-industries.jpg";
+	
+	if(name == "Colosseo")
+		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/1e/Blizzconline_rome_01.png/revision/latest/scale-to-width-down/200?cb=20220926222702";
+	if(name == "Esperanca")
+		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/f5/PortugalPush.jpg/revision/latest/scale-to-width-down/200?cb=20220926215956";
+	if(name == "New Queen Street")
+		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/91/Toronto.jpg/revision/latest/scale-to-width-down/200?cb=20220926222923";
 	
 	console.log("Map not found: " + name);
 	return "/images/Overwatch_circle_logo.png";

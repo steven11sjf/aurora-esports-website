@@ -85,6 +85,25 @@ const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
 // = API Endpoints =
 // =================
 
+// sends navbar data
+app.get('/api/NavInfo/:season', async function(req,res) {
+	const seasonsPromise = sheets.allSeasonInfo();
+	const currSeasonPromise = sheets.getSeason(req.params.season);
+	
+	Promise.all([seasonsPromise, currSeasonPromise])
+	.then((data) => {
+		res.json({
+			seasons : data[0],
+			teams : data[1].teams,
+			tournaments : data[1].tournaments
+		});
+	})
+	.catch((err) => {
+		console.error(err);
+		res.json( {error : err} );
+	});
+});
+
 // sends players.json
 app.get('/api/:season/GetAllPlayersJson', async function(req, res) {
 	sheets.getSeason(req.params.season)

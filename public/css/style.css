@@ -4,7 +4,18 @@ html {
   box-sizing: border-box;
 }
 
-body 
+.nav-bg {
+    background-color: #ddd;
+}
+
+.nav-link {
+	color: rgba(0,0,0,0.55) !important;
+	font-size: 20px;
+}
+
+.gwl-style-header {
+	font-weight: 400 !important;
+}
 
 .headerSortDown:after,
 .headerSortUp:after {
@@ -41,110 +52,12 @@ h1.center {
 	color: inherit;
 }
 
-/* navbar */
-.discord {
-	background-color: #7289DA;
-}
-img.navbar-logo {
-  width: 400px;
-  height: 75px;
-}
-
-.navbar {
-  background-color: white;
-  display: flex;
-  align-items: center;
-}
-
-.navbar a,
-.navbar a:link,
-.navbar a:visited,
-.navbar a:active {
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  padding: 0.5rem 1rem;
-}
-
-.nav-right {
-	float: right;
-	font-size: 16px;
-	color: black;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.nav-left {
-  float: left;
-  font-size: 16px;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: black;
-  font-weight: bold;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 body {
 	background-color: maroon;
 	margin-left: 0;
 	margin-right: 0;
 	margin-top: 0;
 	margin-bottom: 200px;
-}
-
-#twitch-embed {
-	align: center;
-	padding: 50px 50px;
 }
 
 .center {
@@ -164,46 +77,6 @@ body {
 
 h1.center {
 	text-align: center;
-}
-
-nav {
-	text-align: center;
-	margin: auto;
-	width: 50%;
-}
-
-nav ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #800;
-	text-align: center;
-}
-
-nav ul li {
-	float: left;
-	display: inline;
-}
-
-nav ul li a {
-	display: inline-block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-nav ul li a:hover:not(.active) {
-	background-color: #FFD700;
-}
-
-.active {
-	background-color: #111;
-}
-
-.discord-link {
-	background-color: #738ADB;
 }
 
 .table {
@@ -247,4 +120,13 @@ td {
 
 .page-container {
 	padding-top: 50px;
+}
+
+span.spoiler {
+	color: transparent;
+	text-shadow: 0 0 20px black;
+}
+span.spoiler:hover {
+	color: black;
+	text-shadow: none;
 }

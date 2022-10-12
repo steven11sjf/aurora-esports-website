@@ -89,12 +89,10 @@ tr.match-unplayed {
 .round-table {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	width: 90%;
+	width: 100%;
 	table-layout: fixed;
 	font-size: 18px;
 	font-weight: bold;
-	border: 3px solid black;
-	border-collapse: collapse;
 }
 .round-table th {
 	height: 70px;
