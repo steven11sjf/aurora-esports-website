@@ -11,6 +11,7 @@ function dropdownSelected(value) {
 	console.log(heroName);
 	
 	if(heroName == "__LEAGUE_STANDINGS__") { table_type = "All"; loadTable('/html/stats-all-header.html', heroName); }
+	else if(heroName == "__TOTAL_STATS__") { table_type = "All"; loadTable('/html/stats-all-header.html', heroName); }
 	else if(heroinfo_obj[heroName] == "Tank") { table_type = "Tank"; loadTable('/html/stats-tank-header.html', heroName); }
 	else if(heroinfo_obj[heroName] == "Damage") { table_type = "Damage"; loadTable('/html/stats-damage-header.html', heroName); }
 	else if(heroinfo_obj[heroName] == "Support") { table_type = "Support"; loadTable('/html/stats-support-header.html', heroName); }
