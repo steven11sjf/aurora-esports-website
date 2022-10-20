@@ -53,13 +53,7 @@
 			</div>
 		</nav>
 		
-		<!-- this week's matches -->
-		<!-- TODO update upcoming matches for Bootstrap
-		<div class="container-fluid text-center" id="current-matches">
-			<h1 class="gwl-style-header 
-			display-3 font-weight-bold">Current Matches</h1>
-			<div class="team-banner-left">hewwoooooooooo</div>
-		</div> -->
+		
 		<div style="clear:both;">
 			<h1 class="center section-header">Current Round</h1>
 			<div id="rounds-div"></div>
@@ -112,7 +106,7 @@
 				// make list of tags
 				for(j=0; j<obj.tags.length; j++)
 				{
-					tags += '<a href="/blog/tag/';
+					tags += `<a href="/${sname}/blog/tag/`;
 					tags += obj.tags[j].replace(/\s+/g, '-').toLowerCase();
 					tags += '">';
 					tags += obj.tags[j];
@@ -121,7 +115,7 @@
 				}
 				
 				// build the HTML for the post
-				out += '<div class="blurb" onclick="location.href=\'/Blog/'
+				out += `<div class="blurb" onclick="location.href=\'/${sname}/Blog/`;
 				out += jsonObj["blog-posts"][i]["id"];
 				out += '\';">';
 				out += '<img class="blog-thumbnail" src="';

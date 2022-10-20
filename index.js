@@ -255,6 +255,9 @@ app.get('/api/BlogBlurbs/:season',function(req,res) {
 			res.setHeader('Content-Type', 'application/json');
 			res.write(json);
 			res.end();
+		}).catch(err => {
+			console.error(err);
+			res.json({ "season" : req.params.season, "error" : err });
 		});
 	});
 });
@@ -354,15 +357,22 @@ app.get('/:season/Draft/', function(req, res) {
 });
 
 // redirect Blog to homepage
-app.get('/Blog/',function(req,res) {
+app.get('/:season/Blog/',function(req,res) {
 	res.redirect('/Home/');
 	PAGE_HITS++;
 });
 
 // blog editor
-app.get('/Blog/New', function(req,res) {
+app.get('/:season/NewBlog', function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_post_formatter.html');
 	PAGE_HITS++;
+});
+// blog editor
+app.get('/NewBlog', function(req,res) {
+	sheets.allSeasonInfo()
+	.then(result => {
+		res.redirect(`/${result[0].internal}/NewBlog`)
+	});
 });
 
 // froala links
@@ -377,20 +387,20 @@ app.get('/froala/js/froala_editor.pkgd.min.js', function(req,res) {
 });
 
 // blog article pages
-app.get('/Blog/:blogid/',function(req,res) {
+app.get('/:season/Blog/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_template.html');
 	PAGE_HITS++;
 });
 
 // blog tag pages
-app.get('/Blog/Tag/:blogid/',function(req,res) {
+app.get('/:season/Blog/Tag/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_tag.html');
 	PAGE_HITS++;
 });
 
 
 // about page
-app.get('/About/',function(req,res) {
+app.get('/:season/About/',function(req,res) {
 	res.sendFile(__dirname + '/client/about.html');
 	PAGE_HITS++;
 });
