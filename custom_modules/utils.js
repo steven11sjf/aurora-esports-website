@@ -87,7 +87,7 @@ function getPlayerFromObj(obj, battletag) {
 	return new Promise((resolve,reject) => {
 		let players = obj.players;
 		for(i=0;i<players.length;++i) {
-			if(players[i].battletag == battletag)
+			if(players[i].battletag.toLowerCase() == battletag.toLowerCase())
 				resolve(players[i]);
 		}
 		reject("PlayerNotFound");

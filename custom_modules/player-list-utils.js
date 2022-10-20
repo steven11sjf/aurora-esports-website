@@ -26,7 +26,7 @@ function storeNewPlayerInfo(playersObj) {
 	// iterate through all its players
 	for (const p of playersObj.players) {
 		// try to get the index of the tag
-		const idx = player_info_btags.indexOf(p.battletag);
+		const idx = player_info_btags.indexOf(p.battletag.toLowerCase());
 		
 		// if it doesn't exist, copy the player over as a new player
 		if(idx < 0) {
@@ -34,7 +34,7 @@ function storeNewPlayerInfo(playersObj) {
 			
 			// push element to arrays
 			player_info.push(pl);
-			player_info_btags.push(pl.battletag);
+			player_info_btags.push(pl.battletag.toLowerCase());
 		}
 		
 		// if it does exist, overwrite the existing entry, but append to teams and accolades
