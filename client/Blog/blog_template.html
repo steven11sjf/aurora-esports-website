@@ -90,6 +90,7 @@
 		
 		// loads table into HTML
 		function loadBlog(jsonObj) {
+		var sname = window.location.pathname.split('/')[1];
 			var out = "";
 			
 			document.getElementById("blog-title").innerHTML = jsonObj.title;
@@ -99,7 +100,8 @@
 			let tags = '';
 			for(i=0; i<jsonObj.tags.length; i++)
 			{
-				tags += '<a href="/blog/tag/';
+				if(i!=0) tags += ", ";
+				tags += `<a href="/${sname}/blog/tag/`;
 				tags += jsonObj.tags[i].replace(/\s+/g, '-').toLowerCase();
 				tags += '">';
 				tags += jsonObj.tags[i];

@@ -78,6 +78,7 @@
 		}
 		
 		function loadBlurbs(jsonObj) {
+		var sname = window.location.pathname.split('/')[1];
 			var out = "";
 			for(i=jsonObj["blog-posts"].length-1; i>=0; i--) {
 				let display = 0; // 0 for don't display, anything for do display
@@ -86,18 +87,19 @@
 				console.log(obj);
 				for(j=0; j<obj.tags.length; j++)
 				{
+					if(j!=0) tags += ", ";
 					if(obj.tags[j].replace(/\s+/g, '-').toLowerCase() == blogtag) display = 1;
-					tags += '<a href="/blog/tag/';
+					tags += `<a href="/${sname}/blog/tag/`;
 					tags += obj.tags[j].replace(/\s+/g, '-').toLowerCase();
 					console.log(tags);
 					tags += '">';
 					tags += obj.tags[j];
-					tags += '</a>, ';
+					tags += '</a>';
 				}
 				if(display == 0) continue;
 				
 				out += '<div class="blurb">';
-				out += '<a class="title" href="/Blog/';
+				out += `<a class="title" href="/${sname}/Blog/`;
 				out += jsonObj["blog-posts"][i]["id"];
 				out += '">';
 				out += jsonObj["blog-posts"][i]["title"];
