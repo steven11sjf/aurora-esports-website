@@ -91,6 +91,7 @@ function loadHero(dropdown) {
 				// calculate per/10 stats
 				let timePlayed = parseInt(stats[i]["timeplayed"]);
 				timePlayed = timePlayed / 600; // set it to per 10
+				if(timePlayed == 0) continue;
 				let elims = parseInt(stats[i]["elims"])/timePlayed;
 				elims = elims.toFixed(2);
 				let fb = parseInt(stats[i]["fb"])/timePlayed;

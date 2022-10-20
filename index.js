@@ -23,7 +23,7 @@ const sheetsApi = google.sheets('v4');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 app.use(bodyParser.urlencoded({ extended : true }));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 // custom submodules
