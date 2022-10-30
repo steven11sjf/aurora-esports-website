@@ -246,7 +246,7 @@ function getMostPlayedHero() {
 	let name = '';
 	let time = 0.0;
 	for(i=0;i<statsObj.stats.length;++i){
-		if(statsObj.stats[i]["player"] == playerInfo.battletag) {
+		if(statsObj.stats[i]["player"] == playerInfo.battletag && statsObj.stats[i]["hero"] != "__TOTAL_STATS__") {
 			let temp_t = parseFloat(statsObj.stats[i]["timeplayed"]);
 			if(temp_t > time) {
 				name = statsObj.stats[i]["hero"];
