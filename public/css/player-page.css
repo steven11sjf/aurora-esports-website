@@ -45,38 +45,14 @@ body {
   height: 75px;
 }
 
-nav > ul {
-  margin: 0;
-  padding-left: 50px;
-  display: flex;
-  flex-direction: row;
-}
-
-nav > ul > li {
-  list-style-type: none;
-  padding-right: 5px;
-}
-
-nav a,
-nav a:link,
-nav a:visited,
-nav a:active {
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  padding: 2.4rem 1rem;
-}
-
-nav a:hover {
-  color: maroon;
+div.history > h3 {
+  padding-bottom: 20px;
 }
 
 .player-header {
   grid-area: pheader;
   background-color: #FFFFFF;
+  opacity: 0.9;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;

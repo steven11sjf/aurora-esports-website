@@ -1,152 +1,180 @@
 <!DOCTYPE html>
 
 <html>
+	<head>
+		<title>Player - The Gopherwatch League</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/player-page.css">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="/js/player-page.js"></script>
+		<script src="/js/utils.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/navbar.js"></script>
+	</head>
 
-<head>
-    <title>Player - The Gopherwatch League</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/player-page.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="/js/player-page.js"></script>
-	<script src="/js/utils.js"></script>
-</head>
-
-<body>
-    <div class="container">
-        <!-- navbar -->
-		<div id="nav-placeholder">
-			<h1>Please enable JavaScript to use the site!</h1>
-		</div>
-		
-		<script>
-		$(function(){
-			$("#nav-placeholder").load("/html/nav.html");
-		});
-		</script>
-		
-        <div class="player-header" id="player-header">
-            <div class="player-photo" id="player-photo">
-                <img src="#">
-            </div>
-
-            <div class="player-info">
-				<div class="team-images" id="team-images">
-				</div>
-                <p class="player-name" id="player-name"></p>
-                <div class="player-tag-role">
-                    <p class="player-tag" id="player-tag"></p>
-                    <p class="player-number" id="player-number"></p>
-                    <img class="role-image" id="role-image" src="#">
-                </div>
-				<p class="pronouns" id="pronouns"></p>
-            </div>
-			
-			<div class="player-roles">
-				<div class="tank-rank rank-class" id="tank-rank">
-					<img class="role-image" src="/images/playerpage/tank.png">
-					<p class="role-sr" id="tank-sr"></p>
-					<img class="rank-img" id="tank-tier" src="#">
-				</div>
-				<div class="damage-rank rank-class" id="damage-rank">
-					<img class="role-image" src="/images/playerpage/damage.png">
-					<p class="role-sr" id="damage-sr"></p>
-					<img class="rank-img" id="damage-tier" src="#">
-				</div>
-				<div class="support-rank rank-class" id="support-rank">
-					<img class="role-image" src="/images/playerpage/support.png">
-					<p class="role-sr" id="support-sr"></p>
-					<img class="rank-img" id="support-tier" src="#">
+	<body>
+		<!-- navbar -->
+		<nav class="navbar sticky-top navbar-expand-xl container-fluid navbar-light nav-bg fs-5">
+			<div class="container-fluid">
+				<a class="navbar-brand"  href="/"><img src="/images/Aurora_Esports_Circle_Logo.png" alt="Gopherwatch League logo" width="72" height="72"></a>
+				<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navContents"><span class="navbar-toggler-icon"></span></button>
+				<div class="navbar-collapse collapse" id="navContents">
+					<ul class="navbar-nav me-auto mb-2 mb-xl-0">
+						<li class="nav-item pe-1"><a class="nav-link" id="nav-home-link" aria-current="page" href="#">Home</a></li>
+						<li class="nav-item dropdown pe-1">
+							<a class="dropdown-toggle nav-link" href="#" id="navbarTeamsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Teams</a>
+							<ul class="dropdown-menu" id="nav-team-dropdown-contents" aria-labeledby="navbarTeamsDropdown">
+							</ul>
+						</li>
+						<li class="nav-item dropdown pe-1" id="nav-tourn-dropdown-li">
+							<a class="dropdown-toggle nav-link active" href="#" id="navbarTournamentsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Tournaments</a>
+							<ul class="dropdown-menu" id="nav-tourn-dropdown-contents" aria-labeledby="navbarTournamentsDropdown">
+							</ul>
+						</li>
+						<li class="nav-item pe-1"><a class="nav-link" id="nav-schedule-link" href="#">Schedule</a></li>
+						<li class="nav-item pe-1"><a class="nav-link" id="nav-standings-link" href="#">Standings</a></li>
+						<li class="nav-item pe-1"><a class="nav-link" id="nav-stats-link" href="#">Stats</a></li>
+						<li class="nav-item pe-1"><a class="nav-link" id="nav-draft-link" href="#">Draft</a></li>
+					</ul>
+					<ul class="navbar-nav mb-2 mb-xl-0 me-3">
+						<li class="nav-item dropdown pe-4">
+							<a class="dropdown-toggle nav-link" href="#" id="navbarSeasonsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Seasons</a>
+							<ul class="dropdown-menu" id="nav-season-dropdown-contents" aria-labeledby="navbarSeasonsDropdown">
+							</ul>
+						</li>
+						<li class="nav-item"><a href="/Discord/" target="_blank"><img src="/images/Discord-Logo.png" alt="Discord server invite link" width="182.5" height="50"></a></li>
+					</ul>
 				</div>
 			</div>
-        </div>
+		</nav>
+		<div class="justify-content-center">
+			
+			
+			<div class="player-header" id="player-header">
+				<div class="player-photo" id="player-photo">
+					<img src="#">
+				</div>
 
-        <div class="player-bio">
-            <div class ="bio-basics">
-                <div class="hometown">
-                    <img id="hometown-img" src="/images/playerpage/house.png">
-                    <p id="hometown"></p>
-                </div>
-                <div class="major">
-                    <img id="major-img" src="/images/playerpage/cap.png">
-                    <p id="major"></p>
-                </div>
-                <div class="socials" id="socials">
-                    
-                </div>
-            </div>
+				<div class="player-info">
+					<div class="team-images" id="team-images">
+					</div>
+					<p class="player-name" id="player-name"></p>
+					<div class="player-tag-role">
+						<p class="player-tag" id="player-tag"></p>
+						<p class="player-number" id="player-number"></p>
+						<img class="role-image" id="role-image" src="#">
+					</div>
+					<p class="pronouns" id="pronouns"></p>
+				</div>
+				
+				<div class="player-roles">
+					<div class="tank-rank rank-class" id="tank-rank">
+						<img class="role-image" src="/images/playerpage/tank.png">
+						<p class="role-sr" id="tank-sr"></p>
+						<img class="rank-img" id="tank-tier" src="#">
+					</div>
+					<div class="damage-rank rank-class" id="damage-rank">
+						<img class="role-image" src="/images/playerpage/damage.png">
+						<p class="role-sr" id="damage-sr"></p>
+						<img class="rank-img" id="damage-tier" src="#">
+					</div>
+					<div class="support-rank rank-class" id="support-rank">
+						<img class="role-image" src="/images/playerpage/support.png">
+						<p class="role-sr" id="support-sr"></p>
+						<img class="rank-img" id="support-tier" src="#">
+					</div>
+				</div>
+			</div>
 
-            <div class="bio-written">
-                <div class="awards" id="awards">
-                    <h2>Accolades</h2>
-                </div>
-                <div class="history">
-                    <h2>Player Bio</h2>
-                    <h3>Main Role: <span id="main-role"></span></h3>
-                    <h3>Favorite Hero: <span id="favorite-hero"></span></h3>
-                    <h3>Player History</h3>
-                    <p id="bio"></p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="player-stats">
-            <div class="hero-stats">
-                <h2>Hero Stats</h2>
-                <table>
-                    <thead>
-                        <td></td>
-                        <td>Hero</td>
-                        <td>Elims</td>
-                        <td>FB</td>
-                        <td>Damage</td>
-                        <td>Deaths</td>
-                        <td>Healing</td>
-                        <td>Blocked</td>
-                        <td>Time</td>
-                    </thead>
-					<tbody id="hero-stats">
+			<div class="player-bio">
+				<div class ="bio-basics">
+					<div class="hometown">
+						<img id="hometown-img" src="/images/playerpage/house.png">
+						<p id="hometown"></p>
+					</div>
+					<div class="major">
+						<img id="major-img" src="/images/playerpage/cap.png">
+						<p id="major"></p>
+					</div>
+					<div class="socials" id="socials">
 						
-					</tbody>
-                </table>
-            </div>
+					</div>
+				</div>
 
-            <div class="player-overall">
-                <h2>Player Stats</h2>
-                <table id="career-stats">
-                    <thead>
-                        <td>Stat</td>
-                        <td>Total</td>
-                        <td>Per 10</td>
-                        <td>League Average</td>
-                        <td>Per 10</td>
-                    </thead>
-                    <tr id="career-elims">
-                        
-                    </tr>
-                    <tr id="career-fbs">
-                        
-                    </tr>
-                    <tr id="career-dmg">
-                        
-                    </tr>
-                    <tr id="career-deaths">
-                        
-                    </tr>
-                    <tr id="career-heals">
-                        
-                    </tr>
-                    <tr id="career-blocked">
+				<div class="bio-written">
+					<div class="awards" id="awards">
+						<h2>Accolades</h2>
+					</div>
+					<div class="history">
+						<h2>Player Bio</h2>
+						<h3>Main Role: <span id="main-role"></span></h3>
+						<h3>Favorite Hero: <span id="favorite-hero"></span></h3>
+						<h3>Player History</h3>
+						<p id="bio"></p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="player-stats">
+				<div class="hero-stats">
+					<h2>Hero Stats</h2>
+					<table>
+						<thead>
+							<td></td>
+							<td>Hero</td>
+							<td>Elims</td>
+							<td>FB</td>
+							<td>Damage</td>
+							<td>Deaths</td>
+							<td>Healing</td>
+							<td>Blocked</td>
+							<td>Time</td>
+						</thead>
+						<tbody id="hero-stats">
 							
-					</tr>
-                </table>
-            </div>
-        </div>
-    </div>
-</body>
+						</tbody>
+					</table>
+				</div>
 
+				<div class="player-overall">
+					<h2>Player Stats</h2>
+					<table id="career-stats">
+						<thead>
+							<td>Stat</td>
+							<td>Total</td>
+							<td>Per 10</td>
+							<td>League Average</td>
+							<td>Per 10</td>
+						</thead>
+						<tr id="career-elims">
+							
+						</tr>
+						<tr id="career-fbs">
+							
+						</tr>
+						<tr id="career-dmg">
+							
+						</tr>
+						<tr id="career-deaths">
+							
+						</tr>
+						<tr id="career-heals">
+							
+						</tr>
+						<tr id="career-blocked">
+								
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

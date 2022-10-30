@@ -45,10 +45,11 @@ function build() {
 
 		// Declare sheets below, push sheets to array
 		// MAKE SURE TO PUSH LATEST SHEETS LAST :^)
-		arr.push(new GWLRoundRobinSpreadsheet("Season 3", "Season3", false, '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM'));
-		arr.push(new GWLRoundRobinSpreadsheet("Season 4", "Season4", false, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
-		arr.push(new GWLRoundRobinSpreadsheet("Season 5", "Season5", false, '1IZvGqUOmNn4p2yubCNDGvE68PM0A1HmlBgKUgLOTgm0'));
-		arr.push(new GWLDivisionSpreadsheet("Season 5.5", "Season5.5", true, '1rjwOiKJDN82Zmre40ZcUiBOyZK39jhVRfM5g16alf4k'));
+		arr.push(new GWLRoundRobinSpreadsheet("GWL Season 3", "GWL_Season3", false, '1tRHl68j9kqzJzScS0v9X3KdrS2UgycY0hvteI7_56xM'));
+		arr.push(new GWLRoundRobinSpreadsheet("GWL Season 4", "GWL_Season4", false, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
+		arr.push(new GWLRoundRobinSpreadsheet("GWL Season 5", "GWL_Season5", false, '1IZvGqUOmNn4p2yubCNDGvE68PM0A1HmlBgKUgLOTgm0'));
+		arr.push(new GWLDivisionSpreadsheet("GWL Season 5.5", "GWL_Season5.5", false, '1rjwOiKJDN82Zmre40ZcUiBOyZK39jhVRfM5g16alf4k'));
+		arr.push(new GWLDivisionSpreadsheet("Aurora Season 1", "AOC_Season1", true, '1fzRdi0boBOGPrWmHBEUrSk3ve8_hLaNsNDrIwhZUy7o'));
 		
 		// promise all to build sheets
 		for(i=0;i<arr.length;++i) {

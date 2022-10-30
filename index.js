@@ -23,7 +23,7 @@ const sheetsApi = google.sheets('v4');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 app.use(bodyParser.urlencoded({ extended : true }));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 // custom submodules
@@ -66,8 +66,8 @@ startup();
 // = Schedules =
 // =============
 
-// runs a batch update every two minutes
-const batchUpdateJob = cron.job('0/2 * * * *', () => {
+// runs a batch update every 15s
+const batchUpdateJob = cron.job('*/15 * * * * *', () => {
 	sheets.updateAll()
 	.then(res => console.log("Updated seasons ", res))
 });
@@ -84,6 +84,25 @@ const statisticsUpdateJob = cron.job('0/2 * * * *', () => {
 // =================
 // = API Endpoints =
 // =================
+
+// sends navbar data
+app.get('/api/NavInfo/:season', async function(req,res) {
+	const seasonsPromise = sheets.allSeasonInfo();
+	const currSeasonPromise = sheets.getSeason(req.params.season);
+	
+	Promise.all([seasonsPromise, currSeasonPromise])
+	.then((data) => {
+		res.json({
+			seasons : data[0],
+			teams : data[1].teams,
+			tournaments : data[1].tournaments
+		});
+	})
+	.catch((err) => {
+		console.error(err);
+		res.json( {error : err} );
+	});
+});
 
 // sends players.json
 app.get('/api/:season/GetAllPlayersJson', async function(req, res) {
@@ -236,6 +255,9 @@ app.get('/api/BlogBlurbs/:season',function(req,res) {
 			res.setHeader('Content-Type', 'application/json');
 			res.write(json);
 			res.end();
+		}).catch(err => {
+			console.error(err);
+			res.json({ "season" : req.params.season, "error" : err });
 		});
 	});
 });
@@ -335,15 +357,22 @@ app.get('/:season/Draft/', function(req, res) {
 });
 
 // redirect Blog to homepage
-app.get('/Blog/',function(req,res) {
+app.get('/:season/Blog/',function(req,res) {
 	res.redirect('/Home/');
 	PAGE_HITS++;
 });
 
 // blog editor
-app.get('/Blog/New', function(req,res) {
+app.get('/:season/NewBlog', function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_post_formatter.html');
 	PAGE_HITS++;
+});
+// blog editor
+app.get('/NewBlog', function(req,res) {
+	sheets.allSeasonInfo()
+	.then(result => {
+		res.redirect(`/${result[0].internal}/NewBlog`)
+	});
 });
 
 // froala links
@@ -358,20 +387,20 @@ app.get('/froala/js/froala_editor.pkgd.min.js', function(req,res) {
 });
 
 // blog article pages
-app.get('/Blog/:blogid/',function(req,res) {
+app.get('/:season/Blog/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_template.html');
 	PAGE_HITS++;
 });
 
 // blog tag pages
-app.get('/Blog/Tag/:blogid/',function(req,res) {
+app.get('/:season/Blog/Tag/:blogid/',function(req,res) {
 	res.sendFile(__dirname + '/client/Blog/blog_tag.html');
 	PAGE_HITS++;
 });
 
 
 // about page
-app.get('/About/',function(req,res) {
+app.get('/:season/About/',function(req,res) {
 	res.sendFile(__dirname + '/client/about.html');
 	PAGE_HITS++;
 });
@@ -450,7 +479,7 @@ app.get('/download/:path/:article', function(req,res) {
 });
 
 app.get('/favicon.ico', function(req,res) {
-	res.sendFile(__dirname + '/public/images/leaguelogo.png');
+	res.sendFile(__dirname + '/public/images/Aurora_Esports_Circle_Logo.png');
 });
 app.use(express.static(path.join(__dirname, 'public')));
 

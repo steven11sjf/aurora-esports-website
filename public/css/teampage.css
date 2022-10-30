@@ -21,57 +21,42 @@
 .mapimgs {
 	margin: 0 auto;
 }
-
-.mapwin {
-	position: relative;
-	display: inline-block;
-	float: left;
-	width: 64px;
-	border: 4px solid #00FF00;
-	margin: 3px;
-}
 .mapwin img {
-	display: block;
-	width: 64px;
-	opacity: 0.8;
-}
-
-.maploss {
-	position: relative;
 	display: inline-block;
 	float: left;
-	width: 64px;
-	border: 4px solid #FF0000;
-	margin: 3px;
+	width: 7rem;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	border: 0.3rem solid #00FF00;
 }
+
 .maploss img {
-	width: 64px;
-	display: block;
-}
-
-.mapdraw {
-	position: relative;
 	display: inline-block;
-	background: rgb(85,85,85);
 	float: left;
-	width: 64px;
-	border: 4px solid #888888;
-	margin: 3px;
+	width: 7rem;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	border: 0.3rem solid #FF0000;
 }
 .mapdraw img {
-	display: block;
-	opacity: 0.8;
-	width: 64px;
+	display: inline-block;
+	float: left;
+	width: 7rem;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	border: 0.3rem solid #888888;
 }
 .team-page-container {
 	width: 70%;
 }
 
 .grid-container {
+  margin: auto;
+  width: 70rem;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
   display: grid;
-  grid-template-columns: 25% 30% 45%;
+  grid-template-columns: 30% 40% 30%;
   grid-template-rows: 33% 33% 33%;
   gap: 5px 5px;
   padding: 10px;
@@ -146,9 +131,8 @@ span#team-page-div-rank {
 }
 
 .ttable {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	width: 90%;
+	margin: auto;
+	width: 70rem;
 	table-layout: fixed;
 	font-size: 18px;
 	font-weight: bold;
@@ -157,7 +141,9 @@ span#team-page-div-rank {
 }
 
 #mapTable {
-	width: 50%;
+	width: 50rem;
+	padding-left: 10rem;
+	padding-right: 10rem;
 }
 
 .ttable th {
@@ -185,3 +171,13 @@ span#team-page-div-rank {
 	padding: 1px;
 	height: 70%;
 }
+
+.teampage-label {
+	width: 70rem;
+	margin: auto;
+}
+
+.teampage-container {
+	width: 70rem;
+	margin: auto;
+	background-color: white;

@@ -246,7 +246,7 @@ function getMostPlayedHero() {
 	let name = '';
 	let time = 0.0;
 	for(i=0;i<statsObj.stats.length;++i){
-		if(statsObj.stats[i]["player"] == playerInfo.battletag) {
+		if(statsObj.stats[i]["player"] == playerInfo.battletag && statsObj.stats[i]["hero"] != "__TOTAL_STATS__") {
 			let temp_t = parseFloat(statsObj.stats[i]["timeplayed"]);
 			if(temp_t > time) {
 				name = statsObj.stats[i]["hero"];
@@ -265,7 +265,7 @@ function loadHeroStats() {
 	let so = statsObj.stats;
 
 	for(i=0;i<so.length; ++i) {
-		if(so[i]["player"] == btag) {
+		if(so[i]["player"] == btag && so[i]["hero"] != "__TOTAL_STATS__") {
 			let timeplayed = parseInt(so[i]["timeplayed"]) / 600; // time played in 10 min increments
 			// hero image - hero - elims - fb - damage - deaths - healing - blocked - time played
 			result += '<tr><td><img src="/images/heroportraits/';

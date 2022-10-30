@@ -8,9 +8,10 @@
 		"Admin Announcements",
 		"Free Agents",
 		"Power Rankings",
-		"Season 3",
-		"Season 4",
-		"Season 5.5"
+		"GWL Season 3",
+		"GWL Season 4",
+		"GWL Season 5.5",
+		"AOC Season 1"
 	],
 	"blog-posts" : [
 		{
@@ -20,10 +21,10 @@
 			"by" : "Steven Franklin",
 			"tags" : [
 				"Website Updates",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/welcomepost.html"
+			"contents" : "/html/BlogHtml/welcomepost.html"
 		},
 		{
 			"id" : "week3-lls",
@@ -32,10 +33,10 @@
 			"by" : "BOON1E",
 			"tags" : [
 				"Match Recap",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/week3-lls.html"
+			"contents" : "/html/BlogHtml/week3-lls.html"
 		},
 		{
 			"id" : "pagehits1",
@@ -44,10 +45,10 @@
 			"by" : "Steven Franklin",
 			"tags" : [
 				"Website Updates",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/stats_icon.png",
-			"contents" : "/html/Blog/pagehits1.html"
+			"contents" : "/html/BlogHtml/pagehits1.html"
 		},
 		{
 			"id" : "powerrankings-week3",
@@ -57,10 +58,10 @@
 			"tags" : [
 				"Weekly Recap",
 				"Power Rankings",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/powerrankings-week3.html"
+			"contents" : "/html/BlogHtml/powerrankings-week3.html"
 		},
 		{
 			"id" : "patch-notes-7-3-21",
@@ -69,10 +70,10 @@
 			"by" : "Steven Franklin",
 			"tags" : [
 				"Website Updates",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/patch_notes.png",
-			"contents" : "/html/Blog/patch-notes-stats-1.html"
+			"contents" : "/html/BlogHtml/patch-notes-stats-1.html"
 		},
 		{
 			"id" : "player-profiles",
@@ -81,10 +82,10 @@
 			"by" : "Steven Franklin",
 			"tags" : [
 				"Website Updates",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/patch_notes.png",
-			"contents" : "/html/Blog/player-profiles.html"
+			"contents" : "/html/BlogHtml/player-profiles.html"
 		},
 		{
 			"id" : "rat-rankings",
@@ -93,22 +94,22 @@
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Power Rankings",
-				"Season 3"
+				"GWL Season 3"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/ratrankings.html"
+			"contents" : "/html/BlogHtml/ratrankings.html"
 		},
 		{
 			"id" : "S4-PrePowerRankings",
 			"date" : "10/13/2021 6:02 PM",
-			"title" : "Pre-Season 4 Power Rankings",
+			"title" : "Pre-GWL Season 4 Power Rankings",
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Power Rankings",
-				"Season 4"
+				"GWL Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/Season4PrePowerRankings.html"
+			"contents" : "/html/BlogHtml/Season4PrePowerRankings.html"
 		},
 		{
 			"id" : "TimeTravelUpdate",
@@ -117,124 +118,124 @@
 			"by" : "Steven Franklin",
 			"tags" : [
 				"Website Updates",
-				"Season 4"
+				"GWL Season 4"
 			],
 			"image" : "/images/patch_notes.png",
-			"contents" : "/html/Blog/TimeTravelUpdate.html"
+			"contents" : "/html/BlogHtml/TimeTravelUpdate.html"
 		},
 		{
 			"id" : "RecapS4Wk1",
 			"date" : "10/24/2021 8:27 PM",
-			"title" : "Season 4 Week 1 Recap",
+			"title" : "GWL Season 4 Week 1 Recap",
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Weekly Recap",
-				"Season 4"
+				"GWL Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/GWLWeek1MatchRecap.html"
+			"contents" : "/html/BlogHtml/GWLWeek1MatchRecap.html"
 		},
 		{
 			"id" : "RecapS4Wk2",
 			"date" : "10/27/2021 2:42 PM",
-			"title" : "Season 4 Week 2 Recap",
+			"title" : "GWL Season 4 Week 2 Recap",
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Weekly Recap",
-				"Season 4"
+				"GWL Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/GWLPostWeek2MatchRecap.html"
+			"contents" : "/html/BlogHtml/GWLPostWeek2MatchRecap.html"
 		},
 		{
 			"id" : "PowerS4Wk3",
 			"date" : "11/9/2021 8:56 AM",
-			"title" : "Season 4 Week 3 Power Rankings",
+			"title" : "GWL Season 4 Week 3 Power Rankings",
 			"by" : "RustyGoomba",
 			"tags" : [
 				"Power Rankings",
 				"Weekly Recap",
-				"Season 4"
+				"GWL Season 4"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/Week3PowerRankings.html"
+			"contents" : "/html/BlogHtml/Week3PowerRankings.html"
 		},
 		{
 			"id" : "Preseason-Power-Rankings-Season-5.5",
 			"date" : "5/30/2022 8:23 PM",
-			"title" : "Season 5.5 Preseason Power Rankings",
+			"title" : "GWL Season 5.5 Preseason Power Rankings",
 			"by" : "Nuttyr, RiddleDog, RustyGoomba, YeetMeister",
 			"tags" : [
 				"Power Rankings",
-				"Season 5.5"
+				"GWL Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/season5_5powerrankings.html"
+			"contents" : "/html/BlogHtml/season5_5powerrankings.html"
 		},
 		{
 			"id" : "Season-5.5-Week-1-Recap",
 			"date" : "6/10/2022 3:30 PM",
-			"title" : "Season 5.5, Week 1 Recap",
+			"title" : "GWL Season 5.5, Week 1 Recap",
 			"by" : "Nuttyr, LostSilver, Yeetmeister, Rusty, RiddleDog",
 			"tags" : [
 				"Power Rankings",
 				"Weekly Recap",
-				"Season 5.5"
+				"GWL Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/season5_5wk1recap.html"
+			"contents" : "/html/BlogHtml/season5_5wk1recap.html"
 		},
 		{
 			"id" : "Season-5.5-Week-2-Recap",
 			"date" : "6/16/2022 4:05 PM",
-			"title" : "Season 5.5, Week 2 Recap",
+			"title" : "GWL Season 5.5, Week 2 Recap",
 			"by" : "The Journalism Team",
 			"tags" : [
 				"Power Rankings",
 				"Weekly Recap",
-				"Season 5.5"
+				"GWL Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/Season5.5Week2Recap.html"
+			"contents" : "/html/BlogHtml/Season5.5Week2Recap.html"
 		},
 		{
 			"id" : "Season-5.5-Week-3-Recap",
 			"date" : "6/19/2022 4:05 PM",
-			"title" : "Season 5.5, Week 3 Recap",
+			"title" : "GWL Season 5.5, Week 3 Recap",
 			"by" : "The Journalism Team",
 			"tags" : [
 				"Power Rankings",
 				"Weekly Recap",
-				"Season 5.5"
+				"GWL Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/Season5.5Week3Recap.html"
+			"contents" : "/html/BlogHtml/Season5.5Week3Recap.html"
 		},
 		{
 			"id" : "Season-5.5-Week-4-Recap",
 			"date" : "6/29/2022 9:00 PM",
-			"title" : "Season 5.5, Week 4 Recap",
+			"title" : "GWL Season 5.5, Week 4 Recap",
 			"by" : "The Journalism Team",
 			"tags" : [
 				"Power Rankings",
 				"Weekly Recap",
-				"Season 5.5"
+				"GWL Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/Season5.5Week4Recap.html"
+			"contents" : "/html/BlogHtml/Season5.5Week4Recap.html"
 		},
 		{
 			"id" : "Season-5.5-Week-5-Recap",
 			"date" : "7/10/2022 10:45 PM",
-			"title" : "Season 5.5, Week 5 Recap",
+			"title" : "GWL Season 5.5, Week 5 Recap",
 			"by" : "The Journalism Team",
 			"tags" : [
 				"Power Rankings",
 				"Weekly Recap",
-				"Season 5.5"
+				"GWL Season 5.5"
 			],
 			"image" : "/images/Gopherwatch_League.png",
-			"contents" : "/html/Blog/Season5.5Week5Recap.html"
+			"contents" : "/html/BlogHtml/Season5.5Week5Recap.html"
 		}
 	]
 }
