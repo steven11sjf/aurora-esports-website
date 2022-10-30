@@ -265,7 +265,7 @@ function loadHeroStats() {
 	let so = statsObj.stats;
 
 	for(i=0;i<so.length; ++i) {
-		if(so[i]["player"] == btag) {
+		if(so[i]["player"] == btag && so[i]["hero"] != "__TOTAL_STATS__") {
 			let timeplayed = parseInt(so[i]["timeplayed"]) / 600; // time played in 10 min increments
 			// hero image - hero - elims - fb - damage - deaths - healing - blocked - time played
 			result += '<tr><td><img src="/images/heroportraits/';
