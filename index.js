@@ -66,8 +66,8 @@ startup();
 // = Schedules =
 // =============
 
-// runs a batch update every two minutes
-const batchUpdateJob = cron.job('0/2 * * * *', () => {
+// runs a batch update every 15s
+const batchUpdateJob = cron.job('*/15 * * * * *', () => {
 	sheets.updateAll()
 	.then(res => console.log("Updated seasons ", res))
 });
@@ -479,7 +479,7 @@ app.get('/download/:path/:article', function(req,res) {
 });
 
 app.get('/favicon.ico', function(req,res) {
-	res.sendFile(__dirname + '/public/images/leaguelogo.png');
+	res.sendFile(__dirname + '/public/images/Aurora_Esports_Circle_Logo.png');
 });
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -4,13 +4,24 @@ html {
   box-sizing: border-box;
 }
 
+/* fix for dropdown-item */
+.dropdown-item {
+	width: 100% !important;
+}
+
+ul.dropdown-menu {
+	background-color: rgba(117,146,190,1) !important;
+	--bs-dropdown-link-hover-bg: #ffffff;
+}
+
+
 .nav-bg {
-    background-color: #ddd;
+    background-color: rgba(117,146,190,1);
 }
 
 .nav-link {
-	color: rgba(0,0,0,0.55) !important;
-	font-size: 20px;
+	color: rgba(255,255,255,1) !important;
+	font-size: 1.25rem;
 }
 
 .gwl-style-header {
@@ -21,30 +32,30 @@ html {
 .headerSortUp:after {
   content: ' ';
   position: relative;
-  left: 2px;
-  border: 8px solid transparent;
+  left: 0.125rem;
+  border: 0.5rem solid transparent;
 }
 
 .headerSortDown:after {
-  top: 10px;
+  top: 0.625rem;
   border-top-color: silver;
 }
 
 .headerSortUp:after {
-  bottom: 15px;
+  bottom: 1rem;
   border-bottom-color: silver;
 }
 
 .headerSortDown,
 .headerSortUp {
-  padding-right: 10px;
+  padding-right: 0.75rem;
 }
 
 h1.center {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 60px;
+	font-size: 4rem;
 	font-weight: bold;
-	padding: 15px;
+	padding: 1rem;
 }
 
 .auto-plink {
@@ -53,11 +64,14 @@ h1.center {
 }
 
 body {
-	background-color: maroon;
+	background-image: url('/images/background.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	margin-left: 0;
 	margin-right: 0;
 	margin-top: 0;
-	margin-bottom: 200px;
+	padding-bottom: 10rem;
 }
 
 .center {
@@ -66,39 +80,41 @@ body {
 }
 
 .notice {
-	padding: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	padding: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
 	background-color: white;
 	width: 50%;
-	border-radius: 25px;
-	border: 4px solid red;
+	border-radius: 1.5rem;
+	border: 0.25rem solid red;
 }
 
 h1.center {
 	text-align: center;
 }
 
-.table {
-	width: 70%;
+.mytable {
+	margin: auto;
+	width: 80rem;
 	table-layout: fixed;
 	font-size: 18px;
 	font-weight: bold;
 	border: 3px solid black;
+	border-collapse: collapse;
 }
 
-.table th {
-	height: 70px;
+.mytable th {
+	height: 4.375rem;
 	width: 20%;
 }
 
-.table thead tr {
+.mytable thead tr {
 	background-color: white;
 	text-align: center;
 	color: black;
-	padding: 20px 20px;
+	padding: 1.25rem 1.25rem;
 	text-decoration: none;
-	border: 2px solid black;
+	border: 0.125rem solid black;
 }
 
 td.team-name {
@@ -110,23 +126,29 @@ td {
 	text-align: center;
 }
 
-.table tbody tr:nth-child(even) {
+.mytable tbody tr:nth-child(even) {
 	background-color: #ffde7a;
 }
 
-.table tbody tr:nth-child(odd) {
+.mytable tbody tr:nth-child(odd) {
 	background-color: #d5d6d2;
 }
 
 .page-container {
-	padding-top: 50px;
+	padding-top: 3.125rem;
 }
 
 span.spoiler {
 	color: transparent;
-	text-shadow: 0 0 20px black;
+	text-shadow: 0 0 1.25rem black;
 }
 span.spoiler:hover {
 	color: black;
 	text-shadow: none;
+}
+
+/* fix later, this is a stupid patch. idk if i have to roll my own bootstrap but i just gotta get this release out :> */
+body *, body *:after, body *:before
+{
+	box-sizing: content-box !important;
 }

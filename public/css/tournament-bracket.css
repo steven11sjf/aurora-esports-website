@@ -15,10 +15,12 @@ body > div.center {
 	padding-top: 20px;
 	margin-bottom: 0;
 	background-color: white;
+	opacity: 0.9;
 }
 
 .brackets {
 	background-color: white;
+	opacity: 0.9;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	padding-left: 2%;

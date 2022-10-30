@@ -294,48 +294,62 @@ function loadMatchMaps(row) {
 	return res;
 }
 
+// gets the map image url based on the map's name
 function getMapImage(name) {
 	if(name == "Lijiang Tower")
-		return "https://static.playoverwatch.com/img/pages/maps/images/lijiang-tower.jpg";
+		return "/images/maps/Lijiang.webp";
 	if(name == "Busan")
-		return "https://static.playoverwatch.com/img/pages/maps/images/busan.jpg";
+		return "/images/maps/Busan.webp";
 	if(name == "Ilios")
-		return "https://static.playoverwatch.com/img/pages/maps/images/ilios.jpg";
+		return "/images/maps/Ilios.webp";
 	if(name == "Nepal")
-		return "https://static.playoverwatch.com/img/pages/maps/images/nepal.jpg";
+		return "/images/maps/Nepal.webp";
 	if(name == "Oasis")
-		return "https://static.playoverwatch.com/img/pages/maps/images/oasis.jpg";
+		return "/images/maps/Oasis.webp";
 	
+	if(name == "Circuit Royale")
+		return "/images/maps/CircuitRoyale.webp";
 	if(name == "Dorado")
-		return "https://static.playoverwatch.com/img/pages/maps/images/dorado.jpg";
+		return "/images/maps/Oasis.webp";
 	if(name == "Havana")
-		return "https://static.playoverwatch.com/img/pages/maps/images/havana.jpg";
+		return "/images/maps/Havana.webp";
 	if(name == "Route: 66")
-		return "https://static.playoverwatch.com/img/pages/maps/images/route-66.jpg";
+		return "/images/maps/Route66.webp";
 	if(name == "Junkertown")
-		return "https://static.playoverwatch.com/img/pages/maps/images/junkertown.jpg";
+		return "/images/maps/Junkertown.webp";
 	if(name == "Rialto")
-		return "https://static.playoverwatch.com/img/pages/maps/images/rialto.jpg";
+		return "/images/maps/Rialto.webp";
 	if(name == "Watchpoint: Gibraltar")
-		return "https://static.playoverwatch.com/img/pages/maps/images/watchpoint-gibraltar.jpg";
+		return "/images/maps/Gibraltar.webp";
 	
+	if(name == "Midtown")
+		return "/images/maps/Midtown.webp";
+	if(name == "Paraiso")
+		return "/images/maps/Paraiso.webp";
 	if(name == "King&apos;s Row")
-		return "https://static.playoverwatch.com/img/pages/maps/images/kings-row.jpg";
+		return "/images/maps/KingsRow.webp";
 	if(name == "Eichenwalde")
-		return "https://static.playoverwatch.com/img/pages/maps/images/eichenwalde.jpg";
+		return "/images/maps/Eichenwalde.webp";
 	if(name == "Hollywood")
-		return "https://static.playoverwatch.com/img/pages/maps/images/hollywood.jpg";
+		return "/images/maps/Hollywood.webp";
 	if(name == "Numbani")
-		return "https://static.playoverwatch.com/img/pages/maps/images/numbani.jpg";
+		return "/images/maps/Numbani.webp";
 	if(name == "Blizzard World")
-		return "https://static.playoverwatch.com/img/pages/maps/images/blizzard-world.jpg";
+		return "/images/maps/BlizzardWorld.webp";
 	
 	if(name == "Hanamura")
-		return "https://static.playoverwatch.com/img/pages/maps/images/hanamura.jpg";
+		return "/images/maps/Hanamura.webp";
 	if(name == "Temple of Anubis")
-		return "https://static.playoverwatch.com/img/pages/maps/images/temple-of-anubis.jpg";
+		return "/images/maps/TempleOfAnubis.webp";
 	if(name == "Volskaya Industries")
-		return "https://static.playoverwatch.com/img/pages/maps/images/volskaya-industries.jpg";
+		return "/images/maps/VolskayaIndustries.jpg";
+	
+	if(name == "Colosseo")
+		return "/images/maps/Colosseo.webp";
+	if(name == "Esperanca")
+		return "/images/maps/Esperanca.webp";
+	if(name == "New Queen Street")
+		return "/images/maps/NewQueenStreet.webp";
 	
 	console.log("Map not found: " + name);
 	return "/images/Overwatch_circle_logo.png";
@@ -380,7 +394,8 @@ function loadTeamInfo(jsonObj) {
 		$('#team-page-div').text(jsonObj.division);
 	}
 	// set team color
-	$('body').attr('style','background-color:'+jsonObj.color1+';');
+	$('.teampage-container').css('background-color', jsonObj.color1);
+	$('.teampage-container').css('opacity', 0.95);
 	// set secondary color
 	$('.secondary-color').css("color", jsonObj.color2);
 }

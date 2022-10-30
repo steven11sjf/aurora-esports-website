@@ -51,10 +51,12 @@
 }
 
 .grid-container {
+  margin: auto;
+  width: 70rem;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
   display: grid;
-  grid-template-columns: 40% 30% 30%;
+  grid-template-columns: 30% 40% 30%;
   grid-template-rows: 33% 33% 33%;
   gap: 5px 5px;
   padding: 10px;
@@ -129,8 +131,7 @@ span#team-page-div-rank {
 }
 
 .ttable {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: auto;
 	width: 70rem;
 	table-layout: fixed;
 	font-size: 18px;
@@ -140,7 +141,9 @@ span#team-page-div-rank {
 }
 
 #mapTable {
-	width: 50%;
+	width: 50rem;
+	padding-left: 10rem;
+	padding-right: 10rem;
 }
 
 .ttable th {
@@ -168,3 +171,13 @@ span#team-page-div-rank {
 	padding: 1px;
 	height: 70%;
 }
+
+.teampage-label {
+	width: 70rem;
+	margin: auto;
+}
+
+.teampage-container {
+	width: 70rem;
+	margin: auto;
+	background-color: white;
