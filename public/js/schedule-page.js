@@ -340,59 +340,59 @@ function loadMatchMaps(row) {
 // gets the map image url based on the map's name
 function getMapImage(name) {
 	if(name == "Lijiang Tower")
-		return "https://static.playoverwatch.com/img/pages/maps/images/lijiang-tower.jpg";
+		return "/images/maps/Lijiang.webp";
 	if(name == "Busan")
-		return "https://static.playoverwatch.com/img/pages/maps/images/busan.jpg";
+		return "/images/maps/Busan.webp";
 	if(name == "Ilios")
-		return "https://static.playoverwatch.com/img/pages/maps/images/ilios.jpg";
+		return "/images/maps/Ilios.webp";
 	if(name == "Nepal")
-		return "https://static.playoverwatch.com/img/pages/maps/images/nepal.jpg";
+		return "/images/maps/Nepal.webp";
 	if(name == "Oasis")
-		return "https://static.playoverwatch.com/img/pages/maps/images/oasis.jpg";
+		return "/images/maps/Oasis.webp";
 	
-	if(name == "Circuit Royal")
-		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/10/Monte_Carlo.jpg/revision/latest/scale-to-width-down/200?cb=20220926230154";
+	if(name == "Circuit Royale")
+		return "/images/maps/CircuitRoyale.webp";
 	if(name == "Dorado")
-		return "https://static.playoverwatch.com/img/pages/maps/images/dorado.jpg";
+		return "/images/maps/Oasis.webp";
 	if(name == "Havana")
-		return "https://static.playoverwatch.com/img/pages/maps/images/havana.jpg";
+		return "/images/maps/Havana.webp";
 	if(name == "Route: 66")
-		return "https://static.playoverwatch.com/img/pages/maps/images/route-66.jpg";
+		return "/images/maps/Route66.webp";
 	if(name == "Junkertown")
-		return "https://static.playoverwatch.com/img/pages/maps/images/junkertown.jpg";
+		return "/images/maps/Junkertown.webp";
 	if(name == "Rialto")
-		return "https://static.playoverwatch.com/img/pages/maps/images/rialto.jpg";
+		return "/images/maps/Rialto.webp";
 	if(name == "Watchpoint: Gibraltar")
-		return "https://static.playoverwatch.com/img/pages/maps/images/watchpoint-gibraltar.jpg";
+		return "/images/maps/Gibraltar.webp";
 	
 	if(name == "Midtown")
-		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/4/4e/N18S6DCTDPG81613669123002.png/revision/latest/scale-to-width-down/200?cb=20210221175110";
+		return "/images/maps/Midtown.webp";
 	if(name == "Paraiso")
-		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/90/Para%C3%ADso_pvp.jpg/revision/latest/scale-to-width-down/200?cb=20220630025520";
+		return "/images/maps/Paraiso.webp";
 	if(name == "King&apos;s Row")
-		return "https://static.playoverwatch.com/img/pages/maps/images/kings-row.jpg";
+		return "/images/maps/KingsRow.webp";
 	if(name == "Eichenwalde")
-		return "https://static.playoverwatch.com/img/pages/maps/images/eichenwalde.jpg";
+		return "/images/maps/Eichenwalde.webp";
 	if(name == "Hollywood")
-		return "https://static.playoverwatch.com/img/pages/maps/images/hollywood.jpg";
+		return "/images/maps/Hollywood.webp";
 	if(name == "Numbani")
-		return "https://static.playoverwatch.com/img/pages/maps/images/numbani.jpg";
+		return "/images/maps/Numbani.webp";
 	if(name == "Blizzard World")
-		return "https://static.playoverwatch.com/img/pages/maps/images/blizzard-world.jpg";
+		return "/images/maps/BlizzardWorld.webp";
 	
 	if(name == "Hanamura")
-		return "https://static.playoverwatch.com/img/pages/maps/images/hanamura.jpg";
+		return "/images/maps/Hanamura.webp";
 	if(name == "Temple of Anubis")
-		return "https://static.playoverwatch.com/img/pages/maps/images/temple-of-anubis.jpg";
+		return "/images/maps/TempleOfAnubis.webp";
 	if(name == "Volskaya Industries")
-		return "https://static.playoverwatch.com/img/pages/maps/images/volskaya-industries.jpg";
+		return "/images/maps/VolskayaIndustries.jpg";
 	
 	if(name == "Colosseo")
-		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/1e/Blizzconline_rome_01.png/revision/latest/scale-to-width-down/200?cb=20220926222702";
+		return "/images/maps/Colosseo.webp";
 	if(name == "Esperanca")
-		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/f5/PortugalPush.jpg/revision/latest/scale-to-width-down/200?cb=20220926215956";
+		return "/images/maps/Esperanca.webp";
 	if(name == "New Queen Street")
-		return "https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/91/Toronto.jpg/revision/latest/scale-to-width-down/200?cb=20220926222923";
+		return "/images/maps/NewQueenStreet.webp";
 	
 	console.log("Map not found: " + name);
 	return "/images/Overwatch_circle_logo.png";

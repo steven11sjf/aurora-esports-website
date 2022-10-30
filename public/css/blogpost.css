@@ -1,65 +1,73 @@
 .div-blog {
 	width: 50%;
 	text-align: left;
-	background-color: white;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 20px;
-	padding-bottom: 30px;
+	background-color: rgba(182,200,227,0.9);
+	padding-left: 4rem;
+	padding-right: 4rem;
+	padding-top: 1.25rem;
+	padding-bottom: 2rem;
 }
 
 #blog-title {
 	text-align: center;
-	font-size: 40px;
+	font-size: 2.5rem;
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 1.25rem;
 }
 
 #blog-date {
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 #blog-author {
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 #blog-tags a {
-	color: gray;
+	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
+#blog-tags {
+	color: white;
+}
+
 #blog-contents {
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 #contents-blog p {
-	font-size: 20px;
+	font-size: 1.25rem;
+}
+.div-bloghead {
+	color: white;
+	background-color: rgba(20,51,75,0.6)
 }
 
 .blog-image-large {
 	display: block;
-	margin: 20px auto;
+	margin: 1.25rem auto;
 	width: 100%;
 	text-align: center;
 }
 
 .blog-image-medium {
 	display: block;
-	margin: 20px auto;
+	margin: 1.25rem auto;
 	width: 75%;
 	text-align: center;
 }
 
 .blog-image-small {
 	display: block;
-	margin: 20px auto;
+	margin: 1.25rem auto;
 	display: block;
 	width: 50%;
 }
 
 .blog-image-tiny {
 	display: block;
-	margin: 20px auto;
+	margin: 1.25rem auto;
 	width: 25%;
 }
 
@@ -67,17 +75,17 @@
 	display: inline-block;
 	margin-left: 5px;
 	margin-right: 5px;
-	height: 20px;
+	height: 1.25rem;
 }
 
 .subtitle-blog {
 	margin: auto;
 	text-align: center;
-	padding-bottom: 20px;
+	padding-bottom: 1.25rem;
 }
 
 .div-bloghead {
 	border: 3px solid grey;
-	border-radius: 20px;
-	margin: 20px 40px;	
+	border-radius: 1.25rem;
+	margin: 1.25rem 2.5rem;	
 }

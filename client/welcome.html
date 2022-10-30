@@ -22,7 +22,7 @@
 		<!-- navbar -->
 		<nav class="navbar sticky-top navbar-expand-xl container-fluid navbar-light nav-bg fs-5 mb-5">
 			<div class="container-fluid">
-				<a class="navbar-brand"  href="/"><img src="/images/leaguelogo_header.png" alt="Gopherwatch League logo" width="232" height="62"></a>
+				<a class="navbar-brand"  href="/"><img src="/images/Aurora_Esports_Circle_Logo.png" alt="Gopherwatch League logo" width="72" height="72"></a>
 				<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navContents"><span class="navbar-toggler-icon"></span></button>
 				<div class="navbar-collapse collapse" id="navContents">
 					<ul class="navbar-nav me-auto mb-2 mb-xl-0">
@@ -60,9 +60,14 @@
 		</div>
 		
 		<!-- blog posts -->
-		<div class="blog-div">
+		<div class="blog-div clearfix">
 			<h1 class="center section-header">Blog</h1>
-			<div class="blog-blurbs" id="blog-blurbs"></div>
+			<div class="blog-blurbs" id="blog-blurbs">
+				
+			</div>
+		</div>
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<button class="btn btn-lg btn-secondary blog-loadall" onclick="blogLoadAll();" id="blog-loadall">Show All</button>
 		</div>
 		
 		<script type="text/javascript">
@@ -111,8 +116,9 @@
 					tags += '">';
 					tags += obj.tags[j];
 					tags += '</a>';
-					tags += ', ';
+					if (j != obj.tags.length - 1) tags += ', ';
 				}
+				
 				
 				// build the HTML for the post
 				out += `<div class="blurb" onclick="location.href=\'/${sname}/Blog/`;
@@ -137,7 +143,15 @@
 				out += '</span></p></div>';
 			}
 			
-			document.getElementById("blog-blurbs").innerHTML = out;
+			$("#blog-blurbs").prepend($(out));
+		}
+		
+		function blogLoadAll() {
+			$('#blog-loadall').remove();
+			$('#blog-blurbs').empty();
+			ajaxReq(`/api/BlogBlurbs/`)
+			.then(res => loadBlurbs(res))
+			.catch(err => console.error(err));
 		}
 		</script>
 	</body>

@@ -8,41 +8,46 @@
 	margin: auto;
 }
 
+h1#tag-name {
+	color: white;
+}
+
 .blurb {
 	margin: 10px 10px;
 	padding: 10px 10px;
 	border: 1px solid black;
 	border-radius: 10px;
-	background-color: #6ACAB9;
+	background-color: rgba(117,146,190,0.9);
 }
 
 .title {
-	font-size: 40px;
+	font-size: 2.5rem;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-bottom: 1.25rem;
 	text-align: center;
 	display: block;
+	color: white;
+	text-decoration: none;
 }
 
 .blurb-subtext {
 	text-align: center;
 	display: block;
+	color: white;
 }
 
 .date-blurb {
 	font-size: 20px;
-	color: gray;
 }
 
 .author-blurb {
 	font-size: 20px;
-	color: gray;
 }
 
 .tags-blurb a {
-	color: gray;
 	text-decoration: none;
 	text-transform: uppercase;
+	color: white;
 }
 
 .icon {
