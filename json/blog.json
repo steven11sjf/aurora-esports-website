@@ -11,7 +11,7 @@
 		"GWL Season 3",
 		"GWL Season 4",
 		"GWL Season 5.5",
-		"AOC Season 1"
+		"Aurora Season 1"
 	],
 	"blog-posts" : [
 		{
@@ -236,6 +236,45 @@
 			],
 			"image" : "/images/Gopherwatch_League.png",
 			"contents" : "/html/BlogHtml/Season5.5Week5Recap.html"
+		},
+		{
+			"id": "AOC-Season1-Week1.html",
+			"date": "7/10/2022 5:15 PM",
+			"title": "AOC Season 1, Week 1 Recap",
+			"by": "The Journalism Team",
+			"tags": [
+				"Power Rankings",
+				"Weekly Recap",
+				"Aurora Season 1"
+			],
+			"image": "/images/Aurora_Esports_Circle_Logo.png",
+			"contents": "/html/BlogHtml/AOC_PowerRankings1.1.html"
+		},
+		{
+			"id": "AOC-Season1-Week2.html",
+			"date": "7/10/2022 5:15 PM",
+			"title": "AOC Season 1, Week 2 Recap",
+			"by": "The Journalism Team",
+			"tags": [
+				"Power Rankings",
+				"Weekly Recap",
+				"Aurora Season 1"
+			],
+			"image": "/images/Aurora_Esports_Circle_Logo.png",
+			"contents": "/html/BlogHtml/AOC_PowerRankings1.2.html"
+		},
+		{
+			"id": "AOC-Season1-Week3.html",
+			"date": "7/10/2022 5:15 PM",
+			"title": "AOC Season 1, Week 3 Recap",
+			"by": "The Journalism Team",
+			"tags": [
+				"Power Rankings",
+				"Weekly Recap",
+				"Aurora Season 1"
+			],
+			"image": "/images/Aurora_Esports_Circle_Logo.png",
+			"contents": "/html/BlogHtml/AOC_PowerRankings1.3.html"
 		}
 	]
 }
