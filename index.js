@@ -374,6 +374,10 @@ app.get('/NewBlog', function(req,res) {
 		res.redirect(`/${result[0].internal}/NewBlog`)
 	});
 });
+// home page redirect to most recent season
+app.get('/:season/Merch/', function(req,res) {
+	res.sendFile(__dirname + '/client/merch.html');
+});
 
 // froala links
 app.get('/froala/css/froala_editor.pkgd.min.css', function(req,res) {
