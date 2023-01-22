@@ -375,8 +375,8 @@ app.get('/NewBlog', function(req,res) {
 	});
 });
 // home page redirect to most recent season
-app.get('/:season/Merch/', function(req,res) {
-	res.sendFile(__dirname + '/client/merch.html');
+app.get('/:season/Shop/', function(req,res) {
+	res.sendFile(__dirname + '/client/shop.html');
 });
 
 // froala links

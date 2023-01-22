@@ -13,16 +13,28 @@ nav{
   text-align: right;
 }
 nav ul{
+  width: 100%;
   display: inline-block;
   list-style-type: none;
+  background: radial-gradient(#9817fd,#03f9d6);
 }
 nav ul li{
   display: inline-block;
-  margin-right: 20px;
+  padding: 30px;
   color: white;
+}
+nav ul li:hover{
+  background-color: #9817fd;
+  color: white;
+}
+nav ul img{
+  align-items: center;
 }
 a{
   text-decoration: none;
+  color: white;
+}
+a:hover{
   color: white;
 }
 p{
@@ -63,8 +75,28 @@ p{
   border-radius: 30px;
 }
 .btn:hover{
+  display: inline-block;
+  background: black;
+  color: black;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+}
+.order{
+  display: inline-block;
   background: #03f9d6;
   color: black;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+}
+.order:hover{
+  display: inline-block;
+  background: #9817fd;
+  color: white;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
 }
 .header{
   background: radial-gradient(#6785b2,#0c2c42);
@@ -80,6 +112,10 @@ margin: 70px 0;
 .col-3 img{
   width: 100%;
 }
+
+.col-3 h4{
+  text-align: center;
+}
 .small-container{
   max-width: 1080px;
   margin:auto;
@@ -88,15 +124,28 @@ margin: 70px 0;
 }
 .col-4{
   flex-basis: 25%;
-  padding: 10px;
   min-width: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .col-4 img{
   width: 100%;
 }
+.col-4 h4{
+  text-align: center;
+  color:black;
+}
+.col-4 h4 a{
+  text-align: center;
+  color:black;
+  text-decoration: underline;
+}
+.col-4 h4 a:hover{
+  text-align: center;
+  color:#9817fd;
+}
 .price{
   color: grey;
+  text-align: center;
 }
 .title{
   text-align: center;
@@ -115,4 +164,45 @@ margin: 70px 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: white;
+  padding: 30px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top: 30px;
+  margin-left: -30px;
+  z-index: 1;
+}
+
+.dropdown-content p{
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.dropdown:hover{
+  background: #9817fd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background: radial-gradient(#6785b2,#0c2c42);
+}
+
+.dropdown-content p:hover{
+  background-color: #9817fd;
+  color: white;
 }
