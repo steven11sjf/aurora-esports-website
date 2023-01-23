@@ -7,55 +7,39 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="/js/utils.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/teststyle.css">
+  <link rel="stylesheet" href="/css/newstyles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/schedule-page.js"></script>
+  <script src="/js/link-team-names.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
 </head>
 <body>
   <!------- header section ------->
   <div class="header">
     <div class="container">
       <div class="navbar">
-        <div class="logo" >
-          <img src="">
-        </div>
         <nav>
           <ul>
             <img src="/images/Aurora_Esports_Circle_Logo.png" width="72" height="72">
-            <li><a href="https://www.gopherwatchleague.com/AOC_Season1/Home">Home</a></li>
+            <li><a class="nav-link" id="nav-home-link" aria-current="page" href="#">Home</a></li>
             <div class="dropdown">
-              <span>Seasons &#8595;</span>
-              <div class="dropdown-content">
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Home">Aurora Season 1</a></p>
-                <p><a href="https://www.gopherwatchleague.com/GWL_Season5.5/Home">GWL Season 5.5</a></p>
-                <p><a href="https://www.gopherwatchleague.com/GWL_Season5/Home">GWL Season 5</a></p>
-                <p><a href="https://www.gopherwatchleague.com/GWL_Season4/Home">GWL Season 4</a></p>
-                <p><a href="https://www.gopherwatchleague.com/GWL_Season3/Home">GWL Season 3</a></p>
+							<span>Seasons &#8595;</span>
+							<div class="dropdown-content" id="nav-season-dropdown-contents">
               </div>
-            </div>
+						</div>
             <div class="dropdown">
-              <span>Teams &#8595;</span>
-              <div class="dropdown-content">
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/WensleydaleWendals">Wensleydale Wendals</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/MankatoMammoths">Mankato Mammoths</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/NewYorkNewts">New York City Newts</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/CasablancanCappyBlappies">Casablancan Cappy Blappies</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/CanadianCrewmates">Canadian Crewmates</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/HandsomeHogs">Handsome Hogs</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/LesChatsdeChambord">Les Chats de Chambord</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/MillCityMarshmallowMonsters">Mill City Marshmallow Monsters</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/ParisPetRocks">Paris Pet Rocks</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/BrooklynBricks">Brooklyn Bricks</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/BuenosAiresBeebles2">Buenos Aires Beebles 2</a></p>
-                <p><a href="https://www.gopherwatchleague.com/AOC_Season1/Teams/WindigoWendigos">Windigo Wendigos</a></p>
+							<span>Teams &#8595;</span>
+							<div class="dropdown-content" id="nav-team-dropdown-contents">
               </div>
-            </div>
-            <li><a href="https://www.gopherwatchleague.com/AOC_Season1/Schedule">Schedule</a></li>
-            <li><a href="https://www.gopherwatchleague.com/AOC_Season1/Standings">Standings</a></li>
-            <li><a href="https://www.gopherwatchleague.com/AOC_Season1/Stats">Stats</a></li>
-            <li><a href="https://www.gopherwatchleague.com/AOC_Season1/Draft">Draft</a></li>
-            <li><a href="https://www.gopherwatchleague.com/AOC_Season1/Shop">Merchandise</a></li>
+						</div>
+            <li><a class="nav-link" id="nav-schedule-link" href="#">Schedule</a></li>
+            <li><a class="nav-link" id="nav-standings-link" href="#">Standings</a></li>
+            <li><a class="nav-link" id="nav-stats-link" href="#">Stats</a></li>
+            <li><a class="nav-link" id="nav-draft-link" href="#">Draft</a></li>
+            <li><a class="nav-link" id="nav-shop-link" href="#">Merchandise</a></li>
             <li><a href="https://discord.gg/HxxNybCgM4">Discord</a></li>
           </ul>
         </nav>
