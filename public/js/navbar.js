@@ -12,6 +12,7 @@ function loadNavbarLinks() {
 	$("#nav-standings-link").attr("href",`/${sname}/Standings`);
 	$("#nav-stats-link").attr("href",`/${sname}/Stats`);
 	$("#nav-draft-link").attr("href",`/${sname}/Draft`);
+	$("#nav-shop-link").attr("href",`/${sname}/Shop`);
 	
 	// make ajax request for navbar info
 	ajaxReq(`/api/NavInfo/${sname}`)
@@ -26,12 +27,12 @@ function loadNavbarLinks() {
 		console.log(data);
 		// populate seasons list
 		for(i=0; i<data.seasons.length; ++i) {
-			$('#nav-season-dropdown-contents').append(`<li><a class="dropdown-item" href="/${data.seasons[i].internal}/Home">${data.seasons[i].name}</a></li>`);
+			$('#nav-season-dropdown-contents').append(`<p><a href="/${data.seasons[i].internal}/Home">${data.seasons[i].name}</a></p>`);
 		}
 		
 		// populate team list
 		for(i=0;i<data.teams.length;++i) {
-			$('#nav-team-dropdown-contents').append(`<li><a class="dropdown-item" href=\"/${sname}/Teams/${data.teams[i].internal}\">${data.teams[i].name}</a></li>`);
+			$('#nav-team-dropdown-contents').append(`<p><a href=\"/${sname}/Teams/${data.teams[i].internal}\">${data.teams[i].name}</a></p>`);
 		}
 		
 		// populate tournament list
