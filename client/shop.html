@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop</title>
+  <meta name="robots" content="noindex">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="/js/utils.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/newstyles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/schedule-page.js"></script>
+  <script src="/js/link-team-names.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/navbar.js"></script>
+</head>
+<body>
+  <!------- header section ------->
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <nav>
+          <ul>
+            <img src="/images/Aurora_Esports_Circle_Logo.png" width="72" height="72">
+            <li><a class="nav-link" id="nav-home-link" aria-current="page" href="#">Home</a></li>
+            <div class="dropdown">
+							<span>Seasons &#8595;</span>
+							<div class="dropdown-content" id="nav-season-dropdown-contents">
+              </div>
+						</div>
+            <div class="dropdown">
+							<span>Teams &#8595;</span>
+							<div class="dropdown-content" id="nav-team-dropdown-contents">
+              </div>
+						</div>
+            <li><a class="nav-link" id="nav-schedule-link" href="#">Schedule</a></li>
+            <li><a class="nav-link" id="nav-standings-link" href="#">Standings</a></li>
+            <li><a class="nav-link" id="nav-stats-link" href="#">Stats</a></li>
+            <li><a class="nav-link" id="nav-draft-link" href="#">Draft</a></li>
+            <li><a class="nav-link" id="nav-shop-link" href="#">Merchandise</a></li>
+            <li><a href="https://discord.gg/HxxNybCgM4">Discord</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <h1>GAME IN STYLE!</h1>
+          <p>With new Aurora Esports merchandise designed by our community<br>members, you can take your game to the next level.</p>
+          <a href="#categories" class="btn">Browse Our Selection &#8594;</a>
+          <a href="https://forms.gle/tmxTJbwb9t7yYUXy9" class="order">Order Now &#8594;</a>
+        </div>
+        <div class="col-2">
+          <img src="/images/jersey_header.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------- featured ------->
+  <div class="small-container">
+    <h2 class="title">Featured Products</h2>
+    <div class="row">
+      <div class="col-4">
+        <img src="/images/jersey.png">
+        <h4>Aurora Esports Custom Jersey</h4>
+        <p class="price">$70.00</p>
+      </div>
+      <div class="col-4">
+        <img src="/images/vaperwave_tee.png">
+        <h4>Aurora Vaperwave Retro T-Shirt</h4>
+        <p class="price">$20.00</p>
+      </div>
+      <div class="col-4">
+        <img src="/images/sweats.png">
+        <h4>Aurora Logo Sweats</h4>
+        <p class="price">$40.00</p>
+      </div>
+      <div class="col-4">
+        <img src="/images/mousepad.png">
+        <h4>Aurora Logo Mousepad</h4>
+        <p class="price">$20.00</p>
+      </div>
+    </div>
+  </div>
+
+    <!------- new ------->
+    <div class="small-container">
+      <h2 class="title">New Products</h2>
+      <div class="row">
+        <div class="col-4">
+          <img src="/images/jersey.png">
+          <h4>Aurora Esports Custom Jersey</h4>
+          <p class="price">$70.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/vaperwave_tee.png">
+          <h4>Aurora Vaperwave Retro T-Shirt</h4>
+          <p class="price">$20.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/sweats.png">
+          <h4>Aurora Logo Sweats</h4>
+          <p class="price">$40.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/mousepad.png">
+          <h4>Aurora Logo Mousepad</h4>
+          <p class="price">$20.00</p>
+        </div>
+      </div>
+    </div>
+
+      <!------- categories ------->
+    <div class="small-container">
+      <h2 class="title" id="categories">Categories</h2>
+      <div class="row">
+        <div class="col-4">
+          <img src="/images/league_tee.png">
+          <h4><a href="#tees">T-Shirts</a></h4>
+        </div>
+        <div class="col-4">
+          <img src="/images/league_hoodie.png">
+          <h4><a href="#hoodies">Hoodies</a></h4>
+        </div>
+        <div class="col-4">
+          <img src="/images/sweats.png">
+          <h4><a href="#other">Other Clothing</a></h4>
+        </div>
+        <div class="col-4">
+          <img src="/images/mousepad.png">
+          <h4><a href="#access">Aurora Accessories</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <!------- t-shirts ------->
+    <div class="small-container">
+      <h2 class="title" id="tees">Tees</h2>
+      <div class="row">
+        <div class="col-4">
+          <img src="/images/league_tee.png">
+          <h4>Aurora Esports Logo Tee</h4>
+          <p class="price">$20.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/vaperwave_tee.png">
+          <h4>Aurora Vaperwave Retro Tee</h4>
+          <p class="price">$20.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/team_tee.png">
+          <h4>Aurora Team Logo Tee</h4>
+          <p class="price">$20.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!------- hoodies ------->
+    <div class="small-container">
+      <h2 class="title" id="hoodies">Hoodies</h2>
+      <div class="row">
+        <div class="col-4">
+          <img src="/images/league_hoodie.png">
+          <h4>Aurora Esports Hoodie</h4>
+          <p class="price">$50.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/vaperwave_hoodie.png">
+          <h4>Aurora Vaperwave Hoodie</h4>
+          <p class="price">$50.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/team_hoodie.png">
+          <h4>Aurora Team Logo Hoodie</h4>
+          <p class="price">$50.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!------- other clothing ------->
+    <div class="small-container">
+      <h2 class="title" id="other">Other Clothing</h2>
+      <div class="row">
+        <div class="col-4">
+          <img src="/images/sweats.png">
+          <h4>Aurora Esports Sweats</h4>
+          <p class="price">$40.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/aurora_cap.png">
+          <h4>Aurora Esports Winter Cap</h4>
+          <p class="price">$20.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!------- Accessories ------->
+    <div class="small-container">
+      <h2 class="title" id="access">Accessories</h2>
+      <div class="row">
+        <div class="col-4">
+          <img src="/images/mousepad.png">
+          <h4>Aurora Esports Mousepad</h4>
+          <p class="price">$20.00</p>
+        </div>
+        <div class="col-4">
+          <img src="/images/full_mousepad.png">
+          <h4>Aurora Esports Full Mousepad</h4>
+          <p class="price">$50.00</p>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
