@@ -24,6 +24,10 @@ button span {
 	display: none;
 }
 
+.arrowicon{
+	color:white;
+	font-size: 4rem;
+}
 
 .round-table thead {
 	visibility: collapse;

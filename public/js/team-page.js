@@ -386,7 +386,7 @@ function loadTeamStats(jsonObj) {
 
 function loadTeamInfo(jsonObj) {
 	// set icon
-	$('#team-page-icon').attr('src','/images/'+team.replace(/\s+/g,'')+'.png');
+	$('#team-page-icon').attr('src','/images/teamicons/'+team.replace(/\s+/g,'')+'.png');
 	// set team name
 	$('#team-page-name').text(jsonObj.name);
 	// if division exists, set division
