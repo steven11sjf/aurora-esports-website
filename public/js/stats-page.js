@@ -5,22 +5,25 @@ var table_type;
 var loaded = 0;
 
 // called when the dropdown is selected.
-function dropdownSelected(value) {
+function dropdownSelected(value,value2,value3, value4) {
 	let heroName = value;
+	let statsPer10 = value2;
+	let totalPlayerStats = value3;
+	let generalHeroStats = value4;
 	if(heroName == "") return;
 	console.log(heroName);
 	
-	if(heroName == "__LEAGUE_STANDINGS__") { table_type = "All"; loadTable('/html/stats-all-header.html', heroName); }
-	else if(heroName == "__TOTAL_STATS__") { table_type = "All"; loadTable('/html/stats-all-header.html', heroName); }
-	else if(heroinfo_obj[heroName] == "Tank") { table_type = "Tank"; loadTable('/html/stats-tank-header.html', heroName); }
-	else if(heroinfo_obj[heroName] == "Damage") { table_type = "Damage"; loadTable('/html/stats-damage-header.html', heroName); }
-	else if(heroinfo_obj[heroName] == "Support") { table_type = "Support"; loadTable('/html/stats-support-header.html', heroName); }
+	if(generalHeroStats) { table_type = "All"; loadTable('/html/stats-all-header.html', "__LEAGUE_STANDINGS__", statsPer10); }
+	else if(totalPlayerStats) { table_type = "All"; loadTable('/html/stats-all-header.html', "__TOTAL_STATS__", statsPer10); }
+	else if(heroinfo_obj[heroName] == "Tank") { table_type = "Tank"; loadTable('/html/stats-tank-header.html', heroName, statsPer10); }
+	else if(heroinfo_obj[heroName] == "Damage") { table_type = "Damage"; loadTable('/html/stats-damage-header.html', heroName, statsPer10); }
+	else if(heroinfo_obj[heroName] == "Support") { table_type = "Support"; loadTable('/html/stats-support-header.html', heroName, statsPer10); }
 	else { table_type = "All"; loadTable('/html/stats-all-header.html', heroName); }
 }
 
 
 // clears the table, loads the new header and loads hero stats
-function loadTable(header,hero) {
+function loadTable(header,hero, statsPer10, totalPlayerStats) {
 	// clear stats table body
 	document.getElementById("statsTableBody").innerHTML = "";
 	
@@ -32,7 +35,7 @@ function loadTable(header,hero) {
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 			document.getElementById("statsTableHeader").innerHTML = xhttp.responseText;
-			loadHero(hero);
+			loadHero(hero, statsPer10);
 			console.log("Loaded new header!");
 		} else {
 			if(xhttp.status != 200) {
@@ -71,16 +74,17 @@ function doAjax() {
 	});
 };
 
-function loadHero(dropdown) {
+function loadHero(dropdown,per10) {
 	// check if page is loaded
 	if(loaded!=2) {
-		setTimeout(() => {loadHero(dropdown);},500);
+		setTimeout(() => {loadHero(dropdown,per10);},500);
 		return;
 	}
 	// get hero from dropdown
 	let heroName = dropdown;
 	if(heroName == "") return;
 	console.log(heroName);
+	console.log(per10);
 	
 	let inner = "";
 	let stats = herostats_obj.stats;
@@ -88,23 +92,31 @@ function loadHero(dropdown) {
 		for(i=0;i<stats.length;++i) {
 			// enter into the table if this row contains the hero
 			if(stats[i]["hero"] == heroName) {
-				// calculate per/10 stats
 				let timePlayed = parseInt(stats[i]["timeplayed"]);
-				timePlayed = timePlayed / 600; // set it to per 10
+				timePlayed = timePlayed / 60;
 				if(timePlayed == 0) continue;
-				let elims = parseInt(stats[i]["elims"])/timePlayed;
+				let elims = parseInt(stats[i]["elims"]);
+				let fb = parseInt(stats[i]["fb"]);
+				let dmg = parseInt(stats[i]["damage"]);
+				let deaths = parseInt(stats[i]["deaths"]);
+				let healing = parseInt(stats[i]["healing"]);
+				let blocked = parseInt(stats[i]["blocked"]);
+				if(per10) {
+					timePlayed = timePlayed / 10;
+					elims = elims/timePlayed;
+					fb = fb/timePlayed;
+					dmg = dmg/timePlayed;
+					deaths = deaths/timePlayed;
+					healing = healing/timePlayed;
+					blocked = blocked/timePlayed;
+					timePlayed *= 10;
+				}
 				elims = elims.toFixed(2);
-				let fb = parseInt(stats[i]["fb"])/timePlayed;
 				fb = fb.toFixed(2);
-				let dmg = parseInt(stats[i]["damage"])/timePlayed;
 				dmg = dmg.toFixed(0);
-				let deaths = parseInt(stats[i]["deaths"])/timePlayed;
 				deaths = deaths.toFixed(2);
-				let healing = parseInt(stats[i]["healing"])/timePlayed;
-				healing = healing.toFixed(0);
-				let blocked = parseInt(stats[i]["blocked"])/timePlayed;
 				blocked = blocked.toFixed(0);
-				timePlayed *= 10;
+				healing = healing.toFixed(0);
 				timePlayed = timePlayed.toFixed(2);
 				
 				// generate table row
@@ -145,20 +157,28 @@ function loadHero(dropdown) {
 		for(i=0;i<stats.length;++i) {
 			// enter into the table if this row contains the hero
 			if(stats[i]["hero"] == heroName) {
-				// calculate per/10 stats
 				let timePlayed = parseInt(stats[i]["timeplayed"]);
-				timePlayed = timePlayed / 600; // set it to per 10
-				let elims = parseInt(stats[i]["elims"])/timePlayed;
+				timePlayed = timePlayed / 60;
+				if(timePlayed == 0) continue;
+				let elims = parseInt(stats[i]["elims"]);
+				let fb = parseInt(stats[i]["fb"]);
+				let dmg = parseInt(stats[i]["damage"]);
+				let deaths = parseInt(stats[i]["deaths"]);
+				let blocked = parseInt(stats[i]["blocked"]);
+				if(per10) {
+					timePlayed = timePlayed / 10;
+					elims = elims/timePlayed;
+					fb = fb/timePlayed;
+					dmg = dmg/timePlayed;
+					deaths = deaths/timePlayed;
+					blocked = blocked/timePlayed;
+					timePlayed *= 10;
+				}
 				elims = elims.toFixed(2);
-				let fb = parseInt(stats[i]["fb"])/timePlayed;
 				fb = fb.toFixed(2);
-				let dmg = parseInt(stats[i]["damage"])/timePlayed;
 				dmg = dmg.toFixed(0);
-				let deaths = parseInt(stats[i]["deaths"])/timePlayed;
 				deaths = deaths.toFixed(2);
-				let blocked = parseInt(stats[i]["blocked"])/timePlayed;
 				blocked = blocked.toFixed(0);
-				timePlayed *= 10;
 				timePlayed = timePlayed.toFixed(2);
 				
 				// generate table row
@@ -195,18 +215,25 @@ function loadHero(dropdown) {
 		for(i=0;i<stats.length;++i) {
 			// enter into the table if this row contains the hero
 			if(stats[i]["hero"] == heroName) {
-				// calculate per/10 stats
 				let timePlayed = parseInt(stats[i]["timeplayed"]);
-				timePlayed = timePlayed / 600; // set it to per 10
-				let elims = parseInt(stats[i]["elims"])/timePlayed;
+				timePlayed = timePlayed / 60;
+				if(timePlayed == 0) continue;
+				let elims = parseInt(stats[i]["elims"]);
+				let fb = parseInt(stats[i]["fb"]);
+				let dmg = parseInt(stats[i]["damage"]);
+				let deaths = parseInt(stats[i]["deaths"]);
+				if(per10) {
+					timePlayed = timePlayed / 10;
+					elims = elims/timePlayed;
+					fb = fb/timePlayed;
+					dmg = dmg/timePlayed;
+					deaths = deaths/timePlayed;
+					timePlayed *= 10;
+				}
 				elims = elims.toFixed(2);
-				let fb = parseInt(stats[i]["fb"])/timePlayed;
 				fb = fb.toFixed(2);
-				let dmg = parseInt(stats[i]["damage"])/timePlayed;
 				dmg = dmg.toFixed(0);
-				let deaths = parseInt(stats[i]["deaths"])/timePlayed;
 				deaths = deaths.toFixed(2);
-				timePlayed *= 10;
 				timePlayed = timePlayed.toFixed(2);
 				
 				// generate table row
@@ -239,20 +266,28 @@ function loadHero(dropdown) {
 		for(i=0;i<stats.length;++i) {
 			// enter into the table if this row contains the hero
 			if(stats[i]["hero"] == heroName) {
-				// calculate per/10 stats
 				let timePlayed = parseInt(stats[i]["timeplayed"]);
-				timePlayed = timePlayed / 600; // set it to per 10
-				let elims = parseInt(stats[i]["elims"])/timePlayed;
+				timePlayed = timePlayed / 60;
+				if(timePlayed == 0) continue;
+				let elims = parseInt(stats[i]["elims"]);
+				let fb = parseInt(stats[i]["fb"]);
+				let dmg = parseInt(stats[i]["damage"]);
+				let deaths = parseInt(stats[i]["deaths"]);
+				let healing = parseInt(stats[i]["healing"]);
+				if(per10) {
+					timePlayed = timePlayed / 10;
+					elims = elims/timePlayed;
+					fb = fb/timePlayed;
+					dmg = dmg/timePlayed;
+					deaths = deaths/timePlayed;
+					healing = healing/timePlayed;
+					timePlayed *= 10;
+				}
 				elims = elims.toFixed(2);
-				let fb = parseInt(stats[i]["fb"])/timePlayed;
 				fb = fb.toFixed(2);
-				let dmg = parseInt(stats[i]["damage"])/timePlayed;
 				dmg = dmg.toFixed(0);
-				let deaths = parseInt(stats[i]["deaths"])/timePlayed;
 				deaths = deaths.toFixed(2);
-				let healing = parseInt(stats[i]["healing"])/timePlayed;
 				healing = healing.toFixed(0);
-				timePlayed *= 10;
 				timePlayed = timePlayed.toFixed(2);
 				
 				// generate table row

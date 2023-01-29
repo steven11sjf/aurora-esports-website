@@ -50,11 +50,7 @@
 		<h1 class="center" style="font-size: 50px;">Player Stats</h1>
 		
 		<div class="center">
-			<label for="hero-select">Select a hero to see stats</label>
-			<br>
-			<select name="hero-select" id="hero-select" onchange="dropdownSelected(this.value);">
-				<option value="__LEAGUE_STANDINGS__">League-Wide Hero Stats</option>
-				<option value="__TOTAL_STATS__">Total Player Stats</option>
+			<select name="hero-select" id="hero-select" onchange="dropdownSelected(this.value, document.getElementById('per10').checked, document.getElementById('total').checked, document.getElementById('general').checked);">
 				<option value="Ana">Ana</option>
 				<option value="Ashe">Ashe</option>
 				<option value="Baptiste">Baptiste</option>
@@ -91,6 +87,13 @@
 				<option value="Zarya">Zarya</option>
 				<option value="Zenyatta">Zenyatta</option>
 			</select>
+			<br>
+			<input type="checkbox" id="per10" name="per10" value="per10" onclick="dropdownSelected(document.getElementById('hero-select').value, this.checked, document.getElementById('total').checked, document.getElementById('general').checked);">
+			<label class="statsCheck" for="per10">Stats Per 10</label>
+			<input type="checkbox" id="total" name="total" value="total" onclick="dropdownSelected(document.getElementById('hero-select').value, document.getElementById('per10').checked, this.checked, document.getElementById('general').checked);">
+			<label class="statsCheck" for="total">Total Player Stats</label>
+			<input type="checkbox" id="general" name="general" value="general" onclick="dropdownSelected(document.getElementById('hero-select').value, document.getElementById('per10').checked, document.getElementById('total').checked, this.checked);">
+			<label class="statsCheck" for="general">League Hero Stats</label>
 		</div>
 		<div class="center">
 			<table class="mytable center" id="statsTable">
@@ -115,7 +118,7 @@
 		<script type="text/javascript">
 		onload=function(){
 			doAjax()
-			.then(dropdownSelected("__LEAGUE_STANDINGS__"))
+			.then(dropdownSelected(document.getElementById('hero-select').value, document.getElementById('per10').checked, document.getElementById('total').checked, document.getElementById('general').checked))
 			.catch(err => {});
 		};
 		</script>
