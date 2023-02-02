@@ -84,9 +84,10 @@ body {
 	margin-top: 1.25rem;
 	margin-bottom: 1.25rem;
 	background-color: white;
+	color: black;
 	width: 50%;
 	border-radius: 1.5rem;
-	border: 0.25rem solid red;
+	border: 0.25rem solid #03f9d6;
 }
 
 h1.center {
@@ -94,22 +95,42 @@ h1.center {
 }
 
 .mytable {
-	margin: auto;
-	width: 80rem;
-	table-layout: fixed;
+	position: absolute;
+  left: 10%;
+  width: 80%;
+  background: #fafafa;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow: 0 5px 12px rgba(32,32,32,.3);
+  color: black;
+  table-layout: fixed;
 	font-size: 18px;
 	font-weight: bold;
-	border: 3px solid black;
-	border-collapse: collapse;
+}
+
+.mytable p{
+  color: black;
+}
+
+.mytable a{
+  color: black;
+  text-align: center;
+}
+
+th, td {
+ padding: 10px 15px;
 }
 
 .mytable th {
-	height: 4.375rem;
-	width: 20%;
+  background: #9817fd;
+	color: #fafafa;
+  text-transform: uppercase;
 }
 
 .mytable thead tr {
-	background-color: white;
 	text-align: center;
 	color: black;
 	padding: 1.25rem 1.25rem;
@@ -117,21 +138,16 @@ h1.center {
 	border: 0.125rem solid black;
 }
 
-td.team-name {
-	text-align: left;
-	padding-left: 10px;
-}
-
 td {
 	text-align: center;
 }
 
-.mytable tbody tr:nth-child(even) {
-	background-color: #ffde7a;
+.mytable tbody tr:nth-child(odd) {
+	background-color: rgb(103, 133, 178,0.8);
 }
 
-.mytable tbody tr:nth-child(odd) {
-	background-color: #d5d6d2;
+.mytable tbody tr:nth-child(even) {
+	background-color: rgb(12, 44, 66, 0.8);
 }
 
 .page-container {

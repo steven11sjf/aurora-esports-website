@@ -1,26 +1,15 @@
 .ttable tbody tr:nth-child(even):not(.match-win):not(.match-loss):not(.match-unplayed) {
-	background-color: #d5d6d2;
+	background-color: rgb(103, 133, 178,0.8);
 }
 
 .ttable tbody tr:nth-child(odd) {
-	background-color: white;
-}
-
-.ttable tbody tr.match-win {
-	background: #AAFFAA;
-}
-
-.ttable tbody tr.match-loss {
-	background: #FF9999;
-}
-
-.ttable tbody tr.match-unplayed {
-	background: white;
+	background-color: rgb(12, 44, 66, 0.8);
 }
 
 .mapimgs {
 	margin: 0 auto;
 }
+
 .mapwin img {
 	display: inline-block;
 	float: left;
@@ -46,6 +35,7 @@
 	margin-bottom: 1rem;
 	border: 0.3rem solid #888888;
 }
+
 .team-page-container {
 	width: 70%;
 }
@@ -138,6 +128,34 @@ span#team-page-div-rank {
 	font-weight: bold;
 	border: 3px solid black;
 	border-collapse: collapse;
+	color: white;
+}
+
+.ttable tbody tr.match-win {
+	background: #AAFFAA;
+	color: black;
+}
+
+.ttable tbody tr.match-loss {
+	background: #FF9999;
+	color: black;
+}
+
+.ttable tbody tr.match-unplayed {
+	background: white;
+	color: black;
+}
+
+.match-win p{
+	color: black;
+}
+
+.match-loss p{
+	color: black;
+}
+
+.match-unplayed p{
+	color: black;
 }
 
 #mapTable {
@@ -152,8 +170,9 @@ span#team-page-div-rank {
 }
 
 .ttable thead tr {
-	background-color: #800;
+	background-color: #9817fd;
 	text-align: center;
+	text-transform: capitalize;
 	color: white;
 	padding: 20px 20px;
 	text-decoration: none;
@@ -181,3 +200,4 @@ span#team-page-div-rank {
 	width: 70rem;
 	margin: auto;
 	background-color: white;
+}
