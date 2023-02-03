@@ -17,20 +17,10 @@ h1#tag-name {
 	padding: 10px 10px;
 	border: 1px solid black;
 	border-radius: 10px;
-	background-color: rgba(117,146,190,0.9);
-}
-
-.title {
-	font-size: 2.5rem;
-	font-weight: bold;
-	margin-bottom: 1.25rem;
-	text-align: center;
-	display: block;
-	color: white;
-	text-decoration: none;
 }
 
 .blurb-subtext {
+	bottom: 0;
 	text-align: center;
 	display: block;
 	color: white;
