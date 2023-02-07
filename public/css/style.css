@@ -173,6 +173,7 @@ span.spoiler:hover {
 
 .shop-navbar {
 	margin-top: -10px;
+  padding: 0;
 }
 
 nav {
@@ -225,11 +226,11 @@ p {
 }
 
 .container {
-  /* max-width: 1300px; */
-  /* height: 100%; */
-  /* margin: auto; */
-  /* padding-left: 25px; */
-  /* padding-right: 25px; */
+  max-width: 1300px;
+  height: 100%;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .shop-header {
@@ -315,9 +316,8 @@ p {
 }
 
 .col-4 {
-  flex-basis: 25%;
+  flex-basis: 20%;
   min-width: 200px;
-  margin-bottom: 25px;
 }
 .col-4 img {
   width: 100%;
