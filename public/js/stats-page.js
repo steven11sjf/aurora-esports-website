@@ -5,28 +5,27 @@ var table_type;
 var loaded = 0;
 
 // called when the dropdown is selected.
-function dropdownSelected(value,value2,value3, value4) {
+function dropdownSelected(value,value2) {
 	let heroName = value;
 	let statsPer10 = value2;
-	let totalPlayerStats = value3;
-	let generalHeroStats = value4;
 	if(heroName == "") return;
 	console.log(heroName);
+	console.log(statsPer10);
 	
-	if(generalHeroStats) { table_type = "All"; loadTable('/html/stats-all-header.html', "__LEAGUE_STANDINGS__", statsPer10); }
-	else if(totalPlayerStats) { table_type = "All"; loadTable('/html/stats-all-header.html', "__TOTAL_STATS__", statsPer10); }
+	if(!heroinfo_obj) { table_type = "All"; loadTable('/html/stats-all-header.html', heroName, statsPer10); }
 	else if(heroinfo_obj[heroName] == "Tank") { table_type = "Tank"; loadTable('/html/stats-tank-header.html', heroName, statsPer10); }
 	else if(heroinfo_obj[heroName] == "Damage") { table_type = "Damage"; loadTable('/html/stats-damage-header.html', heroName, statsPer10); }
 	else if(heroinfo_obj[heroName] == "Support") { table_type = "Support"; loadTable('/html/stats-support-header.html', heroName, statsPer10); }
-	else { table_type = "All"; loadTable('/html/stats-all-header.html', heroName); }
+	else { table_type = "All"; loadTable('/html/stats-all-header.html', heroName, statsPer10); }
 }
 
 
 // clears the table, loads the new header and loads hero stats
-function loadTable(header,hero, statsPer10, totalPlayerStats) {
+function loadTable(header,hero, statsPer10) {
 	// clear stats table body
 	document.getElementById("statsTableBody").innerHTML = "";
 	
+	console.log(statsPer10);
 	// use AJAX to get the new header
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET",header,true);
@@ -35,6 +34,7 @@ function loadTable(header,hero, statsPer10, totalPlayerStats) {
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 			document.getElementById("statsTableHeader").innerHTML = xhttp.responseText;
+			console.log(statsPer10);
 			loadHero(hero, statsPer10);
 			console.log("Loaded new header!");
 		} else {
@@ -101,6 +101,8 @@ function loadHero(dropdown,per10) {
 				let deaths = parseInt(stats[i]["deaths"]);
 				let healing = parseInt(stats[i]["healing"]);
 				let blocked = parseInt(stats[i]["blocked"]);
+				
+				fixed_digits = 0;
 				if(per10) {
 					timePlayed = timePlayed / 10;
 					elims = elims/timePlayed;
@@ -110,11 +112,12 @@ function loadHero(dropdown,per10) {
 					healing = healing/timePlayed;
 					blocked = blocked/timePlayed;
 					timePlayed *= 10;
+					fixed_digits = 2;
 				}
-				elims = elims.toFixed(2);
-				fb = fb.toFixed(2);
+				elims = elims.toFixed(fixed_digits);
+				fb = fb.toFixed(fixed_digits);
 				dmg = dmg.toFixed(0);
-				deaths = deaths.toFixed(2);
+				deaths = deaths.toFixed(fixed_digits);
 				blocked = blocked.toFixed(0);
 				healing = healing.toFixed(0);
 				timePlayed = timePlayed.toFixed(2);
