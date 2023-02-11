@@ -198,6 +198,19 @@ margin: 70px 0;
   color: white;
 }
 
+.round-table {
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+	width: 78%;
+	table-layout: fixed;
+	font-size: 1.125rem;
+	font-weight: bold;
+}
+
+.round-table p{
+	color: black;
+}
+
 .statsCheck {
   font-size: 18px;
   padding-left: 10px;
