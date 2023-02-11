@@ -210,3 +210,10 @@ margin: 70px 0;
 .round-table p{
 	color: black;
 }
+
+.statsCheck {
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
