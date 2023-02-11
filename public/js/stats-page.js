@@ -152,8 +152,8 @@ function loadHero(dropdown,per10) {
 				inner += '">';
 				inner += blocked;
 				inner += '</p></td><td><p class="statcell time-field">';
-				inner += timePlayed;
-				inner += ' min</p></td></tr>';
+				inner += timePlayedString(timePlayed);
+				inner += '</p></td></tr>';
 			}
 		}
 	} else if (table_type == "Tank") {
@@ -210,8 +210,8 @@ function loadHero(dropdown,per10) {
 				inner += '">';
 				inner += blocked;
 				inner += '</p></td><td><p class="statcell time-field">';
-				inner += timePlayed;
-				inner += ' min</p></td></tr>';
+				inner += timePlayedString(timePlayed);
+				inner += '</p></td></tr>';
 			}
 		}
 	} else if (table_type == "Damage") {
@@ -261,8 +261,8 @@ function loadHero(dropdown,per10) {
 				inner += '">';
 				inner += deaths;
 				inner += '</p></td><td><p class="statcell time-field">';
-				inner += timePlayed;
-				inner += ' min</p></td></tr>';
+				inner += timePlayedString(timePlayed);
+				inner += '</p></td></tr>';
 			}
 		}
 	} else if(table_type == "Support") {
@@ -319,8 +319,8 @@ function loadHero(dropdown,per10) {
 				inner += '">';
 				inner += healing;
 				inner += '</p></td><td><p class="statcell time-field">';
-				inner += timePlayed;
-				inner += ' min</p></td></tr>';
+				inner += timePlayedString(timePlayed);
+				inner += '</p></td></tr>';
 			}
 		}
 	}
@@ -331,4 +331,44 @@ function loadHero(dropdown,per10) {
 	
 	// do linking
 	addLinks();
+}
+
+function timePlayedString(timeRaw) {
+	let mins = Math.floor(timeRaw);
+	let hours = Math.floor(mins / 60);
+	let seconds = (timeRaw - mins) * 60;
+	let secondString = '';
+	let minuteString = '';
+	let hourString = '';
+	let timeString = '';
+
+	// less than 10 seconds
+	if(Math.round(seconds) < 10) {
+		secondString = '0' + Math.round(seconds).toString();
+	} else {
+		secondString = Math.round(seconds).toString();
+	}
+
+	// less than 10 minutes
+	if(mins < 10) {
+		minuteString = '0' + mins.toString();
+	} else if(mins >= 60) {
+		if(mins % 60 < 10) {
+			minuteString = '0' + (mins % 60).toString();
+		} else {
+			minuteString = (mins % 60).toString();
+		}
+	} else {
+		minuteString = mins.toString();
+	}
+
+	timeString = minuteString + ':' + secondString;
+
+	// more than a hour
+	if(hours > 0) {
+		hourString = '0' + hours.toString();
+		timeString = hourString + ':' + timeString;
+	}
+
+	return timeString;
 }
