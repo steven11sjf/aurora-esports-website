@@ -24,9 +24,24 @@ button span {
 	display: none;
 }
 
-.arrowicon{
+.arrowicon-1 {
+	position: absolute;
+	top: 12.5%;
+	left: 35%;
 	color:white;
 	font-size: 4rem;
+	cursor: pointer;
+	user-select: none;
+}
+
+.arrowicon-2 {
+	position: absolute;
+	top: 12.5%;
+	right: 35%;
+	color:white;
+	font-size: 4rem;
+	cursor: pointer;
+	user-select: none;
 }
 
 .round-table thead {
@@ -148,7 +163,7 @@ tr.match-unplayed {
 
 .round-header {
 	font-size: 2.5rem;
-	color: #ccc;
+	color: white;
 }
 
 .left-float {
