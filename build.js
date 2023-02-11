@@ -49,7 +49,8 @@ function build() {
 		arr.push(new GWLRoundRobinSpreadsheet("GWL Season 4", "GWL_Season4", false, '1GGR4EvBzosLZf_Z0axr1PpA4ZMaPwYrw8Jr8WUXRioQ'));
 		arr.push(new GWLRoundRobinSpreadsheet("GWL Season 5", "GWL_Season5", false, '1IZvGqUOmNn4p2yubCNDGvE68PM0A1HmlBgKUgLOTgm0'));
 		arr.push(new GWLDivisionSpreadsheet("GWL Season 5.5", "GWL_Season5.5", false, '1rjwOiKJDN82Zmre40ZcUiBOyZK39jhVRfM5g16alf4k'));
-		arr.push(new GWLDivisionSpreadsheet("Aurora Season 1", "AOC_Season1", true, '1fzRdi0boBOGPrWmHBEUrSk3ve8_hLaNsNDrIwhZUy7o'));
+		arr.push(new GWLDivisionSpreadsheet("Aurora Season 1", "AOC_Season1", false, '1fzRdi0boBOGPrWmHBEUrSk3ve8_hLaNsNDrIwhZUy7o'));
+		arr.push(new GWLDivisionSpreadsheet("Aurora Season 2", "AOC_Season2", true, '1W7mRUAcJ4fcYToYXJyhb7eKNwCz5EkQnFXyPyloeHRA'));
 		
 		// promise all to build sheets
 		for(i=0;i<arr.length;++i) {
