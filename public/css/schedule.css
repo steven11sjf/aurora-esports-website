@@ -24,6 +24,25 @@ button span {
 	display: none;
 }
 
+.arrowicon-1 {
+	position: absolute;
+	top: 12.5%;
+	left: 35%;
+	color:white;
+	font-size: 4rem;
+	cursor: pointer;
+	user-select: none;
+}
+
+.arrowicon-2 {
+	position: absolute;
+	top: 12.5%;
+	right: 35%;
+	color:white;
+	font-size: 4rem;
+	cursor: pointer;
+	user-select: none;
+}
 
 .round-table thead {
 	visibility: collapse;
@@ -50,12 +69,12 @@ tr.match-unplayed {
 	display: inline-block;
 	float: left;
 	height: 4rem;
-	border: 0.25rem solid #AACCFF;
 	margin: 0.188rem 0.188rem;
 }
 .mapwin img {
 	display: block;
 	height: 4rem;
+	border: 0.25rem solid #AACCFF;
 }
 
 .maploss {
@@ -63,12 +82,12 @@ tr.match-unplayed {
 	display: inline-block;
 	float: left;
 	height: 4rem;
-	border: 0.25rem solid #FFAAAA;
 	margin: 0.188rem 0.188rem;
 }
 .maploss img {
 	height: 4rem;
 	display: block;
+	border: 0.25rem solid #FFAAAA;
 }
 
 .mapdraw {
@@ -77,13 +96,13 @@ tr.match-unplayed {
 	background: rgb(85,85,85);
 	float: left;
 	height: 4rem;
-	border: 0.25rem solid #555555;
 	margin: 0.188rem 0.188rem;
 }
 .mapdraw img {
 	display: block;
 	opacity: 0.8;
 	height: 4rem;
+	border: 0.25rem solid #555555;
 }
 
 .round-table {
@@ -144,7 +163,7 @@ tr.match-unplayed {
 
 .round-header {
 	font-size: 2.5rem;
-	color: #ccc;
+	color: white;
 }
 
 .left-float {

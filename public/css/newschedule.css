@@ -1,0 +1,48 @@
+p{
+	color: black;
+}
+
+.round-table {
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+	width: 70%;
+	table-layout: fixed;
+	font-size: 1.125rem;
+	font-weight: bold;
+}
+
+.mapimgsblue {
+	display: none;
+	position:absolute;
+  background-color: #AACCFF;
+  width: 70%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+	outline: black;
+}
+
+.mapimgsred {
+	display: none;
+	position:absolute;
+  background-color: #FFAAAA;
+  width: 70%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+	outline: black;
+}
+
+.tablerow:hover .mapimgsblue{
+	display: block;
+}
+
+.tablerow:hover .mapimgsred{
+	display: block;
+}
+
+.tablerow:hover .blue-team{
+	display: none;
+}
+
+.tablerow:hover .red-team{
+	display: none;
+}

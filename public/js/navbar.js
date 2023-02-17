@@ -27,12 +27,12 @@ function loadNavbarLinks() {
 		console.log(data);
 		// populate seasons list
 		for(i=0; i<data.seasons.length; ++i) {
-			$('#nav-season-dropdown-contents').append(`<p><a href="/${data.seasons[i].internal}/Home">${data.seasons[i].name}</a></p>`);
+			$('#nav-season-dropdown-contents').append(`<a href="/${data.seasons[i].internal}/Home" class=\"dropdown-item-tab\">${data.seasons[i].name}</a>`);
 		}
 		
 		// populate team list
 		for(i=0;i<data.teams.length;++i) {
-			$('#nav-team-dropdown-contents').append(`<p><a href=\"/${sname}/Teams/${data.teams[i].internal}\">${data.teams[i].name}</a></p>`);
+			$('#nav-team-dropdown-contents').append(`<a href=\"/${sname}/Teams/${data.teams[i].internal}\" class=\"dropdown-item-tab\">${data.teams[i].name}</a>`);
 		}
 		
 		// populate tournament list
