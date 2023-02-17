@@ -9,19 +9,29 @@ html {
 	width: 100% !important;
 }
 
+.dropdown-item-tab {
+	color: white;
+	padding: 20px 0 20px 0;
+	text-align: center;
+	font-size: 13px;
+}
+
+.dropdown-item-tab:hover {
+  background: #9817fd;
+  color: white;
+}
+
 ul.dropdown-menu {
-	background-color: rgba(117,146,190,1) !important;
+	background-color: rgb(117, 123, 190) !important;
 	--bs-dropdown-link-hover-bg: #ffffff;
 }
 
-
-.nav-bg {
-    background-color: rgba(117,146,190,1);
-}
-
 .nav-link {
-	color: rgba(255,255,255,1) !important;
-	font-size: 1.25rem;
+	color: white;
+	font-size: 1.25rem !important;
+	height: 100%;
+	width: 100%;
+	text-align: center;
 }
 
 .gwl-style-header {
@@ -61,6 +71,7 @@ h1.center {
 .auto-plink {
 	text-decoration: none;
 	color: inherit;
+	padding-bottom: 0px;
 }
 
 body {
@@ -74,19 +85,21 @@ body {
 	padding-bottom: 10rem;
 }
 
+.shop-body {
+	background-image: none;
+}
+
 .center {
 	margin: auto;
 	text-align: center;
 }
 
 .notice {
-	padding: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 1.25rem;
-	background-color: white;
-	width: 50%;
-	border-radius: 1.5rem;
-	border: 0.25rem solid red;
+	padding: 16px;
+	background-color: rgb(12, 44, 66, 0.8);
+	width: 40%;
+	color: white;
+	font-size: 24px !important;
 }
 
 h1.center {
@@ -94,48 +107,53 @@ h1.center {
 }
 
 .mytable {
-	margin: auto;
-	width: 80rem;
-	table-layout: fixed;
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  /* border-collapse: collapse; */
+  /* border-spacing: 0; */
+  /* border-radius: 12px 12px 0 0; */
+  overflow: hidden;
+  box-shadow: 0 5px 12px rgba(32,32,32,.3);
+  color: white;
+  table-layout: fixed;
 	font-size: 18px;
 	font-weight: bold;
-	border: 3px solid black;
-	border-collapse: collapse;
+}
+
+th, td {
+ padding: 15px;
+ height: 35px;
 }
 
 .mytable th {
-	height: 4.375rem;
-	width: 20%;
+  background: #9917fdcc;
+  text-transform: uppercase;
+}
+
+.mytable p {
+	margin: 0;
 }
 
 .mytable thead tr {
-	background-color: white;
 	text-align: center;
-	color: black;
-	padding: 1.25rem 1.25rem;
-	text-decoration: none;
-	border: 0.125rem solid black;
-}
-
-td.team-name {
-	text-align: left;
-	padding-left: 10px;
 }
 
 td {
 	text-align: center;
 }
 
-.mytable tbody tr:nth-child(even) {
-	background-color: #ffde7a;
+.mytable tbody tr:nth-child(odd) {
+	background-color: rgb(103, 133, 178,0.8);
 }
 
-.mytable tbody tr:nth-child(odd) {
-	background-color: #d5d6d2;
+.mytable tbody tr:nth-child(even) {
+	background-color: rgb(12, 44, 66, 0.8);
 }
 
 .page-container {
-	padding-top: 3.125rem;
+	padding-top: 35px;
 }
 
 span.spoiler {
@@ -147,8 +165,265 @@ span.spoiler:hover {
 	text-shadow: none;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.shop-navbar {
+	margin-top: -10px;
+  padding: 0;
+}
+
+nav {
+	padding: 15px;
+	flex: 1;
+  text-align: right;
+}
+
+nav ul {
+  width: 100%;
+  display: inline-block;
+  list-style-type: none;
+	background: radial-gradient(#6785b2,#0c2c42);
+}
+
+nav ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 129px;
+  height: 84px;
+  color: white;
+}
+
+.shop-navbar-list li {
+	margin-left: 10px;
+}
+
+nav ul li:hover {
+  background-color: #9817fd;
+}
+
+nav ul img {
+  align-items: center;
+}
+
+a {
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.container {
+  max-width: 1300px;
+  height: 100%;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.shop-header {
+  width: 100%;
+  min-height: 500px;
+}
+
+.left-col {
+  float: left !important;
+  min-width: 300px;
+  padding: 100px 0 0 50px;
+}
+
+.right-col {
+  float: right !important;
+  min-width: 300px;
+}
+
+.right-col img {
+  max-width: 100%;
+  max-height: 400px;
+  padding: 50px 0 0 0;
+}
+
+.shop-buttons {
+  display: inline-flex;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.left-col h1 {
+  font-size: 50px;
+  line-height: 60px;
+  margin: 25px 0;
+  color: white;
+}
+
+.btn {
+  background: #9817fd;
+  color: white;
+  padding: 0 30px 0 30px;
+  margin: 30px 8px;
+  border-radius: 30px;
+}
+
+.btn:hover {
+  background: #03f9d6 !important;
+  border-radius: 30px;
+}
+
+.order {
+  background: #03f9d6;
+  color: black;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+}
+
+.order:hover {
+  background: #9817fd;
+  color: white;
+}
+
+.header {
+	background: radial-gradient(#9817fd,#03f9d6);
+  min-height: 650px;
+	padding: 0 15%;
+}
+
+.categories {
+	margin: 70px 0;
+}
+
+.small-container {
+  background-color: white;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.col-4 {
+  flex-basis: 20%;
+  min-width: 200px;
+}
+.col-4 img {
+  width: 100%;
+}
+
+.col-4 h4 {
+  text-align: center;
+  color:black;
+}
+
+.col-4 h4 a {
+  text-align: center;
+  color:black;
+  text-decoration: underline;
+}
+
+.col-4 h4 a:hover {
+  text-align: center;
+  color:#9817fd;
+}
+
+.price {
+  color: grey;
+  text-align: center;
+}
+
+.title {
+  clear: both;
+  width: 100%;
+  margin: 0 auto 80px;
+  text-align: center;
+  position: relative;
+  line-height: 60px;
+  color: grey;
+}
+
+.title::after {
+  content: '';
+  background: #9817fd;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown {
+  display: inline-block;
+  color: white;
+  padding: 25px;
+  cursor: pointer;
+	font-size: 1.25rem !important;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top: 25px;
+  margin-left: -30px;
+  z-index: 1;
+}
+
+.dropdown-content p {
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.dropdown:hover {
+  background: #9817fd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background: radial-gradient(#6785b2,#0c2c42);
+}
+
+.dropdown-content p:hover {
+  background-color: #9817fd;
+}
+
+.round-table {
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+	width: 78%;
+	table-layout: fixed;
+	font-size: 1.125rem;
+	font-weight: bold;
+}
+
+.round-table p {
+	color: black;
+}
+
 /* fix later, this is a stupid patch. idk if i have to roll my own bootstrap but i just gotta get this release out :> */
 body *, body *:after, body *:before
 {
 	box-sizing: content-box !important;
 }
+

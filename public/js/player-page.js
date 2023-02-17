@@ -163,7 +163,7 @@ function loadTeam() {
 			alink.href = '/' + teamInfo.season + '/Teams/' + teamInfo.internal;
 			
 			let icon = document.createElement("img");
-			icon.src = '/images/' + teamInfo.internal + '.png';
+			icon.src = '/images/teamicons/' + teamInfo.internal + '.png';
 			if(teamInfo.season == seasonname) icon.classList.add("current-team");
 			
 			document.getElementById("team-images").appendChild(alink);
@@ -176,7 +176,7 @@ function loadTeam() {
 		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
 	
 		let imgpath = playerInfo.team.replace(/\s+/g,'');
-		document.getElementById("team-icon").src = '/images/' + team.internal + '.png';
+		document.getElementById("team-icon").src = '/images/teamicons/' + team.internal + '.png';
 		document.getElementById("teamlink").href = '/' + seasonname + '/Teams/' + team.internal;
 	}
 }
