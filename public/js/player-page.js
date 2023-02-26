@@ -101,7 +101,7 @@ function loadData() {
 	loadNumberAndRole();
 	loadSocials();
 	loadTeam();
-	// FIX loadAccolades();
+	loadAccolades();
 	loadSRs();
 	loadTables();
 }
@@ -174,7 +174,7 @@ function loadTeam() {
 	} else {
 		// sets color
 		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
-	
+
 		let imgpath = playerInfo.team.replace(/\s+/g,'');
 		document.getElementById("team-icon").src = '/images/teamicons/' + team.internal + '.png';
 		document.getElementById("teamlink").href = '/' + seasonname + '/Teams/' + team.internal;
@@ -207,7 +207,8 @@ function loadImage() {
 
 // loads accolades
 function loadAccolades() {
-	if(playerInfo.accolades == "" && playerInfo.mvp == "0") {
+	console.log(playerInfo.accolades);
+	if(playerInfo.accolades == "" && playerInfo.mvp == "0" || playerInfo.accolades == undefined) {
 		document.getElementById("awards").innerHTML += '<p>No accolades earned... yet!</p>';
 		return;
 	}

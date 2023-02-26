@@ -18,7 +18,7 @@ body {
   margin-right: 0px;
 }
 
-.container {
+.player-container {
   display: grid;
   width: 100%;
   height: 100vh;
@@ -33,14 +33,14 @@ body {
     "stats";
 }
 
-.container > header {
+.player-container > header {
   background-color: white;
   display: flex;
   align-items: center;
   grid-area: header;
 }
 
-.container > header > img {
+.player-container > header > img {
   width: 400px;
   height: 75px;
 }
@@ -49,19 +49,24 @@ div.history > h3 {
   padding-bottom: 20px;
 }
 
+#bio{
+  color: black;
+}
+
 .player-header {
   grid-area: pheader;
   background-color: #FFFFFF;
-  opacity: 0.9;
+  opacity: 0.95;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "photo player-info player-roles";
+  margin-top: -40px;
 }
 
 .player-photo {
-  padding-top: 80px;
-  padding-left: 200px;
+  padding-top: 90px;
+  padding-left: 100px;
   padding-bottom: 0px;
   display: flex;
   justify-content: center;
@@ -69,10 +74,11 @@ div.history > h3 {
 
 .player-photo > img {
   height: 300px;
+  width: 300px;
 }
 
 .player-info {
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: auto;
   display: flex;
   flex-direction: column;
@@ -89,8 +95,6 @@ div.history > h3 {
 	background-color: black;
 	border-radius: 10px 10px 0 0;
 }
-
-
 
 .rank-class {
   display: flex;
@@ -130,14 +134,18 @@ div.history > h3 {
   margin-right: 0px;
 }
 
+.team-images {
+  display: flex;
+}
+
 .team-images > a > img {
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
 }
 
 .current-team {
-  height: 75px !important;
-  width: 75px !important;
+  height: 150px !important;
+  width: 150px !important;
 }
 
 .player-name {
@@ -174,13 +182,13 @@ div.history > h3 {
 }
 
 .player-number {
-  background-color: white;
+  background-color: #6785b2;
   height: 44px;
   width: 48px;
   font-size: 20px;
   font-weight: bold;
   margin-left: 0px;
-  margin-top: 12px;
+  margin-top: 25px;
   margin-bottom: 0px;
   margin-right: 0px;
   display: flex;
@@ -189,6 +197,16 @@ div.history > h3 {
 }
 
 .role-image {
+  background-color: black;
+  height: 44px;
+  width: 48px;
+  margin-left: 0px;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+
+.role-image-sr {
   background-color: black;
   height: 44px;
   width: 48px;
@@ -286,7 +304,7 @@ div.history > h3 {
 
 .bio-written {
   grid-area: bio-written;
-  background-color: maroon;
+  background-color: #0c2c42;
   color: white;
   padding-left: 20px;
   display: grid;
@@ -346,7 +364,7 @@ div.history > h3 {
 
 .player-stats {
   grid-area: stats;
-  background-color: maroon;
+  background-color: #0c2c42;
   color: white;
   display: grid;
   grid-template-rows: 1fr;
@@ -372,7 +390,7 @@ div.history > h3 {
 }
 
 thead {
-  background-color: gold;
+  background-color: #9817fd;
   color: black;
 }
 

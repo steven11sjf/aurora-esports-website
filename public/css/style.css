@@ -231,6 +231,7 @@ p {
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
+  background-color: transparent;
 }
 
 .shop-header {
