@@ -13,15 +13,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
+		<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 		<script src="/js/schedule-page.js"></script>
 		<script src="/js/link-team-names.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/navbar.js"></script>
+		<script src="/js/countdown.js"></script>
 	</head>
 	<body>
 		<!-- navbar -->
-		<div class="container">
+		<div class="header">
 			<div class="navbar">
 				<nav>
 					<ul>
@@ -46,13 +47,117 @@
 					</ul>
 				</nav>
 			</div>
+
+			<div class="upcoming" id="upcoming">
+			</div>
+
+			<script type="text/javascript">
+				var week;
+				var numWeeks; // total number of weeks
+				var season = window.location.pathname.split('/')[1];
+				ajaxReq('/api/'+season+'/matchlog')
+				.then(res => loadUpcoming(res))
+				.catch(err => {
+					console.error("Server unable to return matchlog!");
+					return;
+				});
+				
+				// loads table into HTML
+				function loadUpcoming(obj) {
+					let jsonObj = JSON.parse(obj.responseText);
+					if(jsonObj.error) {
+						console.log("Server returned an error on matchlog!");
+						return;
+					};
+					
+					loadLog(jsonObj);
+					week = jsonObj.currentround;
+					numWeeks = getMaxWeek();
+					
+					createUpcoming(week, jsonObj);
+				}
+				</script>
+
+		<div class="home-header">
+			<div class="left-col">
+				<h1>Welcome to Aurora Esports!</h1>
+				<p>A growing eSports organization specializing in Overwatch and League of Legends with thoughts</br>of expanding into other games in the future.
+					Created in 2021 at the University of Minnesota - TC,</br>Aurora Esports has expanded to include national and even worldwide players. Feel free to join
+					our</br>Discord by clicking on the Discord section of the navbar and follow our socials. We hope to see you soon!
+				</p>
+			</div>
+			<div class="right-col">
+				<img src="/images/Aurora_Esports_Circle_Logo.png">
+			</div>
 		</div>
+	</div>
 		
-		
-		<div style="clear:both;">
-			<h1 class="center section-header">Current Round</h1>
-			<div id="rounds-div"></div>
+	<div id="twitch" class="twitch-twitter">
+		<script src="/js/twitch.js" type="text/javascript"></script>
+		<a class="twitter-timeline" data-lang="en" data-height="875" data-theme="dark" href="https://twitter.com/AuroraEsportsMN?ref_src=twsrc%5Etfw">Tweets by AuroraEsportsMN</a> 
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+
+	<div class="youtube-merch">
+		<div class="youtube">
+			<h1 class="center section-header">Watch Some Matches</h1>
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+				<!-- Full-width images with number and caption text -->
+				<div class="youtubeSlides">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/OVVKi_-PweI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+
+				<div class="youtubeSlides">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/LdiP_OVwZGM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+
+				<div class="youtubeSlides">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/OVVKi_-PweI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+
+				<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusYoutubeSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusYoutubeSlides(1)">&#10095;</a>
+			</div>
+			<br>
+
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+				<span class="youtubeDot" onclick="currentYoutubeSlide(1)"></span>
+				<span class="youtubeDot" onclick="currentYoutubeSlide(2)"></span>
+				<span class="youtubeDot" onclick="currentYoutubeSlide(3)"></span>
+			</div>
 		</div>
+
+		<div class="merch">
+			<h1 class="center section-header">Explore Our Merch Shop</h1>
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+				<!-- Full-width images with number and caption text -->
+				<div class="merchSlides">
+					<img src="/images/merch/jersey.png">
+				</div>
+
+				<div class="merchSlides">
+					<img src="/images/merch/vaperwave_tee.png">
+				</div>
+
+				<div class="merchSlides">
+					<img src="/images/merch/sweats.png">
+				</div>
+
+				<div class="merchSlides">
+					<img src="/images/merch/mousepad.png">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/youtubeCarousel.js" type="text/javascript"></script>
+  <script src="/js/merchCarousel.js" type="text/javascript"></script>
 		
 		<!-- blog posts -->
 		<div class="blog-div">
@@ -65,25 +170,6 @@
 			<button class="btn btn-lg btn-secondary blog-loadall" onclick="blogLoadAll();" id="blog-loadall">Show All</button>
 		</div>
 		
-		<script type="text/javascript">
-		var sname = window.location.pathname.split('/')[1];
-		ajaxReq("/api/" + sname + "/matchlog")
-		.then(res => roundTable(res))
-		.catch(err => console.error(err));
-		
-		// loads table into HTML
-		function roundTable(res) {
-			let obj = JSON.parse(res.responseText);
-			if(obj.error) {
-				console.error("Error: Server could not return match log!");
-				return;
-			}
-			
-			loadLog(obj);
-			var week = obj.currentround;
-			addRoundTable(week);
-		}
-		</script>
 		<script type="text/javascript">
 		ajaxReq(`/api/BlogBlurbs/${sname}`)
 		.then(res => loadBlurbs(res))
