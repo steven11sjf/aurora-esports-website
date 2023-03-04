@@ -145,7 +145,7 @@ td {
 }
 
 .mytable tbody tr:nth-child(odd) {
-	background-color: rgb(103, 133, 178,0.8);
+	background-color: #6785b2cc;
 }
 
 .mytable tbody tr:nth-child(even) {
@@ -301,7 +301,7 @@ p {
 }
 
 .header {
-	background: radial-gradient(#9817fd,#03f9d6);
+	background: radial-gradient(rgb(152, 23, 253, 0.6),rgb(3, 249, 214, 0.6));
   min-height: 650px;
 	padding: 0 15%;
 }
@@ -583,13 +583,24 @@ body *, body *:after, body *:before
   margin: auto;
   margin-top: -40px;
   display: flex;
-  background-color: yellow;
   max-width: 60%;
   height: 50px;
 }
 
 .leftTeam {
   width: 33%;
+  background: radial-gradient(#6785b2,#0c2c42);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.leftTeam img {
+  float: left;
+}
+
+.leftTeam p {
+  padding-top: 12px;
 }
 
 .countdown {
@@ -602,14 +613,18 @@ body *, body *:after, body *:before
 
 .rightTeam {
   flex: 1;
+  background: radial-gradient(#6785b2,#0c2c42);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .rightTeam img {
   float: right;
 }
 
-.upcoming img {
-  background-color: white;
+.rightTeam p {
+  padding-top: 12px;
 }
 
 

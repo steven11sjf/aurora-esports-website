@@ -6,7 +6,7 @@ function createUpcoming(week, matchJson) {
 
   for(var i = 0; i < matches.length; i++) {
     if(weekString == matches[i].round && matches[i]["tournament"] == "Season") {
-      if(matches[i]["played"] == "FALSE") {
+      if(matches[i]["played"] == "FALSE" && matches[i]["date"] != "") {
         matchesToParse.push(matches[i]);
       }
     }
@@ -14,26 +14,34 @@ function createUpcoming(week, matchJson) {
 
   var upcomingMatch = matchesToParse[0];
   for(var i = 0; i < matchesToParse.length; i++) {
-    var dateToCheck = matchesToParse[i]["date"] + matchesToParse[i]["time"]
-    var upcomingDateTime = upcomingMatch[i]["date"] + upcomingMatch[i]["time"]
+    console.log(matchesToParse[i]["date"]);
+    var dateToCheck = matchesToParse[i]["date"] + matchesToParse[i]["time"];
+    console.log("dateToCheck " + dateToCheck);
+    var upcomingDateTime = upcomingMatch["date"] + upcomingMatch["time"];
+    console.log("upcomingDateTime " + upcomingDateTime);
+    console.log(upcomingDateTime);
     if(dateToCheck < upcomingDateTime) {
         upcomingMatch = matchesToParse[i];
     }
   }
 
-  res += '<div class="leftTeam" style="background-color: ';
-  res += "red"; //TEAM 1 BACK
-  res += '>\n<img src="/images/teamicons/';
+  res += '<div class="leftTeam">\n<img src="\/images\/teamicons\/';
   res += upcomingMatch["team1"].replace(/\s+/g,'');
-  res += ' width="50" height="50"></div><div class="countdown" id="timer" style="background-color: white;"></div><div class="rightTeam" style="background-color: ';
-  res += "yellow"; //TEAM 2 BACK
-  res += '>\n<img src="/images/teamicons/';
+  res += '.png" width="50" height="50"><p>';
+  res += upcomingMatch["team1"];
+  res += '</p></div><div class="countdown" id="timer" style="background-color: white;"></div><div class="rightTeam">\n<img src="\/images\/teamicons\/';
   res += upcomingMatch["team2"].replace(/\s+/g,'');
-  res += ' width="50" height="50"></div>';
+  res += '.png" width="50" height="50"><p>'
+  res += upcomingMatch["team2"];
+  res += '</p></div>';
 
-  console.log(res);
-  res = "<p>test</p>"
-  document.getElementById("upcoming").innerHTML = "<p>test</p>";
+  document.getElementById("upcoming").innerHTML = res;
+  const date = upcomingMatch["date"].split("/");
+  const time = upcomingMatch["time"].split(":");
+  var hour = parseInt(time[0]) + 12;
+  let mins = parseInt(time[1].substring(0,2));
+  var dateTime = new Date(parseInt(date[2]),parseInt(date[0]),parseInt(date[1]),hour,mins);
+  countdown(dateTime);
 }
 
 function countdown(dateTime) {
