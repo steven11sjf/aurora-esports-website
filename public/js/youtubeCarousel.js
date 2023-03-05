@@ -4,8 +4,6 @@ function createYouTube(week, matchJson) {
   var matches = matchJson.matches;
   var weekString = week.toString();
 
-  console.log(weekString);
-
   for(var i = 0; i < matches.length; i++) {
     if(weekString == matches[i].round && matches[i]["tournament"] == "Season") {
       if(matches[i]["played"] == "TRUE" && matches[i]["embed"] != "undefined") {
@@ -16,11 +14,6 @@ function createYouTube(week, matchJson) {
 
   res += '<h1 class="center section-header">Watch Some Matches</h1>';
   res += '<div class="slideshow-container">';
-
-  console.log(matchesToList.length);
-  console.log(matchesToList[0]["team1"]);
-  console.log(matchesToList[0]["vod"]);
-  console.log(matchesToList[0]["embed"]);
 
   for(var i = 0; i < matchesToList.length; i++) {
     res += '<div class="youtubeSlides"><iframe width="560" height="315" src="';

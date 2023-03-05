@@ -14,12 +14,8 @@ function createUpcoming(week, matchJson) {
 
   var upcomingMatch = matchesToParse[0];
   for(var i = 0; i < matchesToParse.length; i++) {
-    console.log(matchesToParse[i]["date"]);
     var dateToCheck = matchesToParse[i]["date"] + matchesToParse[i]["time"];
-    console.log("dateToCheck " + dateToCheck);
     var upcomingDateTime = upcomingMatch["date"] + upcomingMatch["time"];
-    console.log("upcomingDateTime " + upcomingDateTime);
-    console.log(upcomingDateTime);
     if(dateToCheck < upcomingDateTime) {
         upcomingMatch = matchesToParse[i];
     }
@@ -59,7 +55,7 @@ function countdown(dateTime) {
 
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + 1;
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
