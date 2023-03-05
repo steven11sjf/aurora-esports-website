@@ -149,9 +149,19 @@ function loadTeam() {
 		let teamsArr = playerInfo.teams.split('\n');
 		console.log(teamsArr);
 		
-		// set color; do current team but
-		// TODO set color depending on season
-		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
+		// set color; do current team
+		var aRgbHex = team.primaryColor.substring(1).match(/.{1,2}/g);
+    var aRgb = [
+        parseInt(aRgbHex[0], 16),
+        parseInt(aRgbHex[1], 16),
+        parseInt(aRgbHex[2], 16)
+    ];
+
+		var colorHeader = 'rgb(' + aRgb[0] + ", " + aRgb[1] + ", " + aRgb[2] + ", " + "0.7)";
+		var colorBody = 'rgb(' + aRgb[0] + ", " + aRgb[1] + ", " + aRgb[2] + ", " + "0.9)";
+		document.getElementById("player-header").style.backgroundColor = colorHeader;
+		document.getElementById("bio-written").style.backgroundColor = colorBody;
+		document.getElementById("player-stats").style.backgroundColor = colorBody;
 		for(t of teamsArr) {
 			console.info(t);
 			let teamInfo;
@@ -207,7 +217,6 @@ function loadImage() {
 
 // loads accolades
 function loadAccolades() {
-	console.log(playerInfo.accolades);
 	if(playerInfo.accolades == "" && playerInfo.mvp == "0" || playerInfo.accolades == undefined) {
 		document.getElementById("awards").innerHTML += '<p>No accolades earned... yet!</p>';
 		return;
