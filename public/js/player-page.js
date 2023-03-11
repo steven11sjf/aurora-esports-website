@@ -147,7 +147,6 @@ function loadTeam() {
 	if(playerInfo.teams) {
 		// get array of teams
 		let teamsArr = playerInfo.teams.split('\n');
-		console.log(teamsArr);
 		
 		// set color; do current team
 		var aRgbHex = team.primaryColor.substring(1).match(/.{1,2}/g);
@@ -227,11 +226,8 @@ function loadAccolades() {
 	if(playerInfo.mvp != "0" && playerInfo.mvp != "") {
 		// add match mvps
 		let mvp = '<div class="award"><img src="/images/playerpage/match_mvp.png"><p>Match MVP x' + playerInfo.mvp + '</p></div>';
-		console.log(playerInfo.mvp,mvp);
 		accoladesDiv.innerHTML += mvp;
 	}
-	
-	console.log(accolades);
 	
 	for(i=0; i<accolades.length; ++i) {
 		let html = '<div class="award"><img src="';
@@ -337,8 +333,7 @@ function loadCareerStats() {
 	let deaths = 0;
 	let healing = 0;
 	let blocked = 0;
-	
-	console.log(btag);
+
 	for(i=0; i<so.length; ++i) {
 		if(so[i]["player"] == btag) {
 			timeplayed += parseFloat(so[i]["timeplayed"]);
@@ -383,7 +378,6 @@ function loadSRs() {
 	let tankrank = getRank(playerInfo.tank);
 	let dpsrank = getRank(playerInfo.dps);
 	let supportrank = getRank(playerInfo.support);
-	console.log(tankrank,dpsrank,supportrank);
 	
 	// set tank sr
 	if(playerInfo.tank == "-") {

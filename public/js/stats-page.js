@@ -9,8 +9,6 @@ function dropdownSelected(value,value2) {
 	let heroName = value;
 	let statsPer10 = value2;
 	if(heroName == "") return;
-	console.log(heroName);
-	console.log(statsPer10);
 	
 	if(!heroinfo_obj) { table_type = "All"; loadTable('/html/stats-all-header.html', heroName, statsPer10); }
 	else if(heroinfo_obj[heroName] == "Tank") { table_type = "Tank"; loadTable('/html/stats-tank-header.html', heroName, statsPer10); }
@@ -24,8 +22,7 @@ function dropdownSelected(value,value2) {
 function loadTable(header,hero, statsPer10) {
 	// clear stats table body
 	document.getElementById("statsTableBody").innerHTML = "";
-	
-	console.log(statsPer10);
+
 	// use AJAX to get the new header
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET",header,true);
@@ -34,7 +31,6 @@ function loadTable(header,hero, statsPer10) {
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 			document.getElementById("statsTableHeader").innerHTML = xhttp.responseText;
-			console.log(statsPer10);
 			loadHero(hero, statsPer10);
 			console.log("Loaded new header!");
 		} else {
@@ -83,8 +79,6 @@ function loadHero(dropdown,per10) {
 	// get hero from dropdown
 	let heroName = dropdown;
 	if(heroName == "") return;
-	console.log(heroName);
-	console.log(per10);
 	
 	let inner = "";
 	let stats = herostats_obj.stats;
@@ -324,7 +318,6 @@ function loadHero(dropdown,per10) {
 			}
 		}
 	}
-	console.log(inner);
 	
 	// enter data into table
 	document.getElementById("statsTable").getElementsByTagName("tbody")[0].innerHTML = inner;
