@@ -101,7 +101,7 @@ function loadData() {
 	loadNumberAndRole();
 	loadSocials();
 	loadTeam();
-	// FIX loadAccolades();
+	loadAccolades();
 	loadSRs();
 	loadTables();
 }
@@ -147,11 +147,20 @@ function loadTeam() {
 	if(playerInfo.teams) {
 		// get array of teams
 		let teamsArr = playerInfo.teams.split('\n');
-		console.log(teamsArr);
 		
-		// set color; do current team but
-		// TODO set color depending on season
-		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
+		// set color; do current team
+		var aRgbHex = team.primaryColor.substring(1).match(/.{1,2}/g);
+    var aRgb = [
+        parseInt(aRgbHex[0], 16),
+        parseInt(aRgbHex[1], 16),
+        parseInt(aRgbHex[2], 16)
+    ];
+
+		var colorHeader = 'rgb(' + aRgb[0] + ", " + aRgb[1] + ", " + aRgb[2] + ", " + "0.7)";
+		var colorBody = 'rgb(' + aRgb[0] + ", " + aRgb[1] + ", " + aRgb[2] + ", " + "0.9)";
+		document.getElementById("player-header").style.backgroundColor = colorHeader;
+		document.getElementById("bio-written").style.backgroundColor = colorBody;
+		document.getElementById("player-stats").style.backgroundColor = colorBody;
 		for(t of teamsArr) {
 			console.info(t);
 			let teamInfo;
@@ -174,7 +183,7 @@ function loadTeam() {
 	} else {
 		// sets color
 		document.getElementById("player-header").style.backgroundColor = team.primaryColor;
-	
+
 		let imgpath = playerInfo.team.replace(/\s+/g,'');
 		document.getElementById("team-icon").src = '/images/teamicons/' + team.internal + '.png';
 		document.getElementById("teamlink").href = '/' + seasonname + '/Teams/' + team.internal;
@@ -207,7 +216,7 @@ function loadImage() {
 
 // loads accolades
 function loadAccolades() {
-	if(playerInfo.accolades == "" && playerInfo.mvp == "0") {
+	if(playerInfo.accolades == "" && playerInfo.mvp == "0" || playerInfo.accolades == undefined) {
 		document.getElementById("awards").innerHTML += '<p>No accolades earned... yet!</p>';
 		return;
 	}
@@ -217,11 +226,8 @@ function loadAccolades() {
 	if(playerInfo.mvp != "0" && playerInfo.mvp != "") {
 		// add match mvps
 		let mvp = '<div class="award"><img src="/images/playerpage/match_mvp.png"><p>Match MVP x' + playerInfo.mvp + '</p></div>';
-		console.log(playerInfo.mvp,mvp);
 		accoladesDiv.innerHTML += mvp;
 	}
-	
-	console.log(accolades);
 	
 	for(i=0; i<accolades.length; ++i) {
 		let html = '<div class="award"><img src="';
@@ -327,8 +333,7 @@ function loadCareerStats() {
 	let deaths = 0;
 	let healing = 0;
 	let blocked = 0;
-	
-	console.log(btag);
+
 	for(i=0; i<so.length; ++i) {
 		if(so[i]["player"] == btag) {
 			timeplayed += parseFloat(so[i]["timeplayed"]);
@@ -373,7 +378,6 @@ function loadSRs() {
 	let tankrank = getRank(playerInfo.tank);
 	let dpsrank = getRank(playerInfo.dps);
 	let supportrank = getRank(playerInfo.support);
-	console.log(tankrank,dpsrank,supportrank);
 	
 	// set tank sr
 	if(playerInfo.tank == "-") {
