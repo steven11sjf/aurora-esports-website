@@ -25,6 +25,7 @@ const fs = require('fs');
 app.use(bodyParser.urlencoded({ extended : true }));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+app.use(requireHTTPS);
 
 // custom submodules
 const googleAuth = require('@mymodules/auth'); // gets authorization for google sheets
@@ -35,6 +36,13 @@ const froala_helper = require('@mymodules/froala-upload-helper'); // helper for 
 
 var PAGE_HITS = []; // stores page hits until next cron job
 
+// redirect to HTTPS
+function requireHTTPS(req, res, next) {
+	if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.ISPROD == "TRUE") {
+		return res.redirect('https://' + req.get('host') + req.url);
+	}
+	next();
+}
 // gracefully exit
 process.on('SIGTERM', () => {
 	if(server) server.close(() => {
