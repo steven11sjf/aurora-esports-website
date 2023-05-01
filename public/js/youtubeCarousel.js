@@ -2,14 +2,20 @@ function createYouTube(week, matchJson) {
   var res = "";
   var matchesToList = [];
   var matches = matchJson.matches;
-  var weekString = week.toString();
+  var cur_week = week;
 
-  for(var i = 0; i < matches.length; i++) {
-    if(weekString == matches[i].round && matches[i]["tournament"] == "Season") {
-      if(matches[i]["played"] == "TRUE" && matches[i]["embed"] != "undefined") {
-        matchesToList.push(matches[i]);
+  while(matchesToList.length == 0 && cur_week != 0) {
+    weekString = cur_week.toString();
+
+    for(var i = 0; i < matches.length; i++) {
+      if(weekString == matches[i].round && matches[i]["tournament"] == "Season") {
+        if(matches[i]["played"] == "TRUE" && matches[i]["embed"] != "undefined") {
+          matchesToList.push(matches[i]);
+        }
       }
     }
+
+    cur_week -= 1;
   }
 
   res += '<h1 class="center section-header">Watch Some Matches</h1>';
